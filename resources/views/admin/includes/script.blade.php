@@ -18,3 +18,5 @@
 {{--<!-- JS custom -->--}}
 @yield('script_custom')
 {{--<!-- /JS custom  -->--}}
+
+@livewireScripts

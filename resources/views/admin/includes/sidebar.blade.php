@@ -33,11 +33,26 @@
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">
-                        <i class="ph-house"></i>
+                    <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}">
+                        <i class="ph-user-gear"></i>
                         <span>
-                            Dashboard
-                            <span class="d-block fw-normal opacity-50">No pending orders</span>
+                            Chức vụ
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.index') ?'active' : '' }}">
+                        <i class="ph-users"></i>
+                        <span>
+                            Người dùng
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.students.index') }}" class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}">
+                        <i class="ph-student"></i>
+                        <span>
+                            Sinh viên
                         </span>
                     </a>
                 </li>
