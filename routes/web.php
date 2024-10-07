@@ -18,8 +18,8 @@ use Illuminate\Foundation\Auth\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('client/pages/index');
 });
 Route::prefix('/admin')->group(function (): void {
     Route::prefix('/role')->group(function (): void {
