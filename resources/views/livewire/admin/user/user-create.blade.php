@@ -12,10 +12,10 @@
                         Họ và tên: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="" type="text" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
+                        <input wire:model.live="name" type="text" class="form-control">
+                        @error('name')
+                        <label class="text-danger">{{ $message }}</label>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group mt-2">
@@ -24,9 +24,9 @@
                     </label>
                     <div>
                         <input wire:model.live="email" type="email" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
+                        @error('email')
+                        <label class="text-danger">{{ $message }}</label>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group mt-2">
@@ -35,9 +35,49 @@
                     </label>
                     <div>
                         <input wire:model.live="phone_number" type="text" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
+                        @error('phone_number')
+                        <label class="text-danger">{{$message}}</label>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Chức vụ: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <select wire:model="role_id" class="form-control">
+                            <option value="">Chọn chức vụ</option>
+                            @foreach($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('role_id')
+                        <label class="text-danger">{{ $message }}</label>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Tên người dùng: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <input wire:model.live="user_name" type="text" class="form-control">
+                        @error('user_name')
+                        <label class="text-danger">{{ $message }}</label>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Mật khẩu: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <input wire:model.live="password" type="password" class="form-control">
+                        @error('password')
+                        <label class="text-danger">{{ $message}}</label>
+                        @enderror
                     </div>
                 </div>
 
@@ -57,4 +97,3 @@
         </div>
     </div>
 </div>
-

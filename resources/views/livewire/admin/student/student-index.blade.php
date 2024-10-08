@@ -33,49 +33,46 @@
                         <tr>
                             <th class="text-center" style="width: 5%">STT</th>
                             <th class="text-center">Họ và tên</th>
-                            <th class="text-center">Email</th>
+                            <th class="text-center">Mã sinh viên</th>
                             <th class="text-center">Số điện thoại</th>
-                            <th class="text-center">Vai trò</th>
+                            <th class="text-center">Email</th>
                             <th class="text-center" style="width: 150px; text-align: center">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <tr>
-                            <td class="text-center"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="text-center"></td>
+                        @foreach ($students as $student)
+                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td>{{ $student -> name }}</td>
+                            <td>{{ $student -> code }}</td>
+                            <td>{{ $student -> phone_number }}</td>
+                            <td>{{ $student -> email }}</td>
                             <td class="text-center">
                                 <div class="dropdown">
-                                    <a href="" class="text-body" data-bs-toggle="dropdown">
+                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <form action="" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a href="" class="dropdown-item">
-                                                <i class="ph-pencil me-2"></i>
-                                                Chỉnh sửa
-                                            </a>
-                                            <button type="submit" class="dropdown-item text-danger">
-                                                <i class="ph-trash me-2"></i>
-                                                Xóa
-                                            </button>
-                                        </form>
+                                        <a href="{{ route('admin.students.edit', ['id' => $student->id]) }}" class="dropdown-item">
+                                            <i class="ph-pencil me-2"></i>
+                                            Chỉnh sửa
+                                        </a>
+                                        <button type="button" wire:click="openDeleteModel({{ $student->id }})" class="dropdown-item text-danger">
+                                            <i class="ph-trash me-2"></i>
+                                            Xóa
+                                        </button>
                                     </div>
                                 </div>
                             </td>
-
+                        @endforeach
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="d-flex justify-content-end align-items-center w-100 mt-3">
                     <div class="pagination">
-
+                        {{ $students->links() }}
                     </div>
                 </div>
             </div>

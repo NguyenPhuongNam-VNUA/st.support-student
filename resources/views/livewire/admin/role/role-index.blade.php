@@ -1,3 +1,4 @@
+
 <div class="col">
     <div class="card">
         <div class="card-body">
@@ -32,53 +33,47 @@
                     <thead>
                         <tr>
                             <th class="text-center" style="width: 5%">STT</th>
-                            <th class="text-center">Họ và tên</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Số điện thoại</th>
-                            <th class="text-center">Vai trò</th>
+                            <th class="text-center">Chức vụ</th>
+                            <th class="text-center">Ngày tạo</th>
                             <th class="text-center" style="width: 150px; text-align: center">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
-                            <td class="text-center"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="text-center"></td>
+                            @foreach ($roles as $role)
+                            <td class="text-center">{{ $loop->iteration }}</< /td>
+                            <td>{{ $role -> name }}</td>
+                            <td>{{ $role->created_at->format('d/m/Y') }}</td>
                             <td class="text-center">
                                 <div class="dropdown">
-                                    <a href="" class="text-body" data-bs-toggle="dropdown">
+                                    <a href="#" class="text-body" data-bs-toggle="dropdown">
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <form action="" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <a href="" class="dropdown-item">
-                                                <i class="ph-pencil me-2"></i>
-                                                Chỉnh sửa
-                                            </a>
-                                            <button type="submit" class="dropdown-item text-danger">
-                                                <i class="ph-trash me-2"></i>
-                                                Xóa
-                                            </button>
-                                        </form>
+                                        <a href="{{ route('admin.roles.edit', ['id' => $role->id]) }}" class="dropdown-item">
+                                            <i class="ph-pencil me-2"></i>
+                                            Chỉnh sửa
+                                        </a>
+                                        <button type="button" wire:click="openDeleteModel({{ $role->id }})" class="dropdown-item text-danger">
+                                            <i class="ph-trash me-2"></i>
+                                            Xóa
+                                        </button>
                                     </div>
                                 </div>
                             </td>
 
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
                 <div class="d-flex justify-content-end align-items-center w-100 mt-3">
                     <div class="pagination">
-
+                        {{ $roles->links() }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

@@ -22,6 +22,7 @@ Route::get('/home', function () {
     return view('client/pages/index');
 });
 Route::prefix('/admin')->group(function (): void {
+    
     Route::prefix('/role')->group(function (): void {
         Route::get('/', [RoleController::class, 'index'])->name('admin.roles.index');
         Route::get('/create', [RoleController::class, 'create'])->name('admin.roles.create');

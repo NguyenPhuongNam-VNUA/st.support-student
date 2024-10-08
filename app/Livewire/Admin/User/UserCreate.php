@@ -3,11 +3,88 @@
 namespace App\Livewire\Admin\User;
 
 use Livewire\Component;
+use App\Models\User;
+use App\Models\Role;
+use Livewire\Attributes\Validate;
 
 class UserCreate extends Component
 {
+    #[Validate(as: 'Họ và tên')]
+    public $name;
+
+    #[Validate(as: 'Email')]
+    public $email;
+
+    #[Validate(as: 'Số điện thoại')]
+    public $phone_number;
+
+    #[Validate(as: 'Chức vụ')]
+    public $role_id;
+
+    #[Validate(as: 'Tên người dùng')]
+    public $user_name;
+
+    #[Validate(as: 'Mật khẩu')]
+    public $password;
+
     public function render()
     {
-        return view('livewire.admin.user.user-create');
+        $roles = Role::all();
+
+        return view('livewire.admin.user.user-create', [
+            'roles' => $roles
+        ]);
+    }
+
+    public function store()
+    {
+        $this->validate();
+
+        User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+            'phone_number' => $this->phone_number,
+            'password' => bcrypt($this->password),
+            'role_id' => $this->role_id,
+            'user_name' => $this->user_name,
+        ]);
+
+        session()->flash('success', 'Thêm mới người dùng thành công');
+
+        return redirect()->route('admin.users.index');
+    }
+
+    protected function rules()
+    {
+        return [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'phone_number' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    if (!preg_match("/^[0-9]{10}$/", $value)) {
+                        return $fail('Số điện thoại chưa đúng định dạng ');
+                    }
+                }
+            ],
+            'password' => 'required',
+            'user_name' => 'required',
+            'role_id' => 'required|exists:roles,id',
+        ];
+    }
+
+    protected function messages()
+    {
+        return [
+            'name.required' => 'Họ và tên không được để trống',
+            'email.required' => 'Email không được để trống',
+            'email.email' => 'Email không đúng định dạng',
+            'email.unique' => 'Email đã tồn tại',
+            'phone_number.required' => 'Số điện thoại không được để trống',
+            'password.required' => 'Mật khẩu không được để trống',
+            'user_name.required' => 'Tên người dùng không được để trống',
+            'role_id.required' => 'Chức vụ phải được chọn',
+            'role_id.exists' => 'Chức vụ không hợp lệ',
+        ];
     }
 }

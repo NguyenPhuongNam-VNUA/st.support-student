@@ -3,44 +3,21 @@
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-info"></i>
-                Thông tin quyền
+                Thông tin chức vụ
             </div>
 
             <div class="card-body">
                 <div class="form-group">
                     <label class="form-label">
-                        Họ và tên: <span class="text-danger">*</span>
+                        Chức vụ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="" type="text" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
+                        <input wire:model.live="name" type="text" class="form-control">
+                        @error('name')
+                        <label class="text-danger">{{ $message }}</label>
+                        @enderror
                     </div>
                 </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Email: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <input wire:model.live="email" type="email" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Số điện thoại: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <input wire:model.live="phone_number" type="text" class="form-control">
-                        
-                        <label class="text-danger"></label>
-                        
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -57,4 +34,3 @@
         </div>
     </div>
 </div>
-
