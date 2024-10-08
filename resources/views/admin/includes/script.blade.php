@@ -15,6 +15,8 @@
 <script src="{{ asset('assets/admin/js/init.js') }}"></script>
 {{--<!-- /theme JS files -->--}}
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 {{--<!-- JS custom -->--}}
 @yield('script_custom')
 {{--<!-- /JS custom  -->--}}

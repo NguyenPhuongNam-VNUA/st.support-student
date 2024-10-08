@@ -26,7 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
-        'username'
+        'user_name'
     ];
 
     /**
@@ -57,5 +57,16 @@ class User extends Authenticatable
     public function posts(): hasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('email', 'like', '%' . $search . '%')
+                ->orWhere('name', 'like', '%' . $search . '%')
+                ->orWhere('phone_number', 'like', '%' . $search . '%');
+        }
+
+        return $query;
     }
 }

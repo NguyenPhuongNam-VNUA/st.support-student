@@ -15,7 +15,7 @@
             <div class="d-flex">
                 <div class="breadcrumb py-2">
                     <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                    <a href="{{route('admin.roles.index')}}" class="breadcrumb-item active">Chức vụ</a>
+                    <a href="{{route('admin.users.index')}}" class="breadcrumb-item active">Chức vụ</a>
                     <span class="breadcrumb-item active">Thêm mới chức vụ</span>
                 </div>
             </div>
