@@ -69,18 +69,6 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Mật khẩu: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <input wire:model.live="password" type="password" class="form-control">
-                        @error('password')
-                        <label class="text-danger">{{ $message}}</label>
-                        @enderror
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
