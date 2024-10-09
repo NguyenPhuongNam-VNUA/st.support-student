@@ -62,4 +62,14 @@ class Student extends Model
     {
         return $this->hasMany(PostReview::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('code', 'like', '%' . $search . '%')
+                ->orWhere('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }

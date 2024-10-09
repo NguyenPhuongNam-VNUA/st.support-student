@@ -10,7 +10,7 @@
                                 <label for="user-search-input">Tìm kiếm</label>
                                 <div class="form-control-feedback form-control-feedback-end">
                                     <input wire:model.live="search" type="text" name="q"
-                                        placeholder="Nhập từ khoá để tìm kiếm..."
+                                        placeholder="Nhập vào tên chức vụ ..."
                                         class="form-control" id="user-search-input">
                                     <div class="form-control-feedback-icon">
                                         <i class="ph-magnifying-glass"></i>
