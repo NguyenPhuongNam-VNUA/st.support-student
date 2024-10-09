@@ -9,7 +9,7 @@
                                 <label for="user-search-input">Tìm kiếm</label>
                                 <div class="form-control-feedback form-control-feedback-end">
                                     <input wire:model.live="search" type="text" name="q"
-                                        placeholder="Nhập từ khoá để tìm kiếm..."
+                                        placeholder="Nhập vào tên hoặc mã sinh viên ..."
                                         class="form-control" id="user-search-input">
                                     <div class="form-control-feedback-icon">
                                         <i class="ph-magnifying-glass"></i>
@@ -40,9 +40,8 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
                         @foreach ($students as $student)
+                        <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $student -> name }}</td>
                             <td>{{ $student -> code }}</td>
@@ -65,8 +64,9 @@
                                     </div>
                                 </div>
                             </td>
-                        @endforeach
+
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
 

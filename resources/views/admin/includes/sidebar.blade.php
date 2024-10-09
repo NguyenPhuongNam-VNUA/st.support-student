@@ -33,24 +33,28 @@
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.roles.index') }}" class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}">
-                        <i class="ph-user-gear"></i>
-                        <span>
+                    <a href="{{ route('admin.roles.index') }}" 
+                        class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-users-cog me-3 fa"></i>
+                        <span style="display: flex; align-items: center;">
                             Chức vụ
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.index') ?'active' : '' }}">
-                        <i class="ph-users"></i>
-                        <span>
-                            Người dùng
-                        </span>
+                    <a href="{{ route('admin.users.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.users.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-users me-3 fa"></i>
+                        <span style="display: flex; align-items: center;">Người dùng</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.students.index') }}" class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}">
-                        <i class="ph-student"></i>
+                    <a href="{{ route('admin.students.index') }}" 
+                        class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-graduation-cap me-3 fa"></i>
                         <span>
                             Sinh viên
                         </span>
