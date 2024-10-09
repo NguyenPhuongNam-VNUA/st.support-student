@@ -24,9 +24,6 @@ class UserEdit extends Component
     #[Validate(as: 'Tên người dùng')]
     public $user_name;
 
-    #[Validate(as: 'Mật khẩu')]
-    public $password;
-
     public $id;
 
     public function render()
@@ -45,7 +42,6 @@ class UserEdit extends Component
         $this->name = $user->name;
         $this->email = $user->email;
         $this->phone_number = $user->phone_number;
-        $this->password = $user->password;
         $this->role_id = $user->role_id;
         $this->user_name = $user->user_name;
     }
@@ -58,7 +54,6 @@ class UserEdit extends Component
             'name' => $this->name,
             'email' => $this->email,
             'phone_number' => $this->phone_number,
-            'password' => bcrypt($this->password),
             'role_id' => $this->role_id,
             'user_name' => $this->user_name,
         ]);
@@ -84,7 +79,6 @@ class UserEdit extends Component
                     }
                 }
             ],
-            'password' => 'required',
             'user_name' => 'required',
             'role_id' => 'required|exists:roles,id',
         ];
@@ -98,7 +92,6 @@ class UserEdit extends Component
             'email.email' => 'Email không đúng định dạng',
             'email.unique' => 'Email đã tồn tại',
             'phone_number.required' => 'Số điện thoại không được để trống',
-            'password.required' => 'Mật khẩu không được để trống',
             'user_name.required' => 'Tên người dùng không được để trống',
             'role_id.required' => 'Chức vụ phải được chọn',
             'role_id.exists' => 'Chức vụ không hợp lệ',

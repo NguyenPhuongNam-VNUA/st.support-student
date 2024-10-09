@@ -21,4 +21,11 @@ class UserController extends Controller
     {
         return view('admin.pages.users.edit');
     }
+
+    public function resetPassword($id)
+    {
+
+        return view('admin.pages.users.reset-password');
+
+    }
 }

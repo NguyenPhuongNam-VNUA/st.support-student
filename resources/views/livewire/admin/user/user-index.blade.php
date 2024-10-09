@@ -56,6 +56,10 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
+                                        <a href="{{ route('admin.users.reset-password', ['id' => $user->id]) }}" class="dropdown-item">
+                                            <i class="ph-key me-2"></i>
+                                            Đổi mật khẩu
+                                        </a>
                                         <a href="{{ route('admin.users.edit', ['id' => $user->id]) }}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa

@@ -33,6 +33,7 @@ Route::prefix('/admin')->group(function (): void {
         Route::get('/', [UserController::class, 'index'])->name('admin.users.index');
         Route::get('/create', [UserController::class, 'create'])->name('admin.users.create');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
+        Route::get('/reset-password/{id}', [UserController::class, 'resetPassword'])->name('admin.users.reset-password');
     });
 
     Route::prefix('/student')->group(function (): void {
