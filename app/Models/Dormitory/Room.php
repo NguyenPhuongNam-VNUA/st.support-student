@@ -29,4 +29,13 @@ class Room extends Model
     {
         return $this->hasMany(DormitoyStudent::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }

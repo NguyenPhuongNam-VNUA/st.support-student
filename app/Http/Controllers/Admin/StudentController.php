@@ -9,16 +9,16 @@ class StudentController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.students.index');
+        return view('admin.pages.super_admin.students.index');
     }
 
     public function create()
     {
-        return view('admin.pages.students.create');
+        return view('admin.pages.super_admin.students.create');
     }
 
     public function edit($id)
     {
-        return view('admin.pages.students.edit');
+        return view('admin.pages.super_admin.students.edit');
     }
 }
