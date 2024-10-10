@@ -9,23 +9,23 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.users.index');
+        return view('admin.pages.super_admin.users.index');
     }
 
     public function create()
     {
-        return view('admin.pages.users.create');
+        return view('admin.pages.super_admin.users.create');
     }
 
     public function edit($id)
     {
-        return view('admin.pages.users.edit');
+        return view('admin.pages.super_admin.users.edit');
     }
 
     public function resetPassword($id)
     {
 
-        return view('admin.pages.users.reset-password');
+        return view('admin.pages.super_admin.users.reset-password');
 
     }
 }

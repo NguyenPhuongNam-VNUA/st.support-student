@@ -34,4 +34,13 @@ class Dormitory extends Model
     {
         return $this->hasMany(DormReport::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }

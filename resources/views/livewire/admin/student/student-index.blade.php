@@ -40,6 +40,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if($students->isEmpty())
+                        <tr>
+                            <td colspan="100%" class="text-center">
+                                <img src="{{ asset('assets/admin/images/emptyData.png') }}" alt="Không tìm thấy kết quả" style="width: 400px;" />
+                            </td>
+                        </tr>
+                        @else
                         @foreach ($students as $student)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
@@ -67,6 +74,7 @@
 
                         </tr>
                         @endforeach
+                        @endif
                     </tbody>
                 </table>
 

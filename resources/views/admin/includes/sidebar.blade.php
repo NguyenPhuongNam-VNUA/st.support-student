@@ -32,6 +32,10 @@
                     <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide"></div>
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
+
+
+
+<!-- ======Super Admin================ -->
                 <li class="nav-item">
                     <a href="{{ route('admin.roles.index') }}" 
                         class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}"
@@ -56,11 +60,54 @@
                         style="display: flex; align-items: center;">
                         <i class="fas fa-graduation-cap me-3 fa"></i>
                         <span>
-                            Sinh viên
+                            Sinh viên trên hệ thống
                         </span>
                     </a>
                 </li>
 
+
+
+<!-- ======Admin kí túc xá + trọ============ -->
+                <li class="nav-item">
+                    <a href="{{ route('dormitoryadmin.dormitories.index') }}" 
+                        class="nav-link {{ request()->routeIs('dormitoryadmin.dormitories.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-building me-3 fa"></i>
+                        <span>
+                            Tòa nhà
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('dormitoryadmin.rooms.index') }}" 
+                        class="nav-link {{ request()->routeIs('dormitoryadmin.rooms.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-th-large me-3 fa"></i>
+                        <span>
+                            Phòng
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" 
+                        class="nav-link" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-user-graduate me-3 fa"></i>
+                        <span>
+                            Sinh viên trong ký túc xá
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('dormitoryadmin.managers.index')}}" 
+                        class="nav-link {{ request()->routeIs('dormitoryadmin.managers.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-user-tie me-3 fa"></i>
+                        <span>
+                            Cán bộ quản lý
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /main navigation -->
