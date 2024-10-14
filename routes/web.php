@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
+use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
+
 
 
 
@@ -67,6 +69,13 @@ Route::prefix('/dormitoryadmin')->group(function (): void {
         Route::get('/', [ManagerController::class, 'index'])->name('dormitoryadmin.managers.index');
         Route::get('/create', [ManagerController::class, 'create'])->name('dormitoryadmin.managers.create');
         Route::get('/edit/{id}', [ManagerController::class, 'edit'])->name('dormitoryadmin.managers.edit');
+    });
+
+    Route::prefix('/dormitory-student')->group(function (): void {
+        Route::get('/', [DormitoryStudentController::class, 'index'])->name('dormitoryadmin.dormitory-students.index');
+        Route::get('/create', [DormitoryStudentController::class, 'create'])->name('dormitoryadmin.dormitory-students.create');
+        Route::get('/edit/{id}', [DormitoryStudentController::class, 'edit'])->name('dormitoryadmin.dormitory-students.edit');
+        Route::get('{id}/detail', [DormitoryStudentController::class, 'detail'])->name('dormitoryadmin.dormitory-students.detail');
     });
     
 });

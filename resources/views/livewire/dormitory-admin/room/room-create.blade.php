@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-info"></i>
-                Phòng
+                Thông tin phòng
             </div>
 
             <div class="card-body">

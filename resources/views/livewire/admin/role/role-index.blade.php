@@ -34,7 +34,7 @@
                             <th class="text-center" style="width: 5%">STT</th>
                             <th class="text-center">Chức vụ</th>
                             <th class="text-center">Ngày tạo</th>
-                            <th class="text-center" style="width: 150px; text-align: center">Hành động</th>
+                            <th class="text-center" style="text-align: center">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>

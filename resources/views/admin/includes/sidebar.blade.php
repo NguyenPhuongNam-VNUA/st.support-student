@@ -89,8 +89,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" 
-                        class="nav-link" 
+                    <a href="{{ route('dormitoryadmin.dormitory-students.index') }}" 
+                        class="nav-link {{ request()->routeIs('dormitoryadmin.dormitory-students.index') ?'active' : '' }}" 
                         style="display: flex; align-items: center;">
                         <i class="fas fa-user-graduate me-3 fa"></i>
                         <span>
