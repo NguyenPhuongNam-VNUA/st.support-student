@@ -5,14 +5,17 @@
                 <i class="ph-folder-user"></i>
                 <span style="font-size: 20px">Thông tin chi tiết</span>
             </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <a href="{{ route('dormitoryadmin.dormitory-students.index') }}" class="btn btn-outline-primary">
+                    <i class="ph-arrow-bend-down-left"></i>&nbsp;Danh sách sinh viên
+                </a>
+            </div>
         </div>
     </div>
 
     <div class="card-body">
         <div class="mt-1">
-            <!-- Sử dụng justify-content-center để căn giữa hàng -->
             <div class="row justify-content-center">
-                <!-- Cột 1 -->
                 <div class="col-md-5 mx-auto">
                     <div class="row mb-3">
                         <div class="col-4 fw-bold text-muted">Họ và tên :</div>
@@ -43,8 +46,6 @@
                         <div class="col">{{ \Carbon\Carbon::parse($dormitory_student->bod)->format('d/m/Y') }}</div>
                     </div>
                 </div>
-
-                <!-- Cột 2 -->
                 <div class="col-md-5 mx-auto">
                     <div class="row mb-3">
                         <div class="col-4 fw-bold text-muted">Email :</div>
