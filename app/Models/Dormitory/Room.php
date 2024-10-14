@@ -27,7 +27,7 @@ class Room extends Model
 
     public function students(): hasMany
     {
-        return $this->hasMany(DormitoyStudent::class);
+        return $this->hasMany(DormitoryStudent::class);
     }
 
     public function scopeSearch($query, $search)

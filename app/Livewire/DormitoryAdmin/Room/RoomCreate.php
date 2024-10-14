@@ -36,7 +36,6 @@ class RoomCreate extends Component
             'dormitory_id' => $this->dormitory_id,
             'capacity' => $this->capacity,
             'slug' => Str::slug($this->name),
-            'student_id' => 1,
             'status' => 'empty',
         ]);
 

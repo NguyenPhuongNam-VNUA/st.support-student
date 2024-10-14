@@ -28,7 +28,7 @@ class DormReport extends Model
 
     public function student(): belongsTo
     {
-        return $this->belongsTo(DormitoyStudent::class);
+        return $this->belongsTo(DormitoryStudent::class);
     }
 
     public function dormReportGalleries(): hasMany

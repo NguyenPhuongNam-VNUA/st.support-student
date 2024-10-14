@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class DormitoyStudent extends Model
+class DormitoryStudent extends Model
 {
     use HasFactory;
 
@@ -16,9 +16,10 @@ class DormitoyStudent extends Model
         'code',
         'gender',
         'citizen_id',
-        'dob',
+        'bod',
         'email',
         'room_id',
+        'phone_number'
     ];
 
     public function room(): BelongsTo
@@ -29,5 +30,15 @@ class DormitoyStudent extends Model
     public function dormReports(): hasMany
     {
         return $this->hasMany(DormReport::class);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%')
+            ->orWhere('code', 'like', '%' . $search . '%');
+        }
+
+        return $query;
     }
 }
