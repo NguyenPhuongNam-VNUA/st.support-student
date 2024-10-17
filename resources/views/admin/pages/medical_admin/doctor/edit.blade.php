@@ -5,7 +5,7 @@
     <div class="page-header-content d-lg-flex">
         <div class="d-flex">
             <h4 class="page-title mb-0">
-                Tòa nhà
+                Cán bộ y tế
             </h4>
         </div>
 
@@ -15,8 +15,8 @@
         <div class="d-flex">
             <div class="breadcrumb py-2">
                 <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                <a href="{{route('dormitoryadmin.dormitories.index')}}" class="breadcrumb-item active">Tòa nhà</a>
-                <span class="breadcrumb-item active">Cập nhật thông tin tòa nhà</span>
+                <a href="{{route('medicaladmin.doctors.index')}}" class="breadcrumb-item active">Cán bộ y tế</a>
+                <span class="breadcrumb-item active">Cập nhật thông tin cán bộ</span>
             </div>
         </div>
 
@@ -27,7 +27,7 @@
 @section('page-content')
 <div class="content">
     <!-- Content -->
-    <livewire:dormitory-admin.dormitory.dormitory-edit />
+    <livewire:medical-admin.doctor.doctor-edit />
     <!-- /content -->
 </div>
 @endsection

@@ -8,6 +8,9 @@ use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
+use App\Http\Controllers\MedicalAdmin\DoctorController;
+use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
+
 
 
 
@@ -78,4 +81,20 @@ Route::prefix('/dormitoryadmin')->group(function (): void {
         Route::get('{id}/detail', [DormitoryStudentController::class, 'detail'])->name('dormitoryadmin.dormitory-students.detail');
     });
     
+});
+
+Route::prefix('/medicaladmin')->group(function (): void {
+
+    Route::prefix('/doctor')->group(function (): void {
+        Route::get('/', [DoctorController::class, 'index'])->name('medicaladmin.doctors.index');
+        Route::get('/create', [DoctorController::class, 'create'])->name('medicaladmin.doctors.create');
+        Route::get('/edit/{id}', [DoctorController::class, 'edit'])->name('medicaladmin.doctors.edit');
+        Route::get('{id}/detail', [DoctorController::class, 'detail'])->name('medicaladmin.doctors.detail');
+    });
+    
+    Route::prefix('/doctorRole')->group(function (): void {
+        Route::get('/', [DoctorRoleController::class, 'index'])->name('medicaladmin.doctorroles.index');
+        Route::get('/create', [DoctorRoleController::class, 'create'])->name('medicaladmin.doctorroles.create');
+        Route::get('/edit/{id}', [DoctorRoleController::class, 'edit'])->name('medicaladmin.doctorroles.edit');
+    });  
 });

@@ -18,4 +18,12 @@ class DoctorRole extends Model
     {
         return $this->hasMany(Doctor::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+        return $query;
+    }
 }
