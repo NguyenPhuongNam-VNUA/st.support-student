@@ -5,7 +5,7 @@
         <div class="page-header-content d-lg-flex">
             <div class="d-flex">
                 <h4 class="page-title mb-0">
-                    Cán bộ quản lý
+                    Cán bộ y tế
                 </h4>
             </div>
 
@@ -15,7 +15,7 @@
             <div class="d-flex">
                 <div class="breadcrumb py-2">
                     <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                    <a href="{{route('dormitoryadmin.managers.index')}}" class="breadcrumb-item active">Cán bộ quản lý</a>
+                    <a href="{{route('medicaladmin.doctors.index')}}" class="breadcrumb-item active">Cán bộ y tế</a>
                     <span class="breadcrumb-item active">Thêm mới cán bộ</span>
                 </div>
             </div>

@@ -108,6 +108,32 @@
                         </span>
                     </a>
                 </li>
+
+
+
+
+<!-- ======Admin y tế============ -->
+
+                <li class="nav-item">
+                    <a href="{{route('medicaladmin.doctors.index')}}" 
+                        class="nav-link {{ request()->routeIs('medicaladmin.doctors.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-briefcase-medical me-3 fa"></i>
+                        <span>
+                            Cán bộ y tế
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('medicaladmin.doctorroles.index')}}" 
+                        class="nav-link {{ request()->routeIs('medicaladmin.doctorroles.index') ?'active' : '' }}" 
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-notes-medical me-3 fa"></i>
+                        <span>
+                            Chuyên khoa
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /main navigation -->
