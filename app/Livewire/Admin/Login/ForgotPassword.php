@@ -1,14 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\Login;
 
+use App\Mail\ForgotPasswordMail;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
-use App\Mail\ForgotPasswordMail;
 use Livewire\Component;
 
 class ForgotPassword extends Component

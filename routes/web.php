@@ -25,9 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('client/pages/index');
-});
+Route::get('/home', fn () => view('client/pages/index'));
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
