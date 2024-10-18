@@ -1,22 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Admin\Login\AuthController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
-use App\Http\Controllers\DormitoryAdmin\RoomController;
-use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
+use App\Http\Controllers\DormitoryAdmin\ManagerController;
+use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
-
-
-
-
-
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

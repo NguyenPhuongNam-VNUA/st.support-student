@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\User;
 
-use Livewire\Component;
 use App\Models\User;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
+
 class UserResetPassword extends Component
 {
     #[Validate(as: 'Mật khẩu mới')]

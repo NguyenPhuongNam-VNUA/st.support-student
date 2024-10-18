@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Models\Dormitory\AccommodationRequest;
@@ -33,7 +35,7 @@ class Student extends Model
         'provider_name'
     ];
 
-    public function accommodationRequest(): hasOne
+    public function accommodationRequest(): HasOne
     {
         return $this->hasOne(AccommodationRequest::class);
     }

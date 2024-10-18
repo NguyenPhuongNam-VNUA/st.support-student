@@ -1,13 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\Role;
+
 use App\Models\Role;
 use Livewire\Component;
 
 class RoleIndex extends Component
 {
     public $roleId;
-    public $search; 
+    public $search;
 
     protected $listeners = [
         'confirmDelete' => 'confirmDelete',
@@ -16,9 +19,9 @@ class RoleIndex extends Component
     public function render()
     {
         $roles = Role::query()
-        ->search($this->search)
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
+            ->search($this->search)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
         return view('livewire.admin.role.role-index', [
             'roles' => $roles
         ]);

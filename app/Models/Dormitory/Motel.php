@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use App\Models\Gallery\dormitory\MotelGallery;
@@ -23,17 +25,17 @@ class Motel extends Model
         'slug',
     ];
 
-    public function motelGalleries(): hasMany
+    public function motelGalleries(): HasMany
     {
         return $this->hasMany(MotelGallery::class);
     }
 
-    public function motelReports(): hasMany
+    public function motelReports(): HasMany
     {
         return $this->hasMany(MotelReport::class);
     }
 
-    public function motelReviews(): hasMany
+    public function motelReviews(): HasMany
     {
         return $this->hasMany(MotelReview::class);
     }

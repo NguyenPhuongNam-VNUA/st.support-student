@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Health;
 
 use App\Models\Gallery\health\HealthIssueGalleries;
@@ -25,7 +27,7 @@ class HealthIssue extends Model
         return $this->belongsTo(Doctor::class);
     }
 
-    public function healthIssueGalleries(): hasMany
+    public function healthIssueGalleries(): HasMany
     {
         return $this->hasMany(HealthIssueGalleries::class);
     }

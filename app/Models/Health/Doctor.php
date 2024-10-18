@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Health;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,12 +27,12 @@ class Doctor extends Model
         return $this->belongsTo(DoctorRole::class);
     }
 
-    public function healthIssues(): hasMany
+    public function healthIssues(): HasMany
     {
         return $this->hasMany(HealthIssue::class);
     }
 
-    public function healthRequests(): hasMany
+    public function healthRequests(): HasMany
     {
         return $this->hasMany(HealthRequest::class);
     }

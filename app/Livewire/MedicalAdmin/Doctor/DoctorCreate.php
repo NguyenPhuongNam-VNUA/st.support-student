@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\Doctor;
 
-use Livewire\Component;
-use Livewire\WithFileUploads;
 use App\Models\Health\Doctor;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class DoctorCreate extends Component
 {

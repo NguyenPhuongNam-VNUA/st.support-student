@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\Role;
 
-use Livewire\Component;
-use Livewire\Attributes\Validate;
 use App\Models\Role;
+use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class RoleEdit extends Component
 {

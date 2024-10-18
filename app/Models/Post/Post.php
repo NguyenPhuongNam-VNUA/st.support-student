@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Post;
 
 use App\Models\User;
@@ -19,12 +21,12 @@ class Post extends Model
         'category',
     ];
 
-    public function user(): belongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function postReviews(): hasMany
+    public function postReviews(): HasMany
     {
         return $this->hasMany(PostReview::class);
     }

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\Manager;
 
-use Livewire\Component;
 use App\Models\Dormitory\Manager;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class ManagerEdit extends Component
 {

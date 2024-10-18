@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,7 +29,7 @@ class DormitoryStudent extends Model
         return $this->belongsTo(Room::class);
     }
 
-    public function dormReports(): hasMany
+    public function dormReports(): HasMany
     {
         return $this->hasMany(DormReport::class);
     }
@@ -36,7 +38,7 @@ class DormitoryStudent extends Model
     {
         if ($search) {
             $query->where('name', 'like', '%' . $search . '%')
-            ->orWhere('code', 'like', '%' . $search . '%');
+                ->orWhere('code', 'like', '%' . $search . '%');
         }
 
         return $query;

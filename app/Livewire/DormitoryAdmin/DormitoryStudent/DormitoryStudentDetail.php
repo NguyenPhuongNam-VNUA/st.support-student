@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\DormitoryStudent;
 
-use Livewire\Component;
 use App\Models\Dormitory\DormitoryStudent;
+use Livewire\Component;
 
 class DormitoryStudentDetail extends Component
 {

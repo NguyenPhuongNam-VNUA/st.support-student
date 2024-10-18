@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Gallery\service;
 
 use App\Models\Service\Service;
@@ -16,7 +18,7 @@ class ServiceGallery extends Model
         'image',
     ];
 
-    public function service(): belongsTo
+    public function service(): BelongsTo
     {
         return $this->belongsTo(Service::class);
     }

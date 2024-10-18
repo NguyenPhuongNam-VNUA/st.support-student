@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\DormitoryStudent;
 
-use Livewire\Component;
+use App\Enums\StatusRoom;
 use App\Models\Dormitory\DormitoryStudent;
 use App\Models\Dormitory\Room;
 use Livewire\Attributes\Validate;
-use App\Enums\StatusRoom;
-
+use Livewire\Component;
 
 class DormitoryStudentEdit extends Component
 {
@@ -81,7 +82,7 @@ class DormitoryStudentEdit extends Component
     {
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:dormitory_students,email,'.$this->id,
+            'email' => 'required|email|unique:dormitory_students,email,' . $this->id,
             'phone_number' => [
                 'required',
                 function ($attribute, $value, $fail) {
@@ -91,19 +92,19 @@ class DormitoryStudentEdit extends Component
                 }
             ],
             'citizen_id' => [
-                'unique:dormitory_students,citizen_id, '. $this->id,
+                'unique:dormitory_students,citizen_id, ' . $this->id,
                 'required',
                 function ($attribute, $value, $fail) {
                     if (!preg_match("/^[0-9]{12}$/", $value)) {
                         return $fail('Căn cước công dân chưa đúng định dạng.');
                     }
                 }
-                
+
             ],
             'code' => [
                 'required',
-                'unique:dormitory_students,code,'. $this->id,
-            ], 
+                'unique:dormitory_students,code,' . $this->id,
+            ],
             'gender' => 'required',
             'bod' => 'required|date',
             'room_id' => 'required',

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,12 +16,12 @@ class Role extends Model
         'name'
     ];
 
-    public function users(): hasMany
+    public function users(): HasMany
     {
         return $this->hasMany(User::class);
     }
 
-    
+
     public function scopeSearch($query, $search)
     {
         if ($search) {

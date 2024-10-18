@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Gallery\health;
 
 use App\Models\Health\HealthIssue;
@@ -16,7 +18,7 @@ class HealthIssueGalleries extends Model
         'image',
     ];
 
-    public function healthIssue(): belongsTo
+    public function healthIssue(): BelongsTo
     {
         return $this->belongsTo(HealthIssue::class);
     }

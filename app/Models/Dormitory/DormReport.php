@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use App\Models\Gallery\dormitory\DormReportGallery;
@@ -21,17 +23,17 @@ class DormReport extends Model
         'thumbnail',
     ];
 
-    public function dormitory(): belongsTo
+    public function dormitory(): BelongsTo
     {
         return $this->belongsTo(Dormitory::class);
     }
 
-    public function student(): belongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(DormitoryStudent::class);
     }
 
-    public function dormReportGalleries(): hasMany
+    public function dormReportGalleries(): HasMany
     {
         return $this->hasMany(DormReportGallery::class);
     }
