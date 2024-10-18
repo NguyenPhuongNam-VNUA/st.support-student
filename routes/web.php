@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Login\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
@@ -31,8 +32,14 @@ use Illuminate\Foundation\Auth\User;
 Route::get('/home', function () {
     return view('client/pages/index');
 });
+
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset-password');
+
 Route::prefix('/admin')->group(function (): void {
-    
+
     Route::prefix('/role')->group(function (): void {
         Route::get('/', [RoleController::class, 'index'])->name('admin.roles.index');
         Route::get('/create', [RoleController::class, 'create'])->name('admin.roles.create');
@@ -80,7 +87,7 @@ Route::prefix('/dormitoryadmin')->group(function (): void {
         Route::get('/edit/{id}', [DormitoryStudentController::class, 'edit'])->name('dormitoryadmin.dormitory-students.edit');
         Route::get('{id}/detail', [DormitoryStudentController::class, 'detail'])->name('dormitoryadmin.dormitory-students.detail');
     });
-    
+
 });
 
 Route::prefix('/medicaladmin')->group(function (): void {
@@ -91,10 +98,11 @@ Route::prefix('/medicaladmin')->group(function (): void {
         Route::get('/edit/{id}', [DoctorController::class, 'edit'])->name('medicaladmin.doctors.edit');
         Route::get('{id}/detail', [DoctorController::class, 'detail'])->name('medicaladmin.doctors.detail');
     });
-    
+
     Route::prefix('/doctorRole')->group(function (): void {
         Route::get('/', [DoctorRoleController::class, 'index'])->name('medicaladmin.doctorroles.index');
         Route::get('/create', [DoctorRoleController::class, 'create'])->name('medicaladmin.doctorroles.create');
         Route::get('/edit/{id}', [DoctorRoleController::class, 'edit'])->name('medicaladmin.doctorroles.edit');
-    });  
+    });
+
 });
