@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\DormitoryStudent;
 
-use Livewire\Component;
+use App\Enums\StatusRoom;
 use App\Models\Dormitory\DormitoryStudent;
 use App\Models\Dormitory\Room;
 use Livewire\Attributes\Validate;
-use App\Enums\StatusRoom;
-
+use Livewire\Component;
 
 class DormitoryStudentCreate extends Component
 {
@@ -37,7 +38,7 @@ class DormitoryStudentCreate extends Component
 
     public $rooms;
 
-    public function mount()
+    public function mount(): void
     {
         // Lọc phòng có trạng thái còn trống (empty)
         $this->rooms = Room::where('status', StatusRoom::Empty->value)->get();
@@ -88,7 +89,7 @@ class DormitoryStudentCreate extends Component
                         return $fail('Căn cước công dân chưa đúng định dạng.');
                     }
                 }
-                
+
             ],
             'code' => 'required|unique:dormitory_students,code',
             'gender' => 'required',

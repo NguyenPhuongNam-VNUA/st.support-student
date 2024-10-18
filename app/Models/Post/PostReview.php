@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Post;
 
 use App\Models\Student;
@@ -18,12 +20,12 @@ class PostReview extends Model
         'comment',
     ];
 
-    public function post(): belongsTo
+    public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
     }
 
-    public function student(): belongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }

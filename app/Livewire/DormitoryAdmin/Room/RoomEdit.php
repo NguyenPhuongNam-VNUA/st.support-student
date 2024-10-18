@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\Room;
 
-use Livewire\Component;
-use App\Models\Dormitory\Room;
 use App\Models\Dormitory\Dormitory;
+use App\Models\Dormitory\Room;
 use Livewire\Attributes\Validate;
-use Illuminate\Support\Str;
+use Livewire\Component;
 
 class RoomEdit extends Component
 {
@@ -54,7 +55,7 @@ class RoomEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required|unique:rooms,name,'. $this->id,
+            'name' => 'required|unique:rooms,name,' . $this->id,
             'dormitory_id' => 'required',
             'capacity' => 'required',
         ];

@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\Doctor;
 
-use Livewire\Component;
 use App\Models\Health\Doctor;
+use Livewire\Component;
 
 class DoctorDetail extends Component
 {

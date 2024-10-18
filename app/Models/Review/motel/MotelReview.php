@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Review\motel;
 
 use App\Models\Dormitory\Motel;
@@ -19,12 +21,12 @@ class MotelReview extends Model
         'comment',
     ];
 
-    public function motel(): belongsTo
+    public function motel(): BelongsTo
     {
         return $this->belongsTo(Motel::class);
     }
 
-    public function student(): belongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }

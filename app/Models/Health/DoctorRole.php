@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Health;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +16,7 @@ class DoctorRole extends Model
         'name',
     ];
 
-    public function doctors(): hasMany
+    public function doctors(): HasMany
     {
         return $this->hasMany(Doctor::class);
     }

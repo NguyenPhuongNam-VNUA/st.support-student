@@ -1,0 +1,80 @@
+name:  CI/CD Laravel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-commit-msg:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        run: npm install
+      - name: Lint commit message
+        run: npx commitlint --last --verbose
+  pint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+
+      - name: Install dependencies
+        run: composer install --no-progress --prefer-dist --no-scripts
+
+      - name: Run Laravel Pint
+        run: vendor/bin/pint --test
+  deploy:
+    needs:
+      - lint-commit-msg
+      - pint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p $SSH_PORT $SSH_HOST >> ~/.ssh/known_hosts
+
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+
+      - name: Deploy to Server
+        run: |
+          ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "
+          cd $LARAVEL_APP_PATH &&
+          git fetch origin main &&
+          git reset --hard origin/main &&
+          git pull origin main &&
+          composer install --no-interaction --prefer-dist --optimize-autoloader &&
+          php artisan migrate --force &&
+          npm install &&
+          npm run build &&
+          php artisan op:clear &&
+          php artisan config:cache &&
+          php artisan route:cache &&
+          php artisan view:cache"
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          LARAVEL_APP_PATH: ${{ secrets.LARAVEL_APP_PATH }}

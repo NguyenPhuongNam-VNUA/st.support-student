@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use App\Models\Student;
@@ -17,7 +19,7 @@ class AccommodationRequest extends Model
         'request_status',
     ];
 
-    public function student(): belongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }

@@ -1,30 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\DoctorRole;
 
-use Livewire\Component;
 use App\Models\Health\DoctorRole;
-
+use Livewire\Component;
 
 class DoctorRoleIndex extends Component
 {
     public $doctor_roleId;
-    public $search; 
-
-    public function render()
-    {
-        $doctor_roles = DoctorRole::query()
-        ->search($this->search)
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
-        return view('livewire.medical-admin.doctor-role.doctor-role-index', [
-            'doctor_roles' => $doctor_roles
-        ]);
-    }
+    public $search;
 
     protected $listeners = [
         'confirmDelete' => 'confirmDelete',
     ];
+
+    public function render()
+    {
+        $doctor_roles = DoctorRole::query()
+            ->search($this->search)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('livewire.medical-admin.doctor-role.doctor-role-index', [
+            'doctor_roles' => $doctor_roles
+        ]);
+    }
 
 
     public function openDeleteModel($id): void

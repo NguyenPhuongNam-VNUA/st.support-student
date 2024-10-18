@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Service;
 
 use App\Models\Gallery\service\ServiceGallery;
@@ -30,12 +32,12 @@ class Service extends Model
         return $this->belongsTo(ServiceCategory::class);
     }
 
-    public function serviceGalleries(): hasMany
+    public function serviceGalleries(): HasMany
     {
         return $this->hasMany(ServiceGallery::class);
     }
 
-    public function serviceReviews(): hasMany
+    public function serviceReviews(): HasMany
     {
         return $this->hasMany(ServiceReview::class);
     }

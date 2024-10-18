@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\Room;
 
-use Livewire\Component;
-use App\Models\Dormitory\Room;
 use App\Models\Dormitory\Dormitory;
-use Livewire\Attributes\Validate;
+use App\Models\Dormitory\Room;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class RoomCreate extends Component
 {
@@ -22,7 +24,7 @@ class RoomCreate extends Component
     public function render()
     {
         $dormitories = Dormitory::all();
-        return view('livewire.dormitory-admin.room.room-create',[
+        return view('livewire.dormitory-admin.room.room-create', [
             'dormitories' => $dormitories
         ]);
     }

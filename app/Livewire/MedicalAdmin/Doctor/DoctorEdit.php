@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\Doctor;
 
-use Livewire\Component;
-use Livewire\WithFileUploads;
 use App\Models\Health\Doctor;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class DoctorEdit extends Component
 {
@@ -49,9 +51,9 @@ class DoctorEdit extends Component
     public function update()
     {
         $this->validate();
-    
+
         $thumbnailPath = $this->thumbnail;
-        
+
         if ($this->new_thumbnail) {
             $thumbnailPath = $this->new_thumbnail->store('doctorProfilePhotos', 'public');
         }

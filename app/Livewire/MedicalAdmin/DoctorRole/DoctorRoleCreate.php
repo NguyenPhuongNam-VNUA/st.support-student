@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\DoctorRole;
 
-use Livewire\Component;
 use App\Models\Health\DoctorRole;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class DoctorRoleCreate extends Component
 {

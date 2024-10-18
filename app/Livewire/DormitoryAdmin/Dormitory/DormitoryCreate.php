@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\Dormitory;
 
-use Livewire\Component;
 use App\Models\Dormitory\Dormitory;
 use App\Models\Dormitory\Manager;
 use Illuminate\Support\Str;
-
 use Livewire\Attributes\Validate;
+use Livewire\Component;
+
 class DormitoryCreate extends Component
 {
     #[Validate(as: 'Tên tòa nhà')]

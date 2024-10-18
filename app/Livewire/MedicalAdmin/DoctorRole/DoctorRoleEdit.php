@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MedicalAdmin\DoctorRole;
 
-use Livewire\Component;
 use App\Models\Health\DoctorRole;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class DoctorRoleEdit extends Component
 {
@@ -28,7 +30,7 @@ class DoctorRoleEdit extends Component
     public function update()
     {
         $this->validate();
-    
+
         DoctorRole::where('id', $this->id)->update([
             'name' => $this->name,
         ]);
@@ -38,7 +40,7 @@ class DoctorRoleEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required|unique:doctor_roles,name, ' .$this->id,
+            'name' => 'required|unique:doctor_roles,name, ' . $this->id,
         ];
     }
 

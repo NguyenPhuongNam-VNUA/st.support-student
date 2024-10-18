@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\DormitoryAdmin\Dormitory;
 
-use Livewire\Component;
 use App\Models\Dormitory\Dormitory;
 use App\Models\Dormitory\Manager;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
-
+use Livewire\Component;
 
 class DormitoryEdit extends Component
 {
@@ -24,7 +25,7 @@ class DormitoryEdit extends Component
     public $description;
 
     public $id;
-    
+
     public function render()
     {
         $managers = Manager::all();
@@ -44,7 +45,7 @@ class DormitoryEdit extends Component
         $this->total_rooms = $dormitory->total_rooms;
         $this->description = $dormitory->description;
     }
-    
+
     public function update()
     {
         $this->validate();

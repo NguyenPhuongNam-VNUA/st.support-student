@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +17,7 @@ class Manager extends Model
         'email',
         'phone_number',
     ];
-    public function dormitory(): hasOne
+    public function dormitory(): HasOne
     {
         return $this->hasOne(Dormitory::class);
     }
@@ -24,7 +26,7 @@ class Manager extends Model
     {
         if ($search) {
             $query->where('name', 'like', '%' . $search . '%')
-            ->orWhere('phone_number', 'like', '%' . $search . '%');
+                ->orWhere('phone_number', 'like', '%' . $search . '%');
         }
 
         return $query;

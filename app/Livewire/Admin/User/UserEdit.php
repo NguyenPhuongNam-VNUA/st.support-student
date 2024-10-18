@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\User;
 
-use Livewire\Component;
-use App\Models\User;
 use App\Models\Role;
+use App\Models\User;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class UserEdit extends Component
 {
@@ -45,7 +47,7 @@ class UserEdit extends Component
         $this->role_id = $user->role_id;
         $this->user_name = $user->user_name;
     }
-    
+
     public function update()
     {
         $this->validate();
@@ -98,5 +100,5 @@ class UserEdit extends Component
         ];
     }
 
-    
+
 }

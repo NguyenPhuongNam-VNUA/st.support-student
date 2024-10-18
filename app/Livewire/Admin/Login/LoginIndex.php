@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\Login;
 
 use Livewire\Attributes\Validate;
@@ -40,9 +42,9 @@ class LoginIndex extends Component
 
         if (auth()->attempt(['user_name' => $this->username, 'password' => $this->password])) {
             return redirect()->route('admin.roles.index');
-        } else {
-            $this->addError('error-login', 'Tài khoản hoặc mật khẩu không đúng');
-            return redirect()->back();
         }
+        $this->addError('error-login', 'Tài khoản hoặc mật khẩu không đúng');
+        return redirect()->back();
+
     }
 }

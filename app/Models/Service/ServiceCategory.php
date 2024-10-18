@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Service;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +16,7 @@ class ServiceCategory extends Model
         'name',
     ];
 
-    public function services(): hasMany
+    public function services(): HasMany
     {
         return $this->hasMany(Service::class);
     }

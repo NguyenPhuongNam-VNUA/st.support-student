@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Admin\Login;
 
 use App\Models\User;
@@ -23,7 +25,7 @@ class ResetPassword extends Component
         return view('livewire.admin.login.reset-password');
     }
 
-    public function mount()
+    public function mount(): void
     {
         $email = DB::table('reset_password')->where('token', $this->token)->first();
         $this->user = User::query()->where('email', $email->email)->first();
@@ -60,4 +62,3 @@ class ResetPassword extends Component
         ];
     }
 }
-

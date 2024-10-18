@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Dormitory;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,7 +27,7 @@ class Room extends Model
         return $this->belongsTo(Dormitory::class);
     }
 
-    public function students(): hasMany
+    public function students(): HasMany
     {
         return $this->hasMany(DormitoryStudent::class);
     }

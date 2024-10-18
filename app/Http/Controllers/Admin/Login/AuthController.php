@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin\Login;
 
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
@@ -31,17 +32,17 @@ class AuthController extends Controller
 
         if (!$resetToken) {
             return redirect()->route('login');
-        } else {
-            $current_time = Carbon::now();
-            $created_at = Carbon::parse($resetToken->created_at)->addMinutes(15);
-
-//            dd($current_time, $created_at, $current_time > $created_at);
-            if ($current_time > $created_at) {
-                session()->flash('error-token', 'Thời gian xác nhận đã hết hạn');
-                return redirect()->route('forgot-password');
-            } else {
-                return view('admin.pages.login.reset-password', ['token' => $token]);
-            }
         }
+        $current_time = Carbon::now();
+        $created_at = Carbon::parse($resetToken->created_at)->addMinutes(15);
+
+        //            dd($current_time, $created_at, $current_time > $created_at);
+        if ($current_time > $created_at) {
+            session()->flash('error-token', 'Thời gian xác nhận đã hết hạn');
+            return redirect()->route('forgot-password');
+        }
+        return view('admin.pages.login.reset-password', ['token' => $token]);
+
+
     }
 }
