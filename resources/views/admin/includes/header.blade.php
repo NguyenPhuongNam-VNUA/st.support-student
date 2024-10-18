@@ -216,7 +216,7 @@
                         <img src="{{ asset('assets/admin/images/logoST.jpg') }}" class="w-32px h-32px rounded-pill" alt="">
                         <span class="status-indicator bg-success"></span>
                     </div>
-                    <span class="d-none d-lg-inline-block mx-lg-2">ST Team</span>
+                    <span class="d-none d-lg-inline-block mx-lg-2">{{ auth()->user()->name }}</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-end">
@@ -242,7 +242,7 @@
                         <i class="ph-gear me-2"></i>
                         Account settings
                     </a>
-                    <a href="#" class="dropdown-item">
+                    <a href="{{ route('logout') }}" class="dropdown-item">
                         <i class="ph-sign-out me-2"></i>
                         Logout
                     </a>
