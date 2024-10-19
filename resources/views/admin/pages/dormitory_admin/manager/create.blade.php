@@ -15,7 +15,7 @@
             <div class="d-flex">
                 <div class="breadcrumb py-2">
                     <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                    <a href="{{route('dormitoryadmin.managers.index')}}" class="breadcrumb-item active">Cán bộ quản lý</a>
+                    <a href="{{route('admin.dormitory.managers.index')}}" class="breadcrumb-item active">Cán bộ quản lý</a>
                     <span class="breadcrumb-item active">Thêm mới cán bộ</span>
                 </div>
             </div>

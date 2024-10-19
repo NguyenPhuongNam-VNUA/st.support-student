@@ -41,7 +41,7 @@ class LoginIndex extends Component
         $this->validate();
 
         if (auth()->attempt(['user_name' => $this->username, 'password' => $this->password])) {
-            return redirect()->route('admin.roles.index');
+            return redirect()->route('admin.index');
         }
         $this->addError('error-login', 'Tài khoản hoặc mật khẩu không đúng');
         return redirect()->back();

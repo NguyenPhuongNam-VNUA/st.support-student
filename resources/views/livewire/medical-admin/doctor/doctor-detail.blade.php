@@ -7,7 +7,7 @@
 
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="{{ route('medicaladmin.doctors.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.medical.doctors.index') }}" class="btn btn-secondary">
                     <i class="ph-arrow-bend-down-left"></i>&nbsp;Danh sách cán bộ y tế
                 </a>
             </div>

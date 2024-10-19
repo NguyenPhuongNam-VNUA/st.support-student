@@ -15,7 +15,7 @@
         <div class="d-flex">
             <div class="breadcrumb py-2">
                 <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                <a href="{{route('medicaladmin.doctors.index')}}" class="breadcrumb-item active">Chuyên khoa</a>
+                <a href="{{route('admin.medical.doctors.index')}}" class="breadcrumb-item active">Chuyên khoa</a>
                 <span class="breadcrumb-item active">Cập nhật chuyên khoa</span>
             </div>
         </div>

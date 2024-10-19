@@ -6,7 +6,7 @@
                 <span style="font-size: 20px">Thông tin chi tiết</span>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="{{ route('dormitoryadmin.dormitory-students.index') }}" class="btn btn-outline-primary">
+                <a href="{{ route('admin.dormitory-students.index') }}" class="btn btn-outline-primary">
                     <i class="ph-arrow-bend-down-left"></i>&nbsp;Danh sách sinh viên
                 </a>
             </div>

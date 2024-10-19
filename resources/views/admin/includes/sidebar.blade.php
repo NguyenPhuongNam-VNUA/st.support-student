@@ -37,7 +37,17 @@
 
 <!-- ======Super Admin================ -->
                 <li class="nav-item">
-                    <a href="{{ route('admin.roles.index') }}" 
+                    <a href="{{ route('admin.index') }}"
+                       class="nav-link {{ request()->routeIs('admin.index') ?'active' : '' }}"
+                       style="display: flex; align-items: center;">
+                        <i class="ph-house-simple me-3 fa"></i>
+                        <span style="display: flex; align-items: center;">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.roles.index') }}"
                         class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-users-cog me-3 fa"></i>
@@ -55,8 +65,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.students.index') }}" 
-                        class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}" 
+                    <a href="{{ route('admin.students.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-graduation-cap me-3 fa"></i>
                         <span>
@@ -69,8 +79,8 @@
 
 <!-- ======Admin kí túc xá + trọ============ -->
                 <li class="nav-item">
-                    <a href="{{ route('dormitoryadmin.dormitories.index') }}" 
-                        class="nav-link {{ request()->routeIs('dormitoryadmin.dormitories.index') ?'active' : '' }}" 
+                    <a href="{{ route('admin.dormitories.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitories.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-building me-3 fa"></i>
                         <span>
@@ -79,8 +89,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dormitoryadmin.rooms.index') }}" 
-                        class="nav-link {{ request()->routeIs('dormitoryadmin.rooms.index') ?'active' : '' }}" 
+                    <a href="{{ route('admin.dormitory.rooms.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.rooms.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-th-large me-3 fa"></i>
                         <span>
@@ -89,8 +99,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('dormitoryadmin.dormitory-students.index') }}" 
-                        class="nav-link {{ request()->routeIs('dormitoryadmin.dormitory-students.index') ?'active' : '' }}" 
+                    <a href="{{ route('admin.dormitory-students.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory-students.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-user-graduate me-3 fa"></i>
                         <span>
@@ -99,8 +109,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('dormitoryadmin.managers.index')}}" 
-                        class="nav-link {{ request()->routeIs('dormitoryadmin.managers.index') ?'active' : '' }}" 
+                    <a href="{{route('admin.dormitory.managers.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-user-tie me-3 fa"></i>
                         <span>
@@ -115,8 +125,8 @@
 <!-- ======Admin y tế============ -->
 
                 <li class="nav-item">
-                    <a href="{{route('medicaladmin.doctors.index')}}" 
-                        class="nav-link {{ request()->routeIs('medicaladmin.doctors.index') ?'active' : '' }}" 
+                    <a href="{{route('admin.medical.doctors.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.medical.doctors.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-briefcase-medical me-3 fa"></i>
                         <span>
@@ -125,8 +135,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('medicaladmin.doctorroles.index')}}" 
-                        class="nav-link {{ request()->routeIs('medicaladmin.doctorroles.index') ?'active' : '' }}" 
+                    <a href="{{route('admin.medical.doctor.roles.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.medical.doctor.roles.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-notes-medical me-3 fa"></i>
                         <span>
