@@ -107,6 +107,12 @@
                                                 </li>
                                                 <li class="menu-link">
                                                     <a href="#" class="link-title">
+                                                        <i class='fa fa-hospital-user me-1'></i>
+                                                        <span class="sp-link-title">Sức khỏe</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-link">
+                                                    <a href="#" class="link-title">
                                                         <i class='fas fa-newspaper me-1'></i>
                                                         <span class="sp-link-title">Bài viết</span>
                                                     </a>
