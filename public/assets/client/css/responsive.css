@@ -352,12 +352,39 @@ idap-pro css
         background-position: bottom;
     }
     /* footer css */
-    .f-logo ul.footer-ul li.footer-li p {
-        max-width: 100%;
+    .f-logo ul.footer-ul li.footer-logo p {
+        font-size: 13px;
     }
-    .f-logo ul.footer-ul li.footer-li ul.f-ul-li-ul li.footer-info {
-        width: calc(100% - 20px);
-        margin-left: 20px;
+    .home5-footer{
+        flex-wrap: wrap;
+    }
+    .f-logo{
+        width: 25%;
+    }
+    .footer-bottom{
+        width: 75%;
+    }
+    /* footer style-5 product css */
+    .footer-style-5-pro .header-product .caption{
+        width: calc(60% - 15px);
+        margin-left: 15px;
+    }
+    .footer-style-5-pro .header-product .caption span.pro-des{
+        font-size: 13px;
+    }
+    .footer-style-5-pro .header-product .caption .rating{
+        margin-top: 7px;
+    }
+    .footer-style-5-pro .header-product .caption .pro-price{
+        margin-top: 7px;
+    }
+    .footer-style-5-pro .header-product .caption .pro-icn{
+        margin-top: 10px;
+    }
+    .footer-style-5-pro .header-product .caption .pro-icn a.w-c-q-icn{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
     /* product page css */
     .pro-page .pro-shipping {
@@ -799,7 +826,7 @@ idap-pro css
         width: 100%;
         padding-top: 23px;
         margin-left: 0px;
-    }   
+    }
     /* style-7 full-left-right 3 grid css */
     .blog-style-7-left-grid-blog,
     .blog-style-7-right-grid-blog{
@@ -817,7 +844,7 @@ idap-pro css
         margin-left: 20px;
     }
 
-    /* comingsoon css */ 
+    /* comingsoon css */
     .coming-soon-area .comingsoon-main {
         width: 55%;
     }
@@ -837,7 +864,7 @@ ipad css
     /* slider css */
     .slider .home-slider .img-back .h-s-content{
         bottom: 35%;
-        width: 60%;
+        width: 50% !important;
         transform: translateY(35%);
     }
     .slider .home-slider .img-back .h-s-content.slide-c-r {
@@ -926,63 +953,64 @@ ipad css
         font-size: 20px;
     }
     /*--------------------------
-    footer css
+    Footer css
     ---------------------------*/
+    .news-5{
+        width: 100%;
+    }
+    .news-5 form {
+        width: 75%;
+    }
+    .news-5 form input{
+        padding: 10px 15px;
+    }
+    .news-5 form a {
+        padding: 10px 30px;
+    }
     /* service css */
-    .footer-service ul.service-ul li.service-li{
-        flex-direction: column;
+    .f-logo{
+        width: 100%;
     }
-    .footer-service ul.service-ul li.service-li a{
-        margin-right: 0;
-        margin-bottom: 15px;
+    .footer-bottom{
+        width: 100%;
+        padding-top: 0px;
+        border-top: none;
     }
-    .footer-service ul.service-ul li.service-li a::before{
-        left: 0;
-        bottom: 0px;
-        width: 2px;
-        height: 15px;
-        margin: 0 auto;
+    /* footer bottom css */
+    .footer-link .f-link{
+        width: 100%;
+        margin-top: 14px;
     }
-    .footer-service ul.service-ul li.service-li:hover a::before{
-        right: 0;
-        bottom: -15px;
+    .footer-link .f-link:first-child {
+        margin-top: 0px;
     }
-    /* company detail css */
-    .f-logo ul.footer-ul{
-        align-items: center;
-        margin-left: -15px;
-        margin-top: -20px;
+    .footer-link .f-link{
+        padding-left: 0px;
     }
-    .f-logo ul.footer-ul li.footer-li{
-        width: calc(50% - 15px);
-        margin-top: 20px;
-        margin-left: 15px;
+    .footer-link .f-link:first-child a.h-footer{
+        margin-top: 0px;
+        padding-top: 14px;
+        border-top: 1px solid #e2e2e2;
+    }
+    .footer-link .f-link h2.h-footer{
+        display: none;
+    }
+    .footer-link .f-link a.h-footer{
+        font-size: 14px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #e2e2e2;
     }
-    .f-logo ul.footer-ul li.footer-li.footer-logo{
-        width: calc(50% - 15px);
-        margin-top: 20px;
-        text-align: center;
-        padding-right: 0px;
+    .footer-link .f-link a.h-footer[aria-expanded="true"] i::before{
+        content: "\f106";
     }
-    /* footer copyright css */
-    .footer-copyright ul.f-bottom{
-        margin-left: -15px;
-        margin-top: -15px;
+    .footer-link .f-link .collapse:not(.show){
+        display: none;
     }
-    .footer-copyright ul.f-bottom li.f-c{
-        width: calc(100% - 15px);
-        margin-left: 15px;
-        margin-top: 15px;
-    }
-    .footer-copyright ul.f-bottom li.f-payment{
-        text-align: center;
-    }
-    .footer-copyright ul.f-bottom li.f-copyright{
-        order: 1;
-        text-align: center;
-        margin-top: 10px;
+    .footer-link .f-link ul.f-link-ul li.f-link-ul-li:first-child{
+        margin-top: 13px;
     }
     /* about page css */
     .about-counter .text-center .counter{
@@ -1104,7 +1132,7 @@ ipad css
         width: 50%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;    
+        align-items: flex-start;
     }
     .wishlist-area .wishlist-details .wishlist-all-pro .all-pro-price{
         width: 50%;
@@ -1969,7 +1997,7 @@ ipad css
         width: calc(100% - 30px);
         margin-top: 30px;
     }
-    /* comingsoon css */ 
+    /* comingsoon css */
     .coming-soon-area .comingsoon-main {
         width: 75%;
     }
@@ -2096,11 +2124,13 @@ iphone css
         font-size: 16px;
     }
     .slider .home-slider .img-back .h-s-content h1{
-        font-size: 28px;
+        font-size: 18px;
         margin-top: 13px;
     }
     .slider .home-slider .img-back .h-s-content a {
         margin-top: 18px;
+        font-size: 13px;
+        padding: 7px 15px !important;
     }
     .slider .home-slider.owl-theme .owl-nav{
         display: none;
@@ -2218,7 +2248,7 @@ iphone css
     }
     .tab-product .tred-pro .Pro-lable span.p-text,
     .tab-product .tred-pro .Pro-lable span.p-discount,
-    .tred-pro .Pro-lable span.p-text, 
+    .tred-pro .Pro-lable span.p-text,
     .tred-pro .Pro-lable span.p-discount{
         font-size: 12px;
         padding: 1px 5px 1px 12px;
@@ -3038,7 +3068,7 @@ iphone css
     }
     .pro-page .pro-shipping .product-service:first-child {
         width: 100%;
-    } 
+    }
     .pro-page-content .pro-page-tab ul.nav.nav-tabs{
         flex-direction: column;
         align-items: center;
@@ -3465,7 +3495,7 @@ iphone css
     .right-blog-style-5 .blog-start .blog-content .blog-title h6 {
         margin-top: 13px;
     }
-    .full-blog-style-5 .blog-start .blog-content p.blog-description, 
+    .full-blog-style-5 .blog-start .blog-content p.blog-description,
     .left-blog-style-5 .blog-start .blog-content p.blog-description,
     .right-blog-style-5 .blog-start .blog-content p.blog-description {
         margin-top: 6px;
@@ -3518,7 +3548,7 @@ iphone css
     .left-blog-list-style-5 .blog-start .blog-content .blog-title h6,
     .right-blog-list-style-5 .blog-start .blog-content .blog-title h6{
         margin-top: 23px;
-    } 
+    }
     .full-blog-list-style-5 .blog-start .blog-content p.blog-description,
     .left-blog-list-style-5 .blog-start .blog-content p.blog-description,
     .right-blog-list-style-5 .blog-start .blog-content p.blog-description {
@@ -3610,7 +3640,7 @@ iphone css
         margin-left: 0px;
     }
     .blog-style-6-3-grid .blog-start .blog-content .blog-title h6,
-    .blog-style-6-left-3-grid .blog-start .blog-content .blog-title h6, 
+    .blog-style-6-left-3-grid .blog-start .blog-content .blog-title h6,
     .blog-style-6-right-3-grid .blog-start .blog-content .blog-title h6 {
         padding-top: 13px;
     }
@@ -3807,7 +3837,7 @@ iphone css
     .t-banner1 .home-offer-banner .o-t-banner .o-t-content a{
         margin-top: 12px;
     }
-    /* comingsoon css */ 
+    /* comingsoon css */
     .coming-soon-area .comingsoon-main {
         width: 80%;
     }
@@ -4011,7 +4041,7 @@ iphone css
         width: 100%;
         margin-left: 0px;
     }
-    .left-blog-list-style-2 .blog-start .blog-content, 
+    .left-blog-list-style-2 .blog-start .blog-content,
     .right-blog-list-style-2 .blog-start .blog-content {
         padding-top: 20px;
     }
