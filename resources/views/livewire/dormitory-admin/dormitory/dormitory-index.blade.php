@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="content-action">
-                    <a href="{{route('dormitoryadmin.dormitories.create')}}" class="btn btn-teal"><i class="ph-plus-circle me-1"></i> Tạo mới</a>
+                    <a href="{{route('admin.dormitories.create')}}" class="btn btn-teal"><i class="ph-plus-circle me-1"></i> Tạo mới</a>
                 </div>
             </div>
         </div>

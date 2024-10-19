@@ -15,7 +15,7 @@
         <div class="d-flex">
             <div class="breadcrumb py-2">
                 <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                <a href="{{route('dormitoryadmin.dormitory-students.index')}}" class="breadcrumb-item active">Sinh viên trong ký túc xá</a>
+                <a href="{{route('admin.dormitory-students.index')}}" class="breadcrumb-item active">Sinh viên trong ký túc xá</a>
                 <span class="breadcrumb-item active">Cập nhật thông tin sinh viên</span>
             </div>
         </div>

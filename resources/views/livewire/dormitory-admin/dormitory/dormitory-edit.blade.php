@@ -68,7 +68,7 @@
             </div>
             <div class="card-body d-flex align-items-center gap-1">
                 <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa</button>
-                <a href="{{ route('dormitoryadmin.dormitories.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
+                <a href="{{ route('admin.dormitories.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>
         </div>
     </div>
