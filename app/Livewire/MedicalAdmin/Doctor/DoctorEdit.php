@@ -65,7 +65,7 @@ class DoctorEdit extends Component
             'thumbnail' => $thumbnailPath,
             'description' => $this->description,
         ]);
-        return redirect()->route('medicaladmin.doctors.index')->with('success', 'Cập nhật thông tin cán bộ thành công');
+        return redirect()->route('admin.medical.doctors.index')->with('success', 'Cập nhật thông tin cán bộ thành công');
     }
 
 

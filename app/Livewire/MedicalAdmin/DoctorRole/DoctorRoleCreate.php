@@ -28,7 +28,7 @@ class DoctorRoleCreate extends Component
 
         session()->flash('success', 'Thêm mới chuyên khoa thành công');
 
-        return redirect()->route('medicaladmin.doctorroles.index');
+        return redirect()->route('admin.medical.doctor.roles.index');
     }
 
     protected function rules()

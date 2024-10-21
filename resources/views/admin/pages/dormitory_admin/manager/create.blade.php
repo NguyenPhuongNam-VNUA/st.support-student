@@ -27,7 +27,7 @@
 @section('page-content')
     <div class="content">
         <!-- Content -->
-        <livewire:medical-admin.doctor.doctor-create />
+        <livewire:dormitory-admin.manager.manager-create />
         <!-- /content -->
     </div>
 @endsection

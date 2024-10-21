@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function (): void {
     Route::get('/', fn () => view('client/pages/index'))->name('client.index');
+    Route::get('/giang-duong', fn () => view('client/pages/lecture-hall'))->name('client.lecture-hall');
+    Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');

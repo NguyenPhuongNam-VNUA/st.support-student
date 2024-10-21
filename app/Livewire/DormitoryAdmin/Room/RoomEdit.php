@@ -49,7 +49,7 @@ class RoomEdit extends Component
             'dormitory_id' => $this->dormitory_id,
             'capacity' => $this->capacity,
         ]);
-        return redirect()->route('dormitoryadmin.rooms.index')->with('success', 'Cập nhật thông tin phòng thành công');
+        return redirect()->route('admin.dormitory.rooms.index')->with('success', 'Cập nhật thông tin phòng thành công');
     }
 
     protected function rules()

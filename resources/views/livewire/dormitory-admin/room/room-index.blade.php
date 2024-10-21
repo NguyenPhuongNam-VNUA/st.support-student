@@ -70,7 +70,7 @@
                                             <i class="ph-eye me-2"></i>
                                             Danh sách sinh viên
                                         </a>
-                                        <a href="{{ route('dormitoryadmin.rooms.edit', ['id' => $room->id]) }}" class="dropdown-item">
+                                        <a href="{{ route('admin.dormitory.rooms.edit', ['id' => $room->id]) }}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa
                                         </a>

@@ -52,7 +52,7 @@ class DormitoryCreate extends Component
 
         session()->flash('success', 'Thêm mới tòa nhà thành công');
 
-        return redirect()->route('dormitoryadmin.dormitories.index');
+        return redirect()->route('admin.dormitories.index');
     }
 
     protected function rules()

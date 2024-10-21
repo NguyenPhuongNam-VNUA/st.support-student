@@ -40,7 +40,6 @@ class DormitoryStudentEdit extends Component
 
     public function render()
     {
-        //$rooms = Room::all();
         $rooms = Room::where('status', StatusRoom::Empty->value)->get();
         return view('livewire.dormitory-admin.dormitory-student.dormitory-student-edit', [
             'rooms' => $rooms
@@ -75,7 +74,7 @@ class DormitoryStudentEdit extends Component
             'room_id' => $this->room_id,
             'citizen_id' => $this->citizen_id,
         ]);
-        return redirect()->route('dormitoryadmin.dormitory-students.index')->with('success', 'Cập nhật thông tin sinh viên thành công');
+        return redirect()->route('admin.dormitory-students.index')->with('success', 'Cập nhật thông tin sinh viên thành công');
     }
 
     protected function rules()

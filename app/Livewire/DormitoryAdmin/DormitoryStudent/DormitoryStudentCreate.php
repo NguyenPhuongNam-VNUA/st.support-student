@@ -65,7 +65,7 @@ class DormitoryStudentCreate extends Component
         ]);
         session()->flash('success', 'Thêm mới sinh viên thành công');
 
-        return redirect()->route('dormitoryadmin.dormitory-students.index');
+        return redirect()->route('admin.dormitory-students.index');
     }
 
     protected function rules()
