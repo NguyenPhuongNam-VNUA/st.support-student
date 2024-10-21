@@ -34,7 +34,7 @@ class DoctorRoleEdit extends Component
         DoctorRole::where('id', $this->id)->update([
             'name' => $this->name,
         ]);
-        return redirect()->route('medicaladmin.doctorroles.index')->with('success', 'Cập nhật chuyên khoa thành công');
+        return redirect()->route('admin.medical.doctor.roles.index')->with('success', 'Cập nhật chuyên khoa thành công');
     }
 
     protected function rules()

@@ -54,7 +54,7 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{route('medicaladmin.doctorroles.edit', ['id' => $doctor_role->id])}}" class="dropdown-item">
+                                        <a href="{{route('admin.medical.doctor.roles.edit', ['id' => $doctor_role->id])}}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa
                                         </a>

@@ -2536,12 +2536,35 @@ a.scroll:hover span{
     text-align: center;
 }
 .about-breadcrumb .about-back .about-l ul.about-link li.go-home a{
-    font-size: 18px;
-    color: #333;
-    position: relative;
-    font-weight: 500;
-    padding-bottom: 10px;
+    /* font-size: 18px; */
+    /* color: #333; */
+    /* position: relative; */
+    /* font-weight: 500; */
+    /* padding-bottom: 10px; */
+
+
+/* ==== Hiệu chỉnh ===*/
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.322); 
+    color: #fff; 
+    padding: 10px; 
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    font-size: 24px; 
+    font-weight: bold; 
+    font-family: 'Arial', sans-serif; 
+    transition: 0.3s; 
 }
+
+.about-breadcrumb .about-back .about-l ul.about-link li.go-home a:hover {
+    background-color: #f5ab1e;
+    color: #fff; 
+}
+
+
 .about-breadcrumb .about-back .about-l ul.about-link li.go-home a::after{
     background-color: #333;
     content: "";

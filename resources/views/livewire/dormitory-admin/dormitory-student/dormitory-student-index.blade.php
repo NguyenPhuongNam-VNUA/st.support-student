@@ -78,11 +78,11 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{route('dormitoryadmin.dormitory-students.detail', ['id' => $dormitory_student -> id])}}" class="dropdown-item">
+                                        <a href="{{route('admin.dormitory-students.detail', ['id' => $dormitory_student -> id])}}" class="dropdown-item">
                                             <i class="ph-eye me-2"></i>
                                             Xem chi tiết
                                         </a>
-                                        <a href="{{route('dormitoryadmin.dormitory-students.edit', ['id' => $dormitory_student -> id])}}" class="dropdown-item">
+                                        <a href="{{route('admin.dormitory-students.edit', ['id' => $dormitory_student -> id])}}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa
                                         </a>

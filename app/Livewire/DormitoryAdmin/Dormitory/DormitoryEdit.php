@@ -57,7 +57,7 @@ class DormitoryEdit extends Component
             'description' => $this->description,
             'slug' => Str::slug($this->name) . '-' . $this->id,
         ]);
-        return redirect()->route('dormitoryadmin.dormitories.index')->with('success', 'Cập nhật thông tin tòa nhà thành công');
+        return redirect()->route('admin.dormitories.index')->with('success', 'Cập nhật thông tin tòa nhà thành công');
     }
 
     protected function rules()

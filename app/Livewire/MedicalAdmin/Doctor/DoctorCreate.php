@@ -48,7 +48,7 @@ class DoctorCreate extends Component
 
         session()->flash('success', 'Thêm mới cán bộ thành công');
 
-        return redirect()->route('medicaladmin.doctors.index');
+        return redirect()->route('admin.medical.doctors.index');
     }
 
     protected function rules()

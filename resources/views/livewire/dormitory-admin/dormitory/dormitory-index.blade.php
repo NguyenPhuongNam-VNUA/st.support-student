@@ -62,7 +62,7 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{ route('dormitoryadmin.dormitories.edit', ['id' => $dormitory->id]) }}" class="dropdown-item">
+                                        <a href="{{ route('admin.dormitories.edit', ['id' => $dormitory->id]) }}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa
                                         </a>

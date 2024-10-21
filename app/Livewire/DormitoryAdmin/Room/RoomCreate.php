@@ -47,7 +47,7 @@ class RoomCreate extends Component
 
         session()->flash('success', 'Thêm mới phòng thành công');
 
-        return redirect()->route('dormitoryadmin.rooms.index');
+        return redirect()->route('admin.dormitory.rooms.index');
     }
 
     protected function rules()

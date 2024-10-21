@@ -36,7 +36,7 @@ class ManagerCreate extends Component
 
         session()->flash('success', 'Thêm mới cán bộ thành công');
 
-        return redirect()->route('dormitoryadmin.managers.index');
+        return redirect()->route('admin.dormitory.managers.index');
     }
 
     protected function rules()

@@ -44,7 +44,7 @@ class ManagerEdit extends Component
             'email' => $this->email,
             'phone_number' => $this->phone_number,
         ]);
-        return redirect()->route('dormitoryadmin.managers.index')->with('success', 'Cập nhật thông tin cán bộ thành công');
+        return redirect()->route('admin.dormitory.managers.index')->with('success', 'Cập nhật thông tin cán bộ thành công');
     }
 
     protected function rules()
