@@ -64,7 +64,7 @@ Danh sách dịch vụ
                                     </div>
                                 </div>
                                 <div class="caption">
-                                    <h3><a href="product.html">Bún cá Thái G7</a></h3>
+                                    <h3><a href="{{route('client.service-detail')}}">Bún cá Thái G7</a></h3>
                                     <div class="rating">
                                         <i class="fa fa-star c-star"></i>
                                         <i class="fa fa-star c-star"></i>
@@ -92,7 +92,7 @@ Danh sách dịch vụ
                                     </div>
                                 </div>
                                 <div class="caption">
-                                    <h3><a href="product.html">Bún cá Thái G7</a></h3>
+                                    <h3><a href="{{route('client.service-detail')}}">Bún cá Thái G7</a></h3>
                                     <div class="rating">
                                         <i class="fa fa-star c-star"></i>
                                         <i class="fa fa-star c-star"></i>
@@ -120,7 +120,7 @@ Danh sách dịch vụ
                                     </div>
                                 </div>
                                 <div class="caption">
-                                    <h3><a href="product.html">Tiệm sửa đồ điện gia dụng</a></h3>
+                                    <h3><a href="{{route('client.service-detail')}}">Tiệm sửa đồ điện gia dụng</a></h3>
                                     <div class="rating">
                                         <i class="fa fa-star c-star"></i>
                                         <i class="fa fa-star c-star"></i>

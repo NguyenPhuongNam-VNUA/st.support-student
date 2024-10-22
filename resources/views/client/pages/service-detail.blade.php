@@ -14,7 +14,7 @@ Dịch vụ
                 <div class="col">
                     <div class="about-l">
                         <ul class="about-link">
-                            <li class="go-home"><a href="index1.html">Dịch vụ</a></li>
+                            <li class="go-home"><a href="">Dịch vụ</a></li>
                         </ul>
                     </div>
                 </div>
