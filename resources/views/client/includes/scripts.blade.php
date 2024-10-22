@@ -13,5 +13,7 @@
 <script src="{{asset('assets/client/js/swiper.min.js')}}"></script>
 <!-- custom -->
 <script src="{{asset('assets/client/js/custom.js')}}"></script>
+<!-- mapbox -->
+<script src="{{asset('assets/client/js/map.js')}}"></script>
 
 @yield('scripts-custom')

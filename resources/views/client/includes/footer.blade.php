@@ -9,7 +9,7 @@
                             <ul class="footer-ul">
                                 <li class="footer-li footer-logo">
                                     <a href="index5.html">
-                                        <img class="img-fluid" src="{{asset('assets/client/image/logo1.png')}}" alt="">
+                                        <img class="img-fluid logo-size" src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="">
                                     </a>
                                 </li>
                                 <li class="footer-li footer-contact">

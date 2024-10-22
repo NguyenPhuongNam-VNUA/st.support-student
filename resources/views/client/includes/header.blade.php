@@ -8,7 +8,7 @@
                         <!-- logo start -->
                         <div class="header-element logo">
                             <a href="index1.html">
-                                <img src="{{asset('assets/client/image/logo1.png')}}" alt="logo-image" class="img-fluid">
+                                <img src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="logo-image" class="img-fluid logo-size" >
                             </a>
                         </div>
                         <!-- logo end -->
@@ -128,15 +128,15 @@
                                     </div>
                                 </div>
                                 <!-- menu end -->
-                                <div class="img-hotline">
-                                    <div class="image-line">
-                                        <a href="javascript:void(0)"><img src="{{asset('assets/client/image/icon_contact.png')}}" class="img-fluid" alt="image-icon"></a>
-                                    </div>
-                                    <div class="image-content">
-                                        <span class="hot-l">Hotline:</span>
-                                        <span>0123 456 789</span>
-                                    </div>
-                                </div>
+{{--                                <div class="img-hotline">--}}
+{{--                                    <div class="image-line">--}}
+{{--                                        <a href="javascript:void(0)"><img src="{{asset('assets/client/image/icon_contact.png')}}" class="img-fluid" alt="image-icon"></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="image-content">--}}
+{{--                                        <span class="hot-l">Hotline:</span>--}}
+{{--                                        <span>0123 456 789</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>

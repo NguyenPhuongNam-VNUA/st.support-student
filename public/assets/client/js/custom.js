@@ -275,7 +275,7 @@ $('.trending-products').owlCarousel({
 // swiper product-tab slider
 ==============================================================*/
 var swiper = new Swiper('.swiper-container.home-pro-tab', {
-    slidesPerView: 4,
+    slidesPerView: 3,
     slidesPerColumn: 1,
     spaceBetween: 30,
     observer: true,

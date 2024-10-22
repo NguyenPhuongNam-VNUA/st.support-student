@@ -9,28 +9,62 @@
     @include('client.includes.home-slider')
     <!--home page slider start-->
 
-    <!--banner start-->
-    <section class="t-banner1 section-tb-padding mt-4">
+    <!-- service start -->
+    <section class="service4-section section1-t-padding">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="home-offer-banner">
-                        <div class="o-t-banner">
-                            <a href="" class="image-b">
-                                <img class="img-fluid" src="{{asset('assets/client/image/banner-1.jpg')}}" alt="banner image">
-                            </a>
-                            <div class="o-t-content">
-                                <h6>Fresh fruits, vagetable on our product</h6>
-                                <a href="product.html" class="btn btn-style1">Shop now</a>
+                    <div class="service">
+                        <div class="service-box">
+                            <div class="s-box">
+                                <div class="service-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{asset('assets/client/image/s-image1.png')}}" class="img-fluid" alt="s-image">
+                                    </a>
+                                </div>
+                                <div class="service-content">
+                                    <span>Dịch vụ</span>
+                                    <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="o-t-banner">
-                            <a href="" class="image-b">
-                                <img class="img-fluid" src="{{asset('assets/client/image/banner-2.jpg')}}" alt="banner image">
-                            </a>
-                            <div class="o-t-content banner-color">
-                                <h6>Vagetable eggplant 100% fresh food</h6>
-                                <a href="product.html" class="btn btn-style1">Shop now</a>
+                        <div class="service-box">
+                            <div class="s-box">
+                                <div class="service-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{asset('assets/client/image/s-image2.png')}}" class="img-fluid" alt="s-image">
+                                    </a>
+                                </div>
+                                <div class="service-content">
+                                    <span>Nhà ở</span>
+                                    <p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-box">
+                            <div class="s-box">
+                                <div class="service-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{asset('assets/client/image/s-image3.png')}}" class="img-fluid" alt="s-image">
+                                    </a>
+                                </div>
+                                <div class="service-content">
+                                    <span>Sức khỏe</span>
+                                    <p>Ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-box">
+                            <div class="s-box">
+                                <div class="service-img">
+                                    <a href="javascript:void(0)">
+                                        <img src="{{asset('assets/client/image/s-image5.png')}}" class="img-fluid" alt="s-image" style="width: 30px; height: 30px">
+                                    </a>
+                                </div>
+                                <div class="service-content">
+                                    <span>Vnua map</span>
+                                    <p>Ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -38,655 +72,173 @@
             </div>
         </div>
     </section>
-    <!-- banner end -->
+    <!-- service end -->
 
-    <!-- Our Products Tab start -->
-    <section class="our-products-tab section-tb-padding">
+    <!-- dịch vụ start -->
+    <section class="our-products-tab section-tb-padding mt-5" style="background-color: #85dd5729">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section-title">
                         <h2>Dịch vụ</h2>
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#home">Quán ăn</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#profile">Quán sửa chữa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact">Quán ...</a>
-                            </li>
-                        </ul>
                     </div>
                     <div class="tab-content pro-tab-slider">
                         <div class="tab-pane fade show active" id="home">
                             <div class="home-pro-tab swiper-container">
                                 <div class="swiper-wrapper" >
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-buttons">
-                                <div class="content-buttons">
-                                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                                    <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile">
-                            <div class="home-pro-tab swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
+                                        <div class="blog-post">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-3-grid.html">
+                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                </a>
                                             </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
+                                            <div class="blog-content">
+                                                <h3 class="title my-3" style="font-size: 18px"><a href="#">Serving fresh ingredients your !</a></h3>
+                                                <p class="desc mb-3">If you are going to use a passage of, you need to be sure there isn't anything in....</p>
+                                                <a href="grid-list.html" class="read-btn btn-style5">
+                                                    <span class="text">Xem thêm</span>
+                                                    <span class="icon"><i class='fa fa-arrow-right'></i></span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-buttons">
-                                <div class="content-buttons">
-                                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                                    <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="contact">
-                            <div class="home-pro-tab swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-{{--                                                <div class="Pro-lable">--}}
-{{--                                                    <span class="p-text">Quán ăn</span>--}}
-{{--                                                </div>--}}
-                                                <div class="pro-icn">
-{{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-{{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-{{--                                                <div class="pro-price">--}}
-{{--                                                    <span class="new-price">$117.00 USD</span>--}}
-{{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="h-t-pro">
-                                            <div class="tred-pro">
-                                                <div class="tr-pro-img">
-                                                    <a href="product.html">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="pro-img1" class="img-fluid">
-                                                        <img src="{{asset('assets/client/image/bbch.jpg')}}" alt="additional image" class="img-fluid additional-image">
-                                                    </a>
-                                                </div>
-                                                {{--                                                <div class="Pro-lable">--}}
-                                                {{--                                                    <span class="p-text">Quán ăn</span>--}}
-                                                {{--                                                </div>--}}
-                                                <div class="pro-icn">
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-                                                    {{--                                                    <a href="#" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_1"><i class="fa fa-eye"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="caption" >
-                                                <h3><a href="#"> Bún bò huế cô Hoa </a></h3>
-                                                <div class="rating">
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                    <i class="fa fa-star e-star"></i>
-                                                </div>
-                                                {{--                                                <div class="pro-price">--}}
-                                                {{--                                                    <span class="new-price">$117.00 USD</span>--}}
-                                                {{--                                                </div>--}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-buttons">
-                                <div class="content-buttons">
-                                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                                    <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -695,81 +247,250 @@
             </div>
         </div>
     </section>
-    <!-- Our Products Tab end -->
+    <!-- dịch vụ end -->
 
-    <!-- Trending Products Start -->
-    <section class="h-t-products1 section-t-padding section-b-padding">
+    <!-- service start -->
+    <section class="home-service section-b-padding my-5">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section-title">
-                        <h2>Một số bệnh phổ biến</h2>
+                        <h2>Nhà ở</h2>
                     </div>
-                    <div class="trending-products owl-carousel owl-theme">
-                        <div class="items">
-                            <div class="tred-pro">
-                                <div class="tr-pro-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="{{asset('assets/client/image/camcum.jpg')}}" alt="pro-img1">
-                                        <img class="img-fluid additional-image" src="{{asset('assets/client/image/camcum.jpg')}}" alt="additional image">
-                                    </a>
-                                </div>
-                                <div class="Pro-lable">
-{{--                                    <span class="p-text">New</span>--}}
-                                </div>
-                                <div class="pro-icn">
-{{--                                    <a href="wishlist.html" class="w-c-q-icn"><i class="fa fa-heart"></i></a>--}}
-{{--                                    <a href="cart.html" class="w-c-q-icn"><i class="fa fa-shopping-bag"></i></a>--}}
-                                    <a href="javascript:void(0)"  class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#exampleModal_2"><i class="fa fa-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="caption">
-                                <h3><a href="#">Các mẹo phòng bệnh phổ biến vào mùa đông</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Trending Products end -->
-
-    <!-- Back-image and countdown star -->
-    <section class="home-countdown1">
-        <div class="back-img" style="background-image: url({{asset('assets/client/image/home-slider-ktx.jpg')}});">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="deal-content">
-                                <h2>Ký túc xá là nhà</h2>
-                                <h2 class="mt-2">Sinh viên là chủ</h2>
-                            <span class="deal-c">Hãy đang ký để gia nhập ngôi nhà chung</span>
-                            <ul class="contdown_row">
-                                <li class="countdown_section">
-                                    <span id="days" class="countdown_timer">00</span>
-                                    <span class="countdown_title">text</span>
+                    <div class="service-area-main">
+                        <div class="service-area-1 service">
+                            <ul class="service-ul">
+                                <li class="service-li">
+                                    <div class="icon">
+                                        <a href="javascript:void(0)">
+                                            <span class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M336 0C362.5 0 384 21.49 384 48V367.8C345.8 389.2 320 430 320 476.9C320 489.8 323.6 501.8 329.9 512H240V432C240 405.5 218.5 384 192 384C165.5 384 144 405.5 144 432V512H48C21.49 512 0 490.5 0 464V48C0 21.49 21.49 0 48 0H336zM64 272C64 280.8 71.16 288 80 288H112C120.8 288 128 280.8 128 272V240C128 231.2 120.8 224 112 224H80C71.16 224 64 231.2 64 240V272zM176 224C167.2 224 160 231.2 160 240V272C160 280.8 167.2 288 176 288H208C216.8 288 224 280.8 224 272V240C224 231.2 216.8 224 208 224H176zM256 272C256 280.8 263.2 288 272 288H304C312.8 288 320 280.8 320 272V240C320 231.2 312.8 224 304 224H272C263.2 224 256 231.2 256 240V272zM80 96C71.16 96 64 103.2 64 112V144C64 152.8 71.16 160 80 160H112C120.8 160 128 152.8 128 144V112C128 103.2 120.8 96 112 96H80zM160 144C160 152.8 167.2 160 176 160H208C216.8 160 224 152.8 224 144V112C224 103.2 216.8 96 208 96H176C167.2 96 160 103.2 160 112V144zM272 96C263.2 96 256 103.2 256 112V144C256 152.8 263.2 160 272 160H304C312.8 160 320 152.8 320 144V112C320 103.2 312.8 96 304 96H272zM576 272C576 316.2 540.2 352 496 352C451.8 352 416 316.2 416 272C416 227.8 451.8 192 496 192C540.2 192 576 227.8 576 272zM352 477.1C352 425.7 393.7 384 445.1 384H546.9C598.3 384 640 425.7 640 477.1C640 496.4 624.4 512 605.1 512H386.9C367.6 512 352 496.4 352 477.1V477.1z"/></svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <h4 class="title">Xem ký túc xá</h4>
+{{--                                        <span class="sub-title">Alway online 24/7</span>--}}
+                                    </div>
                                 </li>
-                                <li class="countdown_section">
-                                    <span id="hours" class="countdown_timer">00</span>
-                                    <span class="countdown_title">text</span>
-                                </li>
-                                <li class="countdown_section">
-                                    <span id="minutes" class="countdown_timer">00</span>
-                                    <span class="countdown_title">text</span>
-                                </li>
-                                <li class="countdown_section">
-                                    <span id="seconds" class="countdown_timer">00</span>
-                                    <span class="countdown_title">text</span>
+                                <li class="service-li">
+                                    <div class="icon">
+                                        <a href="javascript:void(0)">
+                                            <span class="icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16"> <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/> <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/> </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <h4 class="title">Đăng ký ở Ký túc xá</h4>
+{{--                                        <span class="sub-title">Orders from all item</span>--}}
+                                    </div>
                                 </li>
                             </ul>
-                            <a href="#" class="btn btn-style1">Đăng ký</a>
+                        </div>
+                        <div class="service-area-1 service-img">
+                            <img src="https://via.placeholder.com/410x248" class="img-fluid" alt="image">
+                        </div>
+                        <div class="service-area-2 service">
+                            <ul class="service-ul">
+                                <li class="service-li">
+                                    <div class="icon">
+                                        <a href="javascript:void(0)">
+                                                <span class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M511.8 287.6L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L416 100.7V64C416 46.33 430.3 32 448 32H480C497.7 32 512 46.33 512 64V185L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6L511.8 287.6zM288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288zM192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416z"/></svg>
+                                                </span>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <h4 class="title">Xem phòng trọ</h4>
+{{--                                        <span class="sub-title">20% off by subscribing</span>--}}
+                                    </div>
+                                </li>
+                                <li class="service-li">
+                                    <div class="icon">
+                                        <a href="javascript:void(0)">
+                                                <span class="icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16"> <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/> <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/> </svg>
+                                                </span>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <h4 class="title">Thuê trọ</h4>
+{{--                                        <span class="sub-title">Money back guarantee</span>--}}
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Back image and countdown end -->
+    <!-- service end -->
+
+    </div>
+    <!-- sức khỏe start -->
+    <section class="our-products-tab section-tb-padding home12-blog" style="background-color: #85dd5729">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-title">
+                        <h2>Sức khỏe</h2>
+                    </div>
+                    <div class="tab-content pro-tab-slider">
+                        <div class="tab-pane fade show active" id="home">
+                            <div class="home-pro-tab swiper-container blog-home12">
+                                <div class="swiper-wrapper" >
+                                    <div class="swiper-slide">
+                                        <div class="blog-start">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-details.html">
+                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                </a>
+                                                <a href="blog-style-1-details.html" class="blog-icon"><i class="icon-link icons"></i></a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-title">
+                                                    <h6><a href="blog-style-1-details.html">Health and skin for your organic</a></h6>
+                                                </div>
+                                                <p class="blog-description">Lorem Ipsum is simply dummy text of  the printing industry.</p>
+                                                <div class="blog-date">
+                                                    <span class="date">Fab 2022</span>
+                                                    <p class="blog-admin">
+                                                        <span class="color-text">By</span>
+                                                        <span>Spacingtech</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="blog-start">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-details.html">
+                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                </a>
+                                                <a href="blog-style-1-details.html" class="blog-icon"><i class="icon-link icons"></i></a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-title">
+                                                    <h6><a href="blog-style-1-details.html">Health and skin for your organic</a></h6>
+                                                </div>
+                                                <p class="blog-description">Lorem Ipsum is simply dummy text of  the printing industry.</p>
+                                                <div class="blog-date">
+                                                    <span class="date">Fab 2022</span>
+                                                    <p class="blog-admin">
+                                                        <span class="color-text">By</span>
+                                                        <span>Spacingtech</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="blog-start">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-details.html">
+                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                </a>
+                                                <a href="blog-style-1-details.html" class="blog-icon"><i class="icon-link icons"></i></a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-title">
+                                                    <h6><a href="blog-style-1-details.html">Health and skin for your organic</a></h6>
+                                                </div>
+                                                <p class="blog-description">Lorem Ipsum is simply dummy text of  the printing industry.</p>
+                                                <div class="blog-date">
+                                                    <span class="date">Fab 2022</span>
+                                                    <p class="blog-admin">
+                                                        <span class="color-text">By</span>
+                                                        <span>Spacingtech</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="blog-start">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-details.html">
+                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                </a>
+                                                <a href="blog-style-1-details.html" class="blog-icon"><i class="icon-link icons"></i></a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-title">
+                                                    <h6><a href="blog-style-1-details.html">Health and skin for your organic</a></h6>
+                                                </div>
+                                                <p class="blog-description">Lorem Ipsum is simply dummy text of  the printing industry.</p>
+                                                <div class="blog-date">
+                                                    <span class="date">Fab 2022</span>
+                                                    <p class="blog-admin">
+                                                        <span class="color-text">By</span>
+                                                        <span>Spacingtech</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="blog-start">
+                                            <div class="blog-image">
+                                                <a href="blog-style-1-details.html">
+                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                </a>
+                                                <a href="blog-style-1-details.html" class="blog-icon"><i class="icon-link icons"></i></a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-title">
+                                                    <h6><a href="blog-style-1-details.html">Health and skin for your organic</a></h6>
+                                                </div>
+                                                <p class="blog-description">Lorem Ipsum is simply dummy text of  the printing industry.</p>
+                                                <div class="blog-date">
+                                                    <span class="date">Fab 2022</span>
+                                                    <p class="blog-admin">
+                                                        <span class="color-text">By</span>
+                                                        <span>Spacingtech</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- sức khỏe end -->
+
+    <!-- vnuamap start -->
+    <section class="section-tb-padding mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section-title">
+                        <h2 class="mb-3">Vnua map</h2>
+                    </div>
+                    <div style="position: relative">
+                        <button id="toggleView">2D</button>
+                        <div id='map' style='width: 85%; height: 430px; margin: auto; ' ></div>
+                    </div>
+                    <!-- Modal -->
+                    <div id="imageModal" class="modal" style="display: none;">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="modalImage" style="width: 100%;">
+                        <div id="caption"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- vnuamap end -->
 
     <!-- Blog start -->
     <section class="section-tb-padding blog1">
