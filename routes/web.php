@@ -29,6 +29,9 @@ Route::prefix('/')->group(function (): void {
     Route::get('/', fn () => view('client/pages/index'))->name('client.index');
     Route::get('/giang-duong', fn () => view('client/pages/lecture-hall'))->name('client.lecture-hall');
     Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
+    Route::get('/danh-sach-dich-vu', fn () => view('client/pages/service'))->name('client.service');
+    Route::get('/dich-vu', fn () => view('client/pages/service-detail'))->name('client.service-detail');
+
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');

@@ -2566,7 +2566,7 @@ a.scroll:hover span{
 
 
 .about-breadcrumb .about-back .about-l ul.about-link li.go-home a::after{
-    background-color: #333;
+    /* background-color: #333; */
     content: "";
     position: absolute;
     bottom: -15px;
@@ -13200,3 +13200,5 @@ a.responsive-collapse span{
     color: #f5ab1e;
 }
 /*------------------------------------------------------- Comingsoon end -------------------------------------------------------*/
+
+

@@ -18,6 +18,8 @@
 @include('client.includes.quickview_1')
 {{--quickview một số bệnh--}}
 @include('client.includes.quickview_2')
+{{--quick view dịch vụ--}}
+@include('client.includes.quickview_service')
 
 @include('client.includes.footer')
 
