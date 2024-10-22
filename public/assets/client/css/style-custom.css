@@ -1,3 +1,7 @@
+.logo-size{
+    width: 54px;
+}
+
 /* From Uiverse.io by dimasptrautmaa */
 #page_loader{
     position: fixed;
@@ -87,3 +91,411 @@
     top: calc(50% - 1.25em);
     left: calc(50% - 1.25em);
 }
+
+/* service css home-4*/
+.service4-section{
+    position: relative;
+    z-index: 1;
+}
+.service4-section .service{
+    background-color: #fff;
+    margin-top: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+}
+.service4-section .service .service-box {
+    width: 33.33%;
+    padding: 30px 0px 30px 30px;
+}
+.service4-section .service .service-box .s-box .service-img a{
+    position: relative;
+}
+.service4-section .service .service-box:hover .s-box .service-img a{
+    background-color: #066140;
+}
+.service4-section .service .service-box:hover .s-box .service-img a:after,
+.service4-section .service .service-box:hover .s-box .service-img a:before{
+    background-color: #fff;
+}
+.service4-section .service .service-box .s-box .service-img a:after,
+.service4-section .service .service-box .s-box .service-img a:before{
+    mix-blend-mode: difference;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+.service4-section .service .service-box:hover .s-box .service-img a img{
+    position: relative;
+}
+.service4-section .service .service-box .s-box{
+    display: block;
+    text-align: center;
+    border-right: 1px solid #e2e2e2;
+    padding-right: 30px;
+}
+.service4-section .service .service-box:last-child .s-box{
+    border-right: none;
+}
+.service4-section .service .service-box .s-box .service-img a{
+    background-color: #f7f7f7;
+    padding: 14px;
+    border-radius: 50%;
+}
+.service4-section .service .service-box .s-box .service-content span{
+    color: #000;
+    margin-top: 19px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+}
+.service4-section .service .service-box .s-box .service-content p{
+    color: #999;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+/*=====================================
+    blog css
+======================================*/
+.blog-area .blog-post .blog-image {
+    position: relative;
+}
+.blog-area .blog-post .blog-image a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.blog-area .blog-post .blog-image a img {
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.blog-area .blog-post:hover .blog-image a img {
+    transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.blog-area .blog-post .blog-content {
+    margin-top: 26px;
+}
+.blog-area .blog-post .blog-content h4.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.blog-area .blog-post .blog-content p.desc {
+    color: #808080;
+    margin-top: 18px;
+}
+.blog-area .blog-post .blog-content a.read-btn {
+    margin-top: 23px;
+}
+
+/*=====================================
+    section title css
+======================================*/
+.section-capture {
+    margin-bottom: 42px;
+    text-align: center;
+}
+.section-capture .section-title span.subtitle {
+    color: #ea6c3c;
+    font-size: 18px;
+    margin-bottom: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.section-capture .section-title h2 {
+    color: #333333;
+    font-size: 40px;
+    font-weight: 700;
+}
+.section-capture .section-title h2 span {
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    border-bottom: 3px solid;
+}
+.section-capture .section-title p {
+    max-width: 50%;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+@media (max-width: 1199px) {
+    .section-capture {
+        margin-bottom: 32px;
+    }
+    .section-capture .section-title h2 {
+        font-size: 30px;
+    }
+    .section-capture .section-title p {
+        max-width: 58.33%;
+    }
+}
+@media (max-width: 991px) {
+    .section-capture .section-title p {
+        max-width: 75%;
+    }
+}
+@media (max-width: 767px) {
+    .section-capture {
+        margin-bottom: 22px;
+    }
+    .section-capture .section-title h2 {
+        font-size: 22px;
+    }
+    .section-capture .section-title p {
+        padding-top: 8px;
+        max-width: 100%;
+    }
+}
+@media (max-width: 320px) {
+    .section-capture .section-title h2 {
+        font-size: 20px;
+    }
+}
+
+.btn-style5 {
+    background-color: #066140;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+.btn-style5 span.icon {
+    position: relative;
+    font-size: 18px;
+    margin-left: 15px;
+    padding: 6px 0px 6px 15px;
+    display: block;
+    line-height: 1;
+    border-left: 1px solid rgb(255 255 255 / 10%);
+}
+.btn-style5:hover {
+    color: #ffffff;
+    background-color: #7AA32A;
+    border-color: #7AA32A;
+}
+@media (max-width: 991px) {
+    .btn-style5 {
+        font-size: 14px;
+        padding: 8px 24px;
+    }
+    .btn-style5 span.icon {
+        margin-left: 10px;
+        padding: 8px 0px 8px 10px;
+    }
+}
+
+/* Blog css */
+.home12-blog .section-capture {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.home12-blog .blog-home12 .blog-start .blog-image{
+    display: flex;
+    position: relative;
+    z-index: -1;
+}
+.home12-blog .blog-home12 .blog-start .blog-image a img {
+    backface-visibility: hidden;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+.home12-blog .blog-home12 .blog-start .blog-image a.blog-icon {
+    background-color: #066140;
+    color: #fff;
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+.home12-blog .blog-home12 .blog-start:hover .blog-image a.blog-icon {
+    opacity: 1;
+    visibility: visible;
+}
+.home12-blog .blog-home12 .blog-start:hover .blog-image a img {
+    filter: brightness(0.7);
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+.home12-blog .blog-home12 .blog-start .blog-content{
+    background-color: #ffffff;
+    margin: -30px 30px 30px 30px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 8%);
+    z-index: 2;
+}
+.home12-blog .blog-home12 .blog-start .blog-content .blog-title h6{
+    font-size: 18px;
+    font-weight: 600;
+}
+.home12-blog .blog-home12 .blog-start .blog-content .blog-title h6 a{
+    display: block;
+}
+.home12-blog .blog-home12 .blog-start .blog-content p.blog-description{
+    color: #999;
+    font-size: 16px;
+    margin-top: 16px;
+}
+.home12-blog .blog-home12 .blog-start .blog-content .blog-date {
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home12-blog .blog-home12 .blog-start .blog-content .blog-date span.color-text {
+    color: #636d14;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.home12-blog .blog-home12 .blog-start .blog-content .blog-date p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+}
+/* service css */
+.home-service .service-area-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-service .service-area-main .service {
+    width: 30%;
+}
+.home-service .service-area-main .service-area-2.service {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.home-service .service-area-main .service ul.service-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li {
+    display: flex;
+    align-items: center;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li:last-child {
+    margin-top: 60px;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .icon a span {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e2e2;
+    border-radius: 100%;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .icon a span svg {
+    width: 25px;
+    height: 25px;
+    color: #333;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .icon a:hover span svg {
+    color: #066140;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .text {
+    padding-left: 30px;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .text h4.title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+}
+.home-service .service-area-main .service ul.service-ul li.service-li .text span.sub-title {
+    color: #999;
+    margin-bottom: 0;
+    font-size: 14px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+.home-service .service-area-main .service-img {
+    width: 40%;
+    padding: 0px 30px;
+}
+/*map popup*/
+.fixed-popup {
+    width: 200px; /* Đặt chiều rộng cố định */
+    height: auto; /* Đặt chiều cao cố định */
+    /*overflow: auto; !* Thêm thanh cuộn nếu nội dung lớn hơn popup *!*/
+}
+
+.modal {
+    display: none; /* Ẩn modal theo mặc định */
+    position: fixed; /* Ở trên cùng */
+    z-index: 1000; /* Đảm bảo modal nằm trên các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Toàn bộ màn hình */
+    height: 100%; /* Toàn bộ màn hình */
+    /*overflow: auto; !* Nếu cần, thêm thanh cuộn *!*/
+    background-color: rgba(0, 0, 0, 0.8); /* Nền tối với độ trong suốt */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#toggleView{
+    position: absolute;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #066140;
+    color: #fff;
+    top:15px;
+    right: 9%;
+    z-index: 999;
+}
+
