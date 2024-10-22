@@ -2566,7 +2566,6 @@ a.scroll:hover span{
 
 
 .about-breadcrumb .about-back .about-l ul.about-link li.go-home a::after{
-    /* background-color: #333; */
     content: "";
     position: absolute;
     bottom: -15px;
