@@ -87,14 +87,14 @@
                                         <div class="mainwrap">
                                             <ul class="main-menu">
                                                 <li class="menu-link parent">
-                                                    <a href="#" class="link-title">
+                                                    <a href="{{route('client.index')}}" class="link-title">
                                                         <i class='fa-solid fa-house me-1'></i>
                                                         <span class="sp-link-title">Trang chủ</span>
 {{--                                                        <i class="fa fa-angle-down"></i>--}}
                                                     </a>
                                                 </li>
                                                 <li class="menu-link">
-                                                    <a href="#" class="link-title">
+                                                    <a href="{{route('client.service')}}" class="link-title">
                                                         <i class='fa-solid fa-shop me-1'></i>
                                                         <span class="sp-link-title">Dịch vụ</span>
                                                     </a>
