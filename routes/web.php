@@ -31,6 +31,9 @@ Route::prefix('/')->group(function (): void {
     Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
     Route::get('/danh-sach-dich-vu', fn () => view('client/pages/service'))->name('client.service');
     Route::get('/dich-vu', fn () => view('client/pages/service-detail'))->name('client.service-detail');
+    Route::get('/bai-viet', fn () => view('client/pages/blog'))->name('client.blog');
+    Route::get('/chi-tiet-bai-viet', fn () => view('client/pages/blog-detail'))->name('client.blog-detail');
+
 
 });
 
