@@ -100,7 +100,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="menu-link">
-                                                    <a href="#" class="link-title">
+                                                    <a href="{{route('client.motel')}}" class="link-title">
                                                         <i class='fa-solid fa-building-user me-1'></i>
                                                         <span class="sp-link-title">Nhà trọ</span>
                                                     </a>
@@ -175,7 +175,7 @@
                                             </a>
                                         </li>
                                         <li class="menu-link">
-                                            <a href="#" class="link-title">
+                                            <a href="{{route('client.motel')}}" class="link-title">
                                                 <i class='fa-solid fa-building-user me-1'></i>
                                                 <span class="sp-link-title">Nhà trọ</span>
                                             </a>

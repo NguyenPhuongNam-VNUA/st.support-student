@@ -16,10 +16,18 @@
 
 {{--quickview quán ăn--}}
 @include('client.includes.quickview_1')
+
 {{--quickview một số bệnh--}}
 @include('client.includes.quickview_2')
+
 {{--quick view dịch vụ--}}
 @include('client.includes.quickview_service')
+
+{{--quick view nhà trọ--}}
+@include('client.includes.quickview_motel')
+
+{{--quick view đăng ký trọ--}}
+@include('client.includes.modal_register_motel')
 
 @include('client.includes.footer')
 

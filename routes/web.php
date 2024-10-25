@@ -33,6 +33,8 @@ Route::prefix('/')->group(function (): void {
     Route::get('/dich-vu', fn () => view('client/pages/service-detail'))->name('client.service-detail');
     Route::get('/bai-viet', fn () => view('client/pages/blog'))->name('client.blog');
     Route::get('/chi-tiet-bai-viet', fn () => view('client/pages/blog-detail'))->name('client.blog-detail');
+    Route::get('/nha-tro', fn () => view('client/pages/motel'))->name('client.motel');
+    Route::get('/chi-tiet-tro', fn () => view('client/pages/motel-detail'))->name('client.motel-detail');
 
 
 });

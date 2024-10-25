@@ -17609,3 +17609,41 @@ a.responsive-collapse span {
     color: #066140;
 }
 /*------------------------------------------------------- Comingsoon end -------------------------------------------------------*/
+
+#register-motel-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #066140;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    z-index: 100;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    animation: flash 1.5s infinite; /* Gọi hiệu ứng chớp nháy */
+}
+
+#register-motel-button:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}
+
+@keyframes flash {
+    0% {
+        background-color: #066140;
+    }
+    50% {
+        background-color: #f5ab1e; /* Màu khác khi nháy */
+    }
+    100% {
+        background-color: #066140;
+    }
+}
+
+#register-motel-button:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}
+
