@@ -8,7 +8,7 @@ Danh sách dịch vụ
 
 <!-- breadcrumb start -->
 <section class="about-breadcrumb">
-    <div class="about-back section-tb-padding" style="background-image: url({{asset('assets/client/image/footer-5.jpg')}})">
+    <div class="about-back section-tb-padding" style="background-image: url({{ asset('assets/client/image/lecture-hall-image/toanhaTT.jpg') }})">
         <div class="container">
             <div class="row">
                 <div class="col">
