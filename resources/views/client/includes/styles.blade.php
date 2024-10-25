@@ -1,5 +1,5 @@
 <!-- web icon -->
-<link rel="shortcut icon" type="image/favicon" href="{{asset('assets/client/image/fevicon.png')}}">
+<link rel="shortcut icon" type="image/favicon" href="{{asset('assets/admin/images/logo_vnua.png')}}">
 <!-- bootstrap -->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/client/css/bootstrap.min.css')}}">
 <!-- simple-line icon -->

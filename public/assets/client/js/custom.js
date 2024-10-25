@@ -277,6 +277,7 @@ $('.trending-products').owlCarousel({
 var swiper = new Swiper('.swiper-container.home-pro-tab', {
     slidesPerView: 3,
     slidesPerColumn: 1,
+    nav:true,
     spaceBetween: 30,
     observer: true,
     observeParents: true,
@@ -289,11 +290,11 @@ var swiper = new Swiper('.swiper-container.home-pro-tab', {
     autoplayHoverPause: true,
     breakpoints: {
         0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 15
         },
         640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 15
         },
         767: {
