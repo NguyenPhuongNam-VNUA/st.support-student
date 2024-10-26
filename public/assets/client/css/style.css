@@ -17634,12 +17634,19 @@ a.responsive-collapse span {
     0% {
         background-color: #066140;
     }
-    50% {
-        background-color: #f5ab1e; /* Màu khác khi nháy */
+    33.34% {
+        background-color: #f09b1a;
+    }
+    66.67% {
+        background-color: #4e383b;
     }
     100% {
         background-color: #066140;
     }
+}
+
+.element {
+    animation: flash 3s infinite;
 }
 
 #register-motel-button:hover {
