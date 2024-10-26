@@ -40,7 +40,9 @@ Route::prefix('/')->group(function (): void {
     Route::get('/nha-tro', fn () => view('client/pages/motel'))->name('client.motel');
     Route::get('/chi-tiet-tro', fn () => view('client/pages/motel-detail'))->name('client.motel-detail');
 
-
+    Route::prefix('login')->group(function (): void {
+        Route::get('/', [AuthController::class, 'index'])->name('login');
+    });
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');

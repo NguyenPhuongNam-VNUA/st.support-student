@@ -28,14 +28,6 @@ class LoginIndex extends Component
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'username.required' => 'Tài khoản không được để trống',
-            'password.required' => 'Mật khẩu không được để trống'
-        ];
-    }
-
     public function login()
     {
         $this->validate();
