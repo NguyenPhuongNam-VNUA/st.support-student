@@ -2,6 +2,20 @@
 idap-pro css
 ======================================*/
 @media (max-width: 1199px){
+    /*custom*/
+    /* service css */
+    .home-service .service-area-main .service ul.service-ul li.service-li:last-child {
+        margin-top: 40px;
+    }
+    .home-service .service-area-main .service ul.service-ul li.service-li .icon a span {
+        width: 70px;
+        height: 70px;
+    }
+    .home-service .service-area-main .service ul.service-ul li.service-li .icon a span svg {
+        width: 22px;
+        height: 22px;
+    }
+
     /* body hidden class */
     body.hidden {
         overflow-y: hidden;
@@ -52,7 +66,7 @@ idap-pro css
     }
     .right-block-box ul.shop-element li.user-wrap .acc-mob a.user-icon{
         display: flex;
-        font-size: 20px;
+        font-size: 30px;
     }
     /* wishlist css */
     .wishlist-wrap a.header-wishlist span.wishlist-icon{
@@ -853,6 +867,19 @@ idap-pro css
 ipad css
 ======================================*/
 @media (max-width: 991px){
+    /*custom*/
+    /* service css */
+    .home-service .service-area-main .service {
+        width: 50%;
+    }
+    .home-service .service-area-main .service-img {
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 30px;
+        order: -1;
+        text-align: center;
+    }
+
     /* section title css */
     .section-title h2 {
         margin-bottom: 40px;
@@ -2013,6 +2040,8 @@ ipad css
 iphone css
 ======================================*/
 @media (max-width: 767px){
+    /*custom*/
+
     .container{
         padding-left: 15px;
         padding-right: 15px;
@@ -3816,6 +3845,13 @@ iphone css
     .center-blog-style-7 .blog-start:nth-child(1) {
         margin-top: 30px;
     }
+
+    .service4-section .service{
+        flex-wrap: wrap;
+    }
+    .service4-section .service .service-box{
+        width: 49%;
+    }
 }
 @media (max-width: 600px) {
     /* two banner css */
@@ -3875,6 +3911,35 @@ iphone css
     }
 }
 @media (max-width: 479px) {
+    /* service css */
+    .home-service .service-area-main .service {
+        width: 100%;
+    }
+    .home-service .service-area-main .service-area-2.service {
+        justify-content: flex-start;
+    }
+    .home-service .service-area-main .service ul.service-ul li.service-li {
+        margin-top: 30px;
+    }
+    .home-service .service-area-main .service-area-1.service ul.service-ul li.service-li:first-child {
+        margin-top: 0px;
+    }
+    .home-service .service-area-main .service ul.service-ul li.service-li:last-child {
+        margin-top: 30px;
+    }
+
+    /* blog css */
+    .home12-blog .blog-home12 .blog-start .blog-content {
+        padding: 15px;
+        margin: -15px 15px 15px 15px;
+    }
+    .home12-blog .blog-home12 .blog-start .blog-content .blog-title h6 {
+        font-size: 16px;
+    }
+    .home12-blog .blog-home12 .blog-start .blog-content p.blog-description {
+        font-size: 14px;
+    }
+
     /* banner grid css */
     .t-banner1 .home-offer-banner .o-t-banner .o-t-content h6 {
         font-size: 16px;

@@ -7,7 +7,7 @@
                     <div class="header-main">
                         <!-- logo start -->
                         <div class="header-element logo">
-                            <a href="index1.html">
+                            <a href="{{route('client.index')}}">
                                 <img src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="logo-image" class="img-fluid logo-size">
                             </a>
                         </div>
@@ -15,7 +15,7 @@
                         <!-- search start -->
                         <div class="header-element search-wrap">
                             <input type="text" name="search" placeholder="Bạn muốn tìm gì?">
-                            <a href="search.html" class="search-btn"><i class="fa fa-search"></i></a>
+                            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
                         </div>
                         <!-- search end -->
                         <!-- header-icon start -->
@@ -35,20 +35,20 @@
                                 <li class="side-wrap user-wrap">
                                     <div class="acc-desk">
                                         <div class="user-icon">
-                                            <a href="account.html" class="user-icon-desk">
+                                            <a href="#" class="user-icon-desk">
                                                 <span><i class="icon-user"></i></span>
                                             </a>
                                         </div>
                                         <div class="user-info">
                                             <span class="acc-title">Tài khoản</span>
                                             <div class="account-login">
-                                                <a href="register.html">Đăng ký</a>
-                                                <a href="login.html">Đăng nhập</a>
+                                                <a href="#">Đăng ký</a>
+                                                <a href="#">Đăng nhập</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="acc-mob">
-                                        <a href="account.html" class="user-icon">
+                                        <a href="#" class="user-icon">
                                             <span><i class="icon-user"></i></span>
                                         </a>
                                     </div>
