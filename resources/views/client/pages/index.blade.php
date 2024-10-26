@@ -90,7 +90,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -107,7 +107,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -124,7 +124,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -141,7 +141,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -158,7 +158,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -175,7 +175,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -192,7 +192,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -209,7 +209,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -226,7 +226,7 @@
                                         <div class="blog-post">
                                             <div class="blog-image img-size">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/352x254" alt="pro-img1" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="pro-img1" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="blog-content">
@@ -289,7 +289,7 @@
                             </ul>
                         </div>
                         <div class="service-area-1 service-img">
-                            <img src="https://via.placeholder.com/410x248" class="img-fluid" alt="image">
+                            <img src="{{ asset('assets/client/image/logo-vnua.png') }}" class="img-fluid" alt="image">
                         </div>
                         <div class="service-area-2 service">
                             <ul class="service-ul">
@@ -345,7 +345,7 @@
                                         <div class="blog-start">
                                             <div class="blog-image">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="blog-image" class="img-fluid">
                                                 </a>
                                                 <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
@@ -368,7 +368,7 @@
                                         <div class="blog-start">
                                             <div class="blog-image">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="blog-image" class="img-fluid">
                                                 </a>
                                                 <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
@@ -391,7 +391,7 @@
                                         <div class="blog-start">
                                             <div class="blog-image">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="blog-image" class="img-fluid">
                                                 </a>
                                                 <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
@@ -414,7 +414,7 @@
                                         <div class="blog-start">
                                             <div class="blog-image">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="blog-image" class="img-fluid">
                                                 </a>
                                                 <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
@@ -437,7 +437,7 @@
                                         <div class="blog-start">
                                             <div class="blog-image">
                                                 <a href="#">
-                                                    <img src="https://via.placeholder.com/408x292" alt="blog-image" class="img-fluid">
+                                                    <img src="{{ asset('assets/client/image/logo-vnua.png') }}" alt="blog-image" class="img-fluid">
                                                 </a>
                                                 <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
@@ -672,7 +672,7 @@
                         </div>
                     </div>
                     <div class="all-blog">
-                        <a href="{{route('client.blog')}}" class="btn btn-style4">Xem tất cả</a>
+                        <a href="{{ route('client.blog') }}" class="btn btn-style4">Xem tất cả</a>
                     </div>
                 </div>
             </div>
