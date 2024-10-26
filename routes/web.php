@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function (): void {
     Route::get('/', fn () => view('client/pages/index'))->name('client.index');
+    Route::prefix('dormitory')->group(function (): void {
+        Route::get('/', fn () => view('client/pages/dormitory/index'))->name('client.dormitory.index');
+        Route::get('/detail', fn () => view('client/pages/dormitory/detail'))->name('client.dormitory.detail');
+    });
     Route::get('/giang-duong', fn () => view('client/pages/lecture-hall'))->name('client.lecture-hall');
     Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
     Route::get('/danh-sach-dich-vu', fn () => view('client/pages/service'))->name('client.service');
