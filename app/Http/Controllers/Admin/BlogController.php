@@ -59,22 +59,15 @@ class BlogController extends Controller
                 $extension = $file->getClientOriginalExtension();
                 $fileName = Str::slug($fileName) . '_' . time() . '.' . $extension;
 
-                // Đảm bảo thư mục tồn tại
-                $path = public_path('images');
-                if (!file_exists($path)) {
-                    mkdir($path, 0755, true);
-                }
-
-                // Upload file
-                $file->move($path, $fileName);
+                // Lưu file vào thư mục storage/public/blogImg
+                $file->storeAs('public/blogImg', $fileName);
 
                 // Trả về response theo đúng format CKEditor yêu cầu
                 return response()->json([
                     'uploaded' => 1,
                     'fileName' => $fileName,
-                    'url' => asset('images/' . $fileName)
+                    'url' => asset('storage/blogImg/' . $fileName)
                 ]);
-
             } catch (Exception $e) {
                 Log::error('CKEditor upload error: ' . $e->getMessage());
                 return response()->json([
