@@ -43,12 +43,4 @@ class DoctorRoleEdit extends Component
             'name' => 'required|unique:doctor_roles,name, ' . $this->id,
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên chuyên khoa không được để trống',
-            'name.unique' => 'Chuyên khoa đã tồn tại',
-        ];
-    }
 }

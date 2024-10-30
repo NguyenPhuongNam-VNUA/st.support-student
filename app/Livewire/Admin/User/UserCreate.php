@@ -74,19 +74,4 @@ class UserCreate extends Component
             'role_id' => 'required|exists:roles,id',
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Họ và tên không được để trống',
-            'email.required' => 'Email không được để trống',
-            'email.email' => 'Email không đúng định dạng',
-            'email.unique' => 'Email đã tồn tại',
-            'phone_number.required' => 'Số điện thoại không được để trống',
-            'password.required' => 'Mật khẩu không được để trống',
-            'user_name.required' => 'Tên người dùng không được để trống',
-            'role_id.required' => 'Chức vụ phải được chọn',
-            'role_id.exists' => 'Chức vụ không hợp lệ',
-        ];
-    }
 }

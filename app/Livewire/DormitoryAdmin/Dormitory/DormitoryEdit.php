@@ -69,19 +69,4 @@ class DormitoryEdit extends Component
             'description' => 'required',
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên tòa nhà không được để trống',
-            'name.unique' => 'Tên tòa nhà đã tồn tại',
-            'manager_id' => 'Người quản lý phải được chọn',
-            'manager_id.exists' => 'Người quản lý không hợp lệ',
-            'total_rooms.required' => 'Số lượng phòng không được để trống',
-            'total_rooms.integer' => 'Số lượng phòng phải là số nguyên',
-            'total_rooms.min' => 'Số lượng phòng phải lớn hơn 0',
-            'description' => 'Mô tả không được để trống',
-        ];
-    }
-
 }

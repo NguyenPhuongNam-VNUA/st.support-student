@@ -66,15 +66,4 @@ class ManagerEdit extends Component
             ],
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên cán bộ không được để trống',
-            'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Email không được để trống',
-            'email.email' => 'Email không đúng định dạng',
-            'phone_number.required' => 'Số điện thoại không được để trống',
-        ];
-    }
 }

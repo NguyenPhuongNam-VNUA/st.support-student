@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\Login\AuthController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
@@ -52,6 +53,15 @@ Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])-
 
 Route::prefix('/admin')->middleware('auth')->group(function (): void {
     Route::get('/', fn () => view('admin/pages/dashboard/index'))->name('admin.index');
+
+    Route::prefix('/blog')->group(function (): void {
+        Route::get('/', [BlogController::class, 'index'])->name('admin.blogs.index');
+        Route::get('/create', [BlogController::class, 'create'])->name('admin.blogs.create');
+        Route::get('/edit/{id}', [BlogController::class, 'edit'])->name('admin.blogs.edit');
+        Route::get('{id}/detail', [BlogController::class, 'detail'])->name('admin.blogs.detail');
+        Route::post('/upload', [BlogController::class, 'upload'])->name('admin.blog.upload');
+    });
+
     Route::prefix('/role')->group(function (): void {
         Route::get('/', [RoleController::class, 'index'])->name('admin.roles.index');
         Route::get('/create', [RoleController::class, 'create'])->name('admin.roles.create');
@@ -112,4 +122,6 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
             Route::get('/edit/{id}', [DoctorRoleController::class, 'edit'])->name('admin.medical.doctor.roles.edit');
         });
     });
+
+
 });

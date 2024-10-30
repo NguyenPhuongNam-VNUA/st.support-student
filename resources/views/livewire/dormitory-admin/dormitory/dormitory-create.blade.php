@@ -12,9 +12,9 @@
                         Tên tòa nhà: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text" class="form-control">
+                        <input wire:model.live="name" type="text" class="form-control @error('name') is-invalid @enderror">
                         @error('name')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         Người quản lý: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="manager_id" class="form-control">
+                        <select wire:model="manager_id" class="form-control @error('manager_id') is-invalid @enderror">
                             <option value="">Chọn người quản lý</option>
                             @foreach($managers as $manager)
                             <option value="{{ $manager->id }}">{{ $manager->name }}</option>
@@ -31,7 +31,7 @@
                         </select>
 
                         @error('manager_id')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -40,9 +40,9 @@
                         Số phòng: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="total_rooms" type="number" class="form-control">
+                        <input wire:model.live="total_rooms" type="number" class="form-control @error('total_rooms') is-invalid @enderror">
                         @error('total_rooms')
-                        <label class="text-danger">{{$message}}</label>
+                        <label class="text-danger mt-1">{{$message}}</label>
                         @enderror
                     </div>
                 </div>
@@ -51,9 +51,9 @@
                         Mô tả: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="description" type="text" class="form-control">
+                        <input wire:model.live="description" type="text" class="form-control @error('description') is-invalid @enderror">
                         @error('description')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>

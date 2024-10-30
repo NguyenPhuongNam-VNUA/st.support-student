@@ -85,18 +85,4 @@ class DoctorEdit extends Component
             'new_thumbnail' => 'nullable|image|max:2048',
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên cán bộ không được để trống',
-            'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Email không được để trống',
-            'email.email' => 'Email không đúng định dạng',
-            'phone_number.required' => 'Số điện thoại không được để trống',
-            'thumbnail.required' => 'Ảnh hồ sơ không được để trống',
-            'new_thumbnail.image' => 'Ảnh hồ sơ phải là định dạng ảnh',
-            'new_thumbnail.max' => 'Ảnh hồ sơ không được quá 2MB',
-        ];
-    }
 }

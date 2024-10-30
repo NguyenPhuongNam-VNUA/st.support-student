@@ -40,16 +40,6 @@ class UserResetPassword extends Component
         return $rules;
     }
 
-    public function messages()
-    {
-        return [
-            'oldPassword.required' => 'Mật khẩu cũ không được để trống',
-            'newPassword.required' => 'Mật khẩu mới không được để trống',
-            'confirmPassword.required' => 'Xác nhận mật khẩu không được để trống',
-            'confirmPassword.same' => 'Xác nhận mật khẩu không khớp',
-        ];
-    }
-
     public function resetPassword()
     {
         $this->validate();

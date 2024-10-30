@@ -34,15 +34,7 @@ class RoleCreate extends Component
     protected function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:roles',
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên chức vụ không được để trống',
-        ];
-    }
-
 }

@@ -23,7 +23,4 @@ class RoleController extends Controller
         return view('admin.pages.super_admin.roles.edit');
     }
 
-
-
-
 }

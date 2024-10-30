@@ -110,22 +110,4 @@ class DormitoryStudentEdit extends Component
         ];
     }
 
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên sinh viên không được để trống',
-            'email.unique' => 'Email đã tồn tại',
-            'email.required' => 'Email không được để trống',
-            'email.email' => 'Email không đúng định dạng',
-            'phone_number.required' => 'Số điện thoại không được để trống',
-            'code.required' => 'Mã sinh viên không được để trống',
-            'code.unique' => 'Mã sinh viên đã tồn tại ',
-            'citizen_id.required' => 'Căn cước công dân không được để trống',
-            'citizen_id.unique' => 'Căn cước công dân đã tồn tại ',
-            'gender.required' => 'Giới tính phải được chọn',
-            'bod.required' => 'Ngày sinh không được để trống',
-            'room_id.required' => 'Phòng phải được chọn',
-            'bod.date' => 'Ngày sinh không hợp lệ',
-        ];
-    }
 }

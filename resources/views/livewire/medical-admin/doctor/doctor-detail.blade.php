@@ -2,7 +2,7 @@
     <div class="card-header bg-secondary text-white border-bottom-0">
         <div class="row">
             <div class="col-md-6">
-                <i class="ph-first-aid"></i>
+                <i class="ph-first-aid fa-2x" style="vertical-align: middle; margin-right: 8px;"></i>
                 <span style="font-size: 20px">Thông tin cán bộ y tế</span>
 
             </div>

@@ -16,8 +16,33 @@
     .swal2-icon-content {
         font-size: 1.2em !important;
     }
-    .swal2-success-line-tip{
+
+    .swal2-success-line-tip {
         height: 0 !important;
+    }
+
+    figure.image {
+        margin: 0 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    figure.image img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .image {
+        margin: 0 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .image img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
     }
 </style>
 

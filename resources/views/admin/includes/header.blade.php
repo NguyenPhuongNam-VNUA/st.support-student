@@ -7,7 +7,8 @@
             </button>
         </div>
 
-        <div class="navbar-brand flex-1 flex-lg-0">
+        <div class="navbar-brand flex-1 flex-lg-0" style="flex-grow: 1; max-width: 250px;">
+            <img src="{{asset('assets/admin/images/logo-vnua-white.png')}}" alt="" style="width: 100%; height: auto;">
         </div>
 
         <div class="navbar-collapse justify-content-center flex-lg-1 order-2 order-lg-1 collapse" id="navbar_search">

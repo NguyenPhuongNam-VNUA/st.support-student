@@ -40,15 +40,7 @@ class RoleEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:roles,name, ' . $this -> id,
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên chức vụ không được để trống',
-        ];
-    }
-
 }
