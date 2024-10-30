@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Livewire\Admin\Blog;
 
-use Livewire\Component;
 use App\Models\Post\Post;
-use Livewire\Attributes\Validate;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Validate;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class BlogCreate extends Component
 {
@@ -35,7 +35,7 @@ class BlogCreate extends Component
         return view('livewire.admin.blog.blog-create');
     }
 
-    public function updateContent($value)
+    public function updateContent($value): void
     {
         $this->content = $value;
         $this->validateOnly('content');

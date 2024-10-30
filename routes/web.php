@@ -15,7 +15,6 @@ use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

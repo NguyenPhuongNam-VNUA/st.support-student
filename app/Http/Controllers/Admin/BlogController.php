@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -38,7 +38,7 @@ class BlogController extends Controller
         if ($request->hasFile('upload')) {
             try {
                 $file = $request->file('upload');
-                
+
                 // Validate file
                 $validator = Validator::make($request->all(), [
                     'upload' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
@@ -75,7 +75,7 @@ class BlogController extends Controller
                     'url' => asset('images/' . $fileName)
                 ]);
 
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 Log::error('CKEditor upload error: ' . $e->getMessage());
                 return response()->json([
                     'uploaded' => 0,

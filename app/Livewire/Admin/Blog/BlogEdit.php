@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Livewire\Admin\Blog;
 
-use Livewire\Component;
 use App\Models\Post\Post;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class BlogEdit extends Component
@@ -37,7 +37,7 @@ class BlogEdit extends Component
         return view('livewire.admin.blog.blog-edit');
     }
 
-    public function updateContent($value)
+    public function updateContent($value): void
     {
         $this->content = $value;
         $this->validateOnly('content');

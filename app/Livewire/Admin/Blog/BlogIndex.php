@@ -7,7 +7,6 @@ namespace App\Livewire\Admin\Blog;
 use App\Models\Post\Post;
 use Livewire\Component;
 
-
 class BlogIndex extends Component
 {
     public $blogId;
