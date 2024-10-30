@@ -60,19 +60,4 @@ class RoomEdit extends Component
             'capacity' => 'required',
         ];
     }
-
-    protected function messages()
-    {
-        return [
-            'name.required' => 'Tên phòng không được để trống',
-            'name.unique' => 'Tên phòng đã tồn tại',
-            'capacity.required' => 'Số lượng phòng không được để trống',
-            'capacity.integer' => 'Số lượng sinh viên không hợp lệ',
-            'capacity.min' => 'Số lượng sinh viên không hợp lệ',
-            'dormitory_id.required' => 'Tòa nhà phải được chọn',
-            'dormitory_id.exists' => 'Tòa nhà không hợp lệ',
-        ];
-    }
-
-
 }

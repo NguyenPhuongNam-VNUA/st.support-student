@@ -17,8 +17,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script src="{{ asset('assets/admin/js/vendor/editors/ckeditor/ckeditor_classic.js') }}"></script>
+
+@yield('script')
 {{--<!-- JS custom -->--}}
 @yield('script_custom')
 {{--<!-- /JS custom  -->--}}
+
 
 @livewireScripts

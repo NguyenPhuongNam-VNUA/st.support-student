@@ -19,6 +19,7 @@ class Post extends Model
         'content',
         'user_id',
         'category',
+        'thumbnail'
     ];
 
     public function user(): BelongsTo
@@ -29,5 +30,14 @@ class Post extends Model
     public function postReviews(): HasMany
     {
         return $this->hasMany(PostReview::class);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
+        return $query;
     }
 }

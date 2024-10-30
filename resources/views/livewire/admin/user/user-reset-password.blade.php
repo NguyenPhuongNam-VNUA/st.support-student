@@ -15,9 +15,9 @@
                         Mât khẩu mới: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="newPassword" type="password" class="form-control">
+                        <input wire:model.live="newPassword" type="password" class="form-control @error('newPassword') is-invalid @enderror">
                         @error('newPassword')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -26,9 +26,9 @@
                         Nhập lại mật khẩu mới: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="confirmPassword" type="password" class="form-control">
+                        <input wire:model.live="confirmPassword" type="password" class="form-control @error('confirmPassword') is-invalid @enderror">
                         @error('confirmPassword')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>

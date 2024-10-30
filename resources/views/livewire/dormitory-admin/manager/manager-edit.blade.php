@@ -12,9 +12,9 @@
                         Tên cán bộ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text" class="form-control">
+                        <input wire:model.live="name" type="text" class="form-control @error('name') is-invalid @enderror">
                         @error('name')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         Email: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="email" type="text" class="form-control">
+                        <input wire:model.live="email" type="text" class="form-control @error('email') is-invalid @enderror">
                         @error('email')
-                        <label class="text-danger">{{$message}}</label>
+                        <label class="text-danger mt-1">{{$message}}</label>
                         @enderror
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                         Số điện thoại: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="phone_number" type="text" class="form-control">
+                        <input wire:model.live="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror">
                         @error('phone_number')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>

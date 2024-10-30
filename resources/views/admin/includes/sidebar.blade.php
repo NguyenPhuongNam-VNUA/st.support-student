@@ -128,7 +128,7 @@
                     <a href="{{route('admin.medical.doctors.index')}}"
                         class="nav-link {{ request()->routeIs('admin.medical.doctors.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
-                        <i class="fas fa-briefcase-medical me-3 fa"></i>
+                        <i class="fas fa-stethoscope me-3 fa"></i>
                         <span>
                             Cán bộ y tế
                         </span>
@@ -138,9 +138,21 @@
                     <a href="{{route('admin.medical.doctor.roles.index')}}"
                         class="nav-link {{ request()->routeIs('admin.medical.doctor.roles.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
-                        <i class="fas fa-notes-medical me-3 fa"></i>
+                        <i class="fas fa-briefcase-medical me-3 fa"></i>
                         <span>
                             Chuyên khoa
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{route('admin.blogs.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.blogs.index') ?'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-newspaper me-3 fa"></i>
+                        <span>
+                            Bài viết
                         </span>
                     </a>
                 </li>

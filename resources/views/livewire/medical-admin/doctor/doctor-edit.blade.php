@@ -12,9 +12,9 @@
                         Tên cán bộ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text" class="form-control">
+                        <input wire:model.live="name" type="text" class="form-control @error('name') is-invalid @enderror">
                         @error('name')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         Email: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="email" type="text" class="form-control">
+                        <input wire:model.live="email" type="text" class="form-control @error('email') is-invalid @enderror">
                         @error('email')
-                        <label class="text-danger">{{$message}}</label>
+                        <label class="text-danger mt-1">{{$message}}</label>
                         @enderror
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                         Số điện thoại: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="phone_number" type="text" class="form-control">
+                        <input wire:model.live="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror">
                         @error('phone_number')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -45,9 +45,9 @@
                         Ảnh hồ sơ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="new_thumbnail" type="file" class="form-control">
+                        <input wire:model.live="new_thumbnail" type="file" class="form-control @error('thumbnail') is-invalid @enderror">
                         @error('new_thumbnail')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
 
@@ -57,7 +57,7 @@
                         @elseif ($thumbnail)
                         <img src="{{ asset('storage/' . $thumbnail) }}" alt="{{ $name }}" class="img-thumbnail" width="150">
                         @else
-                        <p>No image uploaded</p>
+                        <label class="text-danger mt-1">Chưa tải ảnh lên</label>
                         @endif
                     </div>
                 </div>
@@ -66,9 +66,9 @@
                         Mô tả: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <textarea wire:model.live="description" class="form-control"></textarea>
+                        <textarea wire:model.live="description" class="form-control @error('description') is-invalid @enderror"></textarea>
                         @error('description')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
 

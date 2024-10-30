@@ -12,9 +12,9 @@
                         Tên sinh viên: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text" class="form-control">
+                        <input wire:model.live="name" type="text" class="form-control @error('name') is-invalid @enderror">
                         @error('name')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -23,9 +23,9 @@
                         Mã sinh viên: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="code" type="text" class="form-control">
+                        <input wire:model.live="code" type="text" class="form-control @error('code') is-invalid @enderror">
                         @error('code')
-                        <label class="text-danger">{{$message}}</label>
+                        <label class="text-danger mt-1">{{$message}}</label>
                         @enderror
                     </div>
                 </div>
@@ -34,9 +34,9 @@
                         Căn cước công dân: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="citizen_id" type="text" class="form-control">
+                        <input wire:model.live="citizen_id" type="text" class="form-control @error('citizen_id') is-invalid @enderror">
                         @error('citizen_id')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -45,14 +45,14 @@
                         Giới tính: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model.live="gender" class="form-control">
+                        <select wire:model.live="gender" class="form-control @error('gender') is-invalid @enderror">
                             <option value="">Chọn giới tính</option>
                             @foreach (\App\Enums\Gender::cases() as $gender)
                             <option value="{{ $gender->value }}">{{ $gender->description() }}</option>
                             @endforeach
                         </select>
                         @error('gender')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -62,9 +62,9 @@
                         Email: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="email" type="text" class="form-control">
+                        <input wire:model.live="email" type="text" class="form-control @error('email') is-invalid @enderror">
                         @error('email')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -73,9 +73,9 @@
                         Số điện thoại: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="phone_number" type="text" class="form-control">
+                        <input wire:model.live="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror">
                         @error('phone_number')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -85,10 +85,10 @@
                     </label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="ph-calendar"></i></span>
-                        <input wire:model.live="bod" type="date" class="form-control">
+                        <input wire:model.live="bod" type="date" class="form-control @error('bod') is-invalid @enderror">
                     </div>
                     @error('bod')
-                    <label class="text-danger" style="display: block;">{{ $message }}</label>
+                    <label class="text-danger mt-1" style="display: block;">{{ $message }}</label>
                     @enderror
                 </div>
 
@@ -97,7 +97,7 @@
                         Phòng: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="room_id" class="form-control">
+                        <select wire:model="room_id" class="form-control @error('room_id') is-invalid @enderror">
                             <option value="">Chọn phòng</option>
                             @foreach($rooms as $room)
                             <option value="{{ $room->id }}">{{ $room->name }}</option>
@@ -105,7 +105,7 @@
                         </select>
 
                         @error('room_id')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>

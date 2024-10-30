@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Livewire\Admin\Blog;
+
+use Livewire\Component;
+use App\Models\Post\Post;
+
+class BlogIndex extends Component
+{
+    public $blogId;
+    public $search;
+
+    public function render()
+    {
+        $blogs = Post::query()
+            ->search($this->search)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('livewire.admin.blog.blog-index', [
+            'blogs' => $blogs
+        ]);
+    }
+
+
+    protected $listeners = [
+        'confirmDelete' => 'confirmDelete',
+    ];
+
+    public function openDeleteModel($id): void
+    {
+        $this->blogId = $id;
+        $this->dispatch('openDeleteModel');
+    }
+
+    public function confirmDelete(): void
+    {
+        Post::destroy($this->blogId);
+    }
+}

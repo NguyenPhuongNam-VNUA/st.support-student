@@ -12,9 +12,9 @@
                         Tên phòng: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text" class="form-control">
+                        <input wire:model.live="name" type="text" class="form-control @error('name') is-invalid @enderror">
                         @error('name')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                         Tòa: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="dormitory_id" class="form-control">
+                        <select wire:model="dormitory_id" class="form-control @error('dormitory_id') is-invalid @enderror">
                             <option value="">Chọn tòa nhà kí túc xá</option>
                             @foreach($dormitories as $dormitory)
                             <option value="{{ $dormitory->id }}">{{ $dormitory->name }}</option>
@@ -31,7 +31,7 @@
                         </select>
 
                         @error('dormitory_id')
-                        <label class="text-danger">{{ $message }}</label>
+                        <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
@@ -40,9 +40,9 @@
                         Số sinh viên tối đa: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="capacity" type="number" class="form-control">
+                        <input wire:model.live="capacity" type="number" class="form-control @error('capacity') is-invalid @enderror">
                         @error('capacity')
-                        <label class="text-danger">{{$message}}</label>
+                        <label class="text-danger mt-1">{{$message}}</label>
                         @enderror
                     </div>
                 </div>

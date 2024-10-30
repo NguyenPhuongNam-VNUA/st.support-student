@@ -47,7 +47,7 @@
                         @else
                         @foreach ($roles as $role)
                         <tr>
-                            <td class="text-center">{{ $loop->iteration }}</< /td>
+                            <td class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $role -> name }}</td>
                             <td>{{ $role->created_at->format('d/m/Y') }}</td>
                             <td class="text-center">
