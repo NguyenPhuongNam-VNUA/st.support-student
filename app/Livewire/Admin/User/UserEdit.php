@@ -84,4 +84,6 @@ class UserEdit extends Component
             'role_id' => 'required|exists:roles,id',
         ];
     }
+
 }
+

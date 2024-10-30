@@ -40,7 +40,7 @@ class RoleEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required|unique:roles,name, ' .$this -> id,
+            'name' => 'required|unique:roles,name, ' . $this -> id,
         ];
     }
 }
