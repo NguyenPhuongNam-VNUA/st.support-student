@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\Login\AuthController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
@@ -12,8 +13,8 @@ use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
-use App\Http\Controllers\Admin\BlogController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------

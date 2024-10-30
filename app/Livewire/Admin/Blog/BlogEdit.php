@@ -28,6 +28,10 @@ class BlogEdit extends Component
 
     public $new_thumbnail;
 
+    protected $listeners = [
+        'updateContent' => 'updateContent',
+    ];
+
     public function render()
     {
         return view('livewire.admin.blog.blog-edit');
@@ -39,9 +43,7 @@ class BlogEdit extends Component
         $this->validateOnly('content');
     }
 
-    protected $listeners = [
-        'updateContent' => 'updateContent',
-    ];
+
 
     public function mount(): void
     {

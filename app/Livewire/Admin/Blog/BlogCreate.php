@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class BlogCreate extends Component
 {
     use WithFileUploads;
+
     #[Validate(as: 'Ảnh đại diện bài viết')]
     public $thumbnail;
 
@@ -25,6 +26,10 @@ class BlogCreate extends Component
     #[Validate(as: 'Danh mục')]
     public $category;
 
+    protected $listeners = [
+        'updateContent' => 'updateContent',
+    ];
+
     public function render()
     {
         return view('livewire.admin.blog.blog-create');
@@ -35,10 +40,6 @@ class BlogCreate extends Component
         $this->content = $value;
         $this->validateOnly('content');
     }
-
-    protected $listeners = [
-        'updateContent' => 'updateContent',
-    ];
 
     public function store()
     {
@@ -58,6 +59,7 @@ class BlogCreate extends Component
 
         return redirect()->route('admin.blogs.index');
     }
+
 
     protected function rules()
     {

@@ -7,6 +7,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+
 
 class BlogController extends Controller
 {
@@ -37,7 +40,7 @@ class BlogController extends Controller
                 $file = $request->file('upload');
                 
                 // Validate file
-                $validator = \Validator::make($request->all(), [
+                $validator = Validator::make($request->all(), [
                     'upload' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
                 ]);
 
@@ -73,7 +76,7 @@ class BlogController extends Controller
                 ]);
 
             } catch (\Exception $e) {
-                \Log::error('CKEditor upload error: ' . $e->getMessage());
+                Log::error('CKEditor upload error: ' . $e->getMessage());
                 return response()->json([
                     'uploaded' => 0,
                     'error' => [

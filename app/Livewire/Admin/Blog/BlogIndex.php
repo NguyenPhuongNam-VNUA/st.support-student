@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace App\Livewire\Admin\Blog;
 
-use Livewire\Component;
 use App\Models\Post\Post;
+use Livewire\Component;
+
 
 class BlogIndex extends Component
 {
     public $blogId;
     public $search;
+
+    protected $listeners = [
+        'confirmDelete' => 'confirmDelete',
+    ];
 
     public function render()
     {
@@ -22,11 +27,6 @@ class BlogIndex extends Component
             'blogs' => $blogs
         ]);
     }
-
-
-    protected $listeners = [
-        'confirmDelete' => 'confirmDelete',
-    ];
 
     public function openDeleteModel($id): void
     {
