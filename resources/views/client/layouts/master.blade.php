@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
 
     @include('client.includes.styles')
+    
 </head>
 <body class="home-1">
 

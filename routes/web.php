@@ -45,13 +45,17 @@ Route::prefix('/')->group(function (): void {
         Route::get('/', [AuthController::class, 'index'])->name('login');
     });
 });
+Route::get('/heathy', function () {
+    return view('client/pages/health/index');
+});
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset-password');
 
-Route::prefix('/admin')->middleware('auth')->group(function (): void {
+
+Route::prefix('/admin')->group(function (): void {
     Route::get('/', fn () => view('admin/pages/dashboard/index'))->name('admin.index');
 
     Route::prefix('/blog')->group(function (): void {
