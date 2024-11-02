@@ -328,7 +328,6 @@
     </section>
     <!-- service end -->
 
-    </div>
     <!-- sức khỏe start -->
     <section class="our-products-tab section-tb-padding home12-blog" style="background-color: #85dd5729">
         <div class="container">
@@ -482,11 +481,14 @@
                     </div>
                     <!-- Modal -->
                     <div id="imageModal" class="modal" style="display: none;">
-                        <span class="close" onclick="closeModal()">&times;</span>
+                        <span class="close" onclick="closeModal()">x</span>
                         <img class="modal-content" id="modalImage" style="width: 100%;">
                         <div id="caption"></div>
                     </div>
-
+                    <script>
+                        const icons = @json($icons);
+                        const points = @json($points);
+                    </script>
                 </div>
             </div>
         </div>

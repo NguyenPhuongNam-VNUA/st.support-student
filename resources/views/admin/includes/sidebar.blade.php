@@ -156,6 +156,16 @@
                         </span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.map.index')}}"
+                       class="nav-link {{ request()->routeIs('admin.map.index') ?'active' : '' }}"
+                       style="display: flex; align-items: center;">
+                        <i class="fas fa-map-marked-alt me-3 fa"></i>
+                        <span>
+                            Vnua Map
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /main navigation -->
