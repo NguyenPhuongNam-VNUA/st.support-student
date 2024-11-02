@@ -16,8 +16,6 @@ use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
 use App\Http\Controllers\ServiceAdmin\ServiceCategoryController;
 use App\Http\Controllers\ServiceAdmin\ServiceController;
-
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -118,7 +116,7 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
         Route::get('/create', [ServiceController::class, 'create'])->name('admin.services.create');
         Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('admin.services.edit');
         Route::get('{id}/detail', [ServiceController::class, 'detail'])->name('admin.services.detail');
-        
+
         Route::prefix('/service-category')->group(function (): void {
             Route::get('/', [ServiceCategoryController::class, 'index'])->name('admin.service.service-category.index');
             Route::get('/create', [ServiceCategoryController::class, 'create'])->name('admin.service.service-category.create');

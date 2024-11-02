@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 namespace App\Models\Service;
-use App\Enums\Deliver;
 
 use App\Models\Gallery\service\ServiceGallery;
 use App\Models\Review\service\ServiceReview;

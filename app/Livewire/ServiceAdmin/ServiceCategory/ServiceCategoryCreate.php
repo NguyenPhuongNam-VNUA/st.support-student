@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\ServiceAdmin\ServiceCategory;
 
 use App\Models\Service\ServiceCategory;
-use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class ServiceCategoryCreate extends Component
 {
