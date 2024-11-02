@@ -20,4 +20,13 @@ class ServiceCategory extends Model
     {
         return $this->hasMany(Service::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }
