@@ -29,7 +29,7 @@ class DormitoryCreate extends Component
         $managers = Manager::all();
 
         return view('livewire.dormitory-admin.dormitory.dormitory-create', [
-            'managers' => $managers
+            'managers' => $managers,
         ]);
     }
 
@@ -43,11 +43,11 @@ class DormitoryCreate extends Component
             'total_rooms' => $this->total_rooms,
             'available_rooms' => $this->total_rooms,
             'description' => $this->description,
-            'slug' => Str::slug($this->name)
+            'slug' => Str::slug($this->name),
         ]);
 
         $dormitory->update([
-            'slug' => Str::slug($this->name) . '-' . $dormitory->id,
+            'slug' => Str::slug($this->name).'-'.$dormitory->id,
         ]);
 
         session()->flash('success', 'Thêm mới tòa nhà thành công');

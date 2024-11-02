@@ -17,8 +17,11 @@ class UserResetPassword extends Component
     public $confirmPassword;
 
     public $id;
+
     public $password;
+
     public $user;
+
     public function render()
     {
         return view('livewire.admin.user.user-reset-password')->with('user', $this->user);
@@ -37,6 +40,7 @@ class UserResetPassword extends Component
             'newPassword' => 'required',
             'confirmPassword' => 'required|same:newPassword',
         ];
+
         return $rules;
     }
 

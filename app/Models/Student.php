@@ -26,13 +26,13 @@ class Student extends Model
         'code',
         'name',
         'phone_number',
-        'address'
+        'address',
     ];
 
     protected $hidden = [
         'code',
         'provider_id',
-        'provider_name'
+        'provider_name',
     ];
 
     public function accommodationRequest(): HasOne
@@ -68,8 +68,8 @@ class Student extends Model
     public function scopeSearch($query, $search)
     {
         if ($search) {
-            $query->where('code', 'like', '%' . $search . '%')
-                ->orWhere('name', 'like', '%' . $search . '%');
+            $query->where('code', 'like', '%'.$search.'%')
+                ->orWhere('name', 'like', '%'.$search.'%');
         }
 
         return $query;
