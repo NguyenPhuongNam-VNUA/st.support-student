@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Map\IconPoint;
 use App\Models\Map\Point;
+
 class MapController extends Controller
 {
     public function ShowMap()
@@ -16,7 +19,7 @@ class MapController extends Controller
                 'id' => $point->id,
                 'name' => $point->name,
                 'thumbnail' => $point->thumbnail,
-                'description' => $point->description !== null ? $point->description : '',
+                'description' => null !== $point->description ? $point->description : '',
                 'longitude' => $point->longitude,
                 'latitude' => $point->latitude,
                 'icon_name' => $point->iconPoint->name, // Thêm tên của icon vào đây

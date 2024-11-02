@@ -1,16 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MapAdmin;
 
-use Illuminate\Support\Facades\Storage;
-use Livewire\Component;
 use App\Models\Map\IconPoint;
 use App\Models\Map\Point;
+use Illuminate\Support\Facades\Storage;
+use Livewire\Component;
 
 class MapIndex extends Component
 {
-//    public $points;
-    public $search='';
+    //    public $points;
+    public $search = '';
     public $pointId;
     public $iconId;
 
@@ -27,24 +29,24 @@ class MapIndex extends Component
                 'id' => $point->id,
                 'name' => $point->name,
                 'thumbnail' => $point->thumbnail,
-                'description' => $point->description !== null ? $point->description : '',
+                'description' => null !== $point->description ? $point->description : '',
                 'longitude' => $point->longitude,
                 'latitude' => $point->latitude,
                 'icon_name' => $point->iconPoint->name, // Thêm tên của icon vào đây
             ];
         });
-        $icons_2 = IconPoint::all('name','thumbnail');
+        $icons_2 = IconPoint::all('name', 'thumbnail');
         $icons = IconPoint::where('name', 'like', '%' . $this->search . '%')->paginate(3);
-        return view('livewire.map-admin.map-index',['points' => $points,'icons' =>  $icons,'icons_2' => $icons_2]);
+        return view('livewire.map-admin.map-index', ['points' => $points,'icons' =>  $icons,'icons_2' => $icons_2]);
     }
 
-    public function openDeleteModelPoint($id)
+    public function openDeleteModelPoint($id): void
     {
         $this->pointId = $id;
         $this->dispatch('openDeleteModelPoint');
     }
 
-    public function confirmDeletePoint()
+    public function confirmDeletePoint(): void
     {
         $thumbnail = Point::find($this->pointId)->thumbnail;
         if ($thumbnail) {
@@ -53,13 +55,13 @@ class MapIndex extends Component
         Point::destroy($this->pointId);
     }
 
-    public function openDeleteModelIcon($id)
+    public function openDeleteModelIcon($id): void
     {
         $this->iconId = $id;
         $this->dispatch('openDeleteModelIcon');
     }
 
-    public function confirmDeleteIcon()
+    public function confirmDeleteIcon(): void
     {
         $thumbnail = IconPoint::find($this->iconId)->thumbnail;
         if ($thumbnail) {
@@ -70,4 +72,3 @@ class MapIndex extends Component
 
 
 }
-

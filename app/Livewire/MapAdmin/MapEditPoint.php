@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MapAdmin;
 
+use App\Models\Map\IconPoint;
+use App\Models\Map\Point;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Map\Point;
-use App\Models\Map\IconPoint;
 use Livewire\WithFileUploads;
 
 class MapEditPoint extends Component
@@ -30,7 +32,7 @@ class MapEditPoint extends Component
     #[Validate(as: 'Hỉnh ảnh mới')]
     public $newThumbnail;
 
-    public  function mount()
+    public function mount(): void
     {
         $this->id = request()->id;
         $point = Point::query()->find($this->id);
@@ -42,7 +44,7 @@ class MapEditPoint extends Component
     public function render()
     {
         $icons = IconPoint::all();
-        return view('livewire.map-admin.map-edit-point',['icons' => $icons]);
+        return view('livewire.map-admin.map-edit-point', ['icons' => $icons]);
     }
 
     public function update()
@@ -74,7 +76,8 @@ class MapEditPoint extends Component
         ];
     }
 
-    public function messages(){
+    public function messages()
+    {
         return [
             'name.required' => 'Tên điểm không được để trống',
             'icon_id.required' => 'Icon không được để trống',

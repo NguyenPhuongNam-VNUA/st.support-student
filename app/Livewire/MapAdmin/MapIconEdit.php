@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MapAdmin;
 
+use App\Models\Map\IconPoint;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Map\IconPoint;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
 
 class MapIconEdit extends Component
 {
@@ -25,10 +27,10 @@ class MapIconEdit extends Component
 
     public function render()
     {
-        return view('livewire.map-admin.map-icon-edit',);
+        return view('livewire.map-admin.map-icon-edit', );
     }
 
-    public function mount()
+    public function mount(): void
     {
         $this->id = request()->id;
         $icon = IconPoint::query()->find($this->id);
