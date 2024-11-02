@@ -44,6 +44,11 @@
         height: auto !important;
         display: block !important;
     }
+
+    .icon-2x {
+        font-size: 2em;
+    }
+
 </style>
 
 

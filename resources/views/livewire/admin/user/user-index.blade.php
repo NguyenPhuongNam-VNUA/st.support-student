@@ -54,7 +54,6 @@
                         <td>{{ $user -> name }}</td>
                         <td>{{ $user-> user_name }}</td>
                         <td>{{ $user->role ? $user->role->name : 'Không có chức vụ' }}</td>
-
                         <td>{{ $user-> phone_number }}</td>
                         <td>{{ $user-> email }}</td>
                         <td class="text-center">

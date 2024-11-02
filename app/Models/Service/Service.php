@@ -41,4 +41,13 @@ class Service extends Model
     {
         return $this->hasMany(ServiceReview::class);
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }

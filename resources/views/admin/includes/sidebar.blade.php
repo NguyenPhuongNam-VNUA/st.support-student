@@ -92,7 +92,7 @@
                     <a href="{{ route('admin.dormitory.rooms.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitory.rooms.index') ?'active' : '' }}"
                         style="display: flex; align-items: center;">
-                        <i class="fas fa-th-large me-3 fa"></i>
+                        <i class="fas fa-door-open me-3 fa"></i>
                         <span>
                             Phòng
                         </span>
@@ -163,6 +163,24 @@
                         <i class="fas fa-map-marked-alt me-3 fa"></i>
                         <span>
                             Vnua Map
+{{-- ==========Admin dịch vụ=============== --}}
+                <li class="nav-item">
+                    <a href="{{route('admin.services.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.services.index') ?'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-rocket me-3 fa"></i>
+                        <span>
+                            Dịch vụ
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.service.service-category.index')}}"
+                        class="nav-link {{ request()->routeIs('admin.service.service-category.index') ?'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-list me-3 fa"></i>
+                        <span>
+                            Danh mục dịch vụ
                         </span>
                     </a>
                 </li>
