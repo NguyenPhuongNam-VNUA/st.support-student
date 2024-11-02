@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\ServiceAdmin\ServiceCategory;
 
-use Livewire\Component;
 use App\Models\Service\ServiceCategory;
-
+use Livewire\Component;
 
 class ServiceCategoryIndex extends Component
 {
@@ -18,12 +19,12 @@ class ServiceCategoryIndex extends Component
     public function render()
     {
         $serviceCategories = ServiceCategory::query()
-        ->search($this->search)
-        ->orderBy('created_at', 'desc')
-        ->paginate(10);
-    return view('livewire.service-admin.service-category.service-category-index', [
-        'serviceCategories' => $serviceCategories
-    ]);
+            ->search($this->search)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('livewire.service-admin.service-category.service-category-index', [
+            'serviceCategories' => $serviceCategories
+        ]);
     }
 
     public function openDeleteModel($id): void

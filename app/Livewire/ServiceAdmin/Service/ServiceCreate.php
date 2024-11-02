@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\ServiceAdmin\Service;
 
-use Livewire\Component;
 use App\Models\Service\Service;
 use App\Models\Service\ServiceCategory;
-use Livewire\Attributes\Validate;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Livewire\Attributes\Validate;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ServiceCreate extends Component
 {
@@ -44,7 +46,7 @@ class ServiceCreate extends Component
     public function render()
     {
         $service_categories = ServiceCategory::all();
-        return view('livewire.service-admin.service.service-create',  [
+        return view('livewire.service-admin.service.service-create', [
             'service_categories' => $service_categories
         ]);
     }

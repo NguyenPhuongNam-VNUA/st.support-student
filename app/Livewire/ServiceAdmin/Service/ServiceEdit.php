@@ -1,13 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\ServiceAdmin\Service;
 
-use Livewire\Component;
 use App\Models\Service\Service;
 use App\Models\Service\ServiceCategory;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Str;
 
 class ServiceEdit extends Component
 {
@@ -47,7 +48,7 @@ class ServiceEdit extends Component
     public function render()
     {
         $service_categories = ServiceCategory::all();
-        return view('livewire.service-admin.service.service-edit',  [
+        return view('livewire.service-admin.service.service-edit', [
             'service_categories' => $service_categories
         ]);
     }
@@ -74,13 +75,13 @@ class ServiceEdit extends Component
     public function update()
     {
         $this->validate();
-    
+
         $thumbnailPath = $this->thumbnail;
-    
+
         if ($this->new_thumbnail) {
             $thumbnailPath = $this->new_thumbnail->store('serviceThumbnails', 'public');
         }
-            $service = Service::find($this->id);
+        $service = Service::find($this->id);
         $service->update([
             'name' => $this->name,
             'service_category_id' => $this->service_category_id,
@@ -91,7 +92,7 @@ class ServiceEdit extends Component
             'owner_name' => $this->owner_name,
             'isShip' => $this->isShip,
         ]);
-            if ($this->new_service_galleries) {
+        if ($this->new_service_galleries) {
             foreach ($this->new_service_galleries as $image) {
                 $path = $image->store('service_images', 'public');
                 $service->serviceGalleries()->create([
@@ -101,7 +102,7 @@ class ServiceEdit extends Component
         }
         return redirect()->route('admin.services.index')->with('success', 'Cập nhật thông tin dịch vụ thành công');
     }
-    
+
 
     protected function rules()
     {

@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\ServiceAdmin\Service;
 
-use Livewire\Component;
 use App\Models\Service\Service;
+use Livewire\Component;
 
 class ServiceDetail extends Component
 {
@@ -17,7 +19,7 @@ class ServiceDetail extends Component
 
     public function render()
     {
-         $service = Service::find($this->id);
+        $service = Service::find($this->id);
         return view('livewire.service-admin.service.service-detail')->with('service', $service);
     }
 }
