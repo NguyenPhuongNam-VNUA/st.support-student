@@ -1,11 +1,3 @@
-function openModal(imageUrl) {
-    document.getElementById('imageModal').style.display = "block";
-    document.getElementById('modalImage').src = imageUrl;
-}
-
-function closeModal() {
-    document.getElementById('imageModal').style.display = "none";
-}
 
 mapboxgl.accessToken = 'pk.eyJ1IjoieHVhbnBob25nMDkiLCJhIjoiY20yaXJreWhkMDFlYzJqcXR4MHNqbHc2aCJ9.sfY1bJbQMnBUemqu9nLKdw';
 var map = new mapboxgl.Map({
@@ -131,7 +123,6 @@ map.on('load', function () {
         }
     });
 });
-//them nhãn
 var labeledPoints = {
     'type': 'FeatureCollection',
     'features': points.map(point => ({
@@ -153,70 +144,90 @@ var labeledPoints = {
 map.on('load', function () {
     // Duyệt qua các icon và tải chúng vào Mapbox
     icons.forEach(icon => {
-        const imagePath = "/storage/" + icon.thumbnail;console.log(imagePath);
+        const imagePath = "/storage/" + icon.thumbnail;
         map.loadImage(imagePath, function (error, image) {
             if (error) throw error;
             map.addImage(icon.name, image);
         });
     });
 
-        // Thêm nguồn dữ liệu chứa điểm với icon và nhãn
-        map.addSource('labeled-points-with-icons', {
-            'type': 'geojson',
-            'data': labeledPoints
-        });
+    // Thêm nguồn dữ liệu chứa điểm với icon và nhãn
+    map.addSource('labeled-points-with-icons', {
+        'type': 'geojson',
+        'data': labeledPoints
+    });
 
-        // Thêm lớp biểu tượng
-        map.addLayer({
-            'id': 'icon-labels',
-            'type': 'symbol',
-            'source': 'labeled-points-with-icons',
-            'layout': {
-                'icon-image': ['get', 'icon'], // Sử dụng thuộc tính 'icon' để chỉ định biểu tượng
-                'icon-size': 0.6, // Kích thước của icon
-                'text-field': ['step', ['zoom'], '', 17, ['get', 'name']], // Lấy thuộc tính 'name' để hiển thị nhãn
-                'text-size': 12, // Kích thước của nhãn
-                'text-anchor': 'top', // Định vị nhãn ở phía trên icon
-                'text-offset': [0, 1.5], // Đặt khoảng cách giữa nhãn và biểu tượng
-                'icon-allow-overlap': true, // Cho phép các icon chồng lên nhau nếu cần
-                'text-allow-overlap': true // Cho phép các nhãn chồng lên nhau nếu cần
-            },
-            'paint': {
-                'text-color': '#000000' // Màu của nhãn (đen)
-            },
-            'minzoom': 15, // Mức zoom tối thiểu để hiển thị vùng sáng (chỉnh giá trị theo nhu cầu)
-            'maxzoom': 24  // Mức zoom tối đa (nếu cần)
-        });
+    // Thêm lớp biểu tượng
+    map.addLayer({
+        'id': 'icon-labels',
+        'type': 'symbol',
+        'source': 'labeled-points-with-icons',
+        'layout': {
+            'icon-image': ['get', 'icon'], // Sử dụng thuộc tính 'icon' để chỉ định biểu tượng
+            'icon-size': 0.6, // Kích thước của icon
+            'text-field': ['step', ['zoom'], '', 17, ['get', 'name']], // Lấy thuộc tính 'name' để hiển thị nhãn
+            'text-size': 12, // Kích thước của nhãn
+            'text-anchor': 'top', // Định vị nhãn ở phía trên icon
+            'text-offset': [0, 1.5], // Đặt khoảng cách giữa nhãn và biểu tượng
+            'icon-allow-overlap': true, // Cho phép các icon chồng lên nhau nếu cần
+            'text-allow-overlap': true // Cho phép các nhãn chồng lên nhau nếu cần
+        },
+        'paint': {
+            'text-color': '#000000' // Màu của nhãn (đen)
+        },
+        'minzoom': 15, // Mức zoom tối thiểu để hiển thị vùng sáng (chỉnh giá trị theo nhu cầu)
+        'maxzoom': 20  // Mức zoom tối đa (nếu cần)
+    });
+});
+// Thêm sự kiện click vào bản đồ
+map.on('click', (e) => {
+    const coordinates = e.lngLat;
 
-    // Lắng nghe sự kiện click để hiển thị popup
-    map.on('click', 'icon-labels', function (e) {
-        // Lấy tọa độ, tên và ghi chú của điểm được click
-        var coordinates = e.features[0].geometry.coordinates.slice();
-        var name = e.features[0].properties.name;
-        var imageUrl  = e.features[0].properties.thumbnail;
-        var description = e.features[0].properties.description;// Lấy ghi chú
+    // Kiểm tra xem có điểm nào tại vị trí nhấp hay không
+    const features = map.queryRenderedFeatures(e.point, {
+        layers: ['icon-labels'] // Lớp chứa các điểm của bạn
+    });
+
+    if (features.length) {
+        // Nếu điểm đã tồn tại, hiển thị popup với thông tin chi tiết
+        const pointData = features[0].properties;
 
         // Tạo URL chỉ đường với tọa độ
-        var directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${coordinates[1]},${coordinates[0]}`;
-
-
-        // Tạo popup với ghi chú và tùy chọn mở liên kết chỉ đường
+        var coordinate = features[0].geometry.coordinates;
+        var directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${coordinate[1]},${coordinate[0]}`;
+        var thumbnail = '../storage/' + pointData.thumbnail;
+        const finalEditPointUrl = editPointUrl.replace(':id', features[0].id);
         new mapboxgl.Popup({ className: 'fixed-popup' })
             .setLngLat(coordinates)
-            .setHTML(
-                '<h6>' + name + '</h6>' +
-                '<img src="storage/'+imageUrl+'" alt="'+name+'" style="width: 98%; height: 100px; margin-bottom: 7px; object-fit: cover" onclick="openModal(\'storage/' + imageUrl + '\')"/>' +
-                '<span style="margin-bottom:3px; font-size: 13px">' + description + '</span>' +'<br/>'+
-                '<a href="' + directionsUrl + '" target="_blank" style="color:blue;font-size: 14px">Chỉ đường đến đây</a>')
+            .setHTML(`
+                <h6 class="mb-1">${pointData.name}</h6>
+                <img src="${thumbnail}"  alt="${pointData.name}" class="mb-1" style="width: 98%; height: 100px; object-fit: cover">
+
+                <span style="margin:5px 0;font-size: 14px">${pointData.description}</span><br>
+                <a href="${directionsUrl}" target="_blank" style="color:blue; font-size: 14px;">Chỉ đường đến đây</a>
+                <br>
+                <a href="${finalEditPointUrl}" class="btn btn-teal">Sửa</a>
+                <button wire:click="openDeleteModelPoint(${features[0].id})" class="btn btn-danger">Xóa</button>
+<!--                <a href="http://127.0.0.1:8000/admin/map/${features[0].id}" class="btn btn-danger">Xóa</a>-->
+            `)
             .addTo(map);
-    });
+    } else {
+        // Nếu điểm chưa tồn tại, hiển thị popup để tạo điểm mới
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(`
+                <h6>Điểm chưa được đánh dấu.</h6>
+                <a href="${createPointUrl}?lng=${coordinates.lng}&lat=${coordinates.lat}" class="btn btn-teal">Thêm mới</a>
+            `)
+            .addTo(map);
+    }
 
     // Đổi con trỏ thành dạng bàn tay khi di chuột qua điểm
     map.on('mouseenter', 'icon-labels', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
 
-    // Đổi lại con trỏ thành bình thường khi rời khỏi điểm
+// Đổi lại con trỏ thành bình thường khi rời khỏi điểm
     map.on('mouseleave', 'icon-labels', function () {
         map.getCanvas().style.cursor = '';
     });
@@ -260,3 +271,7 @@ map.on('load', function () {
         }
     });
 });
+
+
+
+
