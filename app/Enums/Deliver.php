@@ -12,8 +12,8 @@ enum Deliver: string
     public function description(): string
     {
         return match ($this) {
-            self::Yes => 'Có',
-            self::No => 'Không',
+            self::Yes => 'Có giao hàng',
+            self::No => 'Không giao hàng',
         };
     }
 }

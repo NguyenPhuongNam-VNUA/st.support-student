@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace App\Models\Service;
+use App\Enums\Deliver;
 
 use App\Models\Gallery\service\ServiceGallery;
 use App\Models\Review\service\ServiceReview;
@@ -40,5 +41,14 @@ class Service extends Model
     public function serviceReviews(): HasMany
     {
         return $this->hasMany(ServiceReview::class);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query;
     }
 }
