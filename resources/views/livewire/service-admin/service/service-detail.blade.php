@@ -35,7 +35,7 @@
                         <div class="col-2 fw-bold text-muted">Tên chủ dịch vụ :</div>
                         <div class="col">{{ $service->owner_name }}</div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-2">
                         <div class="col-1 text-end text-muted">
                             <i class="ph-map-pin-line"></i>
                         </div>
