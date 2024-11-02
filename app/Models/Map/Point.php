@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models\Map;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Map\IconPoint;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Point extends Model

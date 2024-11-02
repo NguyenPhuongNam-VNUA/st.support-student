@@ -11,10 +11,10 @@ use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,12 +124,12 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
         });
     });
 
-    Route::prefix('map')->group(function ():void{
-       Route::get('/', [MapController::class, 'index'])->name('admin.map.index');
-       Route::get('/create-icon', [MapController::class, 'CreateIcon'])->name('admin.map.create_icon');
-       Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon');
-       Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point');
-       Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point');
+    Route::prefix('map')->group(function (): void {
+        Route::get('/', [MapController::class, 'index'])->name('admin.map.index');
+        Route::get('/create-icon', [MapController::class, 'CreateIcon'])->name('admin.map.create_icon');
+        Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon');
+        Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point');
+        Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point');
 
     });
 });

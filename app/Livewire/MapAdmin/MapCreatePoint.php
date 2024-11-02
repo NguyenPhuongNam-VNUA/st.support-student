@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\MapAdmin;
 
+use App\Models\Map\IconPoint;
 use App\Models\Map\Point;
-use http\Env\Request;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Map\IconPoint;
 use Livewire\WithFileUploads;
 
 class MapCreatePoint extends Component
@@ -28,29 +29,35 @@ class MapCreatePoint extends Component
     public $lat;
     public $lng;
 
-    public function mount()
+    public function mount(): void
     {
-        $this->lat= request()->query('lat');
-        $this->lng= request()->query('lng');
+        $this->lat = request()->query('lat');
+        $this->lng = request()->query('lng');
     }
 
     public function store()
     {
         $this->validate();
-        $thumbnailPath=null;
-        if($this->thumbnail){
+        $thumbnailPath = null;
+        if ($this->thumbnail) {
             $thumbnailPath = $this->thumbnail->store('mapPointPhotos', 'public');
         }
         Point::create([
             'name' => $this->name,
             'description' => $this->description,
             'icon_point_id' => $this->icon_id,
-           'thumbnail' => $thumbnailPath,
+            'thumbnail' => $thumbnailPath,
             'latitude' => $this->lat,
             'longitude' => $this->lng,
         ]);
         session()->flash('success', 'Thêm mới icon thành công');
         return redirect()->route('admin.map.index');
+    }
+
+    public function render()
+    {
+        $icons = IconPoint::all('name', 'id');
+        return view('livewire.map-admin.map-create-point', compact('icons'));
     }
 
     protected function rules()
@@ -70,11 +77,5 @@ class MapCreatePoint extends Component
             'thumbnail.image' => 'Hình ảnh phải là định dạng ảnh',
             'thumbnail.max' => 'Hình ảnh không được quá 2MB',
         ];
-    }
-
-    public function render()
-    {
-        $icons = IconPoint::all('name', 'id');
-        return view('livewire.map-admin.map-create-point', compact('icons'));
     }
 }
