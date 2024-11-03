@@ -442,7 +442,7 @@ body.hidden {
     height: 467px;
     background-size: cover;
     background-position: center;
-    background-image: url('{{asset('assets/client/image/vnua1.jpg')}}'); /* Đặt ảnh nền ở đây */
+    background-image: url('../image/vnua1.jpg'); /* Đặt ảnh nền ở đây */
     overflow: hidden;
     border-radius: 8px;
 }
@@ -530,7 +530,6 @@ body.hidden {
     margin-bottom: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    border-bottom: 2px solid #007BFF;
     padding-bottom: 10px;
 }
 
@@ -689,7 +688,6 @@ body.hidden {
     margin-bottom: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    border-bottom: 2px solid #007BFF;
     padding-bottom: 10px;
 }
 
@@ -2048,10 +2046,10 @@ button.navbar-toggler span.line::after {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/*
 .items {
     width: 250px;
-}
+} */
 
 .border-section {
     border: 2px solid #007bff; /* Thay đổi màu sắc và độ dày viền tại đây */

@@ -47,7 +47,7 @@ Route::prefix('/')->group(function (): void {
 });
 Route::get('/heathy', function () {
     return view('client/pages/health/index');
-});
+})->name('client.heathy');
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');

@@ -106,7 +106,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="menu-link">
-                                                    <a href="#" class="link-title">
+                                                    <a hresf="{{route('client.heathy')}}" class="link-title">
                                                         <i class='fa fa-hospital-user me-1'></i>
                                                         <span class="sp-link-title">Sức khỏe</span>
                                                     </a>

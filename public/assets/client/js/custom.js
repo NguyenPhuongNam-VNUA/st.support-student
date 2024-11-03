@@ -863,3 +863,45 @@ $('.details-blog-carousel').owlCarousel({
         }
     }
 });
+
+$('.home6-slider').owlCarousel({
+    loop: false,
+    items: 1,
+    rewind: true,
+    margin: 0,
+    nav: true,
+    navText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    fade: true,
+    transitionStyle: "fade",
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
+});
+
+$('.cate-6').owlCarousel({
+    loop: true,
+    rewind: true,
+    nav: true,
+    margin: 0,
+    navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+    dots: false,autoplay: false,
+    responsive:{
+        0:{
+            items:1,
+        },
+        479:{
+            items:2
+        },
+        768:{
+            items:2
+        },
+        979:{
+            items:3
+        },
+        1199:{
+            items:4
+        }
+    }
+});

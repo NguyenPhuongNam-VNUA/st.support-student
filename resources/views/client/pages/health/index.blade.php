@@ -73,7 +73,7 @@
  {{-- s3 --}}
 <section class="patient-care-process">
     <div class="container-1">
-        <h2 class="section-title">QUY TRÌNH HƯỚNG DẪN CBVC VÀ SINH VIÊN (NGƯỜI BỆNH) <br> 
+        <h2 class="section-title">QUY TRÌNH HƯỚNG DẪN CBVC VÀ SINH VIÊN (NGƯỜI BỆNH) <br>
             ĐẾN KHÁM BỆNH, CHỮA BỆNH TRONG GIỜ HÀNH CHÍNH</h2>
         <div class="process-content">
             <div class="process-row">
@@ -86,7 +86,7 @@
                         <li>Địa điểm: Tại phòng khám bệnh P107</li>
                     </ol>
                 </div>
-                
+
                 <div class="process-box">
                     <h3>Quy trình khám bệnh tại phòng P107:</h3>
                     <ol>
@@ -197,13 +197,13 @@
                                         <div class="cat-box">
                                             <h2>Cảm lạnh thông thường</h2>
                                             <ul class="category-link">
-                                                <li><i class="fa fa-angle-right"></i>Sổ mũi</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Nghẹt mũi</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Hắt hơi</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Ho</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Đau họng</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Sốt nhẹ</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Mệt mỏi</a></li>
+                                                <li><i class="fa fa-angle-right"></i>Sổ mũi</li>
+                                                <li><i class="fa fa-angle-right"></i>Nghẹt mũi</li>
+                                                <li><i class="fa fa-angle-right"></i>Hắt hơi</li>
+                                                <li><i class="fa fa-angle-right"></i>Ho</li>
+                                                <li><i class="fa fa-angle-right"></i>Đau họng</li>
+                                                <li><i class="fa fa-angle-right"></i>Sốt nhẹ</li>
+                                                <li><i class="fa fa-angle-right"></i>Mệt mỏi</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -246,13 +246,13 @@
                                         <div class="cat-box">
                                             <h2>Viêm dạ dày</h2>
                                             <ul class="category-link">
-                                                <li><i class="fa fa-angle-right"></i>Đau bụng hoặc khó chịu</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Buồn nôn</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Đầy hơi</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Chán ăn</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Khó tiêu</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Đôi khi có máu trong bãi nôn hoặc phân</a></li>
-                                                <li><i class="fa fa-angle-right"></i>Mệt mỏi</a></li>
+                                                <li><i class="fa fa-angle-right"></i>Đau bụng hoặc khó chịu</li>
+                                                <li><i class="fa fa-angle-right"></i>Buồn nôn</li>
+                                                <li><i class="fa fa-angle-right"></i>Đầy hơi</li>
+                                                <li><i class="fa fa-angle-right"></i>Chán ăn</li>
+                                                <li><i class="fa fa-angle-right"></i>Khó tiêu</li>
+                                                <li><i class="fa fa-angle-right"></i>Đôi khi có máu trong bãi nôn hoặc phân</li>
+                                                <li><i class="fa fa-angle-right"></i>Mệt mỏi</li>
                                             </ul>
                                         </div>
                                     </div>
