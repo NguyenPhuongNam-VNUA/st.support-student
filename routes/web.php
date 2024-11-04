@@ -27,27 +27,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function (): void {
-    Route::get('/', fn () => view('client/pages/index'))->name('client.index');
+    Route::get('/', fn() => view('client/pages/index'))->name('client.index');
     Route::prefix('dormitory')->group(function (): void {
-        Route::get('/', fn () => view('client/pages/dormitory/index'))->name('client.dormitory.index');
-        Route::get('/detail', fn () => view('client/pages/dormitory/detail'))->name('client.dormitory.detail');
+        Route::get('/', fn() => view('client/pages/dormitory/index'))->name('client.dormitory.index');
+        Route::get('/detail', fn() => view('client/pages/dormitory/detail'))->name('client.dormitory.detail');
     });
-    Route::get('/giang-duong', fn () => view('client/pages/lecture-hall'))->name('client.lecture-hall');
-    Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
-    Route::get('/danh-sach-dich-vu', fn () => view('client/pages/service'))->name('client.service');
-    Route::get('/dich-vu', fn () => view('client/pages/service-detail'))->name('client.service-detail');
-    Route::get('/bai-viet', fn () => view('client/pages/blog'))->name('client.blog');
-    Route::get('/chi-tiet-bai-viet', fn () => view('client/pages/blog-detail'))->name('client.blog-detail');
-    Route::get('/nha-tro', fn () => view('client/pages/motel'))->name('client.motel');
-    Route::get('/chi-tiet-tro', fn () => view('client/pages/motel-detail'))->name('client.motel-detail');
-
+    Route::get('/giang-duong', fn() => view('client/pages/lecture-hall'))->name('client.lecture-hall');
+    Route::get('/danh-sach-phong', fn() => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
+    Route::get('/danh-sach-dich-vu', fn() => view('client/pages/service'))->name('client.service');
+    Route::get('/dich-vu', fn() => view('client/pages/service-detail'))->name('client.service-detail');
+    Route::get('/bai-viet', fn() => view('client/pages/blog'))->name('client.blog');
+    Route::get('/chi-tiet-bai-viet', fn() => view('client/pages/blog-detail'))->name('client.blog-detail');
+    Route::get('/nha-tro', fn() => view('client/pages/motel'))->name('client.motel');
+    Route::get('/chi-tiet-tro', fn() => view('client/pages/motel-detail'))->name('client.motel-detail');
+    Route::get('/suc-khoe', fn() => view('client/pages/health/index'))->name('client.health');
     Route::prefix('login')->group(function (): void {
         Route::get('/', [AuthController::class, 'index'])->name('login');
     });
 });
-Route::get('/heathy', function () {
-    return view('client/pages/health/index');
-})->name('client.heathy');
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
@@ -56,7 +53,7 @@ Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])-
 
 
 Route::prefix('/admin')->group(function (): void {
-    Route::get('/', fn () => view('admin/pages/dashboard/index'))->name('admin.index');
+    Route::get('/', fn() => view('admin/pages/dashboard/index'))->name('admin.index');
 
     Route::prefix('/blog')->group(function (): void {
         Route::get('/', [BlogController::class, 'index'])->name('admin.blogs.index');
@@ -126,6 +123,4 @@ Route::prefix('/admin')->group(function (): void {
             Route::get('/edit/{id}', [DoctorRoleController::class, 'edit'])->name('admin.medical.doctor.roles.edit');
         });
     });
-
-
 });
