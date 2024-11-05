@@ -47,7 +47,7 @@ class DormitoryCreate extends Component
         ]);
 
         $dormitory->update([
-            'slug' => Str::slug($this->name).'-'.$dormitory->id,
+            'slug' => Str::slug($this->name) . '-' . $dormitory->id,
         ]);
 
         session()->flash('success', 'Thêm mới tòa nhà thành công');

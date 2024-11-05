@@ -68,8 +68,8 @@ class Student extends Model
     public function scopeSearch($query, $search)
     {
         if ($search) {
-            $query->where('code', 'like', '%'.$search.'%')
-                ->orWhere('name', 'like', '%'.$search.'%');
+            $query->where('code', 'like', '%' . $search . '%')
+                ->orWhere('name', 'like', '%' . $search . '%');
         }
 
         return $query;

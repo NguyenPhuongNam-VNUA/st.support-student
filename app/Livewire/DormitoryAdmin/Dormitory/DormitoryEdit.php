@@ -54,7 +54,7 @@ class DormitoryEdit extends Component
             'manager_id' => $this->manager_id,
             'total_rooms' => $this->total_rooms,
             'description' => $this->description,
-            'slug' => Str::slug($this->name).'-'.$this->id,
+            'slug' => Str::slug($this->name) . '-' . $this->id,
         ]);
         return redirect()->route('admin.dormitories.index')->with('success', 'Cập nhật thông tin tòa nhà thành công');
     }
@@ -62,7 +62,7 @@ class DormitoryEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required|unique:dormitories,name,'.$this->id,
+            'name' => 'required|unique:dormitories,name,' . $this->id,
             'manager_id' => 'required',
             'total_rooms' => 'required',
             'description' => 'required',
