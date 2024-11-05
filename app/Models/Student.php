@@ -26,13 +26,13 @@ class Student extends Model
         'code',
         'name',
         'phone_number',
-        'address'
+        'address',
     ];
 
     protected $hidden = [
         'code',
         'provider_id',
-        'provider_name'
+        'provider_name',
     ];
 
     public function accommodationRequest(): HasOne

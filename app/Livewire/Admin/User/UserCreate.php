@@ -34,7 +34,7 @@ class UserCreate extends Component
         $roles = Role::all();
 
         return view('livewire.admin.user.user-create', [
-            'roles' => $roles
+            'roles' => $roles,
         ]);
     }
 
@@ -64,10 +64,10 @@ class UserCreate extends Component
             'phone_number' => [
                 'required',
                 function ($attribute, $value, $fail) {
-                    if (!preg_match("/^[0-9]{10}$/", $value)) {
+                    if (! preg_match('/^[0-9]{10}$/', $value)) {
                         return $fail('Số điện thoại chưa đúng định dạng ');
                     }
-                }
+                },
             ],
             'password' => 'required',
             'user_name' => 'required',

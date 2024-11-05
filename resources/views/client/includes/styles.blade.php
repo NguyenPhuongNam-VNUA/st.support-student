@@ -21,6 +21,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/client/css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/client/css/style-custom.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/client/css/responsive.css')}}">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- mapbox -->

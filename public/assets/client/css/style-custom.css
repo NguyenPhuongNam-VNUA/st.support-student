@@ -513,3 +513,35 @@
 .img-size{
     text-align: center;
 }
+/* category css */
+.home6-category .category-6 .cate-6 .cate-back{
+    height: 250px;
+    padding: 15px;
+    background-position: left 100% bottom;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
+}
+.home6-category .category-6 .cate-6 .items{
+    padding: 10px;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box h2{
+    font-size: 16px;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link{
+    margin-top: 18px;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li{
+    margin-top: 9px;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li:first-child {
+    margin-top: 0px;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li a{
+    color: #666;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li a:hover{
+    color: #73841b;
+}
+.home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li a i{
+    margin-right: 5px;
+}

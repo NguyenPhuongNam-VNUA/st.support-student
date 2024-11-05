@@ -31,10 +31,9 @@ class DormitoryEdit extends Component
         $managers = Manager::all();
 
         return view('livewire.dormitory-admin.dormitory.dormitory-edit', [
-            'managers' => $managers
+            'managers' => $managers,
         ]);
     }
-
 
     public function mount(): void
     {
