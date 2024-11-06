@@ -107,7 +107,7 @@
                                                 </li>
                                                 <li class="menu-link">
                                                     <a href="{{route('client.health')}}" class="link-title">
-                                                        <i class='fa fa-hospital-user me-1'></i>
+                                                        <i class='fas fa-stethoscope me-1'></i>
                                                         <span class="sp-link-title">Sức khỏe</span>
                                                     </a>
                                                 </li>
@@ -182,7 +182,7 @@
                                         </li>
                                         <li class="menu-link">
                                             <a href="{{route('client.health')}}" class="link-title">
-                                                <i class='fa fa-hospital-user me-1'></i>
+                                                <i class='fas fa-stethoscope me-1'></i>
                                                 <span class="sp-link-title">Sức khỏe</span>
                                             </a>
                                         </li>

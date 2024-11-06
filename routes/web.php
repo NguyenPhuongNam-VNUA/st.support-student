@@ -43,6 +43,8 @@ Route::prefix('/')->group(function (): void {
     Route::get('/chi-tiet-bai-viet', fn () => view('client/pages/blog-detail'))->name('client.blog-detail');
     Route::get('/nha-tro', fn () => view('client/pages/motel'))->name('client.motel');
     Route::get('/chi-tiet-tro', fn () => view('client/pages/motel-detail'))->name('client.motel-detail');
+    Route::get('/suc-khoe', fn () => view('client/pages/health/index'))->name('client.health');
+
 
     Route::prefix('login')->group(function (): void {
         Route::get('/', [AuthController::class, 'index'])->name('login');
