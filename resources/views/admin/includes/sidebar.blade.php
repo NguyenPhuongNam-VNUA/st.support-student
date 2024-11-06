@@ -10,11 +10,13 @@
                 <h5 class="sidebar-resize-hide flex-grow-1 my-auto">Hệ thống quản lý</h5>
 
                 <div>
-                    <button type="button" class="btn btn-flat-white btn-icon btn-sm rounded-pill border-transparent sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                    <button type="button"
+                        class="btn btn-flat-white btn-icon btn-sm rounded-pill border-transparent sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
                         <i class="ph-arrows-left-right"></i>
                     </button>
 
-                    <button type="button" class="btn btn-flat-white btn-icon btn-sm rounded-pill border-transparent sidebar-mobile-main-toggle d-lg-none">
+                    <button type="button"
+                        class="btn btn-flat-white btn-icon btn-sm rounded-pill border-transparent sidebar-mobile-main-toggle d-lg-none">
                         <i class="ph-x"></i>
                     </button>
                 </div>
@@ -35,11 +37,11 @@
 
 
 
-<!-- ======Super Admin================ -->
+                <!-- ======Super Admin================ -->
                 <li class="nav-item">
                     <a href="{{ route('admin.index') }}"
-                       class="nav-link {{ request()->routeIs('admin.index') ?'active' : '' }}"
-                       style="display: flex; align-items: center;">
+                        class="nav-link {{ request()->routeIs('admin.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
                         <i class="ph-house-simple me-3 fa"></i>
                         <span style="display: flex; align-items: center;">
                             Dashboard
@@ -48,7 +50,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.roles.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.roles.index') ?'active' : '' }}"
+                        class="nav-link {{ request()->routeIs('admin.roles.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-users-cog me-3 fa"></i>
                         <span style="display: flex; align-items: center;">
@@ -66,7 +68,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.students.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.students.index') ?'active' : '' }}"
+                        class="nav-link {{ request()->routeIs('admin.students.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-graduation-cap me-3 fa"></i>
                         <span>
@@ -77,10 +79,10 @@
 
 
 
-<!-- ======Admin kí túc xá + trọ============ -->
+                <!-- ======Admin kí túc xá + trọ============ -->
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitories.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.dormitories.index') ?'active' : '' }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitories.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-building me-3 fa"></i>
                         <span>
@@ -90,7 +92,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitory.rooms.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.dormitory.rooms.index') ?'active' : '' }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.rooms.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-door-open me-3 fa"></i>
                         <span>
@@ -100,7 +102,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitory-students.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.dormitory-students.index') ?'active' : '' }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory-students.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-user-graduate me-3 fa"></i>
                         <span>
@@ -109,8 +111,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.dormitory.managers.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.dormitory.managers.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-user-tie me-3 fa"></i>
                         <span>
@@ -122,11 +124,11 @@
 
 
 
-<!-- ======Admin y tế============ -->
+                <!-- ======Admin y tế============ -->
 
                 <li class="nav-item">
-                    <a href="{{route('admin.medical.doctors.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.medical.doctors.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.medical.doctors.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.medical.doctors.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-stethoscope me-3 fa"></i>
                         <span>
@@ -135,8 +137,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.medical.doctor.roles.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.medical.doctor.roles.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.medical.doctor.roles.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.medical.doctor.roles.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-briefcase-medical me-3 fa"></i>
                         <span>
@@ -147,8 +149,8 @@
 
 
                 <li class="nav-item">
-                    <a href="{{route('admin.blogs.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.blogs.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.blogs.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-newspaper me-3 fa"></i>
                         <span>
@@ -157,16 +159,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.map.index')}}"
-                       class="nav-link {{ request()->routeIs('admin.map.index') ?'active' : '' }}"
-                       style="display: flex; align-items: center;">
+                    <a href="{{ route('admin.map.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.map.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
                         <i class="fas fa-map-marked-alt me-3 fa"></i>
                         <span>
                             Vnua Map
-{{-- ==========Admin dịch vụ=============== --}}
+                        </span>
+                    </a>
+                </li>
+                {{-- ==========Admin dịch vụ=============== --}}
                 <li class="nav-item">
-                    <a href="{{route('admin.services.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.services.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.services.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-rocket me-3 fa"></i>
                         <span>
@@ -175,8 +180,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.service.service-category.index')}}"
-                        class="nav-link {{ request()->routeIs('admin.service.service-category.index') ?'active' : '' }}"
+                    <a href="{{ route('admin.service.service-category.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.service.service-category.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
                         <i class="fas fa-list me-3 fa"></i>
                         <span>
