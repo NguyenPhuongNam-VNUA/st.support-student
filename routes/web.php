@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Login\AuthController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Client\ClientBlogController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
@@ -39,8 +40,8 @@ Route::prefix('/')->group(function (): void {
     Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
     Route::get('/danh-sach-dich-vu', fn () => view('client/pages/service'))->name('client.service');
     Route::get('/dich-vu', fn () => view('client/pages/service-detail'))->name('client.service-detail');
-    Route::get('/bai-viet', fn () => view('client/pages/blog'))->name('client.blog');
-    Route::get('/chi-tiet-bai-viet', fn () => view('client/pages/blog-detail'))->name('client.blog-detail');
+    Route::get('/bai-viet', [ClientBlogController::class, 'index'])->name('client.blog');
+    Route::get('/bai-viet/{id}', [ClientBlogController::class, 'detail'])->name('client.blog-detail');
     Route::get('/nha-tro', fn () => view('client/pages/motel'))->name('client.motel');
     Route::get('/chi-tiet-tro', fn () => view('client/pages/motel-detail'))->name('client.motel-detail');
     Route::get('/suc-khoe', fn () => view('client/pages/health/index'))->name('client.health');

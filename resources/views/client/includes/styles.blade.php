@@ -29,4 +29,12 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js'></script>
 
 @yield('styles-custom')
+<style>
+    .blog-description img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+</style>
 
