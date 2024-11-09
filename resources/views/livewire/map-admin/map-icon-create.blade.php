@@ -9,8 +9,6 @@
                 <div class="form-group">
                     <label class="form-label">
                         Tên icon: <span class="text-danger">*</span>
-                        <br>
-                        <i class="text-danger ms-1">Viết liền không dấu</i>
                     </label>
                     <div>
                         <input  type="text" class="form-control" wire:model.live="name" >
@@ -22,7 +20,6 @@
                 <div class="form-group mt-2">
                     <label class="form-label">
                         Ảnh icon: <span class="text-danger">*</span>
-                        <br> <i class="text-danger ms-1">Icon nên có kích thước 32 x 32px</i>
                     </label>
                     <div>
                         <input type="file" class="form-control" wire:model.livw="thumbnail">
@@ -31,7 +28,7 @@
                         @enderror
                     </div>
                     <div class="mt-2">
-                        @if ($thumbnail)
+                        @if ($thumbnail && !$errors->has('thumbnail'))
                             <img src="{{ $thumbnail->temporaryUrl() }}" alt="New thumbnail" class="img-thumbnail" width="150">
                         @else
                             <p>No image uploaded</p>

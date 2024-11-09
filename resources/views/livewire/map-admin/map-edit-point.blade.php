@@ -57,7 +57,7 @@
                         @enderror
                     </div>
                     <div class="mt-2">
-                        @if ($newThumbnail)
+                        @if ($newThumbnail && !$errors->has('newThumbnail'))
                             <img src="{{ $newThumbnail->temporaryUrl() }}" alt="New thumbnail" class="img-thumbnail" width="150">
                         @else
                             <p>No image uploaded</p>

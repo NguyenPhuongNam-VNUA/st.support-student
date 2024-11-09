@@ -65,7 +65,7 @@ class MapCreatePoint extends Component
         return [
             'name' => 'required',
             'icon_id' => 'required',
-            'thumbnail' => 'nullable|image|max:2048',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
 
@@ -75,6 +75,7 @@ class MapCreatePoint extends Component
             'name.required' => 'Tên điểm không được để trống',
             'icon_id.required' => 'Icon không được để trống',
             'thumbnail.image' => 'Hình ảnh phải là định dạng ảnh',
+            'thumbnail.mimes' => 'Ảnh hồ sơ phải có định dạng jpeg, png, jpg',
             'thumbnail.max' => 'Hình ảnh không được quá 2MB',
         ];
     }

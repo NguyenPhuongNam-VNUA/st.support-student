@@ -72,7 +72,7 @@ class MapEditPoint extends Component
         return [
             'name' => 'required',
             'icon_id' => 'required',
-            'newThumbnail' => 'nullable|image|max:2048',
+            'newThumbnail' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
 
@@ -82,6 +82,7 @@ class MapEditPoint extends Component
             'name.required' => 'Tên điểm không được để trống',
             'icon_id.required' => 'Icon không được để trống',
             'newThumbnail.image' => 'Hình ảnh phải là định dạng ảnh',
+            'newThumbnail.mimes' => 'Hình ảnh phải là định dạng jpeg, png, jpg',
             'newThumbnail.max' => 'Hình ảnh không được quá 2MB',
         ];
     }

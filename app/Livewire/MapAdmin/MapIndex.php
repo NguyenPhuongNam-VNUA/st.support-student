@@ -63,11 +63,19 @@ class MapIndex extends Component
 
     public function confirmDeleteIcon(): void
     {
-        $thumbnail = IconPoint::find($this->iconId)->thumbnail;
+        $icon = IconPoint::find($this->iconId);
+        if($icon->points()->exists()){
+            $this->dispatch('errorDeleteIcon');
+            return;
+        }
+
+        $thumbnail = $icon->thumbnail;
         if ($thumbnail) {
             Storage::disk('public')->delete($thumbnail);
         }
         IconPoint::destroy($this->iconId);
+        $this->dispatch('successDeleteIcon');
+
     }
 
 
