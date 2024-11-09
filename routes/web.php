@@ -8,8 +8,8 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\ClientBlogController;
-use App\Http\Controllers\Client\StudentLoginController;
 use App\Http\Controllers\Client\ClientServiceController;
+use App\Http\Controllers\Client\StudentLoginController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
@@ -33,12 +33,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->group(function (): void {
-    Route::get('/', fn () => view('client/pages/index'))->name('client.index');
-    Route::prefix('ky-tuc-xa')->group(function (): void {
     Route::get('/', [MapController::class, 'ShowMap'])->name('client.index');
-    Route::prefix('dormitory')->group(function (): void {
+    Route::prefix('ky-tuc-xa')->group(function (): void {
         Route::get('/', fn () => view('client/pages/dormitory/index'))->name('client.dormitory.index');
     });
+
     Route::get('/giang-duong', fn () => view('client/pages/lecture-hall'))->name('client.lecture-hall');
     Route::get('/danh-sach-phong', fn () => view('client/pages/lecture-hall-detail'))->name('client.lecture-hall-detail');
     Route::get('/dich-vu', [ClientServiceController::class, 'index'])->name('client.service');
@@ -155,6 +154,5 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
         Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon');
         Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point');
         Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point');
-
     });
 });
