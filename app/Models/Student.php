@@ -14,8 +14,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Student extends Model
+class Student extends Authenticatable
 {
     use HasFactory;
 
@@ -26,13 +27,16 @@ class Student extends Model
         'code',
         'name',
         'phone_number',
-        'address',
+        'bod',
+        'email_verified',
+
     ];
 
     protected $hidden = [
         'code',
         'provider_id',
         'provider_name',
+        'password',
     ];
 
     public function accommodationRequest(): HasOne

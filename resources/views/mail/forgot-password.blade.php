@@ -96,7 +96,7 @@
 
     <!-- Footer section -->
     <div class="footer">
-        <img src="{{ $message->embed(public_path('assets/admin/images/logo_university.png')) }}">
+        <img src="{{ $message->embed(public_path('assets/client/image/logo-vnua.png')) }}">
         <p>Học viện Nông nghiệp Việt Nam</p>
     </div>
 </div>

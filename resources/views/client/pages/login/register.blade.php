@@ -1,7 +1,7 @@
 @extends('client.layouts.master')
 
 @section('title')
-    Đăng nhập
+    Đăng ký
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div class="about-l">
                             <ul class="about-link d-flex gap-2" style="font-size: 1rem">
                                 <li class="text-white"><a href="{{ route('client.index') }}">Trang chủ</a> / </li>
-                                <li class="text-muted"><span>Đăng nhập</span></li>
+                                <li class="text-muted"><span>Đăng ký</span></li>
                             </ul>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
         </div>
     </section>
     <div class="container">
-        <livewire:client.login.login-index :username="$username"/>
+        <livewire:client.login.register-index/>
     </div>
 @endsection
 

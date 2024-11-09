@@ -19,3 +19,4 @@
 @yield('scripts-custom')
 
 @livewireScripts
+

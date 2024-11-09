@@ -469,7 +469,7 @@
     width: 100%; /* Toàn bộ màn hình */
     height: 100%; /* Toàn bộ màn hình */
     /*overflow: auto; !* Nếu cần, thêm thanh cuộn *!*/
-    background-color: rgba(0, 0, 0, 0.8); /* Nền tối với độ trong suốt */
+    background-color: rgba(0, 0, 0, 30%); /* Nền tối với độ trong suốt */
 }
 
 .modal-content {

@@ -4289,12 +4289,12 @@ a.scroll:hover span {
     margin-top: 22px;
 }
 .register-area .register-box form input {
-    width: 100%;
-    padding: 10px 15px;
-    margin-top: 20px;
-    font-size: 13px;
-    border: 1px solid #eee;
-    border-radius: 3px;
+    /*width: 100%;*/
+    /*padding: 10px 15px;*/
+    /*margin-top: 20px;*/
+    /*font-size: 13px;*/
+    /*border: 1px solid #eee;*/
+    /*border-radius: 3px;*/
 }
 .register-area .register-box form input:first-child {
     margin-top: 0px;
@@ -5254,7 +5254,7 @@ a.scroll:hover span {
     justify-content: center;
 }
 .register-area .register-box {
-    width: 50%;
+    width: 67%;
     padding: 30px;
     border: 1px solid #eee;
 }
@@ -5267,12 +5267,12 @@ a.scroll:hover span {
     text-align: center;
 }
 .register-area .register-box form input {
-    width: 100%;
-    padding: 10px 15px;
-    margin-top: 20px;
-    font-size: 13px;
-    border: 1px solid #eee;
-    border-radius: 3px;
+    /*width: 100%;*/
+    /*padding: 10px 15px;*/
+    /*margin-top: 20px;*/
+    /*font-size: 13px;*/
+    /*border: 1px solid #eee;*/
+    /*border-radius: 3px;*/
 }
 .register-area .register-box form input:first-child {
     margin-top: 0px;
