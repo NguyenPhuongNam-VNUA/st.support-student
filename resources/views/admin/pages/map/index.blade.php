@@ -131,9 +131,8 @@
                                 location.reload();
                             });
                         }else if (result.isDismissed) {
-                            // Tải lại hoặc thiết lập lại bản đồ sau khi xác nhận xóa
-                            var src = "{{ asset('assets/admin/js/map.js') }}";
-                            reloadScript(src);
+                            //tải lại trang
+                            location.reload();
                         }
                     });
                 });
@@ -150,38 +149,33 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             Livewire.dispatch('confirmDeleteIcon');
-                            Swal.fire({
-                                title: "Xóa icon thành công!",
-                                icon: "success"
-                            }).then(() => {
-                                //tải lại trang sau khi xóa
-                                location.reload();
-                            });
                         }else if (result.isDismissed) {
-                            // Tải lại hoặc thiết lập lại bản đồ sau khi xác nhận xóa
-                            var src = "{{ asset('assets/admin/js/map.js') }}";
-                            reloadScript(src);
+                            //tải lại trang
+                            location.reload();
                         }
                     });
                 });
+
+                Livewire.on('errorDeleteIcon',(event)=>{
+                    Swal.fire({
+                        title: "Icon này đang được sử dụng, không thể xóa!",
+                        icon: "error"
+                    }).then(() => {
+                        //tải lại trang sau khi xóa
+                        location.reload();
+                    });
+                });
+
+                Livewire.on('successDeleteIcon',(event)=>{
+                    Swal.fire({
+                        title: "Xóa icon thành công!",
+                        icon: "success"
+                    }).then(() => {
+                        //tải lại trang sau khi xóa
+                        location.reload();
+                    });
+                });
             });
-            function reloadScript(src){
-                // Tìm và xóa thẻ script cũ nếu tồn tại
-                let oldScript = document.querySelector(`script[src="${src}"]`);
-                if (oldScript) {
-                    oldScript.remove(); // Xóa script cũ
-                }
-
-                // Tạo thẻ script mới
-                let newScript = document.createElement("script");
-                newScript.src = src + '?v=' + new Date().getTime(); // Thêm timestamp để tránh cache
-                newScript.onload = () => {
-                    console.log(`${src} đã được tải lại thành công.`);
-                };
-
-                // Thêm thẻ script mới vào cuối thẻ <body>
-                document.body.appendChild(newScript);
-            }
         </script>
     @endsection
     <div class="content">

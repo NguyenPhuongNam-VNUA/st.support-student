@@ -60,17 +60,21 @@ class MapIconEdit extends Component
     protected function rules()
     {
         return [
-            'name' => 'required',
-            'newThumbnail' => 'nullable|image|max:2048',
+            'name' => 'required|regex:/^[a-zA-Z]+$/',
+            'newThumbnail' => 'nullable|image|mimes:jpeg,png,jpg|max:2048|dimensions:width=32,height=32',
         ];
+
     }
 
     protected function messages()
     {
         return [
             'name.required' => 'Tên icon không được để trống',
-            'newThumbnail.image' => 'Ảnh hồ sơ phải là định dạng ảnh',
+            'name.regex' => 'Tên icon phải viết liền không dấu',
+            'newThumbnail.image' => 'Ảnh icon phải là định dạng ảnh',
             'newThumbnail.max' => 'Ảnh hồ sơ không được quá 2MB',
+            'newThumbnail.mimes' => 'Ảnh hồ sơ phải có định dạng jpeg, png, jpg',
+            'newThumbnail.dimensions' => 'Ảnh icon phải có kích thước 32 x 32px',
         ];
     }
 
