@@ -29,6 +29,9 @@
 {{--quick view đăng ký trọ--}}
 @include('client.includes.modal_register_motel')
 
+{{--quick view đăng ký ký túc xa--}}
+@include('client.includes.modal_register_dormitory')
+
 @include('client.includes.footer')
 
 <!-- back to top start -->
