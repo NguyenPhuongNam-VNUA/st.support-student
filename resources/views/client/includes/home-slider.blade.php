@@ -5,7 +5,7 @@
                 <div class="h-s-content slide-c-l">
                     <span></span>
                     <h1>Bạn muốn ở ký túc xá</h1>
-                    <a href="#" class="btn btn-style1 mb-3">Đăng ký ngay</a>
+                    <a href="{{route('client.dormitory.index')}}" class="btn btn-style1 mb-3">Đăng ký ngay</a>
                 </div>
             </div>
         </div>

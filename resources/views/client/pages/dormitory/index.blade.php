@@ -37,10 +37,10 @@
                             </div>
                             <div class="order-his-page">
                                 <ul class="profile-ul">
-                                    <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaA')" class="nav-link active">Tòa A <span class="badge bg-success">5</span></a></li>
+                                    <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaA')" class="nav-link active">Tòa A <span class="badge count-text">5</span></a></li>
                                     <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaB')" class="nav-link">Tòa B</a></li>
                                     <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaC')" class="nav-link">Tòa C</a></li>
-                                    <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaD')" class="nav-link">Tòa D <span class="badge bg-success">3</span></a></li>
+                                    <li class="profile-li"><a href="javascript:void(0)" onclick="showContent('toaD')" class="nav-link">Tòa D <span class="badge count-text">3</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,12 +74,12 @@
                                                     <h5>Phòng 101</h5>
                                                 </div>
                                                 <div class="card-body room-body">
-                                                    <p><i class="fa-solid fa-people-roof"></i> Số lượng chỗ trống: 3/6</p>
-                                                    <p><i class="fa-solid fa-kaaba"></i> Tiện ích: Điều hòa, Wi-Fi, Bàn học, Tủ đồ</p>
-                                                    <p><i class="fa-solid fa-hand-holding-dollar"></i> Giá: 1,500,000 VND/tháng</p>
+                                                    <span><i class="fa-solid fa-people-roof"></i> Số lượng: 3/6</span>
+                                                    <span><i class="fa-solid fa-kaaba"></i> Tiện ích: Điều hòa, Wi-Fi, Bàn học, Tủ đồ</span>
+                                                    <span><i class="fa-solid fa-hand-holding-dollar"></i> Giá: 1,500,000 VND/tháng</span>
                                                 </div>
-                                                <div class="card-footer d-flex justify-content-end">
-                                                    <a href="#" class="btn btn-primary">Đăng ký</a>
+                                                <div class="card-footer d-flex justify-content-center">
+                                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerDormitoryModal">Đăng ký</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@
         }
 
         .order-info {
-            border-left:3px solid #066140 !important;
+            border-left:3px solid #448b1f !important;
         }
 
         .profile-ul li a {
@@ -146,29 +146,32 @@
         .profile-ul li a:hover,
         .profile-ul li a.active {
             background-color: #f1f1f1;
-            color: #066140;
+            color: #448b1f;
         }
 
         .order-history .profile {
-            border-left: 3px solid #066140 !important;
+            border-left: 3px solid #448b1f !important;
         }
 
         .nav-item a {
-            color: #066140 !important;
+            color: #448b1f !important;
             text-transform: none !important;
             cursor: pointer;
         }
 
         .nav-item a:hover {
             color: #ffffff !important;
-            background-color: #066140 !important;
+            background-color: #448b1f !important;
         }
 
+        .count-text{
+            background-color: #ea6c3c;
+        }
         .card {
             padding: 10px;
-            border: 1px solid #066140;
+            border: 1px solid #448b1f;
             border-radius: 5px;
-            color: #066140;
+            color: #448b1f;
             font-weight: 500;
             cursor: pointer;
         }
@@ -185,11 +188,11 @@
         .room-card {
             width: 250px;
             padding: 15px;
-            border: 1px solid #066140;
+            border: 1px solid #448b1f;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #066140;
+            color: #448b1f;
         }
 
         .room-card:hover {
@@ -210,19 +213,20 @@
             margin: 0;
         }
 
-        .room-body p {
+        .room-body span {
             font-size: 0.95rem;
             margin: 5px 0;
+            color:#000;
         }
 
         .btn-primary {
-            background-color: #066140;
+            background-color: #448b1f;
             border: none;
             transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
-            background-color: #054f33;
+            background-color: #ea6c3c;
         }
 
         .pro-page-content .pro-page-tab ul.nav.nav-tabs{

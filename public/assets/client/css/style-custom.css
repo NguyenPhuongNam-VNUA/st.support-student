@@ -113,7 +113,7 @@
     position: relative;
 }
 .service4-section .service .service-box:hover .s-box .service-img a{
-    background-color: #066140;
+    background-color: #448b1f;
 }
 .service4-section .service .service-box:hover .s-box .service-img a:after,
 .service4-section .service .service-box:hover .s-box .service-img a:before{
@@ -262,7 +262,7 @@
 }
 
 .btn-style5 {
-    background-color: #066140;
+    background-color: #448b1f;
     color: #FFFFFF;
     font-size: 16px;
     padding: 12px 30px;
@@ -285,7 +285,7 @@
 }
 .btn-style5:hover {
     color: #ffffff;
-    background-color: #7AA32A;
+    background-color: #ed7623;
     border-color: #7AA32A;
 }
 @media (max-width: 991px) {
@@ -317,7 +317,7 @@
     transition: all .3s ease-in-out 0s;
 }
 .home12-blog .blog-home12 .blog-start .blog-image a.blog-icon {
-    background-color: #066140;
+    background-color: #448b1f;
     color: #fff;
     font-size: 16px;
     width: 45px;
@@ -428,7 +428,7 @@
     transition: all .3s ease-in-out 0s;
 }
 .home-service .service-area-main .service ul.service-ul li.service-li .icon a:hover span svg {
-    color: #066140;
+    color: #448b1f;
     -webkit-transition: all .3s ease-in-out 0s;
     -o-transition: all .3s ease-in-out 0s;
     transition: all .3s ease-in-out 0s;
@@ -436,10 +436,11 @@
 .home-service .service-area-main .service ul.service-ul li.service-li .text {
     padding-left: 30px;
 }
-.home-service .service-area-main .service ul.service-ul li.service-li .text h4.title {
-    font-size: 18px;
+.home-service .service-area-main .service ul.service-ul li.service-li .text a.title {
+    font-size: 20px;
     font-weight: 600;
     line-height: 1;
+    cursor: pointer;
 }
 .home-service .service-area-main .service ul.service-ul li.service-li .text span.sub-title {
     color: #999;
@@ -492,7 +493,7 @@
     padding: 5px 10px;
     font-size: 16px;
     font-weight: 700;
-    background-color: #066140;
+    background-color: #448b1f;
     color: #fff;
     top:15px;
     right: 9%;
