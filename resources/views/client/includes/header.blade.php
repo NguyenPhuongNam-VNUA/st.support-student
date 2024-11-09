@@ -26,12 +26,36 @@
                                         <span class="line"></span>
                                     </button>
                                 </li>
-                                <li class="side-wrap notify-wrap">
-                                    <a href="#" class="header-notify">
-                                        <span class="notify-icon"><span class="bi bi-bell"></span></span>
-                                        <span class="notify-counter">0</span>
-                                    </a>
-                                </li>
+                                @auth('students')
+                                    <li class="side-wrap notify-wrap">
+                                        <a href="#" class="header-notify">
+                                            <span class="notify-icon"><span class="bi bi-bell"></span></span>
+                                            <span class="notify-counter">0</span>
+                                        </a>
+                                    </li>
+                                    <li class="side-wrap user-wrap">
+                                        <div class="acc-desk">
+                                            <div class="user-icon">
+                                                <a href="#" class="user-icon-desk">
+                                                    <span><i class="icon-user"></i></span>
+                                                </a>
+                                            </div>
+                                            <div class="user-info">
+                                                <span class="acc-title">{{ auth('students')->user()->name }}</span>
+                                                <div class="account-login">
+                                                    <a href="{{ route('student.logout') }}">Đăng xuất</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="acc-mob">
+                                            <a href="#" class="user-icon">
+                                                <span><i class="icon-user"></i></span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                @endauth
+
+                                @guest('students')
                                 <li class="side-wrap user-wrap">
                                     <div class="acc-desk">
                                         <div class="user-icon">
@@ -42,8 +66,8 @@
                                         <div class="user-info">
                                             <span class="acc-title">Tài khoản</span>
                                             <div class="account-login">
-                                                <a href="#">Đăng ký</a>
-                                                <a href="#">Đăng nhập</a>
+                                                <a href="{{ route('student.register') }}">Đăng ký</a>
+                                                <a href="{{ route('student.login') }}">Đăng nhập</a>
                                             </div>
                                         </div>
                                     </div>
@@ -53,6 +77,7 @@
                                         </a>
                                     </div>
                                 </li>
+                                @endguest
                                 <!-- <li class="side-wrap cart-wrap">
                                     <div class="shopping-widget">
                                         <div class="shopping-cart">
@@ -153,14 +178,14 @@
         <div class="row">
             <div class="col">
                 <div class="main-menu-area">
-                    <div class="main-navigation navbar-expand-xl">
+                    <div class="main-navigation navbar-expand-xl" style="height: 80%; align-items: normal">
                         <div class="box-header menu-close">
                             <button class="close-box" type="button"><i class="ion-close-round"></i></button>
                         </div>
                         <!-- menu start -->
                         <div class="navbar-collapse" id="navbarContent01">
                             <div class="megamenu-content">
-                                <div class="mainwrap">
+                                <div class="mainwrap d-flex flex-column justify-content-between">
                                     <ul class="main-menu" >
                                         <li class="menu-link">
                                             <a href="{{route('client.index')}}" class="link-title">
@@ -199,6 +224,26 @@
                                             </a>
                                         </li>
                                     </ul>
+                                    @auth('students')
+                                    <ul class="main-menu">
+                                        <li class="menu-link">
+                                            <a href="{{ route('student.logout') }}" class="link-title">
+                                                <i class="fa-solid fa-door-open me-1"></i>
+                                                <span class="sp-link-title">Đăng xuất</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    @endauth
+                                    @guest('students')
+                                        <ul class="main-menu">
+                                            <li class="menu-link">
+                                                <a href="{{ route('student.login') }}" class="link-title">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>
+                                                    <span class="sp-link-title">Đăng nhập</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    @endguest
                                 </div>
                             </div>
                         </div>
