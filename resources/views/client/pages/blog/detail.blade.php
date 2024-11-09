@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="col">
                     <div class="about-l">
-                        <ul class="about-link">
+                        {{-- <ul class="about-link">
                             <li class="go-home"><a href="index1.html">Home</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>

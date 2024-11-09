@@ -17,3 +17,5 @@
 <script src="{{asset('assets/client/js/map.js')}}"></script>
 
 @yield('scripts-custom')
+
+@livewireScripts

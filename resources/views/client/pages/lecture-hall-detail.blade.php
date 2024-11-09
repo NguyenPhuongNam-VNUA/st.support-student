@@ -12,10 +12,10 @@ Danh sách các phòng
             <div class="row">
                 <div class="col">
                     <div class="about-l">
-                        <ul class="about-link">
+                        {{-- <ul class="about-link">
                             <li class="go-home"><a href="index1.html">Phòng</a></li>
                             <li class="about-p"><span>Danh sách</span></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>

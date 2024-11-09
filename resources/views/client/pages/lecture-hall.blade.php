@@ -12,9 +12,9 @@ Tìm giảng đường
             <div class="row">
                 <div class="col">
                     <div class="about-l">
-                        <ul class="about-link">
+                        {{-- <ul class="about-link">
                             <li class="go-home"><a href="">Giảng đường</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
