@@ -64,7 +64,7 @@ class MapIndex extends Component
     public function confirmDeleteIcon(): void
     {
         $icon = IconPoint::find($this->iconId);
-        if($icon->points()->exists()){
+        if ($icon->points()->exists()) {
             $this->dispatch('errorDeleteIcon');
             return;
         }
