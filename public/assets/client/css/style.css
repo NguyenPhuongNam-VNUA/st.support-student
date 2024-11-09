@@ -795,17 +795,17 @@ body.hidden {
 /* Khi người dùng hover vào tab */
 .nav-tabs .nav-item .nav-link:hover {
     color: #fff;
-    background-color: #007bff; /* Màu nền khi hover */
-    border-color: #007bff; /* Đường viền khi hover */
-    margin-bottom: 15px; /* Khoảng cách giữa các ô */
-    border: 2px solid red; /* Viền màu đỏ */
+    /* background-color: #448B1F; 
+    border-color: #448B1F;  */
+    margin-bottom: 15px; 
+    border: 2px solid red; 
 }
 
 /* Khi tab được chọn (active) */
 .nav-tabs .nav-item .nav-link.active {
     color: #fff;
-    background-color: #007bff; /* Màu nền khi được chọn */
-    border-color: #007bff; /* Đường viền khi được chọn */
+    /* background-color: #448B1F; 
+    border-color: #448B1F;  */
 }
 
 /* ************** */

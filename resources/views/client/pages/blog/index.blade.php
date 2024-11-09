@@ -12,9 +12,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="about-l">
-                            <ul class="about-link">
+                            {{-- <ul class="about-link">
                                 <li class="go-home"><a href="index1.html">Home</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -36,19 +36,19 @@
         margin: 0 5px;
         background-color: #f1f1f1;
         border: 1px solid #ddd;
-        color: #066140;
+        color: #448B1F;
         text-decoration: none;
         border-radius: 4px;
         transition: background-color 0.3s ease;
     }
     
     .page-link:hover {
-        background-color: #066140;
+        background-color: #448B1F;
         color: #fff;
     }
     
     .page-link.active {
-        background-color: #066140;
+        background-color: #448B1F;
         color: #fff;
         font-weight: bold;
     }
