@@ -98,12 +98,10 @@
     z-index: 1;
 }
 .service4-section .service{
-    background-color: #fff;
     margin-top: -40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #e2e2e2;
 }
 .service4-section .service .service-box {
     width: 33.33%;
@@ -135,7 +133,6 @@
 .service4-section .service .service-box .s-box{
     display: block;
     text-align: center;
-    border-right: 1px solid #e2e2e2;
     padding-right: 30px;
 }
 .service4-section .service .service-box:last-child .s-box{
