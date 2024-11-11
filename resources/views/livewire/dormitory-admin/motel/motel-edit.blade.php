@@ -3,30 +3,30 @@
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-info"></i>
-                Thông tin dịch vụ
+                Thông tin nhà trọ
             </div>
 
             <div class="card-body">
                 <div class="form-group mt-2">
                     <label class="form-label">
-                        Tên dịch vụ: <span class="text-danger">*</span>
+                        Tên chủ trọ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="name" type="text"
-                            class="form-control  @error('name') is-invalid @enderror">
-                        @error('name')
+                        <input wire:model.live="owner_name" type="text"
+                            class="form-control  @error('owner_name') is-invalid @enderror">
+                        @error('owner_name')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group mt-2">
                     <label class="form-label">
-                        Tên chủ dịch vụ: <span class="text-danger">*</span>
+                        Số điện thoại: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="owner_name" type="text"
-                            class="form-control  @error('owner_name') is-invalid @enderror">
-                        @error('owner_name')
+                        <input wire:model.live="owner_phoneNumber" type="text"
+                            class="form-control  @error('owner_phoneNumber') is-invalid @enderror">
+                        @error('owner_phoneNumber')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
@@ -37,28 +37,40 @@
                         Địa chỉ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="location" type="text"
-                            class="form-control  @error('location') is-invalid @enderror">
-                        @error('location')
+                        <input wire:model.live="address" type="text"
+                            class="form-control  @error('address') is-invalid @enderror">
+                        @error('address')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group mt-2">
                     <label class="form-label">
-                        Số điện thoại: <span class="text-danger">*</span>
+                        Số phòng: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="phone_number" type="text"
-                            class="form-control  @error('phone_number') is-invalid @enderror">
-                        @error('phone_number')
+                        <input wire:model.live="total_rooms" type="number"
+                            class="form-control  @error('total_rooms') is-invalid @enderror">
+                        @error('total_rooms')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group mt-2">
                     <label class="form-label">
-                        Ảnh đại diện dịch vụ: <span class="text-danger">*</span>
+                        Số phòng trống: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <input wire:model.live="available_rooms" type="number"
+                            class="form-control  @error('available_rooms') is-invalid @enderror">
+                        @error('available_rooms')
+                            <label class="text-danger mt-1">{{ $message }}</label>
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Ảnh đại diện nhà trọ: <span class="text-danger">*</span>
                     </label>
                     <div>
                         <input wire:model.live="new_thumbnail" type="file"
@@ -73,7 +85,7 @@
                             <img src="{{ $new_thumbnail->temporaryUrl() }}" alt="New thumbnail" class="img-thumbnail"
                                 width="150">
                         @elseif ($thumbnail)
-                            <img src="{{ asset('storage/' . $thumbnail) }}" alt="{{ $name }}"
+                            <img src="{{ asset('storage/' . $thumbnail) }}" alt=""
                                 class="img-thumbnail" width="150">
                         @else
                             <label class="text-danger mt-1">Chưa tải ảnh lên</label>
@@ -83,60 +95,27 @@
                 <div class="form-group mt-2">
                     <label class="form-label">Hình ảnh bổ sung: <span class="text-danger">*</span></label>
                     <div>
-                        <input wire:model="new_service_galleries" type="file" multiple
-                            class="form-control @error('new_service_galleries') is-invalid @enderror">
-                        @error('new_service_galleries')
+                        <input wire:model="new_motel_galleries" type="file" multiple
+                            class="form-control @error('new_motel_galleries') is-invalid @enderror">
+                        @error('new_motel_galleries')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
                     <div class="mt-2">
-                        @if ($new_service_galleries && count($new_service_galleries) > 0)
-                            @foreach ($new_service_galleries as $newGallery)
+                        @if ($new_motel_galleries && count($new_motel_galleries) > 0)
+                            @foreach ($new_motel_galleries as $newGallery)
                                 <img src="{{ $newGallery->temporaryUrl() }}" alt="New gallery image" class="img-thumbnail" width="150">
                             @endforeach
-                        @elseif ($service_galleries && count($service_galleries) > 0)
-                            @foreach ($service_galleries as $gallery)
-                                <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery image" class="img-thumbnail" width="150">
+                        @elseif ($motel_galleries && count($motel_galleries) > 0)
+                            @foreach ($motel_galleries as $motel_gallery)
+                                <img src="{{ asset('storage/' . $motel_gallery->image) }}" alt="Gallery image" class="img-thumbnail" width="150">
                             @endforeach
                         @else
                             <label class="text-danger mt-1">Chưa tải ảnh lên</label>
                         @endif
                     </div>
                 </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Danh mục dịch vụ: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <select wire:model="service_category_id"
-                            class="form-control @error('service_category_id') is-invalid @enderror">
-                            <option value="">Chọn danh mục dịch vụ</option>
-                            @foreach ($service_categories as $service_category)
-                                <option value="{{ $service_category->id }}">{{ $service_category->name }}</option>
-                            @endforeach
-                        </select>
 
-                        @error('service_category_id')
-                            <label class="text-danger mt-1">{{ $message }}</label>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Giao hàng: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <select wire:model.live="isShip" class="form-control @error('isShip') is-invalid @enderror">
-                            <option value="">Chọn trạng thái</option>
-                            @foreach (\App\Enums\Deliver::cases() as $isShip)
-                                <option value="{{ $isShip->value }}">{{ $isShip->description() }}</option>
-                            @endforeach
-                        </select>
-                        @error('isShip')
-                            <label class="text-danger mt-1">{{ $message }}</label>
-                        @enderror
-                    </div>
-                </div>
                 <div class="form-group mt-2">
                     <label class="form-label">
                         Mô tả: <span class="text-danger">*</span>
@@ -159,11 +138,11 @@
                 Hành động
             </div>
             <div class="card-body d-flex align-items-center gap-1">
-                <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh
-                    sửa</button>
-                <a href="{{ route('admin.services.index') }}" type="button" class="btn btn-warning"><i
+                <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Cập nhật</button>
+                <a href="{{ route('admin.dormitory.motel.index') }}" type="button" class="btn btn-warning"><i
                         class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>
         </div>
     </div>
 </div>
+

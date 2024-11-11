@@ -111,6 +111,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.dormitory.motel.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.motel.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-hotel me-3 fa"></i>
+                        <span>
+                            Nhà trọ
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.dormitory.managers.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">

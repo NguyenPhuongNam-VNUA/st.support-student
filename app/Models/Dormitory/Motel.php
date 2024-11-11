@@ -23,6 +23,7 @@ class Motel extends Model
         'status',
         'description',
         'slug',
+        'available_rooms',
     ];
 
     public function motelGalleries(): HasMany
@@ -38,5 +39,12 @@ class Motel extends Model
     public function motelReviews(): HasMany
     {
         return $this->hasMany(MotelReview::class);
+    }
+
+    public function scopeSearch($query, $search): void
+    {
+        if ($search) {
+            $query->where('owner_name', 'like', '%' . $search . '%');
+        }
     }
 }
