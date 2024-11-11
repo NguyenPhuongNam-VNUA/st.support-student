@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="service-content">
                                     <span>Dịch vụ</span>
-                                    <p>Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue</p>
+                                    <p>Cung cấp thông tin về dịch vụ ăn uống, giặt là, và các cửa hàng tiện lợi,.. xung quanh Vnua.</p>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="service-content">
                                     <span>Nhà ở</span>
-                                    <p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque</p>
+                                    <p>Cung cấp thông tin và đăng ký ký túc xá và giúp sinh viên kết nối với các chủ nhà thuê <trọ class=""></trọ></p>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="service-content">
                                     <span>Sức khỏe</span>
-                                    <p>Ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                                    <p>Tìm hiểu về quy trình khám bệnh, chăm sóc sức khỏe tại trạm y tế, Tư vấn sức khỏe,... </p>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="service-content">
                                     <span>Vnua map</span>
-                                    <p>Ucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</p>
+                                    <p>Bản đồ trực tuyến của vnua, giúp sinh viên dễ dàng tìm các giảng đường, thư viện,...</p>
                                 </div>
                             </div>
                         </div>
@@ -275,14 +275,14 @@
                                 </li>
                                 <li class="service-li">
                                     <div class="icon">
-                                        <a href="#">
+                                        <a href="{{route('client.dormitory.index')}}">
                                             <span class="icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16"> <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/> <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/> </svg>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="text">
-                                        <a href="#" class="title">Đăng ký ở Ký túc xá</a>
+                                        <a href="{{route('client.dormitory.index')}}" class="title">Đăng ký ở Ký túc xá</a>
 {{--                                        <span class="sub-title">Orders from all item</span>--}}
                                     </div>
                                 </li>
@@ -295,14 +295,14 @@
                             <ul class="service-ul">
                                 <li class="service-li">
                                     <div class="icon">
-                                        <a href="#">
+                                        <a href="{{route('client.motel')}}">
                                             <span class="icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 576 512"><path d="M511.8 287.6L512.5 447.7C512.6 483.2 483.9 512 448.5 512H128.1C92.75 512 64.09 483.3 64.09 448V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L416 100.7V64C416 46.33 430.3 32 448 32H480C497.7 32 512 46.33 512 64V185L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6L511.8 287.6zM288 288C323.3 288 352 259.3 352 224C352 188.7 323.3 160 288 160C252.7 160 224 188.7 224 224C224 259.3 252.7 288 288 288zM192 416H384C392.8 416 400 408.8 400 400C400 355.8 364.2 320 320 320H256C211.8 320 176 355.8 176 400C176 408.8 183.2 416 192 416z"/></svg>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="text">
-                                        <a href="#" class="title">
+                                        <a href="{{route('client.motel')}}" class="title">
                                            Xem phòng trọ
                                         </a>
 {{--                                        <span class="sub-title">20% off by subscribing</span>--}}
@@ -310,14 +310,14 @@
                                 </li>
                                 <li class="service-li">
                                     <div class="icon">
-                                        <a href="#">
+                                        <a href="{{route('client.motel')}}">
                                             <span class="icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16"> <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/> <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/> </svg>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="text">
-                                        <a href="#" class="title">Đăng ký thuê trọ</a>
+                                        <a href="{{route('client.motel')}}" class="title">Đăng ký thuê trọ</a>
 {{--                                        <span class="sub-title">Money back guarantee</span>--}}
                                     </div>
                                 </li>

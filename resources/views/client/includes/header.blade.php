@@ -178,14 +178,14 @@
         <div class="row">
             <div class="col">
                 <div class="main-menu-area">
-                    <div class="main-navigation navbar-expand-xl" style="height: 80%; align-items: normal">
+                    <div class="main-navigation navbar-expand-xl" style="height: 98%; align-items: normal">
                         <div class="box-header menu-close">
                             <button class="close-box" type="button"><i class="ion-close-round"></i></button>
                         </div>
                         <!-- menu start -->
-                        <div class="navbar-collapse" id="navbarContent01">
+                        <div class="navbar-collapse" id="navbarContent01" style="align-items: normal">
                             <div class="megamenu-content">
-                                <div class="mainwrap d-flex flex-column justify-content-between">
+                                <div class="mainwrap d-flex flex-column justify-content-between" style="height: 100%">
                                     <ul class="main-menu" >
                                         <li class="menu-link">
                                             <a href="{{route('client.index')}}" class="link-title">
@@ -250,7 +250,7 @@
                         <!-- menu end -->
                         <div class="img-hotline">
                             <div class="image-line">
-                                <a href="javascript:void(0)"><img src="image/icon_contact.png" class="img-fluid" alt="image-icon"></a>
+                                <a href="javascript:void(0)"><img src="" class="img-fluid" alt="image-icon"></a>
                             </div>
                             <div class="image-content">
                                 <span class="hot-l">Hotline:</span>

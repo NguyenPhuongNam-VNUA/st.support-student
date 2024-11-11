@@ -117,7 +117,7 @@ idap-pro css
     .header-bottom-area .main-menu-area .main-navigation .navbar-collapse{
         width: 100%;
         display: flex;
-        flex-direction: column-reverse;
+        /*flex-direction: column-reverse;*/
         margin-top: 45px;
     }
     .header-bottom-area .main-menu-area .main-navigation .img-hotline{
@@ -2699,14 +2699,14 @@ iphone css
         flex-direction: column;
     }
     .register-area .register-box{
-        width: 100%;
+        width: 85%;
     }
     .register-area .register-account{
         width: calc(100% - 0px);
         margin-left: 0px;
     }
     .register-area .register-box form input{
-        margin-top: 20px;
+        /*margin-top: 20px;*/
     }
     .register-area .register-box a.btn-style1{
         margin-top: 20px;

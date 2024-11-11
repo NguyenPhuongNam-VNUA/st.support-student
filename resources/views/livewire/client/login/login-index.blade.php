@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <div class="register-area" style="max-width: 55%">
+                <div class="register-area">
                     <div class="register-box" style="background-color: rgba(64,64,64,0.07); border-radius: 12px;">
                         <h1 class="text-success">Đăng nhập tài khoản</h1>
                         <p class="text-muted">Vui lòng nhập thông tin tài khoản bên dưới</p>
