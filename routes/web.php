@@ -13,6 +13,7 @@ use App\Http\Controllers\Client\StudentLoginController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
+use App\Http\Controllers\DormitoryAdmin\MotelController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
@@ -154,5 +155,13 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
         Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon');
         Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point');
         Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point');
+    });
+
+    //motel
+    Route::prefix('/motel')->group(function (): void {
+        Route::get('/', [MotelController::class, 'index'])->name('admin.dormitory.motel.index');
+        Route::get('/create', [MotelController::class, 'create'])->name('admin.dormitory.motel.create');
+        Route::get('/edit/{id}', [MotelController::class, 'edit'])->name('admin.dormitory.motel.edit');
+        Route::get('{id}/detail', [MotelController::class, 'detail'])->name('admin.dormitory.motel.detail');
     });
 });

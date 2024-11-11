@@ -56,7 +56,6 @@ class ServiceEdit extends Component
     public function mount(): void
     {
         $this->id = request()->id;
-        // $service = Service::query()->find($this->id);
         $service = Service::with('serviceGalleries')->find($this->id);
 
         $this->name = $service->name;
@@ -93,6 +92,15 @@ class ServiceEdit extends Component
             'isShip' => $this->isShip,
         ]);
         if ($this->new_service_galleries) {
+
+            foreach ($service->serviceGalleries as $oldGallery) {
+                $oldImagePath = public_path('storage/' . $oldGallery->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+                $oldGallery->delete();
+            }
+
             foreach ($this->new_service_galleries as $image) {
                 $path = $image->store('service_images', 'public');
                 $service->serviceGalleries()->create([
