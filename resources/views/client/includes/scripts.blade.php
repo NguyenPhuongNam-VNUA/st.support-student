@@ -15,6 +15,8 @@
 <script src="{{asset('assets/client/js/custom.js')}}"></script>
 <!-- mapbox -->
 <script src="{{asset('assets/client/js/map.js')}}"></script>
+<!-- Core JS files -->
+<script src="{{ asset('assets/admin/js/vendor/notifications/sweet_alert.min.js') }}"></script>
 
 @yield('scripts-custom')
 

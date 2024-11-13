@@ -15,7 +15,6 @@
                         </div>
                     
                         <ul class="nav nav-tabs pro-page-slider owl-carousel owl-theme">
-                            <!-- Hiển thị ảnh thumbnail trước tiên -->
                             <li class="nav-item items">
                                 <a class="nav-link active" onclick="changeImage('{{ asset('storage/' . $service->thumbnail) }}')">
                                     <img src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid" alt="thumbnail">
@@ -38,34 +37,59 @@
                             @endif
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-xl-6 col-md-6 col-12 col-xs-12 pro-info">
+                    <div class="col-lg-6 col-xl-6 col-md-6 col-12 pro-info">
                         <h4>{{ $service->name }}</h4>
-                        <div class="rating">
-                            <i class="fa fa-star d-star"></i>
-                            <i class="fa fa-star d-star"></i>
-                            <i class="fa fa-star d-star"></i>
-                            <i class="fa fa-star d-star"></i>
-                            <i class="fa fa-star-o"></i>
+                        <div class="rating mb-3">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <i class="fa {{ $i <= $service->rating ? 'fa-star c-star' : 'fa-star-o' }}"></i>
+                            @endfor
                         </div>
-                        <div class="pro-availabale">
-                            <i class="fa-solid fa-truck-fast"></i>
-                            <span class="available">
-                                @if ($service->isShip === \App\Enums\Deliver::Yes->value)
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-1 text-end">
+                                <i class="fa-solid fa-truck-fast text-muted"></i>
+                            </div>
+                            <div class="col-4 fw-bold text-muted">Giao hàng:</div>
+                            <div class="col">
+                                <span class="available">
+                                    @if ($service->isShip === \App\Enums\Deliver::Yes->value)
                                         {{ \App\Enums\Deliver::Yes->description() }}
-\                                @elseif($service->isShip === \App\Enums\Deliver::No->value)
+                                    @elseif($service->isShip === \App\Enums\Deliver::No->value)
                                         {{ \App\Enums\Deliver::No->description() }}
-                                @endif
-                            </span>
+                                    @endif
+                                </span>
+                            </div>
                         </div>
-                        <span class="pro-details">Địa chỉ: {{ $service->location }}</span>
-                        <div>
-                            <span class="pro-details">Số điện thoại: {{ $service->phone_number }}</span>
+                    
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-1 text-end">
+                                <i class="fas fa-map-marker-alt text-muted"></i>
+                            </div>
+                            <div class="col-4 fw-bold text-muted">Địa chỉ:</div>
+                            <div class="col">{{ $service->location }}</div>
+                        </div>
+                    
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-1 text-end">
+                                <i class="fas fa-phone-volume text-muted"></i>
+                            </div>
+                            <div class="col-4 fw-bold text-muted">Số điện thoại:</div>
+                            <div class="col">{{ $service->phone_number }}</div>
                         </div>
 
-                        <p>
-                            {{ $service->description }}
-                        </p>
+                        <div class="row mb-3 align-items-center">
+                            <div class="col-1 text-end">
+                                <i class="fas fa-sticky-note text-muted"></i>
+                            </div>
+                            <div class="col-4 fw-bold text-muted">Mô tả:</div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p>{{ $service->description }}</p>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-xs-12 pro-shipping">

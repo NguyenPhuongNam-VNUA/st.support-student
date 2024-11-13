@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-8 col-12">
-                <div class="grid-4-product">
-                    <div class="grid-pro">
-                        <ul class="grid-product">
+                <div class="row">
+                    <div class="col">
+                        <div class="header-style-pro">
                             @foreach ($services as $service)
-                                <li class="grid-items">
+                                <div class="header-pro">
                                     <div class="tred-pro">
                                         <div class="tr-pro-img">
                                             <a href="{{ route('client.service-detail', ['id' => $service->id]) }}">
@@ -63,9 +63,9 @@
                                             @endfor
                                         </div>
                                     </div>
-                                </li>
+                                </div>
                             @endforeach
-                        </ul>
+                        </div>
 
                     </div>
                 </div>
