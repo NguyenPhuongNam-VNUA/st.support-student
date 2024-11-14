@@ -447,7 +447,7 @@
     text-transform: capitalize;
 }
 .home-service .service-area-main .service-img {
-    width: 40%;
+    /* width: 40%; */
     padding: 0px 30px;
 }
 /*map popup*/
