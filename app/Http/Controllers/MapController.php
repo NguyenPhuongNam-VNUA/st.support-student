@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Map\IconPoint;
 use App\Models\Map\Point;
+use App\Models\Post\Post;
+use App\Models\Service\Service;
 
 class MapController extends Controller
 {
@@ -25,7 +27,11 @@ class MapController extends Controller
                 'icon_name' => $point->iconPoint->name, // Thêm tên của icon vào đây
             ];
         });
-        return view('client/pages/index', compact('icons', 'points'));
+
+        $services = Service::orderBy('created_at', 'desc')->take(10)->get();
+        $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
+        $healthsBlogs = Post::where('category', 2)->orderBy('created_at', 'desc')->take(10)->get();
+        return view('client/pages/index', compact('icons', 'points', 'services', 'posts', 'healthsBlogs'));
     }
 
     public function index()
