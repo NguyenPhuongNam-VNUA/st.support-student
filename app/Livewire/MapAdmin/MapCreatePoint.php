@@ -50,7 +50,7 @@ class MapCreatePoint extends Component
             'latitude' => $this->lat,
             'longitude' => $this->lng,
         ]);
-        session()->flash('success', 'Thêm mới icon thành công');
+        session()->flash('success', 'Thêm mới địa điểm thành công');
         return redirect()->route('admin.map.index');
     }
 
