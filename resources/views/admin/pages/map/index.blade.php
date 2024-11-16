@@ -124,7 +124,7 @@
                         if (result.isConfirmed) {
                             Livewire.dispatch('confirmDeletePoint');
                             Swal.fire({
-                                title: "Xóa điểm thành công!",
+                                title: "Xóa địa điểm thành công!",
                                 icon: "success"
                             }).then(() => {
                                 //tải lại trang sau khi xóa
