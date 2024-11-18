@@ -27,12 +27,6 @@ class ServiceComment extends Component
         'comment' => 'required|string|max:500',
     ];
 
-    protected $messages = [
-        'rating.required' => 'Vui lòng chọn số sao đánh giá',
-        'rating.min' => 'Vui lòng chọn số sao đánh giá',
-        'comment.required' => 'Vui lòng nhập nội dung đánh giá',
-        'comment.max' => 'Nội dung đánh giá không được vượt quá 500 ký tự'
-    ];
 
     public function mount($id): void
     {

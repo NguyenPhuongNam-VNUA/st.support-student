@@ -74,7 +74,7 @@ class MotelComment extends Component
         }
 
         if ($this->hasReviewed) {
-            session()->flash('error', 'Bạn đã đánh giá dịch vụ này rồi.');
+            session()->flash('error', 'Bạn đã đánh giá nhà trọ này rồi.');
             return;
         }
 
