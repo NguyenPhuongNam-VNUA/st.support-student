@@ -1,7 +1,7 @@
 @extends('client.layouts.master')
 
 @section('title')
-Tìm giảng đường
+Giảng đường
 @endsection
 
 @section('content')
@@ -49,10 +49,10 @@ Tìm giảng đường
                                     Tên giảng đường được lấy cảm hứng từ tên của nhà giáo Nguyễn Đăng (1921-2008).
                                     Ông là Hiệu trưởng của trường trong giai đoạn 1963-1975
                                 </p>
-                                <a href="" class="read-link">
+                                {{-- <a href="" class="read-link">
                                     <span>Xem chi tiết</span>
                                     <i class="ti-arrow-right"></i>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
@@ -76,10 +76,10 @@ Tìm giảng đường
                                     Giảng đường Trung tâm nằm trong dự án "Nâng cao chất lượng giáo dục đại học" (SAHEP) do Bộ Giáo dục và Đào tạo (GD&ĐT) phối hợp với Ngân hàng thế giới tổ chức. 
                                     Nhờ đó, giảng đường hiện được trang bị những cơ sở vật chất tốt nhất, phục vụ tối đa việc học tập và phát triển cho sinh viên Học viện.
                                 </p>
-                                <a href="" class="read-link">
+                                {{-- <a href="" class="read-link">
                                     <span>Xem chi tiết</span>
                                     <i class="ti-arrow-right"></i>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
@@ -102,10 +102,10 @@ Tìm giảng đường
                                     Giảng đường B mang vẻ mộc mạc, trữ tình với mặt tiền hướng ra hồ Hi vọng, nơi gió mát cùng những nhành cây nhẹ đưa trong gió. Học tập tại đây sinh viên luôn có thể cảm thấy trong lòng khoan khoái đến lạ.
                                     Cảm thấy tâm hồn thật nhẹ nhõm khi rảo bước quanh hồ, ngồi đọc sách hay tán gẫu những câu chuyện từ thuở hoa niên.
                                 </p>
-                                <a href="" class="read-link">
+                                {{-- <a href="" class="read-link">
                                     <span>Xem chi tiết</span>
                                     <i class="ti-arrow-right"></i>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
@@ -128,10 +128,10 @@ Tìm giảng đường
                                     Bên cạnh các giảng đường hiện đại, giảng đường C vẫn ở đó đồng hành cùng bước đường phát triển của sinh viên Học viện.
                                     Với vẻ đẹp cổ kính, nhuốm màu thời gian giảng đường C đã làm bao con tim của các lứa sinh viên xao xuyến chẳng thể nào quên.
                                 </p>
-                                <a href="" class="read-link">
+                                {{-- <a href="" class="read-link">
                                     <span>Xem chi tiết</span>
                                     <i class="ti-arrow-right"></i>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
@@ -153,10 +153,10 @@ Tìm giảng đường
                                 <p class="blog-description">
                                     Giảng đường Khoa Cơ - Điện mới nằm trong dự án "Nâng cao chất lượng giáo dục đại học" (SAHEP) do Bộ Giáo dục và Đào tạo (GD&ĐT) phối hợp với Ngân hàng thế giới tổ chức. 
                                     Nhờ đó, giảng đường hiện được trang bị những cơ sở vật chất tốt nhất, phục vụ tối đa việc học tập và phát triển cho sinh viên Học viện.
-                                </p>                                <a href="" class="read-link">
+                                {{-- </p>                                <a href="" class="read-link">
                                     <span>Xem chi tiết</span>
                                     <i class="ti-arrow-right"></i>
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>

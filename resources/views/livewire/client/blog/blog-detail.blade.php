@@ -63,7 +63,7 @@
                             <i class="fa fa-quote-left"></i>
                             <h6>{{ $post->user->name }}</h6>
                         </div>
-                        <div class="blog-comments">
+                        {{-- <div class="blog-comments">
                             <h4><span>5</span> Bình luận</h4>
                             <div class="blog-comment-info">
                                 <ul class="comments-arae">
@@ -107,7 +107,7 @@
                                 <textarea placeholder="Nhập vào ý kiến của bạn ..."></textarea>
                             </form>
                             <a href="blog-style-1-3-grid.html" class="btn-style1">Bình luận</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

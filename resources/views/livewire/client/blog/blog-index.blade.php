@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="date-comm-adit">
                                     <span class="blog-date"><i class="ti-calendar"></i>{{ \Carbon\Carbon::parse($post->created_at)->isoFormat('D MMMM YYYY') }}</span>
-                                    <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 1 Comment</a>
+                                    {{-- <a href="javascript:void(0)"><i class="ti-comment-alt"></i> 1 Comment</a> --}}
                                     <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">{{ $post->user->name }}</span></span>
                                 </div>
                                 <p class="blog-description">{{ Str::limit(strip_tags($post->content), 100) }}</p>

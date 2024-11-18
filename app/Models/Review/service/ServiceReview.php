@@ -16,7 +16,7 @@ class ServiceReview extends Model
 
     protected $fillable = [
         'service_id',
-        'user_id',
+        'student_id',
         'rating',
         'comment',
     ];
