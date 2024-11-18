@@ -49,10 +49,6 @@
                                     <i class="icon-user"></i>
                                     <span class="blog-d-n-c">By <span class="editor">{{ $post->user->name }}</span></span>
                                 </span>
-                                <span class="blog-data comments">
-                                    <i class="icon-bubble"></i>
-                                    <span class="blog-d-n-c">4 <span class="add-comments">comments</span></span>
-                                </span>
                             </div>
                         </div>
 
