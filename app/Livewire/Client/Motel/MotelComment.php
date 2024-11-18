@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire\Client\Service;
+namespace App\Livewire\Client\Motel;
 
-use App\Models\Review\service\ServiceReview;
+use App\Models\Review\motel\MotelReview;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class ServiceComment extends Component
+class MotelComment extends Component
 {
     #[Validate(as: 'Điểm đánh giá')]
     public $rating = 0;
@@ -18,7 +18,7 @@ class ServiceComment extends Component
 
     public $reviews;
 
-    public $serviceId;
+    public $motelId;
 
     protected $rules = [
         'rating' => 'required|integer|min:1|max:5',
@@ -27,13 +27,13 @@ class ServiceComment extends Component
 
     public function mount($id): void
     {
-        $this->serviceId = $id;
+        $this->motelId = $id;
         $this->loadReviews();
     }
 
     public function loadReviews(): void
     {
-        $this->reviews = ServiceReview::where('service_id', $this->serviceId)
+        $this->reviews = MotelReview::where('motel_id', $this->motelId)
             ->with('student')
             ->latest()
             ->get();
@@ -48,12 +48,10 @@ class ServiceComment extends Component
 
         $user = auth('students')->user();
 
-
-
         $this->validate();
 
-        ServiceReview::create([
-            'service_id' => $this->serviceId,
+        MotelReview::create([
+            'motel_id' => $this->motelId,
             'student_id' => $user->id,
             'rating' => $this->rating,
             'comment' => $this->comment,
@@ -68,8 +66,9 @@ class ServiceComment extends Component
 
     public function render()
     {
-        return view('livewire.client.service.service-comment', [
+        return view('livewire.client.motel.motel-comment', [
             'reviews' => $this->reviews,
         ]);
     }
+
 }

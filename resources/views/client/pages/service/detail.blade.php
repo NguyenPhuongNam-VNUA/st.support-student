@@ -42,20 +42,9 @@ Dịch vụ
     
 </script>
 
-{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Livewire.on('cmt-success', () => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Thành công',
-                text: 'Bình luận của bạn đã được đăng tải.',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#448B1F',
-            });
-        });
-    });
-</script> --}}
+@if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
 @if(session('success'))
 <div class="alert bg-success text-white alert-dismissible fade show custom-alert">
     <div class="d-flex">
@@ -67,30 +56,7 @@ Dịch vụ
 </div>
 @endif
 
-<style>
-    /* Custom styles for SweetAlert2 */
-    .swal2-container-custom {
-        z-index: 9999 !important;
-    }
 
-    .swal2-popup-custom {
-        font-size: 1rem !important;
-    }
-</style>
-
-<style>
-    .fa-star, .fa-star-o {
-        font-size: 20px;
-        cursor: pointer;
-        transition: color 0.2s ease;
-    }
-    .fa-star:hover, .fa-star-o:hover {
-        color: #FFD700;
-    }
-    .fa-star.e-star {
-        color: #FFD700;
-    }
-</style>
 
 <style>
     .custom-alert {

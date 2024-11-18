@@ -246,15 +246,15 @@
                                     <div class="swiper-slide">
                                         <div class="blog-start">
                                             <div class="blog-image">
-                                                <a href="#">
+                                                <a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}">
                                                     <img src="{{ asset('storage/' . $healthsBlog->thumbnail) }}"
                                                         alt="blog-image" class="img-fluid">
                                                 </a>
-                                                <a href="#" class="blog-icon"><i class="icon-link icons"></i></a>
+                                                <a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
                                             <div class="blog-content">
                                                 <div class="blog-title">
-                                                    <h6><a href="#">{{$healthsBlog->title}}</a></h6>
+                                                    <h6><a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}">{{$healthsBlog->title}}</a></h6>
                                                 </div>
                                                 <p class="blog-description">
                                                     {!! Str::limit(strip_tags($healthsBlog->content), 100, '...') !!}
