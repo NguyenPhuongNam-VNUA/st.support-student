@@ -101,6 +101,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.dormitory.facilities.index') }}"
+                       class="nav-link {{ request()->routeIs('admin.dormitory.facilities.index') ? 'active' : '' }}"
+                       style="display: flex; align-items: center;">
+                        <i class="fas fa-bed me-3 fa"></i>
+                        <span>
+                            Cơ sở hạ tầng
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.dormitory-students.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitory-students.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">

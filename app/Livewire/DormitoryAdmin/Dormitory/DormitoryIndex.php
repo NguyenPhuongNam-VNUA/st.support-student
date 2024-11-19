@@ -22,6 +22,9 @@ class DormitoryIndex extends Component
             ->search($this->search)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
+        foreach ($dormitories as $dormitory) {
+            $dormitory->available_rooms = $dormitory->total_rooms - $dormitory->availableRooms()->count();
+        }
         return view('livewire.dormitory-admin.dormitory.dormitory-index', [
             'dormitories' => $dormitories
         ]);

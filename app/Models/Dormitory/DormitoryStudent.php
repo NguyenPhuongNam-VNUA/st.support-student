@@ -43,4 +43,24 @@ class DormitoryStudent extends Model
 
         return $query;
     }
+
+    // app/Models/Student.php
+
+    public function scopeFilter($query, $dormitoryId = null, $roomId = null)
+    {
+        // Lọc sinh viên theo tòa nhưng không chọn phòng
+        if ($dormitoryId && !$roomId) {
+            return $query->whereHas('room', function ($q) use ($dormitoryId): void {
+                $q->where('dormitory_id', $dormitoryId);
+            });
+        }
+
+        // Lọc sinh viên theo tòa và phòng cụ thể
+        if ($roomId) {
+            $query->where('room_id', $roomId);
+        }
+
+        // Nếu chỉ chọn phòng (không hợp lệ với cấu trúc bạn mô tả), trả về danh sách rỗng
+        return $query;
+    }
 }

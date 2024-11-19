@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Dormitory;
 
+use App\Models\Gallery\dormitory\RoomGallery;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,6 +21,8 @@ class Room extends Model
         'student_id',
         'status',
         'slug',
+        'thumbnail',
+        'description',
     ];
 
     public function dormitory(): BelongsTo
@@ -32,6 +35,16 @@ class Room extends Model
         return $this->hasMany(DormitoryStudent::class);
     }
 
+    public function facilities(): HasMany
+    {
+        return $this->hasMany(Facility::class);
+    }
+
+    public function roomGalleries(): HasMany
+    {
+        return $this->hasMany(RoomGallery::class);
+    }
+
     public function scopeSearch($query, $search)
     {
         if ($search) {
@@ -39,5 +52,19 @@ class Room extends Model
         }
 
         return $query;
+    }
+
+    public function scopeFilter($query, $dormitoryId)
+    {
+        if ($dormitoryId) {
+            return $query->where('dormitory_id', $dormitoryId);
+        }
+    }
+
+    public function scopeEmpty($query, $value)
+    {
+        if ($value) {
+            return $query->where('status', $value);
+        }
     }
 }

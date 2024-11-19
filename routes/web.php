@@ -12,6 +12,7 @@ use App\Http\Controllers\Client\ClientServiceController;
 use App\Http\Controllers\Client\StudentLoginController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
+use App\Http\Controllers\DormitoryAdmin\FacilityController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MapController;
@@ -102,6 +103,12 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
             Route::get('/', [RoomController::class, 'index'])->name('admin.dormitory.rooms.index');
             Route::get('/create', [RoomController::class, 'create'])->name('admin.dormitory.rooms.create');
             Route::get('/edit/{id}', [RoomController::class, 'edit'])->name('admin.dormitory.rooms.edit');
+        });
+
+        Route::prefix('/facility')->group(function (): void {
+            Route::get('/', [FacilityController::class, 'index'])->name('admin.dormitory.facilities.index');
+            Route::get('/create', [FacilityController::class, 'create'])->name('admin.dormitory.facilities.create');
+            Route::get('/edit/{id}', [FacilityController::class, 'edit'])->name('admin.dormitory.facilities.edit');
         });
 
         Route::prefix('/manager')->group(function (): void {

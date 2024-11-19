@@ -83,11 +83,19 @@
                 <div class="form-group mt-2">
                     <label class="form-label">Hình ảnh bổ sung: <span class="text-danger">*</span></label>
                     <div>
-                        <input wire:model="new_service_galleries" type="file" multiple
-                            class="form-control @error('new_service_galleries') is-invalid @enderror">
-                        @error('new_service_galleries')
-                            <label class="text-danger mt-1">{{ $message }}</label>
-                        @enderror
+                        <input wire:model.live="service_galleries" type="file" multiple
+                               class="form-control @error('service_galleries') is-invalid @enderror">
+
+                        {{-- Hiển thị lỗi cho từng ảnh --}}
+                        @if ($errors->has('service_galleries.*'))
+                            @foreach ($service_galleries as $key => $gallery)
+                                @if ($errors->has('service_galleries.' . $key))
+                                    @foreach ($errors->get('service_galleries.' . $key) as $message)
+                                        <label style="display: block" class="text-danger mt-1">Ảnh {{ $key + 1 }}: Dung lượng tập tin ảnh không được lớn hơn 1024 kB.</label>
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
                     {{-- <div class="mt-2">
                         @if ($new_service_galleries)
