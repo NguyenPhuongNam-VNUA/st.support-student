@@ -51,7 +51,7 @@
                         Mô tả: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="description" type="text" class="form-control @error('description') is-invalid @enderror">
+                        <textarea wire:model.live="description" class="form-control @error('description') is-invalid @enderror"></textarea>
                         @error('description')
                         <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror

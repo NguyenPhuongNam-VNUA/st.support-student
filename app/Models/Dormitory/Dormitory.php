@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Dormitory;
 
+use App\Enums\StatusRoom;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -44,5 +45,12 @@ class Dormitory extends Model
         }
 
         return $query;
+    }
+
+    public function scopeAvailableRooms($query)
+    {
+        return $query->whereHas('rooms', function ($query): void {
+            $query->where('status', StatusRoom::Empty->value);
+        });
     }
 }

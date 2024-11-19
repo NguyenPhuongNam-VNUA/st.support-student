@@ -13,6 +13,7 @@
 <script src="{{ asset('assets/admin/js/vendor/pickers/daterangepicker.js') }}"></script>
 <script src="{{ asset('assets/admin/js/app.js') }}"></script>
 <script src="{{ asset('assets/admin/js/init.js') }}"></script>
+<script src="{{ asset('assets/admin/js/vendor/forms/selects/select2.min.js') }}"></script>
 {{--<!-- /theme JS files -->--}}
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

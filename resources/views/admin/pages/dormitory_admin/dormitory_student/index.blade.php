@@ -71,7 +71,7 @@
 @endsection
 <div class="content">
     <!-- Content -->
-    <livewire:dormitory-admin.dormitory-student.dormitory-student-index />
+    <livewire:dormitory-admin.dormitory-student.dormitory-student-index :room_student_id="$room_id" />
     <!-- /content -->
 </div>
 @endsection

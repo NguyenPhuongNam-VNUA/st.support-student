@@ -12,28 +12,28 @@ use Livewire\Component;
 
 class DormitoryStudentCreate extends Component
 {
-    #[Validate(as: 'Tên sinh viên')]
+    #[Validate(as: 'tên sinh viên')]
     public $name;
 
-    #[Validate(as: 'Mã sinh viên')]
+    #[Validate(as: 'mã sinh viên')]
     public $code;
 
-    #[Validate(as: 'Giới tính')]
+    #[Validate(as: 'giới tính')]
     public $gender;
 
-    #[Validate(as: 'Email')]
+    #[Validate(as: 'email')]
     public $email;
 
-    #[Validate(as: 'Số điện thoại')]
+    #[Validate(as: 'số điện thoại')]
     public $phone_number;
 
-    #[Validate(as: 'Ngày sinh')]
+    #[Validate(as: 'ngày sinh')]
     public $bod;
 
-    #[Validate(as: 'Phòng')]
+    #[Validate(as: 'phòng')]
     public $room_id;
 
-    #[Validate(as: 'CCCD')]
+    #[Validate(as: 'căn cước công dân')]
     public $citizen_id;
 
     public $rooms;
@@ -41,7 +41,11 @@ class DormitoryStudentCreate extends Component
     public function mount(): void
     {
         // Lọc phòng có trạng thái còn trống (empty)
-        $this->rooms = Room::where('status', StatusRoom::Empty->value)->get();
+        $this->rooms = Room::with('dormitory')
+            ->where('status', StatusRoom::Empty->value)
+            ->get()
+            ->groupBy('dormitory.name')
+            ->toArray();
     }
     public function render()
     {
@@ -93,7 +97,27 @@ class DormitoryStudentCreate extends Component
             ],
             'code' => 'required|unique:dormitory_students,code',
             'gender' => 'required',
-            'bod' => 'required|date',
+            'bod' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    // Chuyển đổi định dạng từ yyyy-mm-dd sang dd/mm/yyyy nếu input là yyyy-mm-dd
+                    if (preg_match("/^\d{4}-\d{2}-\d{2}$/", $value)) {
+                        $dateParts = explode('-', $value);
+                        $value = $dateParts[2] . '/' . $dateParts[1] . '/' . $dateParts[0];
+                    }
+
+                    // Kiểm tra định dạng dd/mm/yyyy
+                    if (!preg_match("/^\d{2}\/\d{2}\/\d{4}$/", $value)) {
+                        return $fail('Ngày sinh phải có định dạng dd/mm/yyyy');
+                    }
+
+                    // Giới hạn năm từ 1900 đến năm hiện tại
+                    $year = (int) mb_substr($value, 6, 4);
+                    if ($year < 1900 || $year > (int) date('Y')) {
+                        return $fail('Năm sinh không hợp lệ');
+                    }
+                }
+            ],
             'room_id' => 'required',
         ];
     }

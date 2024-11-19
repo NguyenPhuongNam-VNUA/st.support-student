@@ -91,34 +91,37 @@
                     <label class="text-danger mt-1" style="display: block;">{{ $message }}</label>
                     @enderror
                 </div>
-
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Phòng: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <select wire:model="room_id" class="form-control @error('room_id') is-invalid @enderror">
-                            <option value="">Chọn phòng</option>
-                            @foreach($rooms as $room)
-                            <option value="{{ $room->id }}">{{ $room->name }}</option>
-                            @endforeach
-                        </select>
-
-                        @error('room_id')
-                        <label class="text-danger mt-1">{{ $message }}</label>
-                        @enderror
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card">
+            <div class="card-header">
+                Phòng
+            </div>
+            <div class="card-body">
+                <select wire:model="room_id" class="form-control @error('room_id') is-invalid @enderror">
+                    <option value="">Chọn phòng</option>
+                    @foreach($rooms as $dormitoryName => $room)
+                        <optgroup class="text-primary" id="optgroup" label="{{ $dormitoryName }}">
+                            @foreach($room as $item)
+                                <option class="text-muted" value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                            @endforeach
+                        </optgroup>
+                    @endforeach
+                </select>
+
+                @error('room_id')
+                <label class="text-danger mt-1">{{ $message }}</label>
+                @enderror
+            </div>
+        </div>
+        <div class="card">
             <div class="card-header bold">
                 <i class="ph-gear-six"></i>
                 Hành động
             </div>
-            <div class="card-body d-flex align-items-center gap-1">
+            <div class="card-body d-flex justify-content-around gap-1">
                 <button wire:click="store" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Tạo mới</button>
                 <a href="{{ route('admin.dormitory-students.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>

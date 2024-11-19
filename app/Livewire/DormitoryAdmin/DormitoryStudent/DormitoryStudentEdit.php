@@ -37,6 +37,7 @@ class DormitoryStudentEdit extends Component
     public $citizen_id;
 
     public $id;
+    public $rooms;
 
     public function render()
     {
@@ -49,7 +50,7 @@ class DormitoryStudentEdit extends Component
     public function mount(): void
     {
         $this->id = request()->id;
-        $dormitory_student = DormitoryStudent::query()->find($this->id);
+        $dormitory_student = DormitoryStudent::query()->findOrFail($this->id);
         $this->name = $dormitory_student->name;
         $this->code = $dormitory_student->code;
         $this->gender = $dormitory_student->gender;
@@ -58,6 +59,12 @@ class DormitoryStudentEdit extends Component
         $this->bod = $dormitory_student->bod;
         $this->room_id = $dormitory_student->room_id;
         $this->citizen_id = $dormitory_student->citizen_id;
+
+        $this->rooms = Room::with('dormitory')
+            ->where('status', StatusRoom::Empty->value)
+            ->get()
+            ->groupBy('dormitory.name')
+            ->toArray();
     }
 
     public function update()

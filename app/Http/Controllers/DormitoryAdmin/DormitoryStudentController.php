@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Controllers\DormitoryAdmin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class DormitoryStudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.pages.dormitory_admin.dormitory_student.index');
+        $room_id = $request->room_id;
+        return view('admin.pages.dormitory_admin.dormitory_student.index', compact('room_id'));
     }
 
     public function create()

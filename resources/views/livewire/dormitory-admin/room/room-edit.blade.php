@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-info"></i>
-                Phòng
+                Thông tin phòng
             </div>
 
             <div class="card-body">
@@ -23,10 +23,10 @@
                         Tòa: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="dormitory_id" class="form-control @error('dormitory_id') is-invalid @enderror">
+                        <select wire:model.live="dormitory_id" class="form-control @error('dormitory_id') is-invalid @enderror">
                             <option value="">Chọn tòa nhà kí túc xá</option>
                             @foreach($dormitories as $dormitory)
-                            <option value="{{ $dormitory->id }}">{{ $dormitory->name }}</option>
+                                <option value="{{ $dormitory->id }}">{{ $dormitory->name }}</option>
                             @endforeach
                         </select>
 
@@ -46,6 +46,71 @@
                         @enderror
                     </div>
                 </div>
+
+                <div class="form-group mt-3">
+                    <label class="form-label">
+                        Ảnh đại diện phòng: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <input wire:model.live="new_thumbnail" type="file"
+                               class="form-control @error('new_thumbnail') is-invalid @enderror">
+                        @error('new_thumbnail')
+                        <label class="text-danger mt-1">{{ $message }}</label>
+                        @enderror
+                    </div>
+                    <div class="mt-2">
+                        @if ($new_thumbnail)
+                            <img src="{{ $new_thumbnail->temporaryUrl() }}" alt="New thumbnail" class="img-thumbnail"
+                                 width="150">
+                        @elseif ($thumbnail)
+                            <img src="{{ asset('storage/' . $thumbnail) }}" alt="{{ $name }}"
+                                 class="img-thumbnail" width="150">
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label class="form-label">
+                        Ảnh bổ sung: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <input wire:model.live="room_galleries" type="file" multiple
+                               class="form-control @error('room_galleries') is-invalid @enderror">
+
+                        {{-- Hiển thị lỗi cho từng ảnh --}}
+                        @if ($errors->has('room_galleries.*'))
+                            @foreach ($room_galleries as $key => $gallery)
+                                @if ($errors->has('room_galleries.' . $key))
+                                    @foreach ($errors->get('room_galleries.' . $key) as $message)
+                                        <label style="display: block" class="text-danger mt-1">Ảnh {{ $key + 1 }}: Dung lượng tập tin ảnh không được lớn hơn 1024 kB.</label>
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        @endif
+                    </div>
+                    <div class="mt-2">
+                        @if ($new_room_galleries && count($new_room_galleries) > 0)
+                            @foreach ($new_room_galleries as $newGallery)
+                                <img src="{{ $newGallery->temporaryUrl() }}" alt="New gallery image" class="img-thumbnail" width="150">
+                            @endforeach
+                        @elseif ($room_galleries && count($room_galleries) > 0)
+                            @foreach ($room_galleries as $gallery)
+                                <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery image" class="img-thumbnail" width="150">
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label class="form-label">
+                        Mô tả tổng quan: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        <textarea wire:model.live="description" class="form-control @error('description') is-invalid @enderror"></textarea>
+                        @error('description')
+                        <label class="text-danger mt-1">{{$message}}</label>
+                        @enderror
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -56,7 +121,7 @@
                 Hành động
             </div>
             <div class="card-body d-flex align-items-center gap-1">
-                <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa</button>
+                <button wire:click="store" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa </button>
                 <a href="{{ route('admin.dormitory.rooms.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>
         </div>
