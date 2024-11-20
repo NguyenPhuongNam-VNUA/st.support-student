@@ -81,7 +81,7 @@ class MotelEdit extends Component
             'thumbnail' => $thumbnailPath,
             'total_rooms' => $this->total_rooms,
             'available_rooms' => $this->available_rooms,
-            'slug' => Str::slug($this->address),
+            'slug' => Str::slug($this->address) . '-' . $motel->id,
         ]);
 
         if ($this->new_motel_galleries) {

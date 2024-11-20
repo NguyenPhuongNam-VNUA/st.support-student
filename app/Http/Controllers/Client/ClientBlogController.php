@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post\Post;
 
 class ClientBlogController extends Controller
 {
@@ -13,8 +14,12 @@ class ClientBlogController extends Controller
         return view('client.pages.blog.index');
     }
 
-    public function detail($id)
+    public function detail($slug)
     {
-        return view('client.pages.blog.detail')->with('id', $id);
+        $post = Post::where('slug', $slug)->first();
+        return view('client.pages.blog.detail', [
+            'id' => $post->id,
+            'post' => $post,
+        ]);
     }
 }

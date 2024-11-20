@@ -60,6 +60,10 @@ class MotelRegister extends Component
             'status' => \App\Enums\StatusRequest::Pending->value,
         ]);
 
+        $motel->update([
+            'slug' => Str::slug($this->address) . '-' . $motel->id,
+        ]);
+
         if ($this->motel_galleries) {
             foreach ($this->motel_galleries as $motel_gallery) {
                 $path = $motel_gallery->store('motelGalleries', 'public');

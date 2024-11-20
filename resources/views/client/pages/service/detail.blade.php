@@ -8,14 +8,16 @@ Dịch vụ
 
 <!-- breadcrumb start -->
 <section class="about-breadcrumb">
-    <div class="about-back section-tb-padding" style="background-image: url({{ asset('assets/client/image/lecture-hall-image/toanhaTT.jpg') }})">
+    <div class="about-back section-tb-padding" style="background-image: url({{ asset('assets/client/image/lecture-hall-image/ClientBreadcrumb.jpg') }})">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="about-l">
-                        {{-- <ul class="about-link">
-                            <li class="go-home"><a href="">Dịch vụ</a></li>
-                        </ul> --}}
+                        <ul class="about-link d-flex gap-2" style="font-size: 1rem">
+                            <li class="text-muted"><a href="{{route('client.index')}}">Trang chủ</a> / </li>
+                            <li class="text-muted"><a href="{{route('client.service')}}">Dịch vụ</a> / </li>
+                            <li class="text-muted"><span>{{$service->name}}</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>

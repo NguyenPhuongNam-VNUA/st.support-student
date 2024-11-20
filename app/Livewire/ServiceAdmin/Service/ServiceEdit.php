@@ -6,6 +6,7 @@ namespace App\Livewire\ServiceAdmin\Service;
 
 use App\Models\Service\Service;
 use App\Models\Service\ServiceCategory;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -90,6 +91,7 @@ class ServiceEdit extends Component
             'phone_number' => $this->phone_number,
             'owner_name' => $this->owner_name,
             'isShip' => $this->isShip,
+            'slug' => Str::slug($this->name) . '-' . $service->id,
         ]);
         if ($this->new_service_galleries) {
 

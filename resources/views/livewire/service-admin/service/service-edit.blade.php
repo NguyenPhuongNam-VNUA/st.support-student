@@ -83,26 +83,23 @@
                 <div class="form-group mt-2">
                     <label class="form-label">Hình ảnh bổ sung: <span class="text-danger">*</span></label>
                     <div>
-                        <input wire:model.live="service_galleries" type="file" multiple
-                               class="form-control @error('service_galleries') is-invalid @enderror">
-
-                        {{-- Hiển thị lỗi cho từng ảnh --}}
-                        @if ($errors->has('service_galleries.*'))
-                            @foreach ($service_galleries as $key => $gallery)
-                                @if ($errors->has('service_galleries.' . $key))
-                                    @foreach ($errors->get('service_galleries.' . $key) as $message)
-                                        <label style="display: block" class="text-danger mt-1">Ảnh {{ $key + 1 }}: Dung lượng tập tin ảnh không được lớn hơn 1024 kB.</label>
-                                    @endforeach
-                                @endif
+                        <input wire:model.live="new_service_galleries" type="file" multiple
+                               class="form-control @error('new_service_galleries') is-invalid @enderror">
+                
+                        @if ($errors->has('new_service_galleries.*'))
+                            @foreach ($errors->get('new_service_galleries.*') as $message)
+                                <label class="text-danger mt-1">{{ $message }}</label>
                             @endforeach
                         @endif
                     </div>
                     <div class="mt-2">
                         @if ($new_service_galleries && count($new_service_galleries) > 0)
+                            {{-- Chỉ hiển thị ảnh mới khi có upload --}}
                             @foreach ($new_service_galleries as $newGallery)
                                 <img src="{{ $newGallery->temporaryUrl() }}" alt="New gallery image" class="img-thumbnail" width="150">
                             @endforeach
                         @elseif ($service_galleries && count($service_galleries) > 0)
+                            {{-- Hiển thị ảnh cũ chỉ khi không có ảnh mới --}}
                             @foreach ($service_galleries as $gallery)
                                 <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery image" class="img-thumbnail" width="150">
                             @endforeach

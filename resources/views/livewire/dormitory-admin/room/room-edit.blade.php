@@ -73,29 +73,34 @@
                         Ảnh bổ sung: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <input wire:model.live="room_galleries" type="file" multiple
-                               class="form-control @error('room_galleries') is-invalid @enderror">
-
-                        {{-- Hiển thị lỗi cho từng ảnh --}}
-                        @if ($errors->has('room_galleries.*'))
-                            @foreach ($room_galleries as $key => $gallery)
-                                @if ($errors->has('room_galleries.' . $key))
-                                    @foreach ($errors->get('room_galleries.' . $key) as $message)
-                                        <label style="display: block" class="text-danger mt-1">Ảnh {{ $key + 1 }}: Dung lượng tập tin ảnh không được lớn hơn 1024 kB.</label>
-                                    @endforeach
-                                @endif
+                        <input wire:model.live="new_room_galleries" type="file" multiple
+                               class="form-control @error('new_room_galleries') is-invalid @enderror">
+                
+                        {{-- Hiển thị lỗi validation --}}
+                        @error('new_room_galleries')
+                            <label class="text-danger mt-1">{{ $message }}</label>
+                        @enderror
+                        
+                        {{-- Hiển thị lỗi cho từng file --}}
+                        @if ($errors->has('new_room_galleries.*'))
+                            @foreach ($errors->get('new_room_galleries.*') as $error)
+                                <label class="text-danger mt-1">{{ is_array($error) ? implode(', ', $error) : $error }}</label>
                             @endforeach
                         @endif
                     </div>
                     <div class="mt-2">
                         @if ($new_room_galleries && count($new_room_galleries) > 0)
+                            {{-- Hiển thị ảnh mới upload --}}
                             @foreach ($new_room_galleries as $newGallery)
                                 <img src="{{ $newGallery->temporaryUrl() }}" alt="New gallery image" class="img-thumbnail" width="150">
                             @endforeach
                         @elseif ($room_galleries && count($room_galleries) > 0)
+                            {{-- Hiển thị ảnh hiện tại --}}
                             @foreach ($room_galleries as $gallery)
                                 <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery image" class="img-thumbnail" width="150">
                             @endforeach
+                        @else
+                            <label class="text-danger mt-1">Chưa tải ảnh lên</label>
                         @endif
                     </div>
                 </div>
@@ -121,7 +126,7 @@
                 Hành động
             </div>
             <div class="card-body d-flex align-items-center gap-1">
-                <button wire:click="store" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa </button>
+                <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa </button>
                 <a href="{{ route('admin.dormitory.rooms.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>
         </div>

@@ -14,12 +14,12 @@
                         @foreach ($recentPosts as $recentPost)
                         <div class="blog-item d-block">
                             <div class="l-blog-image">
-                                <a href="{{ route('client.blog-detail', ['id' => $recentPost->id]) }}">
+                                <a href="{{ route('client.blog-detail', ['slug' => $recentPost->slug]) }}">
                                     <img src="{{ asset('storage/' . $recentPost->thumbnail) }}" class="img-fluid" alt="{{ $recentPost->title }}">
                                 </a>
                             </div>
                             <div class="l-blog-caption">
-                                <h4><a href="{{ route('client.blog-detail', ['id' => $recentPost->id]) }}">{{ $recentPost->title }}</a></h4>
+                                <h4><a href="{{ route('client.blog-detail', ['slug' => $recentPost->slug]) }}">{{ $recentPost->title }}</a></h4>
                                 <span class="date">{{ \Carbon\Carbon::parse($recentPost->created_at)->format('d-m-Y') }}</span>
                             </div>
                         </div>

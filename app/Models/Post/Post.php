@@ -19,7 +19,8 @@ class Post extends Model
         'content',
         'user_id',
         'category',
-        'thumbnail'
+        'thumbnail',
+        'slug',
     ];
 
     public function user(): BelongsTo

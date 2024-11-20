@@ -99,7 +99,7 @@ class ServiceComment extends Component
             session()->flash('success', 'Đánh giá của bạn đã được gửi thành công!');
 
         } catch (Exception $e) {
-            session()->flash('error', 'Có lỗi xảy ra, vui lòng thử lại sau.');
+            session()->flash('error', 'Vui lòng chọn số sao và nêu đánh giá của bạn.');
         }
     }
 
