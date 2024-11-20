@@ -68,6 +68,10 @@ class ServiceCreate extends Component
             'slug' => Str::slug($this->name),
         ]);
 
+        $service->update([
+            'slug' => Str::slug($this->name) . '-' . $service->id,
+        ]);
+
         if ($this->service_galleries) {
             foreach ($this->service_galleries as $image) {
                 $path = $image->store('service_images', 'public');

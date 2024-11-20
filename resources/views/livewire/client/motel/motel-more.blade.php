@@ -10,7 +10,7 @@
                     <div class="items">
                         <div class="tred-pro">
                             <div class="tr-pro-img">
-                                <a href="{{ route('client.motel-detail', $motel->id) }}">
+                                <a href="{{ route('client.motel-detail', $motel->slug) }}">
                                     <img class="img-fluid" src="{{ asset('storage/' . $motel->thumbnail) }}"
                                         alt="pro-img1">
                                 </a>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="caption">
-                            <h3><a href="{{ route('client.motel-detail', $motel->id) }}">{{ $motel->address }}</a></h3>
+                            <h3><a href="{{ route('client.motel-detail', $motel->slug) }}">{{ $motel->address }}</a></h3>
                             <div class="rating">
                                 @for ($i = 1; $i <= 5; $i++)
                                     <i class="fa {{ $i <= $motel->rating ? 'fa-star c-star' : 'fa-star-o' }}"></i>

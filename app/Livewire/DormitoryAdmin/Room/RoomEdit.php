@@ -34,6 +34,8 @@ class RoomEdit extends Component
 
     public $id;
     public $new_thumbnail;
+
+    #[Validate(as: 'ảnh bổ sung')]
     public $new_room_galleries = [];
 
 
@@ -81,8 +83,16 @@ class RoomEdit extends Component
         ]);
 
         if ($this->new_room_galleries) {
+            foreach ($room->roomGalleries as $oldGallery) {
+                $oldImagePath = public_path('storage/' . $oldGallery->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+                $oldGallery->delete();
+            }
+
             foreach ($this->new_room_galleries as $image) {
-                $path = $image->store('room_images', 'public');
+                $path = $image->store('service_images', 'public');
                 $room->roomGalleries()->create([
                     'image' => $path,
                 ]);
@@ -98,7 +108,7 @@ class RoomEdit extends Component
             'dormitory_id' => 'required',
             'capacity' => 'required',
             'new_thumbnail' => 'nullable|image|max:2048',
-            'new_room_galleries.*' => 'nullable|image|max:1024',
+            'new_room_galleries.*' => 'nullable|image|max:2048',
         ];
     }
 }

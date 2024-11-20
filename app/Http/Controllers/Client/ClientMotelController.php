@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dormitory\Motel;
 
 class ClientMotelController extends Controller
 {
@@ -13,8 +14,12 @@ class ClientMotelController extends Controller
         return view('client.pages.motel.index');
     }
 
-    public function detail($id)
+    public function detail($slug)
     {
-        return view('client.pages.motel.detail')->with('id', $id);
+        $motel = Motel::where('slug', $slug)->first();
+        return view('client.pages.motel.detail', [
+            'id' => $motel->id,
+            'motel' => $motel,
+        ]);
     }
 }

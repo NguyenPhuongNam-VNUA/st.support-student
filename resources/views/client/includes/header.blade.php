@@ -126,7 +126,7 @@
                                                 </li>
                                                 <li class="menu-link">
                                                     <a href="{{route('client.motel')}}" class="link-title">
-                                                        <i class='fa-solid fa-building-user me-1'></i>
+                                                        <i class='fa-solid fa-house-user me-1'></i>
                                                         <span class="sp-link-title">Nhà trọ</span>
                                                     </a>
                                                 </li>
@@ -146,6 +146,12 @@
                                                     <a href="{{route('client.lecture-hall')}}" class="link-title">
                                                         <i class="fa-solid fa-school me-1"></i>
                                                         <span class="sp-link-title">Giảng đường</span>
+                                                    </a>
+                                                </li>
+                                                <li class="menu-link">
+                                                    <a href="{{route('client.dormitory.index')}}" class="link-title">
+                                                        <i class="fa-solid fa-building-user me-1"></i>
+                                                        <span class="sp-link-title">Ký túc xá</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -201,7 +207,7 @@
                                         </li>
                                         <li class="menu-link">
                                             <a href="{{route('client.motel')}}" class="link-title">
-                                                <i class='fa-solid fa-building-user me-1'></i>
+                                                <i class='fa-solid fa-house-user'></i>
                                                 <span class="sp-link-title">Nhà trọ</span>
                                             </a>
                                         </li>
@@ -221,6 +227,12 @@
                                             <a href="{{route('client.lecture-hall')}}" class="link-title">
                                                 <i class="fa-solid fa-school me-1"></i>
                                                 <span class="sp-link-title">Giảng đường</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-link">
+                                            <a href="{{route('client.dormitory.index')}}" class="link-title">
+                                                <i class="fa-solid fa-building-user me-1"></i>
+                                                <span class="sp-link-title">Ký túc xá</span>
                                             </a>
                                         </li>
                                     </ul>

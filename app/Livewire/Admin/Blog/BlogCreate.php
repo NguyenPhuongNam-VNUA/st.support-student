@@ -6,6 +6,7 @@ namespace App\Livewire\Admin\Blog;
 
 use App\Models\Post\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -47,12 +48,17 @@ class BlogCreate extends Component
         $thumbnailPath = $this->thumbnail->store('thumbnailBlogs', 'public');
         $categoryId = Auth::user()->role_id;
 
-        Post::create([
+        $blog = Post::create([
             'title' => $this->title,
             'content' => $this->content,
             'category' => $categoryId,
             'thumbnail' => $thumbnailPath,
             'user_id' => Auth::id(),
+            'slug' => Str::slug($this->title),
+        ]);
+
+        $blog->update([
+            'slug' => Str::slug($this->title) . '-' . $blog->id,
         ]);
 
         session()->flash('success', 'Thêm mới bài viết thành công');

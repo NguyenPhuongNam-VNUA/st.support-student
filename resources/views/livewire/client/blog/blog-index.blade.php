@@ -13,12 +13,12 @@
                         @foreach ($recentPosts as $recentPost)
                         <div class="blog-item d-block">
                             <div class="l-blog-image">
-                                <a href="{{ route('client.blog-detail', ['id' => $recentPost->id]) }}">
+                                <a href="{{ route('client.blog-detail', ['slug' => $recentPost->slug]) }}">
                                     <img src="{{ asset('storage/' . $recentPost->thumbnail) }}" class="img-fluid" alt="{{ $recentPost->title }}">
                                 </a>
                             </div>
                             <div class="l-blog-caption">
-                                <h4><a href="{{ route('client.blog-detail', ['id' => $recentPost->id]) }}">{{ $recentPost->title }}</a></h4>
+                                <h4><a href="{{ route('client.blog-detail', ['slug' => $recentPost->slug]) }}">{{ $recentPost->title }}</a></h4>
                                 <span class="date">{{ \Carbon\Carbon::parse($recentPost->created_at)->format('d-m-Y') }}</span>
                             </div>
                         </div>
@@ -34,13 +34,13 @@
                     <div class="blog-start">
                         <div class="blog-post">
                             <div class="blog-image">
-                                <a href="{{ route('client.blog-detail', ['id' => $post->id]) }}">
+                                <a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}">
                                     <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="blog-image" class="img-fluid">
                                 </a>
                             </div>
                             <div class="blog-content">
                                 <div class="">
-                                    <h6><a href="{{ route('client.blog-detail', ['id' => $post->id]) }}">{{ $post->title }}</a></h6>
+                                    <h6><a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h6>
                                 </div>
                                 <div class="date-comm-adit">
                                     <span class="blog-date"><i class="ti-calendar"></i>{{ \Carbon\Carbon::parse($post->created_at)->isoFormat('D MMMM YYYY') }}</span>
@@ -48,7 +48,7 @@
                                     <span class="blog-admin"><i class="ti-user"></i> By <span class="blog-editor">{{ $post->user->name }}</span></span>
                                 </div>
                                 <p class="blog-description">{{ Str::limit(strip_tags($post->content), 100) }}</p>
-                                <a href="{{ route('client.blog-detail', ['id' => $post->id]) }}" class="read-link">
+                                <a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}" class="read-link">
                                     <span>Xem bài viết</span>
                                     <i class="ti-arrow-right"></i>
                                 </a>

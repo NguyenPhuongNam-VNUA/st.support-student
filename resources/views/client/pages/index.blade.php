@@ -99,16 +99,16 @@
                                         <div class="swiper-slide">
                                             <div class="blog-post">
                                                 <div class="blog-image img-size">
-                                                    <a href="{{ route('client.service-detail', ['id' => $service->id]) }}">
+                                                    <a href="{{ route('client.service-detail', ['slug' => $service->slug]) }}">
                                                         <img src="{{ asset('storage/' . $service->thumbnail) }}"
                                                             alt="pro-img1" class="img-fluid">
                                                     </a>
                                                 </div>
                                                 <div class="blog-content">
-                                                    <h3 class="title my-3" style="font-size: 18px"><a href="{{ route('client.service-detail', ['id' => $service->id]) }}">
+                                                    <h3 class="title my-3" style="font-size: 18px"><a href="{{ route('client.service-detail', ['slug' => $service->slug]) }}">
                                                         {{$service->name}}</a></h3>
                                                     <p class="desc mb-3">{{$service->location}}</p>
-                                                    <a href="{{ route('client.service-detail', ['id' => $service->id]) }}" class="read-btn btn-style5">
+                                                    <a href="{{ route('client.service-detail', ['slug' => $service->slug]) }}" class="read-btn btn-style5">
                                                         <span class="text">Xem thêm</span>
                                                         <span class="icon"><i class='fa fa-arrow-right'></i></span>
                                                     </a>
@@ -246,15 +246,15 @@
                                     <div class="swiper-slide">
                                         <div class="blog-start">
                                             <div class="blog-image">
-                                                <a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}">
+                                                <a href="{{ route('client.blog-detail', ['slug' => $healthsBlog->slug]) }}">
                                                     <img src="{{ asset('storage/' . $healthsBlog->thumbnail) }}"
                                                         alt="blog-image" class="img-fluid">
                                                 </a>
-                                                <a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}" class="blog-icon"><i class="icon-link icons"></i></a>
+                                                <a href="{{ route('client.blog-detail', ['slug' => $healthsBlog->slug]) }}" class="blog-icon"><i class="icon-link icons"></i></a>
                                             </div>
                                             <div class="blog-content">
                                                 <div class="blog-title">
-                                                    <h6><a href="{{ route('client.blog-detail', ['id' => $healthsBlog->id]) }}">{{$healthsBlog->title}}</a></h6>
+                                                    <h6><a href="{{ route('client.blog-detail', ['slug' => $healthsBlog->slug]) }}">{{$healthsBlog->title}}</a></h6>
                                                 </div>
                                                 <p class="blog-description">
                                                     {!! Str::limit(strip_tags($healthsBlog->content), 100, '...') !!}
@@ -322,26 +322,25 @@
                         <div class="items">
                             <div class="blog-start">
                                 <div class="blog-image">
-                                    <a href="{{ route('client.blog-detail', ['id' => $post->id]) }}">
+                                    <a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}">
                                         <img src="{{ asset('storage/' . $post->thumbnail) }}"
                                             alt="blog-image" class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-title">
-                                        <h6><a href="{{ route('client.blog-detail', ['id' => $post->id]) }}">{{$post->title}}</a></h6>
+                                        <h6><a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}">{{$post->title}}</a></h6>
                                         <span class="blog-admin">Danh mục: <span class="blog-editor">{{$post->user->role->name}}</span></span>
                                     </div>
                                     <p class="blog-description">
                                         {!! Str::limit(strip_tags($post->content), 100, '...') !!}
                                     </p>
-                                    <a href="{{ route('client.blog-detail', ['id' => $post->id]) }}" class="read-link">
+                                    <a href="{{ route('client.blog-detail', ['slug' => $post->slug]) }}" class="read-link">
                                         <span>Xem thêm</span>
                                         <i class="ti-arrow-right"></i>
                                     </a>
                                     <div class="blog-date-comment">
                                         <span class="blog-date">{{ \Carbon\Carbon::parse($post->created_at)->isoFormat('D MMMM YYYY') }}</span>
-                                        <a href="javascript:void(0)">01 bình luận</a>
                                     </div>
                                 </div>
                             </div>

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Livewire\Admin\Blog;
 
 use App\Models\Post\Post;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -69,6 +70,7 @@ class BlogEdit extends Component
             'title' => $this->title,
             'content' => $this->content,
             'thumbnail' => $thumbnailPath,
+            'slug' => Str::slug($this->title) . '-' . $this->id,
         ]);
 
         return redirect()->route('admin.blogs.index')->with('success', 'Cập nhật thông tin bài viết thành công');
