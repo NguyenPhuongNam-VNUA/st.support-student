@@ -35,9 +35,6 @@
                     <i class="ph-dots-three sidebar-resize-show"></i>
                 </li>
 
-
-
-                <!-- ======Super Admin================ -->
                 <li class="nav-item">
                     <a href="{{ route('admin.index') }}"
                         class="nav-link {{ request()->routeIs('admin.index') ? 'active' : '' }}"
@@ -48,38 +45,51 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.roles.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.roles.index') ? 'active' : '' }}"
-                        style="display: flex; align-items: center;">
-                        <i class="fas fa-users-cog me-3 fa"></i>
-                        <span style="display: flex; align-items: center;">
-                            Chức vụ
-                        </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.users.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.users.index') ? 'active' : '' }}"
-                        style="display: flex; align-items: center;">
-                        <i class="fas fa-users me-3 fa"></i>
-                        <span style="display: flex; align-items: center;">Người dùng</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.students.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.students.index') ? 'active' : '' }}"
-                        style="display: flex; align-items: center;">
-                        <i class="fas fa-graduation-cap me-3 fa"></i>
-                        <span>
-                            Sinh viên trên hệ thống
-                        </span>
-                    </a>
-                </li>
 
-
+                <!-- ======Super Admin================ -->
+                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Admin')->first()->id)
+                    <li class="nav-item">
+                        <a href="{{ route('admin.roles.index') }}"
+                            class="nav-link {{ request()->routeIs('admin.roles.index') ? 'active' : '' }}"
+                            style="display: flex; align-items: center;">
+                            <i class="fas fa-users-cog me-3 fa"></i>
+                            <span style="display: flex; align-items: center;">
+                                Chức vụ
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.users.index') }}"
+                            class="nav-link {{ request()->routeIs('admin.users.index') ? 'active' : '' }}"
+                            style="display: flex; align-items: center;">
+                            <i class="fas fa-users me-3 fa"></i>
+                            <span style="display: flex; align-items: center;">Người dùng</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.students.index') }}"
+                            class="nav-link {{ request()->routeIs('admin.students.index') ? 'active' : '' }}"
+                            style="display: flex; align-items: center;">
+                            <i class="fas fa-graduation-cap me-3 fa"></i>
+                            <span>
+                                Sinh viên trên hệ thống
+                            </span>
+                        </a>
+                    </li>  
+                    <li class="nav-item">
+                        <a href="{{ route('admin.map.index') }}"
+                            class="nav-link {{ request()->routeIs('admin.map.index') ? 'active' : '' }}"
+                            style="display: flex; align-items: center;">
+                            <i class="fas fa-map-marked-alt me-3 fa"></i>
+                            <span>
+                                Vnua Map
+                            </span>
+                        </a>
+                    </li>  
+                @endif
 
                 <!-- ======Admin kí túc xá + trọ============ -->
+                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Ký túc xá và trọ')->first()->id)
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitories.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitories.index') ? 'active' : '' }}"
@@ -102,8 +112,8 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitory.facilities.index') }}"
-                       class="nav-link {{ request()->routeIs('admin.dormitory.facilities.index') ? 'active' : '' }}"
-                       style="display: flex; align-items: center;">
+                        class="nav-link {{ request()->routeIs('admin.dormitory.facilities.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
                         <i class="fas fa-bed me-3 fa"></i>
                         <span>
                             Cơ sở hạ tầng
@@ -140,12 +150,9 @@
                         </span>
                     </a>
                 </li>
-
-
-
-
-                <!-- ======Admin y tế============ -->
-
+                @endif
+                <!-- ======Admin sức khỏe============ -->
+                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Sức khỏe')->first()->id)
                 <li class="nav-item">
                     <a href="{{ route('admin.medical.doctors.index') }}"
                         class="nav-link {{ request()->routeIs('admin.medical.doctors.index') ? 'active' : '' }}"
@@ -166,7 +173,7 @@
                         </span>
                     </a>
                 </li>
-
+                @endif
 
                 <li class="nav-item">
                     <a href="{{ route('admin.blogs.index') }}"
@@ -178,17 +185,9 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.map.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.map.index') ? 'active' : '' }}"
-                        style="display: flex; align-items: center;">
-                        <i class="fas fa-map-marked-alt me-3 fa"></i>
-                        <span>
-                            Vnua Map
-                        </span>
-                    </a>
-                </li>
+
                 {{-- ==========Admin dịch vụ=============== --}}
+                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Dịch vụ')->first()->id)                
                 <li class="nav-item">
                     <a href="{{ route('admin.services.index') }}"
                         class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}"
@@ -209,6 +208,7 @@
                         </span>
                     </a>
                 </li>
+                @endif  
             </ul>
         </div>
         <!-- /main navigation -->

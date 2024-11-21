@@ -42,11 +42,12 @@ class RegisterIndex extends Component
         //        sleep(2);
         $this->validate();
         $this->password = $this->generatePassword();
-        $student = $this->createStudent();
 
         $this->dispatch('notification', message: 'Đăng ký thành công! Vui lòng kiểm tra email để xác nhận tài khoản');
         $token = Str::random(60);
         $this->sendEmail($token);
+
+        $student = $this->createStudent();
 
         $this->reset();
     }

@@ -18,7 +18,11 @@ class BlogIndex extends Component
 
     public function render()
     {
+        $userRoleId = auth()->user()->role->id;
         $blogs = Post::query()
+            ->whereHas('user.role', function ($query) use ($userRoleId): void {
+                $query->where('id', $userRoleId);
+            })
             ->search($this->search)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
