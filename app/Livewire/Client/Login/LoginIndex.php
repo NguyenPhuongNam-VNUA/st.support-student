@@ -31,9 +31,8 @@ class LoginIndex extends Component
     public function login()
     {
         $this->validate();
-
         if (auth('students')->attempt(['username' => $this->username, 'password' => $this->password])) {
-            if (0 === auth('students')->user()->email_verified) {
+            if (0 === (int)auth('students')->user()->email_verified) {
                 $this->dispatch('notification', message: 'Tài khoản chưa được xác thực');
                 return redirect()->back();
             }
@@ -41,6 +40,7 @@ class LoginIndex extends Component
         }
         $this->addError('error', 'Tên đăng nhập hoặc mật khẩu không đúng');
         return redirect()->back();
+
 
     }
 }
