@@ -53,4 +53,9 @@ class Motel extends Model
         // Kiểm tra nếu dịch vụ được tạo trong vòng 10 ngày gần đây
         return $this->created_at->greaterThan(now()->subDays(10));
     }
+
+    public function averageRating(): float
+    {
+        return (float) $this->motelReviews()->avg('rating') ?? 0.0;
+    }
 }

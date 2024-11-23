@@ -44,10 +44,10 @@
                                             <a href="javascript:void(0)" class="w-c-q-icn quick-view-btn"
                                                 data-bs-toggle="modal" data-bs-target="#exampleModal"
                                                 data-name="{{ $service->name }}"
-                                                data-rating="{{ $service->rating }}"
                                                 data-description="{{ $service->description }}"
                                                 data-ship="{{ $service->isShip }}"
-                                                data-thumbnail="{{ asset('storage/' . $service->thumbnail) }}">
+                                                data-thumbnail="{{ asset('storage/' . $service->thumbnail) }}"
+                                                data-rating="{{ round($service->averageRating()) }}">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </div>
@@ -58,8 +58,7 @@
                                         </h3>
                                         <div class="rating">
                                             @for ($i = 1; $i <= 5; $i++)
-                                                <i
-                                                    class="fa {{ $i <= $service->rating ? 'fa-star c-star' : 'fa-star-o' }}"></i>
+                                                <i class="fa {{ $i <= round($service->averageRating()) ? 'fa-star c-star' : 'fa-star-o' }}"></i>
                                             @endfor
                                         </div>
                                     </div>

@@ -18233,7 +18233,7 @@ a.responsive-collapse span {
 
 @keyframes flash {
     0% {
-        background-color: #448b1f;
+        background-color: #066140;
     }
     33.34% {
         background-color: #f09b1a;
@@ -18242,7 +18242,7 @@ a.responsive-collapse span {
         background-color: #4e383b;
     }
     100% {
-        background-color: #448b1f;
+        background-color: #066140;
     }
 }
 
