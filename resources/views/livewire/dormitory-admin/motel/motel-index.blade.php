@@ -45,7 +45,7 @@
                         @if ($motels->isEmpty())
                             <tr>
                                 <td colspan="100%" class="text-center">
-                                    <img src="{{ asset('assets/admin/images/emptyData.png') }}"
+                                    <img src="{{ asset('assets/admin/images/empty.png') }}"
                                         alt="Không tìm thấy kết quả" style="width: 400px;" />
                                 </td>
                             </tr>

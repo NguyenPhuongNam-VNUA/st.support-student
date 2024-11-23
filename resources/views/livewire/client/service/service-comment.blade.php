@@ -58,13 +58,40 @@
                                     
                                     <div class="star-rating mb-3">
                                         @for ($i = 1; $i <= 5; $i++)
-                                            <i class="fa {{ ($i <= $hoverRating) ? 'fa-star e-star' : ($i <= $rating ? 'fa-star e-star' : 'fa-star-o') }}"
-                                               style="cursor: pointer; font-size: 20px; color: {{ ($i <= $hoverRating) ? '#FFD700' : ($i <= $rating ? '#FFD700' : '#ccc') }}; transition: color 0.2s ease;"
+                                            <i class="fa {{ $i <= ($hoverRating ?: $rating) ? 'fa-star e-star' : 'fa-star-o' }}"
+                                               style="cursor: pointer; 
+                                                      font-size: 20px; 
+                                                      color: {{ $i <= ($hoverRating ?: $rating) ? '#FFD700' : '#ccc' }}; 
+                                                      transition: color 0.2s ease;"
                                                wire:mouseover="setHoverRating({{ $i }})"
                                                wire:mouseout="clearHoverRating"
                                                wire:click="setRating({{ $i }})"></i>
                                         @endfor
                                     </div>
+                                    
+                                    @script
+                                    <script>
+                                    document.addEventListener('livewire:initialized', () => {
+                                        const stars = document.querySelectorAll('.star-rating i');
+                                        
+                                        stars.forEach((star, index) => {
+                                            star.addEventListener('click', () => {
+                                                stars.forEach((s, i) => {
+                                                    if (i <= index) {
+                                                        s.classList.remove('fa-star-o');
+                                                        s.classList.add('fa-star', 'e-star');
+                                                        s.style.color = '#FFD700';
+                                                    } else {
+                                                        s.classList.remove('fa-star', 'e-star');
+                                                        s.classList.add('fa-star-o');
+                                                        s.style.color = '#ccc';
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    });
+                                    </script>
+                                    @endscript
                                     
                                     @error('rating') 
                                         <p class="text-danger mt-1">{{ $message }}</p> 

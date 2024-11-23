@@ -7,42 +7,55 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="large-image-container">
                                 <a href="javascript:void(0)" class="long-img">
-                                    <figure class="zoom" id="figure-zoom" onmousemove="zoom(event)" style="background-image: url({{ asset('storage/' . $service->thumbnail) }})">
-                                        <img id="large-image" src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid" alt="image">
+                                    <figure class="zoom" id="figure-zoom" onmousemove="zoom(event)"
+                                        style="background-image: url({{ asset('storage/' . $service->thumbnail) }})">
+                                        <img id="large-image" src="{{ asset('storage/' . $service->thumbnail) }}"
+                                            class="img-fluid" alt="image">
                                     </figure>
                                 </a>
                             </div>
                         </div>
-                    
+
                         <ul class="nav nav-tabs pro-page-slider owl-carousel owl-theme">
                             <li class="nav-item items">
-                                <a class="nav-link active" onclick="changeImage('{{ asset('storage/' . $service->thumbnail) }}')">
-                                    <img src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid" alt="thumbnail">
+                                <a class="nav-link active"
+                                    onclick="changeImage('{{ asset('storage/' . $service->thumbnail) }}')">
+                                    <img src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid"
+                                        alt="thumbnail">
                                 </a>
                             </li>
                             @if ($service->serviceGalleries->isNotEmpty())
                                 @foreach ($service->serviceGalleries as $index => $gallery)
                                     <li class="nav-item items">
-                                        <a class="nav-link" onclick="changeImage('{{ asset('storage/' . $gallery->image) }}')">
-                                            <img src="{{ asset('storage/' . $gallery->image) }}" class="img-fluid" alt="image-{{ $index }}">
+                                        <a class="nav-link"
+                                            onclick="changeImage('{{ asset('storage/' . $gallery->image) }}')">
+                                            <img src="{{ asset('storage/' . $gallery->image) }}" class="img-fluid"
+                                                alt="image-{{ $index }}">
                                         </a>
                                     </li>
                                 @endforeach
                             @else
-                            <li class="nav-item items">
-                                <a class="nav-link active" onclick="changeImage('{{ asset('storage/' . $service->thumbnail) }}')">
-                                    <img src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid" alt="thumbnail">
-                                </a>
-                            </li>
+                                <li class="nav-item items">
+                                    <a class="nav-link active"
+                                        onclick="changeImage('{{ asset('storage/' . $service->thumbnail) }}')">
+                                        <img src="{{ asset('storage/' . $service->thumbnail) }}" class="img-fluid"
+                                            alt="thumbnail">
+                                    </a>
+                                </li>
                             @endif
                         </ul>
                     </div>
                     <div class="col-lg-6 col-xl-6 col-md-6 col-12 pro-info">
                         <h4>{{ $service->name }}</h4>
                         <div class="rating mb-3">
-                            @for ($i = 1; $i <= 5; $i++)
-                                <i class="fa {{ $i <= $service->rating ? 'fa-star c-star' : 'fa-star-o' }}"></i>
-                            @endfor
+                            @php
+                                $averageRating = round($service->averageRating());
+                            @endphp
+                            <div class="d-flex align-items-center">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    <i class="fa {{ $i <= $averageRating ? 'fa-star c-star' : 'fa-star-o' }}" style="color: {{ $i <= $averageRating ? '#448b1f' : '#ccc' }}"></i>
+                                @endfor
+                            </div>
                         </div>
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
@@ -59,7 +72,7 @@
                                 </span>
                             </div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-map-marker-alt text-muted"></i>
@@ -67,7 +80,7 @@
                             <div class="col-4 fw-bold text-muted">Địa chỉ:</div>
                             <div class="col">{{ $service->location }}</div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-phone-volume text-muted"></i>
@@ -82,14 +95,14 @@
                             </div>
                             <div class="col-4 fw-bold text-muted">Mô tả:</div>
                         </div>
-                    
+
                         <div class="row mb-3">
                             <div class="col">
                                 <p>{{ $service->description }}</p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-xs-12 pro-shipping">

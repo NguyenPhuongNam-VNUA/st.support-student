@@ -47,9 +47,14 @@
                     <div class="col-lg-6 col-xl-6 col-md-6 col-12 pro-info">
                         <h4>{{ $motel->address }}</h4>
                         <div class="rating mb-3">
-                            @for ($i = 1; $i <= 5; $i++)
-                                <i class="fa {{ $i <= $motel->rating ? 'fa-star c-star' : 'fa-star-o' }}"></i>
-                            @endfor
+                            @php
+                                $averageRating = round($motel->averageRating());
+                            @endphp
+                            <div class="d-flex align-items-center">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    <i class="fa {{ $i <= $averageRating ? 'fa-star c-star' : 'fa-star-o' }}" style="color: {{ $i <= $averageRating ? '#448b1f' : '#ccc' }}"></i>
+                                @endfor
+                            </div>
                         </div>
                     
                         <div class="row mb-3 align-items-center">
