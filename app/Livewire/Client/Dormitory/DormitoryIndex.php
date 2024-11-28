@@ -11,6 +11,8 @@ use Livewire\Component;
 class DormitoryIndex extends Component
 {
     public $rooms;
+    public $area = [];
+    public $roomId;
 
     public function render()
     {
@@ -21,12 +23,34 @@ class DormitoryIndex extends Component
 
     public function mount(): void
     {
-        $this->rooms = Room::with('dormitory')
+        $this->rooms = Room::with(['dormitory', 'facilities'])
             ->where('status', StatusRoom::Empty->value)
             ->get()
-            ->groupBy('dormitory.name')
-            ->toArray();
+            ->groupBy(fn ($room) => $room->dormitory->name)
+            ->map(function ($rooms) {
+                return $rooms->map(function ($room) {
+                    return [
+                        'id' => $room->id,
+                        'name' => $room->name,
+                        'description' => $room->description,
+                        'thumbnail' => $room->thumbnail,
+                        'facilities' => $room->facilities->map(function ($facility) {
+                            return [
+                                'area' => $facility->area,
+                                'bed' => $facility->bed,
+                                'wardrobe' => $facility->wardrobe,
+                                'air_conditioner' => $facility->air_conditioner,
+                            ];
+                        }),
+                        'count' => $room->students->count(),
+                        'capacity' => $room->capacity,
+                    ];
+                });
+            });
+    }
 
-        //        dd($this->rooms);
+    public function handleShowRegisterModal($roomId): void
+    {
+        $this->dispatch('showRegisterModal', $roomId);
     }
 }

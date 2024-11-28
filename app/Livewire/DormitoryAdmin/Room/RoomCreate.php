@@ -45,7 +45,7 @@ class RoomCreate extends Component
     {
         //        try {
         //            $this->validate();
-        //        } catch (\Illuminate\Validation\ValidationException $e) {
+        //        } catch (c) {
         //            dd($e->errors());
         //        }
         $this->validate();

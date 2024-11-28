@@ -26,6 +26,11 @@
 
     <section class="order-histry-area section-tb-padding">
         <div class="container">
+            <section class="quick-view">
+                <div class="modal fade" id="quickviewDormitory" tabindex="-1" aria-labelledby="quickviewDormitoryLabel" aria-hidden="true">
+                    <livewire:client.component.dormitory.quick-view />
+                </div>
+            </section>
             <livewire:client.dormitory.dormitory-index />
         </div>
     </section>
@@ -96,5 +101,9 @@
             border-radius: 3px;
         }
     </style>
+@endsection
+
+@section('scripts-custom')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
 
