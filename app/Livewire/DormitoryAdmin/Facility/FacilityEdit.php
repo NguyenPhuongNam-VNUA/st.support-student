@@ -50,4 +50,15 @@ class FacilityEdit extends Component
         $this->roomId = $facility->room_id;
         $this->dispatch('reloadData', room: Room::query()->find($this->roomId));
     }
+
+    public function rules()
+    {
+        return [
+            'roomId' => 'required',
+            'bed' => 'required|numeric',
+            'wardrobe' => 'required|numeric',
+            'air_conditioner' => 'required|numeric',
+            'area' => 'required|numeric',
+        ];
+    }
 }

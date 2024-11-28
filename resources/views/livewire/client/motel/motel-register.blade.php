@@ -14,7 +14,7 @@
                                 <input wire:model.live="owner_name" type="text" class="form-control @error('owner_name') is-invalid @enderror" placeholder="Nhập họ tên ...">
                                 @error('owner_name') <label class="text-danger mt-1">{{ $message }}</label> @enderror
                             </div>
-                            
+
                             <div class="form-group mt-2">
                                 <label class="form-label">Số điện thoại: <span class="text-danger">*</span></label>
                                 <input wire:model.live="owner_phoneNumber" type="text" class="form-control @error('owner_phoneNumber') is-invalid @enderror" placeholder="Nhập số điện thoại...">
