@@ -16,6 +16,69 @@ idap-pro css
         height: 22px;
     }
 
+    /* start healthy */
+    .h-s-content-6 h1 {
+        font-size: 24px;
+    }
+    
+    .h-s-content-6 h2 {
+        font-size: 16px;
+    }
+    .right-banner-6 img {
+        height: auto;
+    }
+    .right-banner-6 a img {
+        width: 100%;
+        height: 224px;
+        object-fit: fill;
+    }
+    .process-box {
+        flex: 1 1 calc(50% - 20px); /* Đặt mỗi box chiếm 100% chiều rộng */
+    }
+
+    .section-title {
+        font-size: 22px; /* Giảm kích thước tiêu đề */
+        margin-bottom: 20px;
+    }
+
+    .process-content {
+        gap: 15px; 
+    }
+
+    .process-box h3 {
+        font-size: 16px;
+    }
+    .items {
+        flex: 1 1 calc(25% - 10px); 
+    }
+
+    .cat-box h2 {
+        font-size: 16px;
+    }
+
+    .category-link li {
+        font-size: 13px;
+    }
+    .doctor-item {
+        height: auto; /* Allow flexible height for medium screens */
+    }
+
+    .doctor-img img {
+        max-height: 160px; /* Giảm chiều cao ảnh cho các màn hình trung bình */
+    }
+    
+    .doctor-info h3 {
+        font-size: 1.1rem; /* Giảm kích thước tiêu đề cho vừa với màn hình nhỏ */
+    }
+
+    .doctor-info {
+        margin-top: -20px;
+    }
+    .doctor-info h3 {
+        font-size: 13px;
+    }
+    /* end healthy */
+
     /* body hidden class */
     body.hidden {
         overflow-y: hidden;
@@ -879,6 +942,68 @@ ipad css
         order: -1;
         text-align: center;
     }
+
+    /* start healthy */
+    /* Điều chỉnh font-size cho các tiêu đề */
+    .h-s-content-6 h1 {
+        font-size: 20px; /* Giảm kích thước tiêu đề h1 */
+    }
+
+    .h-s-content-6 h2 {
+        font-size: 14px; /* Giảm kích thước tiêu đề h2 */
+    }
+
+    .section-title {
+        font-size: 18px; /* Giảm kích thước tiêu đề section */
+        margin-bottom: 15px;
+    }
+
+    .process-box {
+        flex: 1 1 calc(50% - 15px); /* Điều chỉnh kích thước các ô (2 cột) */
+    }
+
+    .process-box h3 {
+        font-size: 14px; /* Giảm kích thước tiêu đề trong process-box */
+    }
+
+    .process-content {
+        gap: 10px; /* Giảm khoảng cách giữa các item */
+    }
+
+    .items {
+        flex: 1 1 calc(50% - 10px); /* Điều chỉnh item để vừa với màn hình nhỏ */
+    }
+
+    .cat-box h2 {
+        font-size: 14px; /* Giảm kích thước tiêu đề category */
+    }
+
+    .category-link li {
+        font-size: 12px; /* Giảm kích thước font trong danh sách category */
+    }
+
+    .doctor-item {
+        height: auto; /* Để chiều cao linh hoạt cho các ô */
+    }
+
+    .doctor-img img {
+        max-height: 150px; /* Giảm chiều cao ảnh trong doctor-item */
+    }
+
+    .doctor-info h3 {
+        font-size: 14px; /* Giảm kích thước tiêu đề trong doctor-info */
+    }
+
+    .doctor-info {
+        margin-top: -10px; /* Điều chỉnh khoảng cách cho doctor-info */
+    }
+    
+    .right-banner-6 img {
+        height: auto; /* Đảm bảo ảnh tự điều chỉnh chiều cao */
+    }
+
+   
+    /* end healthy */
 
     /* section title css */
     .section-title h2 {
@@ -2040,8 +2165,25 @@ ipad css
 iphone css
 ======================================*/
 @media (max-width: 767px){
-    /*custom*/
+    /* start healthy */
+    /* .home-6 .row-6 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col-8 {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+    .home-6 .home-slider-main-6 {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+    }
+  
+    /* end healthy */
 
+    /*custom*/
+    .h-s-content h1{
+        font-size: 10px;
+    }
     .container{
         padding-left: 15px;
         padding-right: 15px;
@@ -3911,6 +4053,16 @@ iphone css
     }
 }
 @media (max-width: 479px) {
+    /* healthy */
+    .h-s-content-6 h1 {
+        font-size: 12px;
+    }
+    
+    .h-s-content-6 h2 {
+        font-size: 8px;
+    }
+    /* end healthy */
+
     /* service css */
     .home-service .service-area-main .service {
         width: 100%;
