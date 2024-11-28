@@ -84,7 +84,7 @@ h6 {
 .category-link li {
     font-size: 16px;
 }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 .cat-box h2:hover {
     color: #0e4e1ef6;
 }
@@ -316,6 +316,23 @@ body.hidden {
 }
 
 /* index-6 */
+.btn-style6 {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 30px;
+    background-color: #066140;
+
+    font-weight: 600;
+    border: 2px solid #066140;
+    border-radius: 25px;
+}
+.btn-style6:hover {
+    color: #fff;
+    background-color: transparent;
+    font-weight: 700;
+    border: 2px solid #066140;
+}
+
 .home-slider-6 {
     display: flex;
     flex-direction: row;
@@ -346,27 +363,27 @@ body.hidden {
     overflow: hidden;
 }
 
-.h-s-content {
+.h-s-content-6 {
     position: absolute;
     bottom: 20px;
     left: 20px;
     color: #333;
 }
 
-.h-s-content .slider-name {
+.h-s-content-6 .slider-name {
     font-size: 18px;
     font-weight: bold;
     color: #6dbd28;
 }
 
-.h-s-content h1 {
+.h-s-content-6 h1 {
     font-size: 32px;
     font-weight: bold;
     margin-top: 5px;
     color: #333;
 }
 
-.btn-style1 {
+.btn-style6 {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
@@ -461,7 +478,7 @@ body.hidden {
     z-index: -10;
 }
 
-.h-s-content {
+.h-s-content-6 {
     position: relative;
     z-index: 2;
     color: #333;
@@ -474,23 +491,23 @@ body.hidden {
     /* filter: blur(1.5px); */
 }
 
-.h-s-content a:hover {
+.h-s-content-6 a:hover {
     background-color: orange;
     border: 2px solid #45a049;
 }
 
 .banner-r-content1 a:hover,
- .banner-r-content2 a:hover{
+.banner-r-content2 a:hover{
     background-color: orange;
     border: 2px solid #45a049;
 }
 
 .banner-r-content1 span:hover,
 .banner-r-content2 span:hover {
-    color: #000;
+    color: #fff;
  }
 
-.h-s-content h2 {
+.h-s-content-6 h2 {
     font-size: 16px;
     font-weight: 500px;
 }
@@ -516,7 +533,7 @@ body.hidden {
 }
 
 .patient-care-process {
-    min-height: 600px; /* Chiều cao tối thiểu cho section quy trình */
+    min-height: 500px; /* Chiều cao tối thiểu cho section quy trình */
 }
 
 .news-section {
@@ -572,9 +589,10 @@ body.hidden {
 .banner-shop1, .banner-shop2 {
     display: inline-block;
     padding: 10px 10px;
-    background-color: #45a049;
+    background-color: #6dbd28;
     color: #000;
-    border: 2px solid #FFAA00;
+    /* border: 2px solid #FFAA00; */
+    border: 2px solid #066140;
     border-radius: 4px;
     font-weight: bold;
     text-align: center;
@@ -703,7 +721,7 @@ body.hidden {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 15px;
-    flex: 1 1 calc(25% - 10px); /* 4 ô trong 1 hàng */
+    flex: 1 1 calc(25% - 10px); 
     margin: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
@@ -714,7 +732,6 @@ body.hidden {
 }
 
 .process-box h3 {
-    /* color: #007BFF; */
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -730,16 +747,16 @@ body.hidden {
 
 .empty-box {
     flex: 1 1 calc(25% - 10px);
-    visibility: hidden; /* Giữ cho ô trống không hiển thị nhưng vẫn giữ vị trí */
+    visibility: hidden; 
 }
 
 .home6-category {
     max-width: 1200px; /* Kích thước tối đa cho section */
     margin: 20px auto; /* Giữa */
     padding: 20px; /* Khoảng cách bên trong */
-    border: 2px solid #007BFF; /* Đường viền màu xanh */
+    border: 2px solid #007BFF; 
     border-radius: 10px; /* Bo góc */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .section-title3 {
@@ -754,11 +771,11 @@ body.hidden {
 }
 
 .cate-back {
-    background-size: cover; /* Đảm bảo ảnh phủ hết khung */
-    background-position: center; /* Căn giữa ảnh */
-    height: 200px; /* Chiều cao cố định cho mỗi mục */
-    border-radius: 8px; /* Bo góc cho ảnh */
-    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài */
+    background-size: cover; 
+    background-position: center; 
+    height: 200px;
+    border-radius: 8px; 
+    overflow: hidden; 
 }
 
 
@@ -785,9 +802,8 @@ body.hidden {
 }
 
 .nav-tabs .nav-item .nav-link {
-    color: #333; /* Màu chữ mặc định */
-    background-color: #f8f9fa; /* Màu nền mặc định */
-    /* border: 1px solid transparent; */
+    color: #333; 
+    background-color: #f8f9fa; 
     border: 2px solid rgb(228, 228, 228);
     transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển đổi */
 }
@@ -795,8 +811,8 @@ body.hidden {
 /* Khi người dùng hover vào tab */
 .nav-tabs .nav-item .nav-link:hover {
     color: #fff;
-    /* background-color: #448B1F; 
-    border-color: #448B1F;  */
+    background-color: #007bff; 
+    border-color: #007bff;
     margin-bottom: 15px; 
     border: 2px solid red; 
 }
@@ -804,8 +820,8 @@ body.hidden {
 /* Khi tab được chọn (active) */
 .nav-tabs .nav-item .nav-link.active {
     color: #fff;
-    /* background-color: #448B1F; 
-    border-color: #448B1F;  */
+    background-color: #007bff; 
+    border-color: #007bff;
 }
 
 /* ************** */
@@ -816,14 +832,14 @@ body.hidden {
 }
 .doctor-list {
     display: flex;
-    flex-wrap: wrap;            /* Để các phần tử tự động xuống dòng khi quá chiều rộng */
-    gap: 20px;                  /* Khoảng cách giữa các phần tử, bạn có thể điều chỉnh giá trị này */
-    justify-content: flex-start; /* Căn chỉnh các phần tử sang bên trái */
+    flex-wrap: wrap;            
+    gap: 20px;                  
+    justify-content: flex-start; 
 }
 
 /* Cấu trúc từng mục bác sĩ */
 .doctor-item {
-    width: calc(25% - 15px); /* Mỗi mục bác sĩ chiếm 25% chiều rộng của hàng (trừ khoảng cách) */
+    width: calc(25% - 15px); 
     box-sizing: border-box;
     background: #f9f9f9;
     padding: 15px;

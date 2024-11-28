@@ -12,33 +12,33 @@
                 <div class="slider-banner-6">
                     <div class="home-6 home-slider-main-6">
                         <div class="home6-slider owl-carousel owl-theme">
-                            <div class="items" style="width: 777.33px">
+                            <div class="items" style="max-width: 777.33px">
                                 <div class="img-back-6" style="background-image:url({{asset('assets/client/image/vnua7.jpg')}});">
-                                    <div class="h-s-content">
+                                    <div class="h-s-content-6">
                                         <br>
-                                        <h1>Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
-                                        <h2>Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
-                                        <a href="https://tramyte.vnua.edu.vn/gioi-thieu/gioi-thieu-chung" class="btn btn-style1"><span>Truy cập</span></a>
+                                        <h1 class="mt-4">Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
+                                        <h2 class="mt-1">Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
+                                        <a href="https://tramyte.vnua.edu.vn/gioi-thieu/gioi-thieu-chung" class="btn btn-style6"><span>Truy cập</span></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="items" style="width: 777.33px">
+                            <div class="items" style="max-width: 777.33px">
                                 <div class="img-back-6" style="background-image:url({{asset('assets/client/image/vnua3.jpg')}});">
-                                    <div class="h-s-content">
+                                    <div class="h-s-content-6">
                                         <br>
-                                        <h1>Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
-                                        <h2>Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
-                                        <a href="grid-list.html" class="btn btn-style1"><span>Truy cập</span></a>
+                                        <h1 class="mt-4">Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
+                                        <h2 class="mt-1">Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
+                                        <a href="grid-list.html" class="btn btn-style6"><span>Truy cập</span></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="items" style="width: 777.33px">
+                            <div class="items" style="max-width: 777.33px">
                                 <div class="img-back-6" style="background-image:url({{asset('assets/client/image/vnua9.jpg')}});">
-                                    <div class="h-s-content">
+                                    <div class="h-s-content-6">
                                         <br>
-                                        <h1>Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
-                                        <h2>Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
-                                        <a href="grid-list.html" class="btn btn-style1"><span>Truy cập</span></a>
+                                        <h1 class="mt-4">Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
+                                        <h2 class="mt-1">Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
+                                        <a href="grid-list.html" class="btn btn-style6"><span>Truy cập</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,13 @@
                         <li>Thực hiện cấp cứu: Bác sỹ và điều dưỡng</li>
                     </ol>
                 </div>
-
+                <div class="process-box">
+                    <h3>Phòng lưu bệnh nhân P.101</h3>
+                    <ol>
+                        <li>Chuyển lên tuyến trên</li>
+                        <li>Khám và điều trị tại chỗ</li>
+                    </ol>
+                </div>
                 <div class="process-box">
                     <h3>Phòng lưu bệnh nhân P.101</h3>
                     <ol>
