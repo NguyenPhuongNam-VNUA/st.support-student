@@ -433,7 +433,7 @@ $('#top').on('click',function() {
 ==============================================================*/
 var swiper = new Swiper('.swiper-container.our-products-tab', {
     slidesPerView: 3,
-    slidesPerColumn: 3,
+    slidesPerColumn: 1,
     spaceBetween: 30,
     observer: true,
     observeParents: true,

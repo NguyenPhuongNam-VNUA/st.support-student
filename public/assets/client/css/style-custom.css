@@ -543,3 +543,149 @@
 .home6-category .category-6 .cate-6 .cate-back .cat-box ul.category-link li a i{
     margin-right: 5px;
 }
+
+/* our products tab css */
+.our-tab ul.nav.nav-tabs{
+    border-bottom: none;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.our-tab ul.nav.nav-tabs li.nav-item{
+    margin-right: 60px;
+}
+.our-tab ul.nav.nav-tabs li.nav-item:last-child{
+    margin-right: 0px;
+}
+.our-tab ul.nav.nav-tabs li.nav-item a.nav-link{
+    color: #949494;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+.our-tab ul.nav.nav-tabs li.nav-item a.nav-link.active,
+.our-tab ul.nav.nav-tabs li.nav-item a.nav-link:hover{
+    color: #000;
+    border: 1px solid #000;
+}
+.tab-product{
+    display: flex;
+}
+.tab-product .tred-pro{
+    position: relative;
+    width: 30%;
+}
+.tab-product .tred-pro .Pro-lable span.p-text,
+.tab-product .tred-pro .Pro-lable span.p-discount{
+    position: absolute;
+    top: 5px;
+    font-size: 13px;
+    color: #fff;
+    padding: 2px 10px 2px 15px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 20% 50%);
+}
+.tab-product .tred-pro .Pro-lable span.p-text{
+    left: 5px;
+    background-color: #5fa800;
+}
+.tab-product .tred-pro .Pro-lable span.p-discount{
+    right: 5px;
+    background-color: #e30514;
+}
+.tab-product .tab-caption .pro-icn{
+    margin-top: 14px;
+}
+.tab-product .tab-caption .pro-icn a.w-c-q-icn i{
+    background-color: #5fa800;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0px;
+    font-size: 14px;
+    border: 2px solid #5fa800;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+.tab-product .tab-caption .pro-icn a.w-c-q-icn:hover i {
+    background-color: transparent;
+    color: #5fa800;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+.tab-product .tab-caption{
+    width: 70%;
+    padding-left: 15px;
+}
+.tab-product .tab-caption h3{
+    font-size: 14px;
+    font-weight: 400;
+}
+.tab-product .tab-caption h3 a{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab-product .tab-caption .rating{
+    display: flex;
+    margin-top: 14px;
+}
+.tab-product .tab-caption .rating i{
+    color: #ccc;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.tab-product .tab-caption .rating i.b-star,
+.tab-product .tab-caption .rating i.c-star,
+.tab-product .tab-caption .rating i.d-star,
+.tab-product .tab-caption .rating i.e-star{
+    color: #ffb503;
+}
+.tab-product .tab-caption .rating i:last-child{
+    margin-right: 0px;
+}
+.tab-product .tab-caption .pro-price{
+    margin-top: 16px;
+}
+.tab-product .tab-caption .pro-price span.new-price{
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 5px;
+    line-height: 1;
+}
+.tab-product .tab-caption .pro-price span.old-price{
+    color: #999;
+    font-size: 14px;
+    line-height: 1;
+}
+.tred-pro .tr-pro-img a img{
+    backface-visibility: hidden;
+}
+/* additional image css */
+.tab-product .tred-pro .tr-pro-img a img.additional-image{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+.tab-product .tred-pro:hover .tr-pro-img a img.additional-image{
+    opacity: 1;
+    visibility: visible;
+}
+.tab-product .tred-pro .tr-pro-img a img.additional-image,
+.tab-product .tred-pro:hover .tr-pro-img a img.additional-image{
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
