@@ -16,6 +16,7 @@ use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\FacilityController;
 use App\Http\Controllers\DormitoryAdmin\ManagerController;
 use App\Http\Controllers\DormitoryAdmin\MotelController;
+use App\Http\Controllers\DormitoryAdmin\RegisterAdmin;
 use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
@@ -123,6 +124,10 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
             Route::get('/create', [DormitoryStudentController::class, 'create'])->name('admin.dormitory-students.create');
             Route::get('/edit/{id}', [DormitoryStudentController::class, 'edit'])->name('admin.dormitory-students.edit');
             Route::get('{id}/detail', [DormitoryStudentController::class, 'detail'])->name('admin.dormitory-students.detail');
+        });
+
+        Route::prefix('/register')->group(function (): void {
+            Route::get('/', [RegisterAdmin::class, 'index'])->name('admin.dormitory.register.index');
         });
     });
 

@@ -38,6 +38,19 @@ class UserCreate extends Component
         ]);
     }
 
+    //    public function updatedRoleId($value)
+    //    {
+    //        if ($value == 1) {
+    //            $this->user_name = 'admin';
+    //        } elseif ($value == 2) {
+    //            $this->user_name = 'dv_';
+    //        } elseif ($value == 3) {
+    //            $this->user_name = 'sk_';
+    //        } else {
+    //            $this->user_name = 'ktx_';
+    //        }
+    //    }
+
     public function store()
     {
         $this->validate();

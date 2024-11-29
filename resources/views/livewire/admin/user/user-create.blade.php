@@ -45,7 +45,7 @@
                         Chức vụ: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="role_id" class="form-control @error('role_id') is-invalid @enderror">
+                        <select wire:model.live="role_id" class="form-control @error('role_id') is-invalid @enderror">
                             <option value="">Chọn chức vụ</option>
                             @foreach($roles as $role)
                             <option value="{{ $role->id }}">{{ $role->name }}</option>

@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="header-main">
+                    <div class="header-main d-flex justify-content-between">
                         <!-- logo start -->
                         <div class="header-element logo">
                             <a href="{{route('client.index')}}">
@@ -13,10 +13,10 @@
                         </div>
                         <!-- logo end -->
                         <!-- search start -->
-                        <div class="header-element search-wrap">
-                            <input type="text" name="search" placeholder="Bạn muốn tìm gì?">
-                            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
-                        </div>
+{{--                        <div class="header-element search-wrap">--}}
+{{--                            <input type="text" name="search" placeholder="Bạn muốn tìm gì?">--}}
+{{--                            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>--}}
+{{--                        </div>--}}
                         <!-- search end -->
                         <!-- header-icon start -->
                         <div class="header-element right-block-box">
@@ -27,12 +27,6 @@
                                     </button>
                                 </li>
                                 @auth('students')
-                                    <li class="side-wrap notify-wrap">
-                                        <a href="#" class="header-notify">
-                                            <span class="notify-icon"><span class="bi bi-bell"></span></span>
-                                            <span class="notify-counter">0</span>
-                                        </a>
-                                    </li>
                                     <li class="side-wrap user-wrap">
                                         <div class="acc-desk">
                                             <div class="user-icon">
