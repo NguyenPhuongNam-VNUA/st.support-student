@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Livewire\DormitoryAdmin\Room;
 
+use App\Enums\StatusRoom;
 use App\Models\Dormitory\Dormitory;
 use App\Models\Dormitory\Room;
 use Livewire\Component;
@@ -24,11 +25,18 @@ class RoomIndex extends Component
     public function render()
     {
         $rooms = Room::query()
+            ->with('students')
             ->search($this->search)
             ->filter($this->dormitoryId)
             ->empty($this->status)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
+
+        foreach ($rooms as $room) {
+            $room->status = ($room->capacity > $room->students->count()) ? StatusRoom::Empty : StatusRoom::Full;
+            $room->save();
+        }
+
         $dormitories = Dormitory::all();
         return view('livewire.dormitory-admin.room.room-index', [
             'rooms' => $rooms,

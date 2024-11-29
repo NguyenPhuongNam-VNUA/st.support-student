@@ -35,7 +35,9 @@ class RoomCreate extends Component
 
     public function render()
     {
-        $dormitories = Dormitory::all();
+        $dormitories = Dormitory::query()
+            ->where('available_rooms', '>', 0)
+            ->get();
         return view('livewire.dormitory-admin.room.room-create', [
             'dormitories' => $dormitories
         ]);

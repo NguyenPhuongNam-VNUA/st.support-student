@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Dormitory;
 
+use App\Enums\StatusRoom;
 use App\Models\Gallery\dormitory\RoomGallery;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -44,6 +45,20 @@ class Room extends Model
     {
         return $this->hasMany(RoomGallery::class);
     }
+
+    public function requests(): HasMany
+    {
+        return $this->hasMany(DormitoryRequest::class);
+    }
+
+    //    public function getStatusAttribute(): string
+    //    {
+    //        if ($this->capacity > $this->students->count()) {
+    //            return StatusRoom::Empty->value;
+    //        }
+    //
+    //        return StatusRoom::Full->value;
+    //    }
 
     public function scopeSearch($query, $search)
     {

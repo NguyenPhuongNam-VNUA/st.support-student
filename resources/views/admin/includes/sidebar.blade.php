@@ -41,13 +41,16 @@
                         style="display: flex; align-items: center;">
                         <i class="ph-house-simple me-3 fa"></i>
                         <span style="display: flex; align-items: center;">
-                            Dashboard
+                            Bảng điều khiền
                         </span>
                     </a>
                 </li>
 
                 <!-- ======Super Admin================ -->
                 @if (auth()->user()->role->id == App\Models\Role::where('name', 'Admin')->first()->id)
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Tài khoản</div>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.roles.index') }}"
                             class="nav-link {{ request()->routeIs('admin.roles.index') ? 'active' : '' }}"
@@ -66,6 +69,9 @@
                             <span style="display: flex; align-items: center;">Người dùng</span>
                         </a>
                     </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Sinh viên</div>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.students.index') }}"
                             class="nav-link {{ request()->routeIs('admin.students.index') ? 'active' : '' }}"
@@ -75,21 +81,40 @@
                                 Sinh viên trên hệ thống
                             </span>
                         </a>
-                    </li>  
+                    </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Bản đồ</div>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.map.index') }}"
                             class="nav-link {{ request()->routeIs('admin.map.index') ? 'active' : '' }}"
                             style="display: flex; align-items: center;">
                             <i class="fas fa-map-marked-alt me-3 fa"></i>
                             <span>
-                                Vnua Map
+                                Bản đồ VNUA
                             </span>
                         </a>
-                    </li>  
+                    </li>
                 @endif
 
                 <!-- ======Admin kí túc xá + trọ============ -->
                 @if (auth()->user()->role->id == App\Models\Role::where('name', 'Ký túc xá và trọ')->first()->id)
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide mt-1"> Cán bộ </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.dormitory.managers.index') }}"
+                           class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ? 'active' : '' }}"
+                           style="display: flex; align-items: center;">
+                            <i class="fas fa-user-tie me-3 fa"></i>
+                            <span>
+                            Cán bộ quản lý
+                        </span>
+                        </a>
+                    </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide mt-1">Ký túc xá</div>
+                    </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitories.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitories.index') ? 'active' : '' }}"
@@ -120,6 +145,9 @@
                         </span>
                     </a>
                 </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide m-1">Sinh viên</div>
+                    </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitory-students.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitory-students.index') ? 'active' : '' }}"
@@ -130,6 +158,9 @@
                         </span>
                     </a>
                 </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide mt-1"> Trọ </div>
+                    </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.dormitory.motel.index') }}"
                         class="nav-link {{ request()->routeIs('admin.dormitory.motel.index') ? 'active' : '' }}"
@@ -140,13 +171,16 @@
                         </span>
                     </a>
                 </li>
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide mt-1"> Yêu cầu đăng ký </div>
+                    </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.dormitory.managers.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.dormitory.managers.index') ? 'active' : '' }}"
+                    <a href="{{ route('admin.dormitory.register.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.dormitory.register.index') ? 'active' : '' }}"
                         style="display: flex; align-items: center;">
-                        <i class="fas fa-user-tie me-3 fa"></i>
+                        <i class="far fa-clipboard me-3"></i>
                         <span>
-                            Cán bộ quản lý
+                            Đơn đăng ký ký túc xá
                         </span>
                     </a>
                 </li>
@@ -175,6 +209,10 @@
                 </li>
                 @endif
 
+                @if(!auth()->user()->role->id == App\Models\Role::where('name', 'Admin')->first()->id)
+                <li class="nav-item-header">
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Bài viết</div>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.blogs.index') }}"
                         class="nav-link {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}"
@@ -185,9 +223,10 @@
                         </span>
                     </a>
                 </li>
+                @endif
 
                 {{-- ==========Admin dịch vụ=============== --}}
-                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Dịch vụ')->first()->id)                
+                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Dịch vụ')->first()->id)
                 <li class="nav-item">
                     <a href="{{ route('admin.services.index') }}"
                         class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}"
@@ -208,7 +247,7 @@
                         </span>
                     </a>
                 </li>
-                @endif  
+                @endif
             </ul>
         </div>
         <!-- /main navigation -->

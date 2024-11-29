@@ -97,7 +97,7 @@
                             <td class="text-center">{{ $room->dormitory->name ?? 'Không thuộc tòa nhà nào' }}</td>
                             <td>{{ $room->capacity}}</td>
                             <td class="text-center">
-                                @if($room->status == 'empty')
+                                @if($room->status == \App\Enums\StatusRoom::Empty)
                                 <span class="badge bg-success bg-opacity-20 text-success">Còn trống</span>
                                 @else
                                 <span class="badge bg-danger bg-opacity-20 text-danger">Đã đầy</span>

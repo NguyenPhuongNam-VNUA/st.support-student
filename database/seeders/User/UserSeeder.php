@@ -14,18 +14,15 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('roles')->insert([
-            'name' => 'Admin',
-            'created_at' => now(),
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Admin',
-            'role_id' => 1,
-            'email' => 'nguyenphuongnam12a9@gmail.com',
-            'phone_number' => '0983562383',
-            'user_name' => 'admin',
-            'password' => bcrypt('123456aA@'),
-        ]);
+        if (!DB::table('users')->where('name', 'Admin')->exists()) {
+            DB::table('users')->insert([
+                'name' => 'Admin',
+                'role_id' => 1,
+                'email' => 'nguyenphuongnam12a9@gmail.com',
+                'phone_number' => '0983562383',
+                'user_name' => 'admin',
+                'password' => bcrypt('123456aA@'),
+            ]);
+        }
     }
 }
