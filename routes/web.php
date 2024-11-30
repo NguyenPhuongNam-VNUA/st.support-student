@@ -128,6 +128,7 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
 
         Route::prefix('/register')->group(function (): void {
             Route::get('/', [RegisterAdmin::class, 'index'])->name('admin.dormitory.register.index');
+            Route::get('/student-success', [RegisterAdmin::class, 'showStudentSuccess'])->name('admin.dormitory.register.student-success');
         });
     });
 

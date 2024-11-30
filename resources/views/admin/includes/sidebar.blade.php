@@ -157,6 +157,14 @@
                             Sinh viên trong ký túc xá
                         </span>
                     </a>
+                    <a href="{{ route('admin.dormitory.register.student-success') }}"
+                       class="nav-link {{ request()->routeIs('admin.dormitory.register.student-success') ? 'active' : '' }}"
+                       style="display: flex; align-items: center;">
+                        <i class="ph-address-book me-3"></i>
+                        <span>
+                            Sinh viên đăng kí thành công
+                        </span>
+                    </a>
                 </li>
                     <li class="nav-item-header">
                         <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide mt-1"> Trọ </div>

@@ -25,6 +25,7 @@ class DormitoryRequest extends Model
         'note',
         'status',
         'gender',
+        'citizen_id',
         'created_at',
     ];
 

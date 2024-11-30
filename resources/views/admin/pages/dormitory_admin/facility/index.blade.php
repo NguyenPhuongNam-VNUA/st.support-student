@@ -44,31 +44,6 @@
         </script>
     @endif
 
-    @section('script_custom')
-        <script>
-            document.addEventListener('livewire:init', () => {
-                Livewire.on('openDeleteModel', (event) => {
-                    Swal.fire({
-                        title: "Bạn có chắc muốn xóa phòng này không?",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Có, xóa!",
-                        cancelButtonText: "Không!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Livewire.dispatch('confirmDelete');
-                            Swal.fire({
-                                title: "Xóa phòng thành công!",
-                                icon: "success"
-                            });
-                        }
-                    });
-                });
-            });
-        </script>
-    @endsection
     <div class="content">
         <!-- Content -->
         <livewire:dormitory-admin.facility.facility-index :room_facility_id="$room_id" />

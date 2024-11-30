@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire\Client\Component\Dormitory;
+namespace App\Livewire\DormitoryAdmin\Register;
 
 use App\Enums\StatusRequest;
 use App\Models\Dormitory\DormitoryRequest;
@@ -10,12 +10,11 @@ use App\Models\Dormitory\Room;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class RegisterModal extends Component
+class StudentSuccessIndex extends Component
 {
     public $roomId;
-    public $roomName;
 
-    #[Validate(as: 'họ tên')]
+    #[Validate(as: 'họ và tên')]
     public $name;
 
     #[Validate(as: 'mã sinh viên')]
@@ -26,61 +25,61 @@ class RegisterModal extends Component
 
     #[Validate(as: 'ngày sinh')]
     public $bod;
-    public $note;
-    public $status;
 
-    #[Validate(as: 'giới tính')]
-    public $gender;
-
-    #[Validate(as: 'căn cước công dân')]
+    #[Validate(as: 'căn cươc công dân')]
     public $citizen_id;
 
     protected $listeners = [
-        'showRegisterModal' => 'showRegisterModal',
+        'changeRoom' => 'updatedRoom',
+        'openModal' => 'openModal',
+        'closeModal' => 'closeModal'
     ];
 
     public function render()
     {
-        return view('livewire.client.component.dormitory.register-modal');
+        $dormitoryRequests = DormitoryRequest::query()
+            ->where('status', StatusRequest::Completed->value)
+            ->filter($this->roomId)
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        $rooms = Room::with('dormitory')
+            ->get()
+            ->groupBy('dormitory.name')
+            ->toArray();
+
+        return view('livewire.dormitory-admin.register.student-success-index', [
+            'dormitoryRequests' => $dormitoryRequests,
+            'rooms' => $rooms,
+        ]);
     }
 
-    public function showRegisterModal($roomId): void
+    public function openModal($id): void
+    {
+        $request = DormitoryRequest::query()->where('id', $id)->first();
+
+        $this->name = $request->name;
+        $this->code = $request->code;
+        $this->phone = $request->phone;
+        $this->bod = $request->bod;
+        $this->citizen_id = $request->citizen_id;
+
+        $this->dispatch('openModal', ['id' => $id]);
+    }
+
+    public function save(): void
+    {
+        $this->validate();
+    }
+
+    public function updatedRoom($roomId): void
     {
         $this->roomId = $roomId;
-        $this->roomName = Room::find($roomId)->name;
     }
 
-    public function mount(): void
+    public function resetFilter(): void
     {
-        if (auth('students')->check()) {
-            $student = auth('students')->user();
-            $this->name = $student->name;
-            $this->code = $student->code;
-            $this->phone = $student->phone;
-            $this->bod = $student->bod;
-        }
-    }
-
-    public function registerDorm(): void
-    {
-
-        $this->validate();
-
-        DormitoryRequest::create([
-            'room_id' => $this->roomId,
-            'name' => $this->name,
-            'code' => $this->code,
-            'phone' => $this->phone,
-            'bod' => $this->bod,
-            'note' => $this->note,
-            'gender' => $this->gender,
-            'status' => StatusRequest::Pending->value,
-            'citizen_id' => $this->citizen_id,
-            'created_at' => now(),
-        ]);
-
-        $this->reset();
-        $this->dispatch('registration-success');
+        $this->roomId = '';
+        $this->dispatch('resetFilter');
     }
 
     public function rules()
@@ -117,7 +116,6 @@ class RegisterModal extends Component
                     }
                 }
             ],
-            'gender' => 'required',
             'citizen_id' => 'required',
         ];
     }
