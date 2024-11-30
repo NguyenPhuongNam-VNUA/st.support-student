@@ -12,4 +12,9 @@ class RegisterAdmin extends Controller
     {
         return view('admin.pages.dormitory_admin.register.index');
     }
+
+    public function showStudentSuccess()
+    {
+        return view('admin.pages.dormitory_admin.register.student_success_index');
+    }
 }

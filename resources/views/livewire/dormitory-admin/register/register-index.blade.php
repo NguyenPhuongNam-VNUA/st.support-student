@@ -81,7 +81,7 @@
                         </tr>
                     @else
                         @foreach($dormitoryRequests as $request)
-                            <tr>
+                            <tr @if($request->status == \App\Enums\StatusRequest::Cancel->value) style="background-color: rgba(128,128,128,0.11)" @endif">
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center"> {{ $request->room->name }} </td>
                                 <td class="text-center">{{ $request->name }} </td>
@@ -90,34 +90,32 @@
                                 <td class="text-center">{!! $request->statusText !!}</td>
                                 <td class="text-center">
                                     <div class="dropdown">
-                                        <a href="" class="text-body" data-bs-toggle="dropdown">
+                                        <a class="text-body" data-bs-toggle="dropdown">
                                             <i class="ph-list"></i>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li>
+                                                <!-- Nút xem chi tiết luôn được hiển thị -->
                                                 <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal_{{ $request->id }}">
                                                     <i class="ph-eye me-2"></i> Chi tiết
                                                 </button>
                                             </li>
-                                            <li>
-                                                <a href="" class="dropdown-item text-primary">
-                                                    <i class="ph-paper-plane-tilt me-2"></i>
-                                                    Xác nhận
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="" class="dropdown-item text-success">
-                                                    <i class="ph-check-circle me-2"></i>
-                                                    Thành công
-                                                </a>
-                                            </li>
-                                            <li class="dropdown-divider"></li>
-                                            <li>
-                                                <a href="" class="dropdown-item text-danger">
-                                                    <i class="ph-file-x me-2"></i>
-                                                    Từ chối
-                                                </a>
-                                            </li>
+
+                                            <!-- Chỉ hiển thị các nút khác nếu không phải trạng thái Completed hoặc Cancel -->
+                                            @if(!in_array($request->status, [\App\Enums\StatusRequest::Completed->value, \App\Enums\StatusRequest::Cancel->value]))
+                                                <li>
+                                                    <button type="button" class="dropdown-item text-success" data-bs-toggle="modal" data-bs-target="#modal_form_horizontal_success{{ $request->id }}">
+                                                        <i class="ph-check-circle me-2"></i>
+                                                        Xác nhận thành công
+                                                    </button>
+                                                </li>
+                                                <li class="dropdown-divider"></li>
+                                                <li>
+                                                    <button type="button" class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#modal_form_horizontal_{{ $request->id }}">
+                                                        <i class="ph-file-x me-2"></i>Từ chối
+                                                    </button>
+                                                </li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </td>
@@ -151,7 +149,7 @@
                         <p class="text-muted">Họ và tên: {{ $request->name }}</p>
                         <p class="text-muted">Mã sinh viên: {{ $request->code }}</p>
                         <p class="text-muted">Giới tính: {!! $request->genderText !!}</p>
-                        <p class="text-muted">Ngày sinh: {{ $request->dob }}</p>
+                        <p class="text-muted">Ngày sinh: {{ \Carbon\Carbon::parse($request->bod)->format('d-m-Y') }}</p>
                         <p class="text-muted">Số điện thoại: {{ $request->phone }}</p>
 
                         <hr>
@@ -162,6 +160,70 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-link" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div wire:ignore.self id="modal_form_horizontal_{{ $request->id }}" class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title text-white">Từ chối</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h6 class="fw-semibold">Thông tin sinh viên: </h6>
+                        <p class="text-muted">Họ và tên: {{ $request->name }}</p>
+                        <p class="text-muted">Mã sinh viên: {{ $request->code }}</p>
+                        <p class="text-muted">Giới tính: {!! $request->genderText !!}</p>
+                        <p class="text-muted">Ngày sinh: {{ \Carbon\Carbon::parse($request->bod)->format('d-m-Y') }}</p>
+                        <p class="text-muted">Số điện thoại: {{ $request->phone }}</p>
+                        <hr>
+                        <h6 class="fw-semibold">Lý do từ chối: </h6>
+                        <textarea wire:model.live="cancelContent" class="form-control @error('cancelContent') is-invalid @enderror" rows="3" placeholder="Nhập lý do từ chối"></textarea>
+                        @error('cancelContent')
+                        <div class="invalid-feedback"> {{ $message }} </div>
+                        @enderror
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Đóng</button>
+                        <button wire:loading.remove wire:target="cancelRequest" wire:click="cancelRequest({{ $request->id }})" type="button" class="btn btn-danger"><i class="ph-at me-2"></i>Xác nhận</button>
+                        <span wire:loading wire:target="cancelRequest" class="text-danger">Đang gửi...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div wire:ignore.self id="modal_form_horizontal_success{{ $request->id }}" class="modal fade" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title text-white">Xác nhận thành công</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h6 class="fw-semibold">Thông tin sinh viên: </h6>
+                        <p class="text-muted">Họ và tên: {{ $request->name }}</p>
+                        <p class="text-muted">Mã sinh viên: {{ $request->code }}</p>
+                        <p class="text-muted">Giới tính: {!! $request->genderText !!}</p>
+                        <p class="text-muted">Ngày sinh: {{ \Carbon\Carbon::parse($request->bod)->format('d-m-Y') }}</p>
+                        <p class="text-muted">Số điện thoại: {{ $request->phone }}</p>
+                        <hr>
+                        <h6 class="fw-semibold">Nội dung: </h6>
+                        <textarea wire:model.live="completedContent" class="form-control @error('completedContent') is-invalid @enderror" rows="3" placeholder="Nhập nội dung thông báo thành công"></textarea>
+                        @error('completedContent')
+                        <div class="invalid-feedback"> {{ $message }} </div>
+                        @enderror
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-bs-dismiss="modal">Đóng</button>
+                        <button wire:loading.remove wire:target="completedRequest" wire:click="completedRequest({{ $request->id }})" type="button" class="btn btn-success"><i class="ph-at me-2"></i>Xác nhận</button>
+                        <span wire:loading wire:target="completedRequest" class="text-success">Đang gửi...</span>
                     </div>
                 </div>
             </div>

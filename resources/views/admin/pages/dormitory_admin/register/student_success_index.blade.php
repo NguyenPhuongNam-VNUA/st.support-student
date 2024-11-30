@@ -5,7 +5,7 @@
         <div class="page-header-content d-lg-flex">
             <div class="d-flex">
                 <h4 class="page-title mb-0">
-                    Đơn đăng ký
+                    Danh sách sinh viên đăng kí thành công
                 </h4>
             </div>
 
@@ -15,7 +15,7 @@
             <div class="d-flex">
                 <div class="breadcrumb py-2">
                     <a href="" class="breadcrumb-item"><i class="ph-house"></i></a>
-                    <span class="breadcrumb-item active"> Đơn đăng ký </span>
+                    <span class="breadcrumb-item active"> Danh sách sinh viên đăng kí thành công </span>
                 </div>
             </div>
 
@@ -39,12 +39,14 @@
                     }
                 }
             }).show();
+            sessionStorage.removeItem('selectedFile');
+            sessionStorage.removeItem('selectedGalleries');
         </script>
     @endif
 
     <div class="content">
         <!-- Content -->
-        <livewire:dormitory-admin.register.register-index />
+        <livewire:dormitory-admin.register.student-success-index />
         <!-- /content -->
     </div>
 @endsection

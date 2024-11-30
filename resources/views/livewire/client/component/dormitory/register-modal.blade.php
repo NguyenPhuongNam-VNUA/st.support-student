@@ -48,6 +48,12 @@
                 </div>
 
                 <div class="form-group mt-2">
+                    <label class="form-label">Căn cước công dân: <span class="text-danger">*</span></label>
+                    <input wire:model.live="citizen_id" type="text" class="form-control @error('citizen_id') is-invalid @enderror" placeholder="Nhập căn cước công dân ...">
+                    @error('citizen_id') <label class="text-danger mt-1">{{ $message }}</label> @enderror
+                </div>
+
+                <div class="form-group mt-2">
                     <label class="form-label">Giới tính: <span class="text-danger">*</span></label>
                     <select wire:model.live="gender" class="form-control @error('gender') is-invalid @enderror" id="gender">
                         <option value="">Chọn giới tính</option>
