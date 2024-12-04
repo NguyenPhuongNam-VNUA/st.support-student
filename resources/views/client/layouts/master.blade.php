@@ -34,9 +34,6 @@
 @include('client.includes.modal_register_dormitory')
 
 {{--quick view yêu cầu tư vấn sức khỏe--}}
-@include('client.includes.health_request_modal')
-
-{{--quick view yêu cầu tư vấn sức khỏe--}}
 
 @include('client.includes.footer')
 
