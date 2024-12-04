@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\ClientBlogController;
+use App\Http\Controllers\Client\ClientHealthController;
 use App\Http\Controllers\Client\ClientMotelController;
 use App\Http\Controllers\Client\ClientServiceController;
 use App\Http\Controllers\Client\StudentLoginController;
@@ -50,7 +51,7 @@ Route::prefix('/')->group(function (): void {
     Route::get('/bai-viet/{slug}', [ClientBlogController::class, 'detail'])->name('client.blog-detail');
     Route::get('/nha-tro', [ClientMotelController::class, 'index'])->name('client.motel');
     Route::get('/nha-tro/{slug}', [ClientMotelController::class, 'detail'])->name('client.motel-detail');
-    Route::get('/suc-khoe', fn () => view('client/pages/health/index'))->name('client.health');
+    Route::get('/suc-khoe', [ClientHealthController::class, 'index'])->name('client.health');
 
     Route::prefix('dang-nhap')->group(function (): void {
         Route::get('/', [StudentLoginController::class, 'index'])->name('student.login');

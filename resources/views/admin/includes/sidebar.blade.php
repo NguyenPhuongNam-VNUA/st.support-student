@@ -217,21 +217,7 @@
                 </li>
                 @endif
 
-                @if(!auth()->user()->role->id == App\Models\Role::where('name', 'Admin')->first()->id)
-                <li class="nav-item-header">
-                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Bài viết</div>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.blogs.index') }}"
-                        class="nav-link {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}"
-                        style="display: flex; align-items: center;">
-                        <i class="fas fa-newspaper me-3 fa"></i>
-                        <span>
-                            Bài viết
-                        </span>
-                    </a>
-                </li>
-                @endif
+
 
                 {{-- ==========Admin dịch vụ=============== --}}
                 @if (auth()->user()->role->id == App\Models\Role::where('name', 'Dịch vụ')->first()->id)
@@ -256,6 +242,20 @@
                     </a>
                 </li>
                 @endif
+
+                <li class="nav-item-header">
+                    <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Bài viết</div>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.blogs.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="fas fa-newspaper me-3 fa"></i>
+                        <span>
+                            Bài viết
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /main navigation -->

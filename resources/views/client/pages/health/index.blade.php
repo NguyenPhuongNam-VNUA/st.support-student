@@ -4,6 +4,24 @@
     Sức khỏe
 @endsection
 @section('content')
+    <section class="about-breadcrumb">
+        <div class="about-back section-tb-padding"
+            style="background-image: url({{ asset('assets/client/image/lecture-hall-image/ClientBreadcrumb.jpg') }})">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="about-l">
+                            <ul class="about-link d-flex gap-2" style="font-size: 1rem">
+                                <li class="text-muted"><a href="{{ route('client.index') }}">Trang chủ</a> / </li>
+                                <li class="text-muted"><span>Sức khỏe</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
     <!--home page slider start-->
     <section class="home-slider-6">
         <div class="home-6 container">
@@ -17,7 +35,7 @@
                                         style="background-image:url({{ asset('assets/client/image/vnua7.jpg') }});">
                                         <div class="h-s-content">
                                             <br>
-                                            <h1 class="title-vnua" >Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
+                                            <h1 class="title-vnua">Trạm Y tế - Học viện Nông nghiệp Việt Nam</h1>
                                             <h2>Địa chỉ: Học viện Nông nghiệp Việt Nam</h2>
                                             <a href="https://tramyte.vnua.edu.vn/gioi-thieu/gioi-thieu-chung"
                                                 class="btn btn-style1"><span>Truy cập</span></a>
@@ -147,12 +165,11 @@
                         </ul>
                     </div>
 
-                    <div class="process-box empty-box"></div> <!-- Thêm ô trống để giữ cân bằng -->
+                    <div class="process-box empty-box"></div>
                 </div>
             </div>
         </div>
     </section>
-    {{-- s4 --}}
     <section class="patient-care-process">
         <div class="container-1">
             <h2 class="section-title">QUY TRÌNH HƯỚNG DẪN CBVC VÀ SINH VIÊN (NGƯỜI BỆNH)<br>
@@ -187,190 +204,92 @@
         </div>
     </section>
 
-    <section class="section-tb-padding">
-        <div class="container"  style="border: 2px solid #007BFF; border-radius: 10px">
-            <div class="row">
-                <div class="col">
-                    <div class="our-tab">
-                        <div class="section-title" style="border-bottom:2px solid #007BFF">
-                            <h5 class="mt-4 mb-4">LÃNH ĐẠO TRẠM Y TẾ QUA CÁC THỜI KỲ TỪ NĂM 1956 ĐẾN NAY</h5>
-                        </div>
-                        <div class="tab-content tab-pro-slider mb-4">
-                            <div class="tab-pane fade show active" id="home">
-                                <div class="our-products-tab swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-{{--                                                    <div class="pro-price">--}}
-{{--                                                        <span class="new-price">$117.00 USD</span>--}}
-{{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-                                                    {{--                                                    <div class="pro-price">--}}
-                                                    {{--                                                        <span class="new-price">$117.00 USD</span>--}}
-                                                    {{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-                                                    {{--                                                    <div class="pro-price">--}}
-                                                    {{--                                                        <span class="new-price">$117.00 USD</span>--}}
-                                                    {{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-                                                    {{--                                                    <div class="pro-price">--}}
-                                                    {{--                                                        <span class="new-price">$117.00 USD</span>--}}
-                                                    {{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-                                                    {{--                                                    <div class="pro-price">--}}
-                                                    {{--                                                        <span class="new-price">$117.00 USD</span>--}}
-                                                    {{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tab-product">
-                                                <div class="tred-pro">
-                                                    <div class="tr-pro-img">
-                                                        <a href="#">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="pro-img1" class="img-fluid">
-                                                            <img src="{{ asset('assets/client/image/avatar-mh.jpg') }}" alt="additional image" class="img-fluid additional-image">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-caption" style="line-height: 18px">
-                                                    <h3><a href="#">Họ tên: Nguyễn Văn A</a></h3>
-                                                    <h3 style="color: black">Chức vụ: Bác sĩ</h3>
-                                                    <h3 style="color: black">Số điện thoại: 012131233</h3>
-                                                    <h3 style="color: black">Email: abc@gmail.com</h3>
-                                                    {{--                                                    <div class="pro-price">--}}
-                                                    {{--                                                        <span class="new-price">$117.00 USD</span>--}}
-                                                    {{--                                                    </div>--}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <livewire:client.health.doctor />
     {{-- end s2 --}}
-    <section class="news-section">
-        <div class="container-5">
-            <h2 class="section-title">Tin tức & Sự kiện</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="news-box">
-                        <img src="{{ asset('assets/client/image/vnua3.jpg') }}" class="img-fluid" alt="news-image">
-                        <h4>Chương trình khám sức khỏe định kỳ</h4>
-                        <p>Tham gia chương trình khám sức khỏe định kỳ dành cho toàn thể sinh viên và cán bộ trong trường
-                            vào tháng tới.</p>
-                        <a href="news-details.html" class="btn btn-news">Đọc thêm</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="news-box">
-                        <img src="{{ asset('assets/client/image/vnua4.jpg') }}" class="img-fluid" alt="news-image">
-                        <h4>Buổi Tư Vấn Sức Khỏe Tâm Lý</h4>
-                        <p>Buổi tư vấn sức khỏe tâm lý miễn phí với chuyên gia, giúp bạn cân bằng cuộc sống học tập và công
-                            việc.</p>
-                        <a href="news-details.html" class="btn btn-news">Đọc thêm</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="news-box">
-                        <img src="{{ asset('assets/client/image/vnua5.jpg') }}" class="img-fluid" alt="news-image">
-                        <h4>Chương trình Hiến Máu Nhân Đạo</h4>
-                        <p>Chương trình hiến máu nhân đạo hằng năm của trường sẽ diễn ra vào tháng tới. Hãy đăng ký và tham
-                            gia ngay!</p>
-                        <a href="news-details.html" class="btn btn-news">Đọc thêm</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <livewire:client.health.blog />
+
     <!-- Register health -->
-    <button id="register-motel-button" class="custom-btn" data-bs-toggle="modal"
-        data-bs-target="#healthRequestModal">Tham vấn sức khỏe từ chuyên gia
+    <button id="register-motel-button" class="custom-btn" data-bs-toggle="modal" data-bs-target="#healthRequestModal">Tham
+        vấn sức khỏe từ chuyên gia
     </button>
+    <livewire:client.health.health-request />
+    <style>
+        .doctor-card {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .doctor-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid #007BFF;
+            padding: 5px;
+        }
+
+        .doctor-info {
+            text-align: center;
+        }
+
+        .doctor-name {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .doctor-title,
+        .doctor-specialty {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Livewire.on('request-success', () => {
+                var modal = document.getElementById('healthRequestModal');
+                var bootstrapModal = bootstrap.Modal.getInstance(modal);
+                bootstrapModal.hide();
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Yêu cầu được gửi đi thành công',
+                    text: 'Các bác sĩ đã nhận được yêu cầu từ bạn. Vui lòng chờ phản hồi từ bác sĩ qua Zalo.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#448B1F',
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Livewire.on('request-denied', () => {
+                var modal = document.getElementById('healthRequestModal');
+                var bootstrapModal = bootstrap.Modal.getInstance(modal);
+                bootstrapModal.hide();
+
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Bạn cần đăng nhập để thực hiện chức năng này',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#F39C12',
+                    html: `
+                    <a href="{{ route('student.login') }}" style="color: #F39C12;">Click để tới trang đăng nhập</a>
+                    `,
+                });
+            });
+        });
+    </script>
+
+    <style>
+        /* Custom styles for SweetAlert2 */
+        .swal2 - container - custom {
+            z - index: 9999 !important;
+        }
+
+        .swal2 - popup - custom {
+            font - size: 1 rem !important;
+        }
+    </style>
 @endsection
