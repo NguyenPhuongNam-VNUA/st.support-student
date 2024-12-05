@@ -215,6 +215,16 @@
                         </span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.medical.healthRequest.index') }}"
+                        class="nav-link {{ request()->routeIs('admin.medical.healthRequest.index') ? 'active' : '' }}"
+                        style="display: flex; align-items: center;">
+                        <i class="far fa-comments me-3 fa"></i>
+                        <span>
+                            Yêu cầu tư vấn sức khỏe
+                        </span>
+                    </a>
+                </li>
                 @endif
 
 

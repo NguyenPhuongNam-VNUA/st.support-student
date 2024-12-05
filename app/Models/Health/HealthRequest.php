@@ -37,4 +37,14 @@ class HealthRequest extends Model
     {
         return $this->hasMany(HealthRequestGallery::class, 'health_request_id');
     }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('code', 'like', '%' . $search . '%');
+        }
+
+        return $query;
+    }
 }
