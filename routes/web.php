@@ -22,6 +22,7 @@ use App\Http\Controllers\DormitoryAdmin\RoomController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\MedicalAdmin\DoctorController;
 use App\Http\Controllers\MedicalAdmin\DoctorRoleController;
+use App\Http\Controllers\MedicalAdmin\HealthRequestController;
 use App\Http\Controllers\ServiceAdmin\ServiceCategoryController;
 use App\Http\Controllers\ServiceAdmin\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -160,6 +161,10 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
             Route::get('/', [DoctorRoleController::class, 'index'])->name('admin.medical.doctor.roles.index');
             Route::get('/create', [DoctorRoleController::class, 'create'])->name('admin.medical.doctor.roles.create');
             Route::get('/edit/{id}', [DoctorRoleController::class, 'edit'])->name('admin.medical.doctor.roles.edit');
+        });
+        Route::prefix('/healthRequest')->group(function (): void {
+            Route::get('/', [HealthRequestController::class, 'index'])->name('admin.medical.healthRequest.index');
+            Route::get('{id}/detail', [HealthRequestController::class, 'detail'])->name('admin.medical.healthRequest.detail');
         });
     });
 
