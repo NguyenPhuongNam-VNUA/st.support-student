@@ -137,12 +137,6 @@
                                                     </a>
                                                 </li>
                                                 <li class="menu-link">
-                                                    <a href="{{route('client.lecture-hall')}}" class="link-title">
-                                                        <i class="fa-solid fa-school me-1"></i>
-                                                        <span class="sp-link-title">Giảng đường</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-link">
                                                     <a href="{{route('client.dormitory.index')}}" class="link-title">
                                                         <i class="fa-solid fa-building-user me-1"></i>
                                                         <span class="sp-link-title">Ký túc xá</span>
@@ -215,12 +209,6 @@
                                             <a href="{{route('client.blog')}}" class="link-title">
                                                 <i class='fas fa-newspaper me-1'></i>
                                                 <span class="sp-link-title">Bài viết</span>
-                                            </a>
-                                        </li>
-                                        <li class="menu-link">
-                                            <a href="{{route('client.lecture-hall')}}" class="link-title">
-                                                <i class="fa-solid fa-school me-1"></i>
-                                                <span class="sp-link-title">Giảng đường</span>
                                             </a>
                                         </li>
                                         <li class="menu-link">
