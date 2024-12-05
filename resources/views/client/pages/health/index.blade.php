@@ -170,12 +170,12 @@
             </div>
         </div>
     </section>
-    <section class="patient-care-process">
+    <section class="patient-care-process" style="min-height: auto">
         <div class="container-1">
             <h2 class="section-title">QUY TRÌNH HƯỚNG DẪN CBVC VÀ SINH VIÊN (NGƯỜI BỆNH)<br>
                 ĐẾN KHÁM BỆNH, CHỮA BỆNH NGOÀI GIỜ HÀNH CHÍNH <br>
                 (Chỉ giải quyết cấp cứu)</h2>
-            <div class="process-content">
+            <div class="process-content" >
                 <div class="process-row">
                     <div class="process-box">
                         <h3>I. Cán bộ, viên chức, sinh viên (người bệnh) chuẩn bị:</h3>
