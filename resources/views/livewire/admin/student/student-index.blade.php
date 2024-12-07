@@ -19,9 +19,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-action">
+                {{-- <div class="content-action">
                     <a href="{{route('admin.students.create')}}" class="btn btn-teal"><i class="ph-plus-circle me-1"></i> Tạo mới</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -60,10 +60,10 @@
                                         <i class="ph-list"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="{{ route('admin.students.edit', ['id' => $student->id]) }}" class="dropdown-item">
+                                        {{-- <a href="{{ route('admin.students.edit', ['id' => $student->id]) }}" class="dropdown-item">
                                             <i class="ph-pencil me-2"></i>
                                             Chỉnh sửa
-                                        </a>
+                                        </a> --}}
                                         <button type="button" wire:click="openDeleteModel({{ $student->id }})" class="dropdown-item text-danger">
                                             <i class="ph-trash me-2"></i>
                                             Xóa

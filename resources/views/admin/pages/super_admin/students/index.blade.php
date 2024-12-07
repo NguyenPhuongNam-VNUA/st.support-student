@@ -32,3 +32,29 @@
     </div>
 @endsection
 
+@section('script_custom')
+<script>
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('openDeleteModel', (event) => {
+            Swal.fire({
+                title: "Bạn có chắc xóa sinh viên này không?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Có, xóa!",
+                cancelButtonText: "Không!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('confirmDelete');
+                    Swal.fire({
+                        title: "Xóa sinh viên thành công!",
+                        icon: "success"
+                    });
+                }
+            });
+        });
+    });
+</script>
+@endsection
+

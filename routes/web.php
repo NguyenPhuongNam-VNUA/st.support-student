@@ -12,6 +12,7 @@ use App\Http\Controllers\Client\ClientHealthController;
 use App\Http\Controllers\Client\ClientMotelController;
 use App\Http\Controllers\Client\ClientServiceController;
 use App\Http\Controllers\Client\StudentLoginController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryController;
 use App\Http\Controllers\DormitoryAdmin\DormitoryStudentController;
 use App\Http\Controllers\DormitoryAdmin\FacilityController;
@@ -66,7 +67,7 @@ Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name(
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset-password');
 
 Route::prefix('/admin')->middleware('auth')->group(function (): void {
-    Route::get('/', fn () => view('admin/pages/dashboard/index'))->name('admin.index');
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
 
     Route::prefix('/blog')->group(function (): void {
         Route::get('/', [BlogController::class, 'index'])->name('admin.blogs.index');
