@@ -3916,6 +3916,13 @@ iphone css
     }
 }
 @media (max-width: 479px) {
+    .heading-footer{
+        display: none;
+    }
+
+    .home-6home-slider-main-6{
+        display: none;
+    }
     /* service css */
     .home-service .service-area-main .service {
         width: 100%;
@@ -3970,6 +3977,7 @@ iphone css
     .f-logo ul.footer-ul li.footer-li.footer-logo {
         width: 100%;
         margin-left: 0px;
+        text-align: center;
     }
     .f-logo ul.footer-ul li.footer-li {
         width: 100%;

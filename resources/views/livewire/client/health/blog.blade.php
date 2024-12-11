@@ -13,7 +13,7 @@
                                         <img src="{{ asset('storage/' . $post->thumbnail) }}" class="img-fluid"
                                             alt="news-image">
                                         <h4>{{$post->title}}</h4>
-                                        <p>{{ \Illuminate\Support\Str::limit(strip_tags($post->content, '<p>'), 100) }}</p>
+                                        <p>{!! Str::limit(strip_tags($post->content), 100, '...') !!}</p>
                                         <a href="{{route('client.blog-detail', $post->slug)}}" class="btn btn-news">Đọc thêm</a>
                                     </div>
                                 </div>
