@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="slider-banner-6">
-                        <div class="home-6 home-slider-main-6">
+                        <div class="home-6home-slider-main-6">
                             <div class="home6-slider owl-carousel owl-theme">
                                 <div class="items" style="width: 777.33px">
                                     <div class="img-back-6"

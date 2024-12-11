@@ -8,31 +8,20 @@
                         <div class="f-logo me-3">
                             <ul class="footer-ul">
                                 <li class="footer-li footer-logo">
-                                    <a href="index5.html">
-                                        <img class="img-fluid logo-size" src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="">
+                                    <h6 class="heading-footer">Về chúng tôi</h6>
+                                    <a href="">
+                                        <img class="img-fluid logo-size" src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="" style="width: 100px; height: auto;">
                                     </a>
                                 </li>
                                 <li class="footer-li footer-contact">
-                                    <ul class="f-ul-li-ul">
-                                        <li class="footer-icon">
-                                            <i class="ion-ios-telephone"></i>
-                                        </li>
-                                        <li class="footer-info">
-                                            <a href="tel:1-800-222-000">SĐT: 123 456 789</a>
-                                            <a href="mailto:demo@demo.com">Email: demo@demo.com</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer-li footer-contact footer-map">
-                                    <ul class="f-ul-li-ul">
-                                        <li class="footer-icon">
-                                            <i class="ion-ios-location"></i>
-                                        </li>
-                                        <li class="footer-info">
-                                                    <span>401 Trâu Quỳ, Gia Lâm, Hà Nội</span>
-                                            <span>...</span>
-                                        </li>
-                                    </ul>
+                                    <div class="footer-desc">
+                                        <p class="desc">
+                                            "Dự án hỗ trợ sinh viên 
+                                            Học viện Nông Nghiệp Việt Nam" 
+                                            – Kết nối, hỗ trợ và đồng hành cùng 
+                                            sinh viên trên hành trình phát triển.
+                                        </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
