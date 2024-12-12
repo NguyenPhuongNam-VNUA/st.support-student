@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9" style="width: 73%">
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-info"></i>
@@ -60,15 +60,15 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3" style="width: 27%">
         <div class="card">
             <div class="card-header bold">
                 <i class="ph-gear-six"></i>
                 Hành động
             </div>
-            <div class="card-body d-flex align-items-center gap-1">
+            <div class="card-body d-flex justify-content-between gap-1">
                 <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa</button>
-                <a href="{{ route('admin.dormitories.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
+                <a href="{{ route('admin.dormitories.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i>Trở lại</a>
             </div>
         </div>
     </div>

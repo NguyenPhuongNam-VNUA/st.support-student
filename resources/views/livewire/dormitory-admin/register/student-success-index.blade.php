@@ -95,14 +95,14 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li>
-                                                <a class="dropdown-item text-success">
+                                                <a wire:click="addDormitoryStudent({{ $request->id }})" class="dropdown-item text-success">
                                                     <i class="ph-user-plus me-2"></i>
                                                     Thêm
                                                 </a>
                                             </li>
                                             <li class="dropdown-divider"></li>
                                             <li>
-                                                <a class="dropdown-item text-danger">
+                                                <a wire:click="openDeleteModal({{ $request->id }})" class="dropdown-item text-danger">
                                                     <i class="ph-user-minus me-2"></i>
                                                     Hủy
                                                 </a>
@@ -136,7 +136,26 @@
 
         window.addEventListener('resetFilter', event => {
             $('#dormitory').val(null).trigger('change');
-            $('#status').val(null).trigger('change');
+        });
+
+        window.addEventListener('openDeleteModal', event => {
+            const { roomName } = event.detail[0];
+            console.log(event.detail[0]);
+
+            Swal.fire({
+                title: 'Xác nhận',
+                text: `Bạn có chắc chắn muốn hủy sinh viên đăng ký phòng ${roomName} không?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Xác nhận',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('confirmDelete');
+                }
+            });
         });
     </script>
 </div>

@@ -24,13 +24,16 @@
     </section>
     <!-- breadcrumb end -->
 
-    <section class="order-histry-area section-tb-padding">
+    <section class="order-histry-area section-tb-padding" style="background-color: #3333331a">
         <div class="container">
-            <section class="quick-view">
-                <div class="modal fade" id="quickviewDormitory" tabindex="-1" aria-labelledby="quickviewDormitoryLabel" aria-hidden="true">
-                    <livewire:client.component.dormitory.quick-view />
-                </div>
-            </section>
+{{--            <section class="quick-view">--}}
+{{--                <div class="modal fade" id="quickviewDormitory" tabindex="-1" aria-labelledby="quickviewDormitoryLabel" aria-hidden="true">--}}
+{{--                    <livewire:client.component.dormitory.quick-view />--}}
+{{--                </div>--}}
+{{--            </section>--}}
+            <div class="modal fade" id="quickviewDormitory" tabindex="-1">
+                <livewire:client.component.dormitory.quick-view />
+            </div>
             <livewire:client.dormitory.dormitory-index />
         </div>
     </section>
@@ -47,7 +50,6 @@
 
         .order-info {
             border-left: 3px solid #448b1f !important;
-            background-color: #f8f9fa;
         }
 
         .profile-ul li a {
@@ -62,34 +64,6 @@
             color: #448b1f;
         }
 
-        .card {
-            padding: 15px;
-            border: 1px solid #448b1f;
-            border-radius: 8px;
-            color: #333;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .room-header {
-            background-color: #448b1f;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-        }
-
-        .btn-primary {
-            background-color: #448b1f;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-
         .btn-primary:hover {
             background-color: #ea6c3c;
         }
@@ -100,6 +74,78 @@
             padding: 2px 5px;
             border-radius: 3px;
         }
+
+        :root{
+            --spacer: 1.25rem;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
+
+        .content {
+            padding: var(--spacer) 1.25rem;
+            -ms-flex-positive: 1;
+            flex-grow: 1
+        }
+
+        .card {
+            border: 0;
+            margin-bottom: var(--spacer)
+        }
+
+
+        @media (min-width:576px) {
+            .blog-horizontal .card-img-actions {
+                width: 45%;
+                float: left;
+                max-width: 25rem;
+                z-index: 10
+            }
+
+            .align-items-sm-center {
+                -ms-flex-align: center !important;
+                align-items: center !important;
+            }
+
+            .justify-content-sm-between {
+                -ms-flex-pack: justify !important;
+                justify-content: space-between !important;
+            }
+
+            .d-sm-flex {
+                display: -ms-flexbox !important;
+                display: flex !important;
+            }
+
+            .mt-sm-0 {
+                margin-top: 0 !important;
+            }
+        }
+
+        @media (min-width:576px) {
+            .blog-horizontal-xs .card-img-actions {
+                width: 35%;
+                max-width: 12.5rem
+            }
+        }
+
+        @media (min-width:576px) {
+            .blog-horizontal-sm .card-img-actions {
+                width: 40%;
+                max-width: 18.75rem
+            }
+        }
+
+        @media (min-width:576px) {
+            .blog-horizontal-lg .card-img-actions {
+                width: 50%;
+                max-width: 31.25rem
+            }
+        }
+
     </style>
 @endsection
 

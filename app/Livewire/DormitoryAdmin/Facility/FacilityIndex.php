@@ -62,11 +62,12 @@ class FacilityIndex extends Component
     public function openDeleteModel($id): void
     {
         $this->facilityId = $id;
-        $this->dispatch('openDeleteModel');
+        $nameRoom = Facility::query()->where('id', $id)->first()->room->name;
+        $this->dispatch('openDeleteModel', ['nameRoom' => $nameRoom]);
     }
 
     public function confirmDelete(): void
     {
-        Facility::find($this->facilityId)->delete();
+        Facility::query()->where('id', $this->facilityId)->delete();
     }
 }

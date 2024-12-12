@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Models\Dormitory;
 
-use App\Enums\StatusRoom;
 use App\Models\Gallery\dormitory\RoomGallery;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Room extends Model
 {
@@ -24,6 +24,7 @@ class Room extends Model
         'slug',
         'thumbnail',
         'description',
+        'available',
     ];
 
     public function dormitory(): BelongsTo
@@ -36,9 +37,9 @@ class Room extends Model
         return $this->hasMany(DormitoryStudent::class);
     }
 
-    public function facilities(): HasMany
+    public function facility(): HasOne
     {
-        return $this->hasMany(Facility::class);
+        return $this->hasOne(Facility::class);
     }
 
     public function roomGalleries(): HasMany
@@ -51,13 +52,9 @@ class Room extends Model
         return $this->hasMany(DormitoryRequest::class);
     }
 
-    //    public function getStatusAttribute(): string
+    //    public function getAvailableAttribute(): int
     //    {
-    //        if ($this->capacity > $this->students->count()) {
-    //            return StatusRoom::Empty->value;
-    //        }
-    //
-    //        return StatusRoom::Full->value;
+    //        return  $this->capacity - $this->students->count();
     //    }
 
     public function scopeSearch($query, $search)

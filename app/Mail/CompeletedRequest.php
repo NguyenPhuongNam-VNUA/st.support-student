@@ -10,21 +10,21 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class CancelRequest extends Mailable
+class CompeletedRequest extends Mailable
 {
     use Queueable;
     use SerializesModels;
 
     public $request;
-    public $cancelContent;
+    public $completedContent;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($request, $cancelContent)
+    public function __construct($request, $completedContent)
     {
         $this->request = $request;
-        $this->cancelContent = $cancelContent;
+        $this->completedContent = $completedContent;
     }
 
     /**

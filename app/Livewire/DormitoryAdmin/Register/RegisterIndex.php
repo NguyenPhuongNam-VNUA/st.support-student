@@ -6,6 +6,7 @@ namespace App\Livewire\DormitoryAdmin\Register;
 
 use App\Enums\StatusRequest;
 use App\Mail\CancelRequest;
+use App\Mail\CompeletedRequest;
 use App\Models\Dormitory\DormitoryRequest;
 use App\Models\Dormitory\Room;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +15,7 @@ use Livewire\Component;
 class RegisterIndex extends Component
 {
     public $roomId;
-
+    public $search;
     #[Validate(as: 'lý do từ chối')]
     public $cancelContent;
 
@@ -29,6 +30,7 @@ class RegisterIndex extends Component
     {
         $dormitoryRequests = DormitoryRequest::query()
             ->filter($this->roomId)
+            ->search($this->search)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         $rooms = Room::with('dormitory')
@@ -52,8 +54,11 @@ class RegisterIndex extends Component
         ]);
 
         $room = Room::query()->where('id', $request->room->id)->first();
-        $room->capacity = $room->capacity - 1;
-        $room->save();
+        $room->update([
+            'available' => $room->available - 1,
+        ]);
+
+        Mail::to($request->code . '@sv.vnua.edu.vn')->send(new CompeletedRequest($request, $this->completedContent));
 
         return redirect()->route('admin.dormitory.register.index')
             ->with('success', 'Đã gửi thông báo thành công đến tài khoản ' . $request->code . '@sv.vnua.edu.vn');
@@ -82,6 +87,7 @@ class RegisterIndex extends Component
     public function resetFilter(): void
     {
         $this->roomId = '';
+        $this->search = '';
         $this->dispatch('resetFilter');
     }
 

@@ -27,6 +27,7 @@ class DormitoryRequest extends Model
         'gender',
         'citizen_id',
         'created_at',
+        'is_check',
     ];
 
     public function room(): BelongsTo
@@ -45,7 +46,8 @@ class DormitoryRequest extends Model
     public function scopeSearch($query, $search)
     {
         if ($search) {
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('code', 'like', '%' . $search . '%');
         }
 
         return $query;

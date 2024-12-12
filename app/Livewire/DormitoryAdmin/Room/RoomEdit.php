@@ -80,6 +80,7 @@ class RoomEdit extends Component
             'capacity' => $this->capacity,
             'thumbnail' => $thumbnailPath,
             'description' => $this->description,
+            'available' => $this->capacity - $room->students->count(),
         ]);
 
         if ($this->new_room_galleries) {

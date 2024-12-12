@@ -133,5 +133,25 @@
             $('#dormitory').val(null).trigger('change');
             $('#status').val(null).trigger('change');
         });
+
+        window.addEventListener('openDeleteModel', event => {
+            const { nameRoom } = event.detail[0];
+            console.log(event.detail[0]);
+
+            Swal.fire({
+                title: 'Xác nhận',
+                text: `Bạn có chắc chắn muốn xóa cơ sở hạ tầng phòng ${nameRoom} không?`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Xác nhận',
+                cancelButtonText: 'Hủy',
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('confirmDelete');
+                }
+            });
+        });
     </script>
 </div>

@@ -27,7 +27,7 @@ class QuickView extends Component
     public function showQuickView($roomId): void
     {
         $this->roomId = $roomId;
-        $this->room = Room::with(['roomGalleries', 'facilities'])->find($this->roomId);
+        $this->room = Room::with(['roomGalleries', 'facility'])->find($this->roomId);
         if ($this->room) {
             $this->images = $this->room->roomGalleries->pluck('image')->toArray();
         } else {

@@ -81,7 +81,7 @@
                         </tr>
                     @else
                         @foreach($dormitoryRequests as $request)
-                            <tr @if($request->status == \App\Enums\StatusRequest::Cancel->value) style="background-color: rgba(128,128,128,0.11)" @endif">
+                            <tr @if($request->is_check == 1) style="background-color: rgba(128,128,128,0.11)" @endif">
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td class="text-center"> {{ $request->room->name }} </td>
                                 <td class="text-center">{{ $request->name }} </td>
@@ -242,7 +242,6 @@
 
         window.addEventListener('resetFilter', event => {
             $('#dormitory').val(null).trigger('change');
-            $('#status').val(null).trigger('change');
         });
     </script>
 </div>

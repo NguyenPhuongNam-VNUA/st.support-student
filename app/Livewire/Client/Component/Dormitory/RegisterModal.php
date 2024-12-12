@@ -56,7 +56,7 @@ class RegisterModal extends Component
             $student = auth('students')->user();
             $this->name = $student->name;
             $this->code = $student->code;
-            $this->phone = $student->phone;
+            $this->phone = $student->phone_number;
             $this->bod = $student->bod;
         }
     }

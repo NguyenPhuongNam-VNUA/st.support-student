@@ -75,12 +75,12 @@
                     <div>
                         <input wire:model.live="new_room_galleries" type="file" multiple
                                class="form-control @error('new_room_galleries') is-invalid @enderror">
-                
+
                         {{-- Hiển thị lỗi validation --}}
                         @error('new_room_galleries')
                             <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
-                        
+
                         {{-- Hiển thị lỗi cho từng file --}}
                         @if ($errors->has('new_room_galleries.*'))
                             @foreach ($errors->get('new_room_galleries.*') as $error)
@@ -125,7 +125,7 @@
                 <i class="ph-gear-six"></i>
                 Hành động
             </div>
-            <div class="card-body d-flex align-items-center gap-1">
+            <div class="card-body d-flex justify-content-around gap-1">
                 <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa </button>
                 <a href="{{ route('admin.dormitory.rooms.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>

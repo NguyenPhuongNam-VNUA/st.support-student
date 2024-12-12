@@ -1,9 +1,15 @@
 <div class="row">
     <div class="col-md-9">
         <div class="card">
-            <div class="card-header bold">
-                <i class="ph-info"></i>
-                Thông tin cơ sở hạ tầng
+            <div class="card-header bold d-flex justify-content-between">
+                <div>
+                    <i class="ph-info"></i>
+                    Thông tin cơ sở hạ tầng
+                </div>
+                <div>
+                    <i class="ph-door"></i>
+                    Phòng: &nbsp <span class="text-primary">{{ $room }}</span>
+                </div>
             </div>
 
             <div class="card-body">
@@ -66,52 +72,14 @@
     </div>
     <div class="col-md-3">
         <div class="card">
-            <div class="card-header">
-                Phòng: <span class="text-danger">*</span>
-            </div>
-            <div class="card-body">
-                <div wire:ignore>
-                    <select id="room" wire:model.live="roomId" class="form-control @error('roomId') is-invalid @enderror">
-                        <option value=""></option>
-                        @foreach($rooms as $dormitoryName => $room)
-                            @if (!empty($room))
-                                <optgroup class="text-primary" label="{{ $dormitoryName }}">
-                                    @foreach($room as $item)
-                                        <option class="text-muted" value="{{ $item['id'] }}">{{ $item['name'] }}</option>
-                                    @endforeach
-                                </optgroup>
-                            @endif
-                        @endforeach
-                    </select>
-                </div>
-                @error('roomId')
-                <label class="text-danger mt-1">{{ $message }}</label>
-                @enderror
-            </div>
-        </div>
-        <div class="card">
             <div class="card-header bold">
                 <i class="ph-gear-six"></i>
                 Hành động
             </div>
             <div class="card-body d-flex justify-content-around gap-1">
-                <button wire:click="store" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Tạo mới</button>
+                <button wire:click="update" class="btn btn-primary" type="submit"><i class="ph-floppy-disk"></i>Chỉnh sửa</button>
                 <a href="{{ route('admin.dormitory.facilities.index') }}" type="button" class="btn btn-warning"><i class="ph-arrow-counter-clockwise"></i> Trở lại</a>
             </div>
         </div>
     </div>
-
-    <script>
-        $('#room').select2({
-            placeholder: 'Chọn phòng',
-            allowClear: true
-        }).change(function() {
-            Livewire.dispatch('choseRoom', [$(this).val()]);
-        });
-
-        window.addEventListener('reloadData', event => {
-            let data = event.detail.room;
-            $('#room').val(data.id).trigger('change');
-        })
-    </script>
 </div>

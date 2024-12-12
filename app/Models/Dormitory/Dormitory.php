@@ -37,6 +37,11 @@ class Dormitory extends Model
         return $this->hasMany(DormReport::class);
     }
 
+    public function getAvailableRoomsAttribute()
+    {
+        return $this->total_rooms - $this->rooms->count();
+    }
+
     public function scopeSearch($query, $search)
     {
         if ($search) {
