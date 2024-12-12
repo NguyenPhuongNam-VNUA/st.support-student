@@ -31,13 +31,13 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 5%">STT</th>
-                            <th class="text-center">Tên tòa nhà</th>
-                            <th class="text-center">Người quản lý</th>
-                            <th class="text-center">Số phòng</th>
-                            <th class="text-center">Số phòng còn trống</th>
-                            <th class="text-center">Mô tả</th>
-                            <th class="text-center" style="width: 150px; text-align: center">Hành động</th>
+                            <th class="text-center" style="width: 1%">STT</th>
+                            <th class="text-center" style="width: 20%">Tên tòa nhà</th>
+                            <th class="text-center" style="width: 20%">Người quản lý</th>
+                            <th class="text-center" style="width: 10%">Số phòng</th>
+                            <th class="text-center" style="width: 20%">Số phòng còn trống</th>
+                            <th class="text-center" style="width: 28%">Mô tả</th>
+                            <th class="text-center" style="width: 1%; text-align: center">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,11 +51,11 @@
                         @foreach($dormitories as $dormitory)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
-                            <td>{{ $dormitory->name }}</td>
-                            <td>{{ $dormitory->manager->name ?? 'Không có người quản lý'}}</td>
-                            <td>{{ $dormitory->total_rooms }}</td>
-                            <td>{{ $dormitory->available_rooms }}</td>
-                            <td>{{ $dormitory->description ?:'Trống' }}</td>
+                            <td class="text-center">{{ $dormitory->name }}</td>
+                            <td class="text-center">{{ $dormitory->manager->name ?? 'Không có người quản lý'}}</td>
+                            <td class="text-center">{{ $dormitory->total_rooms }}</td>
+                            <td class="text-center">{{ $dormitory->available_rooms }}</td>
+                            <td>{{ \Illuminate\Support\Str::limit($dormitory->description, 70)  ?:'Trống' }}</td>
                             <td class="text-center">
                                 <div class="dropdown">
                                     <a href="#" class="text-body" data-bs-toggle="dropdown">

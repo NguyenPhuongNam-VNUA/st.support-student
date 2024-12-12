@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Livewire\Client\Dormitory;
 
-use App\Enums\StatusRoom;
 use App\Models\Dormitory\Room;
 use Livewire\Component;
 
@@ -23,8 +22,8 @@ class DormitoryIndex extends Component
 
     public function mount(): void
     {
-        $this->rooms = Room::with(['dormitory', 'facilities'])
-            ->where('status', StatusRoom::Empty->value)
+        $this->rooms = Room::with('dormitory')
+            ->where('available', '>', 0)
             ->get()
             ->groupBy(fn ($room) => $room->dormitory->name)
             ->map(function ($rooms) {
@@ -34,20 +33,14 @@ class DormitoryIndex extends Component
                         'name' => $room->name,
                         'description' => $room->description,
                         'thumbnail' => $room->thumbnail,
-                        'facilities' => $room->facilities->map(function ($facility) {
-                            return [
-                                'area' => $facility->area,
-                                'bed' => $facility->bed,
-                                'wardrobe' => $facility->wardrobe,
-                                'air_conditioner' => $facility->air_conditioner,
-                            ];
-                        }),
-                        'count' => $room->students->count(),
+                        'available' => $room->available,
                         'capacity' => $room->capacity,
                     ];
                 });
             });
     }
+
+
 
     public function handleShowRegisterModal($roomId): void
     {

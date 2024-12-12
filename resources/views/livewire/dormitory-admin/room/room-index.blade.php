@@ -73,9 +73,9 @@
                             <th class="text-center">Ảnh đại diện phòng</th>
                             <th class="text-center">Tên phòng</th>
                             <th class="text-center">Tòa</th>
-                            <th class="text-center">Số người tối đa</th>
+                            <th class="text-center">Sức chứa</th>
                             <th class="text-center">Trạng thái</th>
-                            <th class="text-center" style=" text-align: center">Hành động</th>
+                            <th class="text-center" style="width: 12%">Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -95,7 +95,7 @@
                             </td>
                             <td class="text-center">{{ $room->name }}</td>
                             <td class="text-center">{{ $room->dormitory->name ?? 'Không thuộc tòa nhà nào' }}</td>
-                            <td>{{ $room->capacity}}</td>
+                            <td class="text-center">{{ $room->capacity}}</td>
                             <td class="text-center">
                                 @if($room->status == \App\Enums\StatusRoom::Empty)
                                 <span class="badge bg-success bg-opacity-20 text-success">Còn trống</span>

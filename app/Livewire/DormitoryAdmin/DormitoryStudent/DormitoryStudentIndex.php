@@ -97,5 +97,6 @@ class DormitoryStudentIndex extends Component
     public function confirmDelete(): void
     {
         DormitoryStudent::destroy($this->dormitoryStudentId);
+        ;
     }
 }

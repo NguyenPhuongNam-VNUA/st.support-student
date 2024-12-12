@@ -49,11 +49,13 @@ class DormitoryEdit extends Component
     {
         $this->validate();
 
-        Dormitory::where('id', $this->id)->update([
+        $dormitory = Dormitory::query()->where('id', $this->id)->first();
+        $dormitory->update([
             'name' => $this->name,
             'manager_id' => $this->manager_id,
             'total_rooms' => $this->total_rooms,
             'description' => $this->description,
+            'available_rooms' => $this->total_rooms - $dormitory->rooms->count(),
             'slug' => Str::slug($this->name) . '-' . $this->id,
         ]);
         return redirect()->route('admin.dormitories.index')->with('success', 'Cập nhật thông tin tòa nhà thành công');
@@ -64,7 +66,14 @@ class DormitoryEdit extends Component
         return [
             'name' => 'required|unique:dormitories,name,' . $this->id,
             'manager_id' => 'required',
-            'total_rooms' => 'required',
+            'total_rooms' => [
+                'required',
+                function ($attribute, $value, $fail): void {
+                    if ($value < Dormitory::query()->find($this->id)->rooms->count()) {
+                        $fail('Số phòng không được nhỏ hơn số phòng đã tạo');
+                    }
+                },
+            ],
             'description' => 'required',
         ];
     }

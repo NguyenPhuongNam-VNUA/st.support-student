@@ -45,11 +45,6 @@ class RoomCreate extends Component
 
     public function store()
     {
-        //        try {
-        //            $this->validate();
-        //        } catch (c) {
-        //            dd($e->errors());
-        //        }
         $this->validate();
         $thumbnailPath = $this->thumbnail ? $this->thumbnail->store('roomThumbnails', 'public') : null;
         $room = Room::create([
@@ -60,6 +55,7 @@ class RoomCreate extends Component
             'slug' => Str::slug($this->name),
             'status' => 'empty',
             'description' => $this->description,
+            'available' => $this->capacity,
         ]);
 
         $room->update([
@@ -74,6 +70,11 @@ class RoomCreate extends Component
                 ]);
             }
         }
+
+        $room->dormitory->update([
+            'available_rooms' => $room->dormitory->available_rooms - 1,
+        ]);
+
 
         session()->flash('success', 'Thêm mới phòng thành công');
 

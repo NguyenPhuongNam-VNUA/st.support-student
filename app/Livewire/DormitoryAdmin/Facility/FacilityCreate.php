@@ -12,7 +12,7 @@ use Livewire\Component;
 class FacilityCreate extends Component
 {
     #[Validate(as: 'phòng')]
-    public $roomId;
+    public $roomId = [];
 
     #[Validate(as: 'số lượng giường')]
     public $bed;
@@ -33,9 +33,10 @@ class FacilityCreate extends Component
     public function render()
     {
         $rooms = Room::with('dormitory')
+            ->doesntHave('facility')
             ->get()
-            ->groupBy('dormitory.name')
-            ->toArray();
+            ->groupBy('dormitory.name');
+
         return view('livewire.dormitory-admin.facility.facility-create', [
             'rooms' => $rooms,
         ]);
@@ -50,13 +51,15 @@ class FacilityCreate extends Component
     {
         $this->validate();
 
-        $facility = Facility::create([
-            'room_id' => $this->roomId,
-            'bed' => $this->bed,
-            'wardrobe' => $this->wardrobe,
-            'air_conditioner' => $this->air_conditioner,
-            'area' => $this->area,
-        ]);
+        foreach ($this->roomId as $room) {
+            $facility = Facility::create([
+                'room_id' => $room,
+                'bed' => $this->bed,
+                'wardrobe' => $this->wardrobe,
+                'air_conditioner' => $this->air_conditioner,
+                'area' => $this->area,
+            ]);
+        }
 
         session()->flash('success', 'Thêm mới cơ sở vật chất thành công');
 

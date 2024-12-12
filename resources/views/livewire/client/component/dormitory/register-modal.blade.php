@@ -21,7 +21,7 @@
     </div>
 
     <div class="quick-view-area">
-        <div class="modal-body d-flex flex-row flex-wrap" style="max-height: 70vh; overflow-y: auto; width: 100%;">
+        <div class="modal-body d-flex flex-row flex-wrap" style="max-height: 70vh; overflow-y: auto; width: 100%; padding: 30px">
             <div class="me-4 pe-4" style="width: 100%;">
                 <div class="form-group mt-2">
                     <label class="form-label">Họ tên: <span class="text-danger">*</span></label>

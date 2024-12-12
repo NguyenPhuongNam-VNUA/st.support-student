@@ -1,7 +1,7 @@
     <div class="row">
         <div class="col">
             <div class="order-history">
-                <div class="profile sticky-container">
+                <div class="profile sticky-container" style="background-color: #f8f9fa">
                     <div class="order-pro d-flex justify-content-center">
                         <div class="order-name">
                             <h4 class="text-success">Ký túc xá</h4>
@@ -20,45 +20,47 @@
                     </div>
                 </div>
 
-                <div class="order-info border rounded p-4 mt-4">
+                <div class="order-info border rounded p-4">
                     @foreach($rooms as $dormitoryName => $room)
                         <div id="{{ $dormitoryName }}" class="content-div">
-                            <h4>{{ $dormitoryName }}</h4>
-                            <div class="list-product">
-                                @foreach($room as $item)
-                                    <div class="list-items">
-                                        <div class="tred-pro">
-                                            <div class="tr-pro-img">
-                                                <a href="">
-                                                    <img class="img-fluid" src="{{ asset('storage/' . $item['thumbnail']) }}" alt="pro-img">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="caption" style="text-align: left">
-                                            <div class="d-flex justify-content-between">
-                                                <h3><a href="">Phòng ký túc xá: {{ $item['name'] }}</a></h3>
-                                                <div class="pro-icn" style="margin-top: 0">
-                                                    <a onclick="showQuickView('{{ $item['id'] }}')" href="javascript:void(0)" class="w-c-q-icn" data-bs-toggle="modal" data-bs-target="#quickviewDormitory"><i style="height: 29px; width: 29px" class="fa-solid fa-eye"></i></a>
+                            @php
+                                $rooms = array_chunk($room->toArray(), 2);
+                            @endphp
+                            @foreach($rooms as $items)
+                                <div class="row">
+                                    @foreach($items as $item)
+                                        <div class="col-xl-6 mb-2">
+                                            <div class="card blog-horizontal">
+                                                <div class="card-body">
+                                                    <div class="card-img-actions me-sm-3 mb-3 mb-sm-0">
+                                                        <a onclick="showQuickView('{{ $item['id'] }}')" class="d-inline-block position-relative" data-bs-toggle="modal" data-bs-target="#quickviewDormitory">
+                                                            <img class="img-fluid card-img" src="{{ asset('storage/' . $item['thumbnail']) }}" alt="pro-img">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <h5 class="d-flex flex-nowrap my-1">
+                                                            <a href="#" class="me-2 text-primary">{{ $item['name'] }}</a>
+                                                            <span class="text-success ms-auto">{{ $item['capacity'] - $item['available'] }} / {{ $item['capacity'] }}</span>
+                                                        </h5>
+                                                    </div>
+
+                                                    <p>{{ $item['description'] }}</p>
+                                                </div>
+
+                                                <div class="card-footer d-sm-flex justify-content-end">
+                                                    <div class="mt-2 mt-sm-0">
+                                                        <a wire:click="handleShowRegisterModal('{{ $item['id'] }}')" class=" link-success" data-bs-toggle="modal" data-bs-target="#registerDormitoryModal" style="cursor: pointer">
+                                                            Đăng ký
+                                                            <i class="fa-solid fa-arrow-right ms-2"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start gap-5">
-                                                <span class="badge rounded-pill bg-success"><i class="fa-solid fa-users-line"></i> {{ $item['count'] }} / {{ $item['capacity'] }}</span>
-                                                @foreach($item['facilities'] as $facility)
-                                                    <span class="badge rounded-pill bg-danger"><i class="fa-solid fa-warehouse"></i> {{ $facility['area'] }} m&#178;</span>
-                                                    <span class="badge rounded-pill bg-secondary"><i class="fa-solid fa-bed"></i> {{ $facility['bed'] }}</span>
-                                                    <span class="badge rounded-pill bg-secondary"><i class="fa-solid fa-wind"></i> {{ $facility['air_conditioner'] }}</span>
-                                                    <span class="badge rounded-pill bg-secondary"><i class="fa-solid fa-tablet"></i> {{ $facility['wardrobe'] }}</span>
-                                                @endforeach
-                                            </div>
-                                            <p class="list-description">{{ $item['description'] }}</p>
-                                            <div class="pro-price d-flex justify-content-end">
-                                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerDormitoryModal"
-                                                    wire:click="handleShowRegisterModal('{{ $item['id'] }}')">Đăng ký</button>
-                                            </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
+                                    @endforeach
+                                </div>
+                            @endforeach
                         </div>
                     @endforeach
                 </div>

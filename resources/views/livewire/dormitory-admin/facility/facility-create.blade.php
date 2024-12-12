@@ -104,9 +104,10 @@
     <script>
         $('#room').select2({
             placeholder: 'Chọn phòng',
-            allowClear: true
+            multiple: true,
         }).change(function() {
             Livewire.dispatch('choseRoom', [$(this).val()]);
+            console.log($(this).val());
         });
     </script>
 </div>

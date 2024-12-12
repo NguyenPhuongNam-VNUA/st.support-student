@@ -6,40 +6,30 @@ namespace App\Livewire\DormitoryAdmin\Register;
 
 use App\Enums\StatusRequest;
 use App\Models\Dormitory\DormitoryRequest;
+use App\Models\Dormitory\DormitoryStudent;
 use App\Models\Dormitory\Room;
-use Livewire\Attributes\Validate;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class StudentSuccessIndex extends Component
 {
     public $roomId;
+    public $search;
 
-    #[Validate(as: 'họ và tên')]
-    public $name;
-
-    #[Validate(as: 'mã sinh viên')]
-    public $code;
-
-    #[Validate(as: 'số điện thoại')]
-    public $phone;
-
-    #[Validate(as: 'ngày sinh')]
-    public $bod;
-
-    #[Validate(as: 'căn cươc công dân')]
-    public $citizen_id;
+    public $requestId;
 
     protected $listeners = [
         'changeRoom' => 'updatedRoom',
-        'openModal' => 'openModal',
-        'closeModal' => 'closeModal'
+        'confirmDelete' => 'confirmDelete',
     ];
 
     public function render()
     {
         $dormitoryRequests = DormitoryRequest::query()
             ->where('status', StatusRequest::Completed->value)
+            ->where('is_check', false)
             ->filter($this->roomId)
+            ->search($this->search)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         $rooms = Room::with('dormitory')
@@ -51,19 +41,6 @@ class StudentSuccessIndex extends Component
             'dormitoryRequests' => $dormitoryRequests,
             'rooms' => $rooms,
         ]);
-    }
-
-    public function openModal($id): void
-    {
-        $request = DormitoryRequest::query()->where('id', $id)->first();
-
-        $this->name = $request->name;
-        $this->code = $request->code;
-        $this->phone = $request->phone;
-        $this->bod = $request->bod;
-        $this->citizen_id = $request->citizen_id;
-
-        $this->dispatch('openModal', ['id' => $id]);
     }
 
     public function save(): void
@@ -79,44 +56,51 @@ class StudentSuccessIndex extends Component
     public function resetFilter(): void
     {
         $this->roomId = '';
+        $this->search = '';
         $this->dispatch('resetFilter');
     }
 
-    public function rules()
+    public function addDormitoryStudent($id)
     {
-        return [
-            'name' => 'required',
-            'code' => 'required',
-            'phone' => [
-                'required',
-                function ($attribute, $value, $fail) {
-                    if (!preg_match("/^[0-9]{10}$/", $value)) {
-                        return $fail('Số điện thoại chưa đúng định dạng ');
-                    }
-                }
-            ],
-            'bod' => [
-                'required',
-                function ($attribute, $value, $fail) {
-                    // Chuyển đổi định dạng từ yyyy-mm-dd sang dd/mm/yyyy nếu input là yyyy-mm-dd
-                    if (preg_match("/^\d{4}-\d{2}-\d{2}$/", $value)) {
-                        $dateParts = explode('-', $value);
-                        $value = $dateParts[2] . '/' . $dateParts[1] . '/' . $dateParts[0];
-                    }
+        $this->requestId = $id;
+        $room = DormitoryRequest::query()->where('id', $id)->first()->room;
+        $dormitoryRequest = DormitoryRequest::query()->where('id', $id)->first();
+        $dormitoryRequest->update([
+            'is_check' => true
+        ]);
 
-                    // Kiểm tra định dạng dd/mm/yyyy
-                    if (!preg_match("/^\d{2}\/\d{2}\/\d{4}$/", $value)) {
-                        return $fail('Ngày sinh phải có định dạng dd/mm/yyyy');
-                    }
+        DormitoryStudent::create([
+            'room_id' => $room->id,
+            'name' => $dormitoryRequest->name,
+            'code' => $dormitoryRequest->code,
+            'gender' => $dormitoryRequest->gender,
+            'phone_number' => $dormitoryRequest->phone,
+            'email' => $dormitoryRequest->code . '@sv.vnua.edu.vn',
+            'bod' => $dormitoryRequest->bod,
+            'citizen_id' => $dormitoryRequest->citizen_id,
+            'created_at' => Carbon::now(),
+        ]);
 
-                    // Giới hạn năm từ 1900 đến năm hiện tại
-                    $year = (int) mb_substr($value, 6, 4);
-                    if ($year < 1900 || $year > (int) date('Y')) {
-                        return $fail('Năm sinh không hợp lệ');
-                    }
-                }
-            ],
-            'citizen_id' => 'required',
-        ];
+        return redirect()->route('admin.dormitory.register.student-success')->with('success', 'Thêm sinh viên vào phòng: ' . $room->name . ' thành công');
+    }
+
+    public function openDeleteModal($id): void
+    {
+        $this->requestId = $id;
+        $roomName = DormitoryRequest::query()->where('id', $id)->first()->room->name;
+        $this->dispatch('openDeleteModal', ['roomName' => $roomName]);
+    }
+
+    public function confirmDelete()
+    {
+        DormitoryRequest::query()->where('id', $this->requestId)->update([
+            'status' => StatusRequest::Cancel->value,
+            'is_check' => true
+        ]);
+        $room = DormitoryRequest::query()->where('id', $this->requestId)->first()->room;
+        $room->update([
+            'available' => $room->available + 1
+        ]);
+        return redirect()->route('admin.dormitory.register.student-success')->with('success', 'Hủy đăng ký thành công');
     }
 }

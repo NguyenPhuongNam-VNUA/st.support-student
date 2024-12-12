@@ -33,8 +33,12 @@ class RoomIndex extends Component
             ->paginate(10);
 
         foreach ($rooms as $room) {
-            $room->status = ($room->capacity > $room->students->count()) ? StatusRoom::Empty : StatusRoom::Full;
-            $room->save();
+            $available = $room->capacity - $room->students->count();
+
+            $room->update([
+                'available' => $available,
+                'status' => $available > 0 ? StatusRoom::Empty : StatusRoom::Full, // Sửa điều kiện
+            ]);
         }
 
         $dormitories = Dormitory::all();

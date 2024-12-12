@@ -5,15 +5,12 @@ declare(strict_types=1);
 namespace App\Livewire\DormitoryAdmin\Facility;
 
 use App\Models\Dormitory\Facility;
-use App\Models\Dormitory\Room;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class FacilityEdit extends Component
 {
-    #[Validate(as: 'phòng')]
-    public $roomId;
-
+    public $room;
     #[Validate(as: 'số lượng giường')]
     public $bed;
 
@@ -30,13 +27,7 @@ class FacilityEdit extends Component
 
     public function render()
     {
-        $rooms = Room::with('dormitory')
-            ->get()
-            ->groupBy('dormitory.name')
-            ->toArray();
-        return view('livewire.dormitory-admin.facility.facility-edit', [
-            'rooms' => $rooms,
-        ]);
+        return view('livewire.dormitory-admin.facility.facility-edit');
     }
 
     public function mount(): void
@@ -47,14 +38,27 @@ class FacilityEdit extends Component
         $this->wardrobe = $facility->wardrobe;
         $this->air_conditioner = $facility->air_conditioner;
         $this->area = $facility->area;
-        $this->roomId = $facility->room_id;
-        $this->dispatch('reloadData', room: Room::query()->find($this->roomId));
+        $this->room = $facility->room->name;
+    }
+
+    public function update()
+    {
+        $this->validate();
+        Facility::find($this->facilityId)->update([
+            'bed' => $this->bed,
+            'wardrobe' => $this->wardrobe,
+            'air_conditioner' => $this->air_conditioner,
+            'area' => $this->area,
+        ]);
+
+        session()->flash('success', 'Chỉnh sửa cơ sở vật chất thành công');
+
+        return redirect()->route('admin.dormitory.facilities.index');
     }
 
     public function rules()
     {
         return [
-            'roomId' => 'required',
             'bed' => 'required|numeric',
             'wardrobe' => 'required|numeric',
             'air_conditioner' => 'required|numeric',
