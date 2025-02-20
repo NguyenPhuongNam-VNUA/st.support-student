@@ -3,7 +3,7 @@
 }
 
 /* From Uiverse.io by dimasptrautmaa */
-#page_loader{
+.preloader{
     position: fixed;
     top: 0;
     left: 0;
@@ -494,7 +494,7 @@
     color: #fff;
     top:15px;
     right: 9%;
-    z-index: 999;
+    z-index: 1;
 }
 
 .mapbox{
@@ -505,7 +505,7 @@
     height: 28px;
     background-color: #fff;
     margin: auto;
-    z-index: 999;
+    z-index: 2;
 }
 
 .img-size{

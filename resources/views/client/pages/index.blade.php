@@ -25,8 +25,7 @@
                                 </div>
                                 <div class="service-content">
                                     <span>Dịch vụ</span>
-                                    <p>Cung cấp thông tin về dịch vụ ăn uống, giặt là, và các cửa hàng tiện lợi,.. xung
-                                        quanh Vnua.</p>
+                                    <p>Cung cấp thông tin về dịch vụ ăn uống, giặt là, và các cửa hàng tiện lợi,...</p>
                                 </div>
                             </div>
                         </div>

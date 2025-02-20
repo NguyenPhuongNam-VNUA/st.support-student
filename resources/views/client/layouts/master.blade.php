@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
 
     @include('client.includes.styles')
-    
+
 </head>
 <body class="home-1">
 
@@ -37,7 +37,7 @@
 <!-- back to top end -->
 <div class="mm-fullscreen-bg"></div>
 
-<div id="page_loader">
+<div class="preloader">
     <div class="loader"></div>
 </div>
 
