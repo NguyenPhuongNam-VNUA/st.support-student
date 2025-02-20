@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Livewire\Admin\Role;
 
+use App\Models\Permission;
 use App\Models\Role;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Permission;
 
 class RoleCreate extends Component
 {
@@ -19,10 +19,12 @@ class RoleCreate extends Component
     public function render()
     {
         $permissions = Permission::all();
-        return view('livewire.admin.role.role-create',
+        return view(
+            'livewire.admin.role.role-create',
             [
                 'permissions' => $permissions
-            ]);
+            ]
+        );
     }
 
     public function store()

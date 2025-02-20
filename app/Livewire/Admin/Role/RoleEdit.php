@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Livewire\Admin\Role;
 
+use App\Models\Permission;
 use App\Models\Role;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-use App\Models\Permission;
 
 class RoleEdit extends Component
 {
@@ -22,7 +22,7 @@ class RoleEdit extends Component
         $permissions = Permission::all();
         return view('livewire.admin.role.role-edit', [
             'permissions' => $permissions,
-            'role_id'=> $this->id
+            'role_id' => $this->id
         ]);
     }
 
