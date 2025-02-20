@@ -131,6 +131,16 @@ map.on('load', function () {
         }
     });
 });
+
+// Duyệt qua các icon và tải chúng vào Mapbox
+icons.forEach(icon => {
+    const imagePath = "/storage/" + icon.thumbnail;
+    map.loadImage(imagePath, function (error, image) {
+        if (error) throw error;
+        map.addImage(icon.name, image);
+    });
+});
+
 //them nhãn
 var labeledPoints = {
     'type': 'FeatureCollection',
@@ -151,14 +161,14 @@ var labeledPoints = {
 };
 
 map.on('load', function () {
-    // Duyệt qua các icon và tải chúng vào Mapbox
-    icons.forEach(icon => {
-        const imagePath = "/storage/" + icon.thumbnail;console.log(imagePath);
-        map.loadImage(imagePath, function (error, image) {
-            if (error) throw error;
-            map.addImage(icon.name, image);
-        });
-    });
+    // // Duyệt qua các icon và tải chúng vào Mapbox
+    // icons.forEach(icon => {
+    //     const imagePath = "/storage/" + icon.thumbnail;
+    //     map.loadImage(imagePath, function (error, image) {
+    //         if (error) throw error;
+    //         map.addImage(icon.name, image);
+    //     });
+    // });
 
         // Thêm nguồn dữ liệu chứa điểm với icon và nhãn
         map.addSource('labeled-points-with-icons', {

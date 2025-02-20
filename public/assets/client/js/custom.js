@@ -14,20 +14,22 @@ $(window).resize(function () {
 resizefullscreen();
 
 
-// Chạy khi trang bắt đầu load
-    window.addEventListener('load', function() {
-        // Ẩn loader sau khi trang đã tải xong
-        document.getElementById('page_loader').style.display = 'none';
-    });
-
-    // Chạy khi trang bắt đầu tải
-    document.onreadystatechange = function() {
-        if (document.readyState === "loading") {
-            // Hiển thị loader
-            document.getElementById('page_loader').style.display = 'block';
-        }
-    };
-
+// // Chạy khi trang bắt đầu load
+//     window.addEventListener('load', function() {
+//         // Ẩn loader sau khi trang đã tải xong
+//         document.getElementById('page_loader').style.display = 'none';
+//     });
+//
+//     // Chạy khi trang bắt đầu tải
+//     document.onreadystatechange = function() {
+//         if (document.readyState === "loading") {
+//             // Hiển thị loader
+//             document.getElementById('page_loader').style.display = 'block';
+//         }
+//     };
+    $(window).on('load', function () {
+    $('.preloader').delay(100).fadeOut('fast');
+});
 /*==============================================================
 // toggler js
 ==============================================================*/

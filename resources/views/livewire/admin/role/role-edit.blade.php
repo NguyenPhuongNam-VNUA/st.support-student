@@ -18,7 +18,23 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Quyền hạn: <span class="text-danger">*</span>
+                    </label>
+                    <div>
+                        @foreach($permissions as $permission)
+                            <input wire:model.live="permission_ids" type="checkbox" id="permission_{{$permission->id}}"
+                                   name="permissions[]" value="{{$permission->id}}" class="ms-3" @if($permission->role_id==$role_id) checked @endif>
+                            <label for="permission_{{$permission->id}}"> {{$permission->name}}</label><br>
+                        @endforeach
+                            @error('permission_ids')
+                            <label class="text-danger mt-1">{{ $message }}</label>
+                            @enderror
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     <div class="col-md-3">
