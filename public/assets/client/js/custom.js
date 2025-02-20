@@ -27,9 +27,18 @@ resizefullscreen();
 //             document.getElementById('page_loader').style.display = 'block';
 //         }
 //     };
-    $(window).on('load', function () {
-    $('.preloader').delay(100).fadeOut('fast');
-});
+//     $(window).on('load', function () {
+//     $('.preloader').delay(100).fadeOut('fast');
+// });
+
+    $(window).on("load", function () {
+        $(".preloader").fadeOut();
+    });
+
+    setTimeout(function () {
+        $(".preloader").fadeOut();
+    }, 3000);
+
 /*==============================================================
 // toggler js
 ==============================================================*/
