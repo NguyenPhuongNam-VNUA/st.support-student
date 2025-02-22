@@ -88,7 +88,7 @@
                         </a>
                     </li>
                 @endif
-                @if(auth()->user()->role->permissions->where('name','Bản đồ')->first())
+                @if(auth()->user()->role->permissions->where('name','Bản đồ VNUA')->first())
                     <li class="nav-item-header">
                         <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Bản đồ</div>
                     </li>

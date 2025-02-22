@@ -36,6 +36,7 @@ class LoginIndex extends Component
                 $this->dispatch('notification', message: 'Tài khoản chưa được xác thực');
                 return redirect()->back();
             }
+            session()->flash('loginSuccess', 'Đăng nhập thành công!');
             return redirect()->route('client.index');
         }
         $this->addError('error', 'Tên đăng nhập hoặc mật khẩu không đúng');

@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class StudentLoginController extends Controller
@@ -51,5 +52,30 @@ class StudentLoginController extends Controller
 
         session(['verified_token' => $token]);
         return redirect()->route('student.login');
+    }
+
+    public function forgotPassword()
+    {
+        return view('client.pages.login.forgot-password');
+
+    }
+
+    public function resetPassword($token)
+    {
+        $resetToken = DB::table('reset_password')->where('token', $token)->first();
+        if (!$resetToken) {
+            return redirect()->route('student.forgot-password');
+        }
+
+        $current_time = Carbon::now();
+        $created_at = Carbon::parse($resetToken->created_at)->addMinutes(15);
+        if ($current_time > $created_at) {
+            session()->flash('error-token', 'Thời gian xác nhận đã hết hạn');
+            return redirect()->route('student.forgot-password');
+        }
+
+
+        return  view('client.pages.login.reset-password', ['token' => $token]);
+
     }
 }
