@@ -29,7 +29,7 @@
                                 @error('password') <span class="text-danger bold mt-1">{{ $message }}</span> @enderror
                             </div>
                             <div class="d-flex gap-2 justify-content-between">
-                                <a href="#" class="text-decoration-none text-warning">Quên mật khẩu</a>
+                                <a href="{{route('student.forgot-password')}}" class="text-decoration-none text-warning">Quên mật khẩu</a>
                                 <a href="{{ route('student.register') }}" class="text-decoration-none text-primary">Đăng ký</a>
                             </div>
                             <div  class="text-center mt-3">
@@ -54,6 +54,16 @@
             });
         });
     </script>
+
+    @if(session('resetSuccess'))
+        <script>
+            window.addEventListener('DOMContentLoaded', event => {
+                toastr.success("{{ session('resetSuccess') }}" , {
+                    timeOut: 5000,
+                });
+            });
+        </script>
+    @endif
 </section>
 
 

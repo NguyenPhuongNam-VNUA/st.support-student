@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\ClientBlogController;
 use App\Http\Controllers\Client\ClientHealthController;
+use App\Http\Controllers\Client\ClientManageAccount;
 use App\Http\Controllers\Client\ClientMotelController;
 use App\Http\Controllers\Client\ClientServiceController;
 use App\Http\Controllers\Client\StudentLoginController;
@@ -61,6 +62,9 @@ Route::prefix('/')->group(function (): void {
     });
 
     Route::get('/quen-mat-khau', [StudentLoginController::class, 'forgotPassword'])->name('student.forgot-password');
+    Route::get('/nhap-lai-mat-khau/{token}', [StudentLoginController::class, 'resetPassword'])->name('student.reset-password');
+    Route::get('/tai-khoan', [ClientManageAccount::class, 'index'])->name('student.account')->middleware('auth.student');
+
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');

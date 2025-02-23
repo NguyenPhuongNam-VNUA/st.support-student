@@ -30,7 +30,7 @@
                                     <li class="side-wrap user-wrap">
                                         <div class="acc-desk">
                                             <div class="user-icon">
-                                                <a href="#" class="user-icon-desk">
+                                                <a href="{{route('student.account')}}" class="user-icon-desk">
                                                     <span><i class="icon-user"></i></span>
                                                 </a>
                                             </div>
@@ -42,7 +42,7 @@
                                             </div>
                                         </div>
                                         <div class="acc-mob">
-                                            <a href="#" class="user-icon">
+                                            <a href="{{route('student.account')}}" class="user-icon">
                                                 <span><i class="icon-user"></i></span>
                                             </a>
                                         </div>
@@ -53,7 +53,7 @@
                                 <li class="side-wrap user-wrap">
                                     <div class="acc-desk">
                                         <div class="user-icon">
-                                            <a href="#" class="user-icon-desk">
+                                            <a href="{{route('student.login')}}" class="user-icon-desk">
                                                 <span><i class="icon-user"></i></span>
                                             </a>
                                         </div>
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                     <div class="acc-mob">
-                                        <a href="#" class="user-icon">
+                                        <a href="{{route('student.login')}}" class="user-icon">
                                             <span><i class="icon-user"></i></span>
                                         </a>
                                     </div>
