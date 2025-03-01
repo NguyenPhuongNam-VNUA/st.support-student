@@ -174,11 +174,11 @@ Route::prefix('/admin')->middleware('auth')->group(function (): void {
     });
 
     Route::prefix('map')->group(function (): void {
-        Route::get('/', [MapController::class, 'index'])->name('admin.map.index')->middleware('permission:Bản đồ');
-        Route::get('/create-icon', [MapController::class, 'CreateIcon'])->name('admin.map.create_icon')->middleware('permission:Bản đồ');
-        Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon')->middleware('permission:Bản đồ');
-        Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point')->middleware('permission:Bản đồ');
-        Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point')->middleware('permission:Bản đồ');
+        Route::get('/', [MapController::class, 'index'])->name('admin.map.index')->middleware('permission:Bản đồ VNUA');
+        Route::get('/create-icon', [MapController::class, 'CreateIcon'])->name('admin.map.create_icon')->middleware('permission:Bản đồ VNUA');
+        Route::get('/edit-icon/{id}', [MapController::class, 'EditIcon'])->name('admin.map.edit_icon')->middleware('permission:Bản đồ VNUA');
+        Route::get('/create-point', [MapController::class, 'CreatePoint'])->name('admin.map.create_point')->middleware('permission:Bản đồ VNUA');
+        Route::get('/edit-point/{id}', [MapController::class, 'EditPoint'])->name('admin.map.edit_point')->middleware('permission:Bản đồ VNUA');
     });
 
     //motel
