@@ -31,9 +31,9 @@ resizefullscreen();
 //     $('.preloader').delay(100).fadeOut('fast');
 // });
 
-    // $(window).on("load", function () {
-    //     $(".preloader").fadeOut();
-    // });
+    $(window).on("load", function () {
+        $(".preloader").fadeOut();
+    });
 
     setTimeout(function () {
         $(".preloader").fadeOut();
