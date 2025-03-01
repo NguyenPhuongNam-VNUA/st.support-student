@@ -37,7 +37,7 @@ resizefullscreen();
 
     setTimeout(function () {
         $(".preloader").fadeOut();
-    }, 3000);
+    }, 1000);
 
 /*==============================================================
 // toggler js
