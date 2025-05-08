@@ -9,16 +9,17 @@
                             <ul class="footer-ul">
                                 <li class="footer-li footer-logo">
                                     <h6 class="heading-footer">Về chúng tôi</h6>
-                                    <a href="">
-                                        <img class="img-fluid logo-size" src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="" style="width: 100px; height: auto;">
-                                    </a>
+                                    <div>
+                                        <a href="https://vnua.edu.vn/"><img class="img-fluid logo-size" src="{{asset('assets/admin/images/logo_vnua.png')}}" alt="" style="width: 100px; height: auto;"></a>
+                                        <a href="https://fita.vnua.edu.vn/"><img class="img-fluid logo-size ms-2" src="{{asset('assets/client/image/LogoKhoaCNTT.png')}}" alt="" style="width: 100px; height: auto;"></a>
+                                    </div>
                                 </li>
                                 <li class="footer-li footer-contact">
                                     <div class="footer-desc">
                                         <p class="desc">
-                                            "Dự án hỗ trợ sinh viên 
-                                            Học viện Nông Nghiệp Việt Nam" 
-                                            – Kết nối, hỗ trợ và đồng hành cùng 
+                                            "Dự án hỗ trợ sinh viên
+                                            Học viện Nông Nghiệp Việt Nam"
+                                            – Kết nối, hỗ trợ và đồng hành cùng
                                             sinh viên trên hành trình phát triển.
                                         </p>
                                     </div>
@@ -65,9 +66,12 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <ul class="f-bottom">
+                <ul class="f-bottom d-flex justify-content-between">
                     <li class="f-c f-copyright">
                         <p><i class="fa fa-copyright"></i> 2024 ST TEAM</p>
+                    </li>
+                    <li class="f-c f-copyright text-end advice" style="cursor: pointer">
+                        <a href="{{route('advice.create')}}" class="text-light">Góp ý với chúng tôi</a>
                     </li>
                 </ul>
             </div>

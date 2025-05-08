@@ -689,3 +689,9 @@
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
+
+
+.advice a:hover{
+    text-decoration: underline;
+
+}
