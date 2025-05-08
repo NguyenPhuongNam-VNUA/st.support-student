@@ -36,8 +36,7 @@ class LoginIndex extends Component
             return redirect()->route('admin.index');
         }
         $this->reset();
-        $this->addError('error-login', 'Tài khoản hoặc mật khẩu không đúng');
-        return redirect()->back();
-
+        $this->render();
+        return redirect()->back()->with('error-login', 'Tên đăng nhập hoặc mật khẩu không đúng');
     }
 }
