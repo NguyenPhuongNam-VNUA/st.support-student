@@ -19,7 +19,7 @@
             <div class="mb-3">
                 <label class="form-label">Tài khoản</label>
                 <div class="form-control-feedback form-control-feedback-start">
-                    <input wire:model.live="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Nhập tài khoản">
+                    <input wire:model.live="username" name="username" type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Nhập tài khoản">
                     <div class="form-control-feedback-icon">
                         <i class="ph-user-circle text-muted"></i>
                     </div>
@@ -32,7 +32,7 @@
             <div class="mb-3">
                 <label class="form-label">Mật khẩu</label>
                 <div class="form-control-feedback form-control-feedback-start">
-                    <input wire:model.live="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="•••••••••••">
+                    <input wire:model.live="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="•••••••••••">
                     <div class="form-control-feedback-icon">
                         <i class="ph-lock text-muted"></i>
                     </div>
