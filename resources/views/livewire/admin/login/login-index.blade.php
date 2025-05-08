@@ -19,7 +19,7 @@
             <div class="mb-3">
                 <label class="form-label">Tài khoản</label>
                 <div class="form-control-feedback form-control-feedback-start">
-                    <input wire:model.live="username" name="username"
+                    <input wire:model="username" name="username"
                            type="text" class="form-control @error('username') is-invalid @enderror"
                            placeholder="Nhập tài khoản"
                            autocomplete="username"
@@ -36,11 +36,10 @@
             <div class="mb-3">
                 <label class="form-label">Mật khẩu</label>
                 <div class="form-control-feedback form-control-feedback-start">
-                    <input wire:model.live="password" name="password"
+                    <input wire:model="password" name="password"
                            type="password" class="form-control @error('password') is-invalid @enderror"
                            placeholder="•••••••••••"
-                           autocomplete="password"
-                    >
+                           autocomplete="current-password">
 
                     <div class="form-control-feedback-icon">
                         <i class="ph-lock text-muted"></i>
