@@ -10,10 +10,10 @@ use Livewire\Component;
 class LoginIndex extends Component
 {
     #[Validate(as: 'tài khoàn')]
-    public $username;
+    public $username = '';
 
     #[Validate(as: 'mật khẩu')]
-    public $password;
+    public $password = '';
 
     public function render()
     {
