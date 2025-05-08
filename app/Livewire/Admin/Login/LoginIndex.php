@@ -32,10 +32,12 @@ class LoginIndex extends Component
     {
         $this->validate();
 
-        if (auth()->attempt(['user_name' => $this->username, 'password' => $this->password])) {
-            return redirect()->route('admin.index');
+        if (!auth()->attempt(['user_name' => $this->username, 'password' => $this->password])) {
+            return redirect()->back() ->withErrors([
+                'error-login' => 'Tên đăng nhập hoặc mật khẩu không đúng',
+            ]);
         }
 
-        return redirect()->route('login')->with('error-login', 'Tên đăng nhập hoặc mật khẩu không đúng');
+        return redirect()->route('admin.index');
     }
 }
