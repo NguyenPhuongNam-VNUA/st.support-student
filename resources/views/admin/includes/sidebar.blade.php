@@ -304,6 +304,21 @@
                         </a>
                     </li>
                 @endif
+                @if(auth()->user()->role->permissions->where('name','Quản lý chức vụ')->first())
+                    <li class="nav-item-header">
+                        <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Góp ý</div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.advice.index') }}"
+                           class="nav-link {{ request()->routeIs('admin.advice.index') ? 'active' : '' }}"
+                           style="display: flex; align-items: center;">
+                            <i class="fas fa-newspaper me-3 fa"></i>
+                            <span>
+                            Góp ý từ người dùng
+                        </span>
+                        </a>
+                    </li>
+                @endif
 
 {{--                <!-- ======Super Admin================ -->--}}
 {{--                @if (auth()->user()->role->id == App\Models\Role::where('name', 'Admin')->first()->id)--}}

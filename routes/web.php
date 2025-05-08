@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\Login\AuthController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Client\AdviceController;
 use App\Http\Controllers\Client\ClientBlogController;
 use App\Http\Controllers\Client\ClientHealthController;
 use App\Http\Controllers\Client\ClientManageAccount;
@@ -65,6 +66,8 @@ Route::prefix('/')->group(function (): void {
     Route::get('/nhap-lai-mat-khau/{token}', [StudentLoginController::class, 'resetPassword'])->name('student.reset-password');
     Route::get('/tai-khoan', [ClientManageAccount::class, 'index'])->name('student.account')->middleware('auth.student');
 
+    Route::get('/gop-y', [AdviceController::class, 'create'])->name('advice.create');
+
 });
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -74,6 +77,7 @@ Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])-
 
 Route::prefix('/admin')->middleware('auth')->group(function (): void {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+    Route::get('/advice', [AdviceController::class, 'index'])->name('admin.advice.index')->middleware('permission:Quản lý chức vụ');
 
     Route::prefix('/blog')->group(function (): void {
         Route::get('/', [BlogController::class, 'index'])->name('admin.blogs.index')->middleware('permission:Quản lý bài viết');
