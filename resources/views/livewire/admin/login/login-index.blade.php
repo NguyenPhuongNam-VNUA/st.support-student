@@ -10,11 +10,11 @@
                 <span class="d-block text-muted">Nhập thông tin đăng nhập của bạn bên dưới</span>
             </div>
 
-            @error('error-login')
-            <div class="mb-3 text-center">
-                <label class="text-danger"> {{ $message }}</label>
-            </div>
-            @enderror
+            @if(Session::has('error-login'))
+                <div class="mb-3 text-center">
+                    <label class="text-danger"> {{ Session::get('error-login') }}</label>
+                </div>
+            @endif
 
             <div class="mb-3">
                 <label class="form-label">Tài khoản</label>
