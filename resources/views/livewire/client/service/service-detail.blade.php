@@ -49,12 +49,32 @@
                         <h4>{{ $service->name }}</h4>
                         <div class="rating mb-3">
                             @php
-                                $averageRating = round($service->averageRating());
+                            function renderStarsDetail($rating) {
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                    $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
+
+                                    $output = '';
+
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        $output .= '<i class="fa fa-star e-star" style="color: #448b1f;"></i>';
+                                    }
+
+                                    if ($hasHalfStar) {
+                                        $output .= '<i class="fa fa-star-half-o e-star" style="color: #448b1f;"></i>';
+                                    }
+
+                                    for ($i = 0; $i < $emptyStars; $i++) {
+                                        $output .= '<i class="fa fa-star-o" style="color: #ccc;"></i>';
+                                    }
+
+                                    return $output;
+                                }
                             @endphp
                             <div class="d-flex align-items-center">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <i class="fa {{ $i <= $averageRating ? 'fa-star c-star' : 'fa-star-o' }}" style="color: {{ $i <= $averageRating ? '#448b1f' : '#ccc' }}"></i>
-                                @endfor
+                                <div class="p-rating">
+                                    {!! renderStarsDetail($service->averageRating()) !!}
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3 align-items-center">

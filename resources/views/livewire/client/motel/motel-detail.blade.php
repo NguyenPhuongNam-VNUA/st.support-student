@@ -46,17 +46,35 @@
                     </div>
                     <div class="col-lg-6 col-xl-6 col-md-6 col-12 pro-info">
                         <h4>{{ $motel->address }}</h4>
+                        @php
+                            function renderStarsDetail($rating) {
+                                $fullStars = floor($rating);
+                                $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
+
+                                $output = '';
+
+                                for ($i = 0; $i < $fullStars; $i++) {
+                                    $output .= '<i class="fa fa-star e-star" style="color: #448b1f;"></i>';
+                                }
+
+                                if ($hasHalfStar) {
+                                    $output .= '<i class="fa fa-star-half-o e-star" style="color: #448b1f;"></i>';
+                                }
+
+                                for ($i = 0; $i < $emptyStars; $i++) {
+                                    $output .= '<i class="fa fa-star-o" style="color: #ccc;"></i>';
+                                }
+
+                                return $output;
+                            }
+                        @endphp
                         <div class="rating mb-3">
-                            @php
-                                $averageRating = round($motel->averageRating());
-                            @endphp
                             <div class="d-flex align-items-center">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    <i class="fa {{ $i <= $averageRating ? 'fa-star c-star' : 'fa-star-o' }}" style="color: {{ $i <= $averageRating ? '#448b1f' : '#ccc' }}"></i>
-                                @endfor
+                               {!! renderStarsDetail($motel->averageRating()) !!}
                             </div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-crown text-muted"></i>
@@ -64,7 +82,7 @@
                             <div class="col-4 fw-bold text-muted">Tên chủ trọ:</div>
                             <div class="col">{{ $motel->owner_name }}</div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-phone-volume text-muted"></i>
@@ -72,7 +90,7 @@
                             <div class="col-4 fw-bold text-muted">Số điện thoại:</div>
                             <div class="col">{{ $motel->owner_phoneNumber }}</div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-door-open text-muted"></i>
@@ -80,7 +98,7 @@
                             <div class="col-4 fw-bold text-muted">Số phòng:</div>
                             <div class="col">{{ $motel->total_rooms }}</div>
                         </div>
-                    
+
                         <div class="row mb-3 align-items-center">
                             <div class="col-1 text-end">
                                 <i class="fas fa-thumbs-up text-muted"></i>
@@ -95,14 +113,14 @@
                             </div>
                             <div class="col-4 fw-bold text-muted">Mô tả:</div>
                         </div>
-                    
+
                         <div class="">
-                            <div class="col">   
+                            <div class="col">
                                 <p>{{ $motel->description }}</p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="col-xl-3 col-lg-12 col-md-12 col-xs-12 pro-shipping">

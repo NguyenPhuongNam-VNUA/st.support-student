@@ -43,8 +43,8 @@
                         <div class="register-info mt-3">
                             <p class="text-primary fw-bold" style="font-family: Arial"><span>*</span> Lưu ý:</p>
                             <p class="text-muted">
-                                Khi đăng kí tài khoản, bạn sẽ nhận được một email xác nhận qua email sinh viên của bạn.
-                                <span class="text-warning fw-semibold">Vui lòng kiểm tra hộp thư đến của bạn!</span>
+                                Khi đăng kí tài khoản, bạn sẽ nhận được một email xác nhận qua <strong style="font-size: 14px">email sinh viên của bạn</strong> .
+                                <span class="text-warning fw-semibold mt-2">Vui lòng kiểm tra hộp thư đến của bạn!</span>
                             </p>
                         </div>
                     </div>

@@ -24,7 +24,7 @@
                                 <label class="text-muted form-label">Mật khẩu:</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                                    <input wire:model.live="password" type="password" class="form-control" placeholder="•••••••••••">
+                                    <input wire:model.live="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
                                 </div>
                                 @error('password') <span class="text-danger bold mt-1">{{ $message }}</span> @enderror
                             </div>
