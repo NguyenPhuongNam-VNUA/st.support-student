@@ -57,34 +57,34 @@
                                                 href="{{ route('client.service-detail', ['slug' => $service->slug]) }}">{{ $service->name }}</a>
                                         </h3>
                                         <div class="rating">
-                                            @php
-                                                function renderStarsDetailIndex($rating) {
-                                                        $fullStars = floor($rating);
-                                                        $hasHalfStar = ($rating - $fullStars) >= 0.5;
-                                                        $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
+{{--                                            @php--}}
+{{--                                                function renderStarsDetailIndex($rating) {--}}
+{{--                                                        $fullStars = floor($rating);--}}
+{{--                                                        $hasHalfStar = ($rating - $fullStars) >= 0.5;--}}
+{{--                                                        $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);--}}
 
-                                                        $output = '';
+{{--                                                        $output = '';--}}
 
-                                                        for ($i = 0; $i < $fullStars; $i++) {
-                                                            $output .= '<i class="fa fa-star e-star" style="color: #448b1f;"></i>';
-                                                        }
+{{--                                                        for ($i = 0; $i < $fullStars; $i++) {--}}
+{{--                                                            $output .= '<i class="fa fa-star e-star" style="color: #448b1f;"></i>';--}}
+{{--                                                        }--}}
 
-                                                        if ($hasHalfStar) {
-                                                            $output .= '<i class="fa fa-star-half-o e-star" style="color: #448b1f;"></i>';
-                                                        }
+{{--                                                        if ($hasHalfStar) {--}}
+{{--                                                            $output .= '<i class="fa fa-star-half-o e-star" style="color: #448b1f;"></i>';--}}
+{{--                                                        }--}}
 
-                                                        for ($i = 0; $i < $emptyStars; $i++) {
-                                                            $output .= '<i class="fa fa-star-o" style="color: #ccc;"></i>';
-                                                        }
+{{--                                                        for ($i = 0; $i < $emptyStars; $i++) {--}}
+{{--                                                            $output .= '<i class="fa fa-star-o" style="color: #ccc;"></i>';--}}
+{{--                                                        }--}}
 
-                                                        return $output;
-                                                    }
-                                            @endphp
-                                            <div class="d-flex align-items-center">
-                                                <div class="p-rating">
-                                                    {!! renderStarsDetailIndex($service->averageRating()) !!}
-                                                </div>
-                                            </div>
+{{--                                                        return $output;--}}
+{{--                                                    }--}}
+{{--                                            @endphp--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="p-rating">--}}
+{{--                                                    {!! renderStarsDetailIndex($service->averageRating()) !!}--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
