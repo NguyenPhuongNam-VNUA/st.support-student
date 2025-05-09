@@ -33,7 +33,7 @@
                                         href="{{ route('client.motel-detail', ['slug' => $motel->slug]) }}">{{ $motel->address }}</a>
                                 </h3>
                                 @php
-                                    function renderStarsDetail($rating) {
+                                    function renderStarsDetailIndex($rating) {
                                         $fullStars = floor($rating);
                                         $hasHalfStar = ($rating - $fullStars) >= 0.5;
                                         $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
@@ -56,7 +56,7 @@
                                     }
                                 @endphp
                                 <div class="rating">
-                                    {!! renderStarsDetail($motel->averageRating()) !!}
+                                    {!! renderStarsDetailIndex($motel->averageRating()) !!}
                                 </div>
                             </div>
                         </div>
