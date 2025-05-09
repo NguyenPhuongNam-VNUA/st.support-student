@@ -58,7 +58,7 @@
                                         </h3>
                                         <div class="rating">
                                             @php
-                                                function renderStarsDetail($rating) {
+                                                function renderStarsDetailIndex($rating) {
                                                         $fullStars = floor($rating);
                                                         $hasHalfStar = ($rating - $fullStars) >= 0.5;
                                                         $emptyStars = 5 - $fullStars - ($hasHalfStar ? 1 : 0);
@@ -82,7 +82,7 @@
                                             @endphp
                                             <div class="d-flex align-items-center">
                                                 <div class="p-rating">
-                                                    {!! renderStarsDetail($service->averageRating()) !!}
+                                                    {!! renderStarsDetailIndex($service->averageRating()) !!}
                                                 </div>
                                             </div>
                                         </div>
