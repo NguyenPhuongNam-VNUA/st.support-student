@@ -33,7 +33,7 @@
                         <i class="ph-stack"></i>
                     </div>
                     <div class="col-10 fw-bold text-muted">&nbsp;Danh mục :</div>
-                    <div class="col-10">{{ $blog->user->role->name}}</div>
+                    <div class="col-10">{{ $blog->getCategoryName($blog->category)}}</div>
                 </div>
                 <div class="row mb-4">
                     <div class="col-1 text-end text-muted">

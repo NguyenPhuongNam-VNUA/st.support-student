@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Livewire\Admin\Blog;
 
 use App\Models\Post\Post;
+use App\Models\Role;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -23,7 +24,7 @@ class BlogEdit extends Component
     public $content = '';
 
     #[Validate(as: 'Danh mục')]
-    public $category;
+    public $category_id;
 
     public $id;
 
@@ -35,7 +36,10 @@ class BlogEdit extends Component
 
     public function render()
     {
-        return view('livewire.admin.blog.blog-edit');
+        $categories = Role::where('name', '!=', 'admin')->get();
+        return view('livewire.admin.blog.blog-edit', [
+            'categories' => $categories
+        ]);
     }
 
     public function updateContent($value): void
@@ -53,13 +57,20 @@ class BlogEdit extends Component
         $this->title = $blog->title;
         $this->thumbnail = $blog->thumbnail;
         $this->content = $blog->content;
-
-
+        $this->category_id = $blog->category;
     }
 
     public function update()
     {
         $this->validate();
+        if (auth()->user()->role()->where('name', 'admin')->exists()) {
+            $this->validate([
+                'category_id' => 'required|exists:roles,id',
+            ]);
+            $categoryId = $this->category_id;
+        } else {
+            $categoryId = auth()->user()->role_id;
+        }
         $thumbnailPath = $this->thumbnail;
 
         if ($this->new_thumbnail) {
@@ -70,6 +81,7 @@ class BlogEdit extends Component
             'title' => $this->title,
             'content' => $this->content,
             'thumbnail' => $thumbnailPath,
+            'category' => $categoryId,
             'slug' => Str::slug($this->title) . '-' . $this->id,
         ]);
 

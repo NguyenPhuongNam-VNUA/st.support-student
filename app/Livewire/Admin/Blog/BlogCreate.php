@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Livewire\Admin\Blog;
 
 use App\Models\Post\Post;
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
@@ -25,7 +26,7 @@ class BlogCreate extends Component
     public $content = '';
 
     #[Validate(as: 'Danh mục')]
-    public $category;
+    public $category_id;
 
     protected $listeners = [
         'updateContent' => 'updateContent',
@@ -33,7 +34,10 @@ class BlogCreate extends Component
 
     public function render()
     {
-        return view('livewire.admin.blog.blog-create');
+        $categories = Role::where('name', '!=', 'admin')->get();
+        return view('livewire.admin.blog.blog-create', [
+            'categories' => $categories,
+        ]);
     }
 
     public function updateContent($value): void
@@ -45,8 +49,18 @@ class BlogCreate extends Component
     public function store()
     {
         $this->validate();
+        if (Auth::user()->role()->where('name', 'admin')->exists()) {
+            $this->validate([
+                'category_id' => 'required|exists:roles,id',
+            ]);
+            $categoryId = $this->category_id;
+        } else {
+            $categoryId = Auth::user()->role_id;
+        }
+
+        $this->validate();
         $thumbnailPath = $this->thumbnail->store('thumbnailBlogs', 'public');
-        $categoryId = Auth::user()->role_id;
+
 
         $blog = Post::create([
             'title' => $this->title,

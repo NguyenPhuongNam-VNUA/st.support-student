@@ -56,7 +56,7 @@
                             </td>
                             <td>{{$blog -> title}}</td>
                             <td>{!! Str::limit(strip_tags($blog->content), 100, '...') !!}</td>
-                            <td>{{ $blog->user->role->name}}</td>
+                            <td>{{ $blog->getCategoryName($blog->category)}}</td>
                             <td>{{$blog->user ? $blog->user->name : 'Nặc danh'}}</td>
                             <td class="text-center">
                                 <div class="dropdown">

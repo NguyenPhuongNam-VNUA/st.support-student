@@ -168,6 +168,24 @@
                         @endif
                     </div>
                 </div>
+                @if(Auth::user()->role()->where('name', 'admin')->exists())
+                    <div class="form-group mt-2">
+                        <label class="form-label">
+                            Danh mục bài viết: <span class="text-danger">*</span>
+                        </label>
+                        <div>
+                            <select wire:model.live="category_id" class="form-control @error('category_id') is-invalid @enderror">
+                                <option value="">Chọn danh mục</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                            <label class="text-danger mt-1">{{ $message }}</label>
+                            @enderror
+                        </div>
+                    </div>
+                @endif
                 <div class="form-group">
                     <label class="form-label">
                         Nội dung bài viết: <span class="text-danger">*</span>
