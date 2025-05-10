@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Post;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -31,6 +32,11 @@ class Post extends Model
     public function postReviews(): HasMany
     {
         return $this->hasMany(PostReview::class);
+    }
+
+    public function getCategoryName($id)
+    {
+        return Role::query()->where('id', $id)->first()->name;
     }
 
     public function scopeSearch($query, $search)
