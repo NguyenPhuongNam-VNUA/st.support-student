@@ -38,6 +38,7 @@
                             <th class="text-center">Số điện thoại</th>
                             <th class="text-center">Danh mục</th>
                             <th class="text-center">Nhận ship</th>
+                            <th class="text-center" style="width: 10%">Trạng thái</th>
                             <th class="text-center" style="text-align: center">Hành động</th>
                         </tr>
                     </thead>
@@ -45,8 +46,8 @@
                         @if ($services->isEmpty())
                             <tr>
                                 <td colspan="100%" class="text-center">
-                                    <img src="{{ asset('assets/admin/images/empty.png') }}"
-                                        alt="Không tìm thấy kết quả" style="width: 400px;" />
+                                    <img src="{{ asset('assets/admin/images/empty.png') }}" alt="Không tìm thấy kết quả"
+                                        style="width: 400px;" />
                                 </td>
                             </tr>
                         @else
@@ -72,13 +73,49 @@
                                                 </span>
                                             @endif
                                         </div>
-                                    </td>                                    
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="col">
+                                            @if ($service->status === \App\Enums\StatusRequest::Pending->value)
+                                                <span class="badge bg-warning bg-opacity-20 text-warning">
+                                                    {{ \App\Enums\StatusRequest::Pending->description() }}
+                                                </span>
+                                            @elseif($service->status === \App\Enums\StatusRequest::Completed->value)
+                                                <span class="badge bg-success bg-opacity-20 text-success">
+                                                    {{ \App\Enums\StatusRequest::Completed->description() }}
+                                                </span>
+                                            @elseif($service->status === \App\Enums\StatusRequest::Cancel->value)
+                                                <span class="badge bg-danger bg-opacity-20 text-danger">
+                                                    {{ \App\Enums\StatusRequest::Cancel->description() }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </td>
                                     <td class="text-center">
                                         <div class="dropdown">
                                             <a href="#" class="text-body" data-bs-toggle="dropdown">
                                                 <i class="ph-list"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
+                                                @if ($service->status !== \App\Enums\StatusRequest::Cancel->value)
+                                                    <button type="button"
+                                                        wire:click="approveService({{ $service->id }})"
+                                                        class="dropdown-item text-success">
+                                                        <i class="ph-check-circle me-2"></i>
+                                                        Duyệt
+                                                    </button>
+                                                @else
+                                                    <button type="button" class="dropdown-item text-muted" disabled>
+                                                        <i class="ph-check-circle me-2"></i>
+                                                        Duyệt
+                                                    </button>
+                                                @endif
+
+                                                <button type="button" wire:click="cancelService({{ $service->id }})"
+                                                    class="dropdown-item text-warning">
+                                                    <i class="ph-x-circle me-2"></i>
+                                                    Hủy bỏ
+                                                </button>
                                                 <a href="{{ route('admin.services.detail', ['id' => $service->id]) }}"
                                                     class="dropdown-item">
                                                     <i class="ph-eye me-2"></i>
