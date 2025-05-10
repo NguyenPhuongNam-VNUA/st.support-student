@@ -66,6 +66,7 @@ class ServiceCreate extends Component
             'owner_name' => $this->owner_name,
             'isShip' => $this->isShip,
             'slug' => Str::slug($this->name),
+            'status' => \App\Enums\StatusRequest::Completed->value,
         ]);
 
         $service->update([

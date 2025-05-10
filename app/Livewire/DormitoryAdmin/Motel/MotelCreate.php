@@ -57,7 +57,7 @@ class MotelCreate extends Component
             'total_rooms' => $this->total_rooms,
             'available_rooms' => $this->available_rooms,
             'slug' => Str::slug($this->address),
-            'status' => \App\Enums\StatusRequest::Pending->value,
+            'status' => \App\Enums\StatusRequest::Completed->value,
         ]);
 
         $motel->update([

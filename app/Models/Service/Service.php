@@ -25,6 +25,7 @@ class Service extends Model
         'owner_name',
         'description',
         'service_category_id',
+        'status',
     ];
 
     public function serviceCategory(): BelongsTo
@@ -53,8 +54,8 @@ class Service extends Model
 
     public function isNew()
     {
-        // Kiểm tra nếu dịch vụ được tạo trong vòng 10 ngày gần đây
-        return $this->created_at->greaterThan(now()->subDays(10));
+        // Kiểm tra nếu dịch vụ được tạo trong vòng 30 ngày gần đây
+        return $this->created_at->greaterThan(now()->subDays(30));
     }
 
 
