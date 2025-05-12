@@ -33,6 +33,7 @@
                         <tr>
                             <th class="text-center" style="width: 1%">STT</th>
                             <th class="text-center" style="width: 20%">Tên tòa nhà</th>
+                            <th class="text-center" style="width: 15%">Ảnh tòa nhà </th>
                             <th class="text-center" style="width: 20%">Người quản lý</th>
                             <th class="text-center" style="width: 10%">Số phòng</th>
                             <th class="text-center" style="width: 20%">Số phòng còn trống</th>
@@ -52,6 +53,10 @@
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
                             <td class="text-center">{{ $dormitory->name }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $dormitory->thumbnail) }}" alt=""
+                                     width="100">
+                            </td>
                             <td class="text-center">{{ $dormitory->manager->name ?? 'Không có người quản lý'}}</td>
                             <td class="text-center">{{ $dormitory->total_rooms }}</td>
                             <td class="text-center">{{ $dormitory->available_rooms }}</td>

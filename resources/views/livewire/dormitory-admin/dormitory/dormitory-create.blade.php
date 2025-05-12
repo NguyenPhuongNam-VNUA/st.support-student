@@ -18,32 +18,63 @@
                         @enderror
                     </div>
                 </div>
+                <div class="d-flex justify-content-between gap-3">
+                    <div class="form-group mt-2 flex-fill">
+                        <label class="form-label">
+                            Người quản lý: <span class="text-danger">*</span>
+                        </label>
+                        <div>
+                            <select wire:model="manager_id" class="form-select @error('manager_id') is-invalid @enderror">
+                                <option value="">Chọn người quản lý</option>
+                                @foreach($managers as $manager)
+                                    <option value="{{ $manager->id }}">{{ $manager->name }}</option>
+                                @endforeach
+                            </select>
+
+                            @error('manager_id')
+                            <label class="text-danger mt-1">{{ $message }}</label>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="form-label">
+                            Số tầng: <span class="text-danger">*</span>
+                        </label>
+                        <div>
+                            <input wire:model.live="floors" type="number" class="form-control @error('floors') is-invalid @enderror">
+                            @error('floors')
+                            <label class="text-danger mt-1">{{$message}}</label>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label class="form-label">
+                            Số phòng: <span class="text-danger">*</span>
+                        </label>
+                        <div>
+                            <input wire:model.live="total_rooms" type="number" class="form-control @error('total_rooms') is-invalid @enderror">
+                            @error('total_rooms')
+                            <label class="text-danger mt-1">{{$message}}</label>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group mt-2">
                     <label class="form-label">
-                        Người quản lý: <span class="text-danger">*</span>
+                        Ảnh toà nhà: <span class="text-danger">*</span>
                     </label>
                     <div>
-                        <select wire:model="manager_id" class="form-control @error('manager_id') is-invalid @enderror">
-                            <option value="">Chọn người quản lý</option>
-                            @foreach($managers as $manager)
-                            <option value="{{ $manager->id }}">{{ $manager->name }}</option>
-                            @endforeach
-                        </select>
-
-                        @error('manager_id')
+                        <input wire:model.live="thumbnail" type="file" class="form-control @error('thumbnail') is-invalid @enderror">
+                        @error('thumbnail')
                         <label class="text-danger mt-1">{{ $message }}</label>
                         @enderror
                     </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label class="form-label">
-                        Số phòng: <span class="text-danger">*</span>
-                    </label>
-                    <div>
-                        <input wire:model.live="total_rooms" type="number" class="form-control @error('total_rooms') is-invalid @enderror">
-                        @error('total_rooms')
-                        <label class="text-danger mt-1">{{$message}}</label>
-                        @enderror
+                    <div class="mt-2">
+                        @if ($thumbnail)
+                            <img src="{{ $thumbnail->temporaryUrl() }}" alt="New thumbnail" class="img-thumbnail"
+                                 width="150">
+                        @endif
                     </div>
                 </div>
                 <div class="form-group mt-2">
@@ -57,6 +88,26 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group mt-2">
+                    <label class="form-label">
+                        Địa chỉ:
+                    </label>
+                    <div>
+                        <select wire:model.live="location" class="form-select">
+                            <option value="">Chọn địa chỉ</option>
+                                @foreach($locations as $location)
+                                    <option value="{{ $location->id }}">{{ $location->name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
+                </div>
+                @if($address)
+                    <div class="form-group mt-2">
+                        <span class="form-label">
+                            Địa chỉ cụ thể: <a href="{{ $address }}" class="link-primary">{{ $address }}</a>
+                        </span>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

@@ -139,7 +139,7 @@
                                                 <li class="menu-link">
                                                     <a href="{{route('client.dormitory.index')}}" class="link-title">
                                                         <i class="fa-solid fa-building-user me-1"></i>
-                                                        <span class="sp-link-title">Ký túc xá</span>
+                                                        <span class="sp-link-title">Đăng ký ký túc xá</span>
                                                     </a>
                                                 </li>
                                             </ul>
