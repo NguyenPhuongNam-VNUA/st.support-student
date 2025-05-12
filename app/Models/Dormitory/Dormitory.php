@@ -15,6 +15,9 @@ class Dormitory extends Model
 
     protected $fillable = [
         'name',
+        'thumbnail',
+        'location',
+        'floor',
         'total_rooms',
         'available_rooms',
         'manager_id',
