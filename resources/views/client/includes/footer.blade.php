@@ -17,8 +17,8 @@
                                 <li class="footer-li footer-contact">
                                     <div class="footer-desc">
                                         <p class="desc">
-                                            "Dự án hỗ trợ sinh viên
-                                            Học viện Nông Nghiệp Việt Nam"
+                                            Hệ thống hỗ trợ sinh viên
+                                            Học viện Nông Nghiệp Việt Nam
                                             – Kết nối, hỗ trợ và đồng hành cùng
                                             sinh viên trên hành trình phát triển.
                                         </p>
@@ -35,9 +35,9 @@
                                         <i class="fa fa-angle-down"></i>
                                     </a>
                                     <ul class="f-link-ul collapse" id="t-cate" data-bs-parent="#footer-accordian">
-                                        <li class="f-link-ul-li"><span> Địa chỉ :</span></li>
-                                        <li class="f-link-ul-li"><span>Email:</span></li>
-                                        <li class="f-link-ul-li"><span>Số điện thoại:</span></li>
+                                        <li class="f-link-ul-li"><span> Địa chỉ : Trâu Qùy - Gia Lâm - Hà Nội</span></li>
+                                        <li class="f-link-ul-li"><span>Email: contact@st.vnua.edu.vn</span></li>
+                                        <li class="f-link-ul-li"><span>Số điện thoại: 0987651543</span></li>
                                     </ul>
                                 </div>
                                 <div class="f-link">
@@ -47,9 +47,9 @@
                                         <i class="fa fa-angle-down"></i>
                                     </a>
                                     <ul class="f-link-ul collapse" id="services" data-bs-parent="#footer-accordian">
-                                        <li class="f-link-ul-li"><span> Địa chỉ :</span></li>
-                                        <li class="f-link-ul-li"><span>Email:</span></li>
-                                        <li class="f-link-ul-li"><span>Số điện thoại:</span></li>
+                                        <li class="f-link-ul-li"><span> Địa chỉ : Trâu Qùy - Gia Lâm - Hà Nội</span></li>
+                                        <li class="f-link-ul-li"><span>Email: contact@st.vnua.edu.vn</span></li>
+                                        <li class="f-link-ul-li"><span>Số điện thoại: 0987651543</span></li>
                                     </ul>
                                 </div>
                             </div>
